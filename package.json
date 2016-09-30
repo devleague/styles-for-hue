@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/creindle/styles-for-hue/issues"
   },
-  "homepage": "https://github.com/creindle/styles-for-hue#readme"
+  "homepage": "https://github.com/creindle/styles-for-hue#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
 }
