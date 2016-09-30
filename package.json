@@ -1,0 +1,20 @@
+{
+  "name": "styles-for-hue",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/creindle/styles-for-hue.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/creindle/styles-for-hue/issues"
+  },
+  "homepage": "https://github.com/creindle/styles-for-hue#readme"
+}
