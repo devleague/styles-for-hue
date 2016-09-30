@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "dev": "webpack-dev-server --entry ./src/app.js --module-bind 'js=babel' --inline --hot --content-base public --history-api-fallback",
+    "dev": "webpack-dev-server --port 4567 --entry ./src/app.js --module-bind 'js=babel' --inline --hot --content-base public --history-api-fallback",
     "build": "webpack src/app.js public/js/app.js --module-bind 'js=babel'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
