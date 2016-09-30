@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
+import { HueDiv } from '../components';
 
 class Template extends Component {
   render() {
     return (
-      <div class="index-contain">Sup Brah
-        <div class="index-pagewrap">
-        </div>
-      </div>
+      <HueDiv />
     )
   }
 }
