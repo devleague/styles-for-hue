@@ -4,7 +4,7 @@ class DivComp extends Component {
   render() {
     return (
       <div
-        className="DivComp"
+        className="divComp"
         style={
           {
             display: "inline-block",

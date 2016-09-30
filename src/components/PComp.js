@@ -8,7 +8,8 @@ class PComp extends Component {
         style={
           {
             display: "inline-block",
-            backgroundColor: "blue"
+            backgroundColor: "blue",
+            color: "white"
           }
         }
       >I'm a p component!
