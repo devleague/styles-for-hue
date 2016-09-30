@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { DivComp, PComp, ImgComp } from '../components';
+import { DivComp, PComp, ImgComp, ListComp } from '../components';
 
 class Template extends Component {
   render() {
@@ -8,6 +8,7 @@ class Template extends Component {
         <ImgComp />
         <DivComp />
         <PComp />
+        <ListComp />
       </div>
     )
   }
