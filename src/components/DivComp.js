@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-class HueDiv extends Component {
+class DivComp extends Component {
   render() {
     return (
       <div
-        className="hueDiv"
+        className="DivComp"
         style={
           {
             display: "inline-block",
@@ -18,4 +18,4 @@ class HueDiv extends Component {
   }
 }
 
-export default HueDiv;
+export default DivComp;

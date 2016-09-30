@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
-import { HueDiv } from '../components';
+import { DivComp, PComp } from '../components';
 
 class Template extends Component {
   render() {
     return (
-      <HueDiv />
+      <div>
+        <DivComp />
+        <PComp />
+      </div>
     )
   }
 }
