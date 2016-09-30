@@ -1,3 +1,9 @@
-const omg = 'OMG';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-console.log(omg);
+import { Template } from './containers';
+
+ReactDOM.render(
+  <Template />,
+  document.getElementById('template')
+)
