@@ -4,7 +4,7 @@ class Home extends Component {
   render() {
     return (
       <div
-      className="home-page"
+        className="home-page"
       >
         <h1>
           Welcome to Colors 

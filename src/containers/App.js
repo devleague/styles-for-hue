@@ -7,11 +7,11 @@ class App extends Component {
     return (
       <div>
         <div 
-        className="nav"
+          className="nav"
         >
           <ul>
             <div 
-            className="home"
+              className="home"
             >
               <li>
                 <IndexLink
@@ -23,7 +23,7 @@ class App extends Component {
               </li>
             </div>
             <div 
-            className="template"
+              className="template"
             >
               <li>
                 <NavLink
