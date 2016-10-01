@@ -8,23 +8,35 @@ class App extends Component {
   render () {
     return (
       <div>
-        <ul>
-          <li>
-            <IndexLink
-              to="/"
-              activeClassName="active"
+        <div 
+        className="nav"
+        >
+          <ul>
+            <div 
+            className="home"
             >
-              Home
-            </IndexLink>
-          </li>
-          <li>
-            <NavLink
-              to="/template"
+              <li>
+                <IndexLink
+                  to="/"
+                  activeClassName="active"
+                >
+                  Home
+                </IndexLink>
+              </li>
+            </div>
+            <div 
+            className="template"
             >
-              Template
-            </NavLink>
-          </li>
-        </ul>
+              <li>
+                <NavLink
+                  to="/template"
+                >
+                  Template
+                </NavLink>
+              </li>
+            </div>
+          </ul>
+        </div>
         <div>
           { this.props.children }
         </div>

@@ -1,0 +1,23 @@
+@import 'https://fonts.googleapis.com/css?family=Lato';
+
+a{
+  font-family: 'Lato', sans-serif;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+a:visited{
+  color: none;
+}
+
+.nav{
+  float: right;
+  width: 100%;
+}
+
+.home{
+  width: 40px;
+}
+
+.template{
+  width: 40px;
+}

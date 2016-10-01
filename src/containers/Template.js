@@ -4,11 +4,17 @@ import { DivComp, PComp, ImgComp, ListComp } from '../components';
 class Template extends Component {
   render() {
     return (
-      <div>
-        <ImgComp />
-        <DivComp />
-        <PComp />
-        <ListComp />
+      <div
+        className="template-contain"
+      >
+        <div
+        className="template-pagewrap"
+        >
+          <ImgComp />
+          <DivComp />
+          <PComp />
+          <ListComp />
+        </div>
       </div>
     )
   }

@@ -1,2 +1,15 @@
 @import 'partials/reset';
 @import 'partials/clearfix';
+@import 'partials/index';
+@import 'partials/nav';
+
+.contain{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.page-wrap{
+  display: block;
+  align-content: space-between;
+}
