@@ -3,8 +3,14 @@ import React, { Component } from 'react';
 class Home extends Component {
   render() {
     return (
-      <div>
-        Welcome to Colors for Hue!
+      <div
+        className="home-page"
+      >
+        <h1>
+          Welcome to Colors 
+          <br/>
+          for Hue!
+        </h1>
       </div>
     )
   }
