@@ -5,12 +5,12 @@ class ImgComp extends Component {
     return (
       <img
         className="imgComp"
-        src="https://scontent-dft4-1.xx.fbcdn.net/v/t1.0-9/14484933_1259937267381521_3166834407146026396_n.jpg?oh=aaf828d044af7ce83e78941819be992b&oe=5863670D"
+        src="http://buzzsharer.com/wp-content/uploads/2015/07/cute-corgi-face.jpg"
         alt="I like rice!"
         style={
           {
             display: "inline-block",
-            width: "50%"
+            width: "30%"
           }
         }
       />
