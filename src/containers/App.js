@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { IndexLink } from 'react-router';
 import { NavLink } from '../components';
 
-console.log(NavLink);
-
 class App extends Component {
   render () {
     return (
