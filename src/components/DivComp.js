@@ -8,7 +8,7 @@ class DivComp extends Component {
         style={
           {
             display: "inline-block",
-            backgroundColor: "red"
+            backgroundColor: this.props.backgroundColor
           }
         }
       >
