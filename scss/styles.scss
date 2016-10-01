@@ -3,6 +3,12 @@
 @import 'partials/index';
 @import 'partials/nav';
 
+@import 'https://fonts.googleapis.com/css?family=Lato';
+
+body{
+  font-family: 'Lato', sans-serif;
+}
+
 .contain{
   display: flex;
   flex-flow: row wrap;
