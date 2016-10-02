@@ -1,3 +1,10 @@
+export function setDivStyle (style) {
+  return {
+    type: 'SET_DIV_STYLE',
+    data: style
+  }
+}
+
 export function changeColor (color) {
   return {
     type: 'CHANGE_COLOR',

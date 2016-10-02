@@ -1,25 +1,11 @@
-const loadMongo = function () {
-  $.ajax({
-    url: 'http://localhost:3000/api/styles',
-    dataType: 'json',
-    success: (mongoStyles) => {
-      // this.setState({style:mongoStyles})
-      console.log(mongoStyles);
-    }
-  })
-  console.log('hi');
-}
-loadMongo();
-
-const initialState = {
-  display: 'inline-block',
-  backgroundColor: 'red',
-  fontFamily: 'sans-serif'
-};
+const initialState = {};
 
 const reducer = (state = initialState, action) => {
   let newState = { ...state };
   switch (action.type) {
+    case "SET_DIV_STYLE":
+      newState = action.data;
+      return newState;
     case "CHANGE_COLOR":
       newState.backgroundColor = action.data.backgroundColor;
       return newState;

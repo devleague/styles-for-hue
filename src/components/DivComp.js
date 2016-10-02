@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+
+
 class DivComp extends Component {
   // getStyle(){
   //   console.log('hi');
