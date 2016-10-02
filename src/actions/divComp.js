@@ -1,4 +1,4 @@
-function changeColor (color) {
+export function changeColor (color) {
   return {
     type: 'CHANGE_COLOR',
     data: {
@@ -7,4 +7,11 @@ function changeColor (color) {
   }
 }
 
-export default changeColor;
+export function changeFont (font) {
+  return {
+    type: 'CHANGE_FONT',
+    data: {
+      fontFamily: font
+    }
+  }
+}
