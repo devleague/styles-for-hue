@@ -8,10 +8,7 @@ db.createCollection("styles");
 print("styles");
 db.styles.insert([
   {
-    className : 'divComp',
-    'border-radius': 8,
-    'background-color': 'red',
-    'font-family': '"Comic Sans MS", cursive, sans-serif'
+    'backgroundColor': 'pink',
   }
 ]);
 

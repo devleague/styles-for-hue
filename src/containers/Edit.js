@@ -13,6 +13,14 @@ class Edit extends Component {
       var color = document.getElementById("colorMenu").value;
       return color;
   }
+
+  getStyle(){
+    console.log('hi');
+    var divStyles = document.getElementsByClassName('divComp');
+    console.log(divStyles[0].style.backgroundColor);
+    console.log('div styles:', divStyles);
+  }
+
   render () {
     return (
       <div
@@ -32,6 +40,9 @@ class Edit extends Component {
               <option value="blue">Blue</option>
               <option value="purple">Purple</option>
             </select>
+        </div>
+        <div>
+          <button type="button" onClick={this.getStyle}> Save </button>
         </div>
       </div>
     )

@@ -36,8 +36,17 @@ const elementArray = [
   }
 ]
 
-function mapStateToProps (state) {
-  return { ...state};
+
+function loadMongo () {
+  $.ajax({
+    url: 'http://localhost:3000/api/styles',
+    dataType: 'json',
+    success: (mongoStyles) => {
+      // this.setState({style:mongoStyles})
+      // console.log(mongoStyles);
+      return JSON.parse(JSON.stringify(mongoStyles));
+    }
+  })
 }
 
 class Template extends Component {
@@ -46,7 +55,9 @@ class Template extends Component {
   }
   render() {
     return (
-      <div>
+      <div
+        className="template-one"
+      >
         <Header />
         <ImgComp />
         <DivComp

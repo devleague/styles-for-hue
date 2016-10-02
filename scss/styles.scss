@@ -1,3 +1,4 @@
+
 @import 'partials/reset';
 @import 'partials/clearfix';
 @import 'partials/index';
@@ -5,30 +6,90 @@
 
 @import 'https://fonts.googleapis.com/css?family=Lato|Galada';
 
+$small: "(min-width: 100px) and (max-width: 600px)";
+$medium: "(min-width: 601px) and (max-width: 900px)";
+$large: "(min-width: 900px)";
+
 $darkBlue: #373F47;
 $lightGrey: #E6E8E6;
+
+@mixin small{
+  @media #{$small} {
+    @content;
+  }
+}
+
+@mixin medium{
+  @media #{$medium} {
+    @content;
+  }
+}
+
+@mixin large{
+  @media #{$large} {
+    @content;
+  }
+}
 
 body{
   font-family: 'Lato', sans-serif;
 }
 
-.contain{
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
 }
 
-.page-wrap{
-  display: block;
-  align-content: space-between;
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+
+// .index-contain{
+//   display: flex;
+//   flex-flow: row wrap;
+//   justify-content: space-between;
+// }
+
+// .index-page-wrap{
+//   display: block;
+//   align-content: space-between;
+// }
+
+.template-edit-container{
+  display: flex;
+  flex-flow: row no-wrap;
+}
+
+.template-one{
+  flex: auto;
 }
 
 .editColumn{
   width: 300px;
   height: 100%;
-  float: right;
   color: $darkBlue;
-  box-shadow: -10px 0px 10px 1px #c0c0c0;
+  box-shadow: -10px 0px 10px 1px rgba(192, 192, 192, .3);
+  background-color: #f0f0f0;
+  right: 0;
   h1{
     font-family: 'Galada', cursive;
     font-size: 2rem;
@@ -39,5 +100,12 @@ body{
   }
   h3{
     padding: 8px;
+  }
+  select{
+    margin: 0 10px 0 10px;
+    width: 95%;
+  }
+  option{
+    height: 40px;
   }
 }

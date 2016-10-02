@@ -1,6 +1,6 @@
-export function setInitialState (style) {
+export function setDivStyle (style) {
   return {
-    type: 'SET_INITIAL_STATE',
+    type: 'SET_DIV_STYLE',
     data: style
   }
 }

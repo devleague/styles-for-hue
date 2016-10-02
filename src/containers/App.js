@@ -11,32 +11,26 @@ class App extends Component {
           className="nav"
         >
           <ul>
-            <div
-              className="home"
-            >
-              <li>
-                <IndexLink
-                  to="/"
-                  activeClassName="active"
-                >
-                  Home
-                </IndexLink>
-              </li>
-            </div>
-            <div
-              className="template"
-            >
-              <li>
-                <NavLink
-                  to="/template"
-                >
-                  Template
-                </NavLink>
-              </li>
-            </div>
+            <li>
+              <IndexLink
+                to="/"
+                activeClassName="active"
+              >
+                Home
+              </IndexLink>
+            </li>
+            <li>
+              <NavLink
+                to="/template"
+              >
+                Template
+              </NavLink>
+            </li>
           </ul>
         </div>
-        <div>
+        <div
+          className="app-container"
+        >
           { this.props.children }
         </div>
       </div>

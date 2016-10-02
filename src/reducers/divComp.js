@@ -1,23 +1,10 @@
 const initialState = {};
 
-// const loadMongo =function () {
-//   $.ajax({
-//     url: 'http://localhost:3000/api/styles',
-//     dataType: 'json',
-//     success: (mongoStyles) => {
-//       // this.setState({style:mongoStyles})
-//       console.log(JSON.stringify(mongoStyles));
-//       // console.log(mongoStyles);
-//       return mongoStyles;
-//     }
-//   })
-// }
-
 const reducer = (state = initialState, action) => {
   let newState = { ...state };
   switch (action.type) {
-    case "SET_INITIAL_STATE":
-      newState = action.data.style;
+    case "SET_DIV_STYLE":
+      newState = action.data;
       return newState;
     case "CHANGE_COLOR":
       newState.backgroundColor = action.data.backgroundColor;
