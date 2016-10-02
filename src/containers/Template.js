@@ -8,7 +8,9 @@ class Template extends Component {
   }
   render() {
     return (
-      <div>
+      <div
+        className="template-one"
+      >
         <Header />
         <EditComp />
         <ImgComp />
