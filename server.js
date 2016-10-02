@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
+const bodyParser = require('body-parser');
 const path = require('path');
 
 const MONGO_URL = 'mongodb://localhost/styles-for-hue';
@@ -22,10 +23,20 @@ app.use(function (req, res, next) {
 });
 
 app.use('/', express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
 
 app.get('/api/styles', (req, res) => {
   Style.find({})
   .then(results => res.json(results[0]));
+});
+
+app.post('/update', function(req, res){
+  console.log('post', req.body);
+  // Style.save({
+  //   'background-color': req.body
+  // })
+  // .then(results => res.json(results));
 });
 
 app.get('*', function (req, res) {
