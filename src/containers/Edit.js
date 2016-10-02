@@ -21,7 +21,7 @@ class Edit extends Component {
         <h1> Edit </h1>
         <div>
           <h3>Pick Your Font:</h3>
-            <select id="fontMenu" onChange={this.changeFont}>
+            <select id="fontMenu" onChange={() => this.props.changeFont(this.changeFont())}>
               <option value="times">Times New Roman</option>
               <option value="arial">Arial</option>
             </select>
