@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 class DivComp extends Component {
   render() {
+    console.log(this.props.changeColor);
     return (
       <div
         className="divComp"

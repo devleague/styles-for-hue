@@ -1,4 +1,4 @@
-export function changeColor (color) {
+function changeColor (color) {
   return {
     type: 'CHANGE_COLOR',
     data: {
@@ -6,3 +6,5 @@ export function changeColor (color) {
     }
   }
 }
+
+export default changeColor;

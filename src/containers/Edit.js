@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class EditComp extends Component {
+class Edit extends Component {
   render () {
     return (
       <div
@@ -26,4 +26,4 @@ class EditComp extends Component {
   }
 }
 
-export default EditComp;
+export default Edit;

@@ -1,1 +1,1 @@
-export { default as divComp } from './divComp';
+export { default as changeColor } from './divComp';

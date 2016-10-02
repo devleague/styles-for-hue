@@ -16,10 +16,10 @@ class Template extends Component {
     return (
       <div>
         <Header />
-        <EditComp />
         <ImgComp />
         <DivComp
           style={this.props.divComp}
+          changeColor={this.props.changeColor}
         />
         <PComp />
         <ListComp />
