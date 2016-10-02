@@ -8,11 +8,12 @@ class Header extends Component {
         style={
           {
             width: "100%",
-            height: "40%",
+            height: "20px",
             backgroundColor: "#48E5C2"
           }
         }
       >
+      Hello
       </div>
     )
   }

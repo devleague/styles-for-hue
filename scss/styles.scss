@@ -5,30 +5,63 @@
 
 @import 'https://fonts.googleapis.com/css?family=Lato|Galada';
 
+$small: "(min-width: 100px) and (max-width: 600px)";
+$medium: "(min-width: 601px) and (max-width: 900px)";
+$large: "(min-width: 900px)";
+
 $darkBlue: #373F47;
 $lightGrey: #E6E8E6;
+
+@mixin small{
+  @media #{$small} {
+    @content;
+  }
+}
+
+@mixin medium{
+  @media #{$medium} {
+    @content;
+  }
+}
+
+@mixin large{
+  @media #{$large} {
+    @content;
+  }
+}
 
 body{
   font-family: 'Lato', sans-serif;
 }
 
-.contain{
+
+// .index-contain{
+//   display: flex;
+//   flex-flow: row wrap;
+//   justify-content: space-between;
+// }
+
+// .index-page-wrap{
+//   display: block;
+//   align-content: space-between;
+// }
+
+.template-edit-container{
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
+  flex-flow: row no-wrap;
 }
 
-.page-wrap{
-  display: block;
-  align-content: space-between;
+.template-one{
+  flex: auto;
 }
 
 .editColumn{
   width: 300px;
   height: 100%;
-  float: right;
   color: $darkBlue;
-  box-shadow: -10px 0px 10px 1px #c0c0c0;
+  box-shadow: -10px 0px 10px 1px rgba(192, 192, 192, .3);
+  background-color: #f0f0f0;
+  right: 0;
   h1{
     font-family: 'Galada', cursive;
     font-size: 2rem;
@@ -39,5 +72,12 @@ body{
   }
   h3{
     padding: 8px;
+  }
+  select{
+    margin: 0 10px 0 10px;
+    width: 95%;
+  }
+  option{
+    height: 40px;
   }
 }
