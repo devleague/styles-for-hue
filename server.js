@@ -25,6 +25,7 @@ app.get('*', function (req, res) {
 })
 
 app.use((req, res) => {
+  console.log(req);
   res.status(404).send('Fix Dis Stuff!');
 })
 
