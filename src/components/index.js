@@ -5,3 +5,4 @@ export { default as ListComp } from './ListComp';
 export { default as NavLink } from './NavLink';
 export { default as Header } from './Header';
 export { default as Footer } from './Footer';
+export { default as EditComp } from './EditComp';

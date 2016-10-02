@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { DivComp, PComp, ImgComp, ListComp, Header, Footer } from '../components';
+import { DivComp, PComp, ImgComp, ListComp, Header, Footer, EditComp } from '../components';
 import { connect } from 'react-redux';
 
 import { changeColor } from '../actions';
@@ -16,6 +16,7 @@ class Template extends Component {
     return (
       <div>
         <Header />
+        <EditComp />
         <ImgComp />
         <DivComp
           style={this.props.divComp}
