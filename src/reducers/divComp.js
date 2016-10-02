@@ -1,3 +1,16 @@
+const loadMongo = function () {
+  $.ajax({
+    url: 'http://localhost:3000/api/styles',
+    dataType: 'json',
+    success: (mongoStyles) => {
+      // this.setState({style:mongoStyles})
+      console.log(mongoStyles);
+    }
+  })
+  console.log('hi');
+}
+loadMongo();
+
 const initialState = {
   display: 'inline-block',
   backgroundColor: 'red',
