@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 
 class EditComp extends Component {
-  myFunction() {
+  ChangeColor() {
       var x = document.getElementById("changeColor").value;
 
-      document.getElementById("demo").innerHTML = "You selected: " + x;
-      document.getElementById("demo").style.backgroundColor = x;
+      document.getElementById("Color").innerHTML = "You selected: " + x;
+      document.getElementById("Color").style.backgroundColor = x;
+  }
+  ChangeFont() {
+      var x = document.getElementById("changeFont").value;
+
+      document.getElementById("Font").innerHTML = "You selected: " + x;
+      document.getElementById("Font").style.fontFamily = x;
   }
   render () {
     return (
@@ -15,19 +21,20 @@ class EditComp extends Component {
         <h1> Edit </h1>
         <div>
           <h3>Pick Your Font:</h3>
-            <select>
+            <select id="changeFont" onChange={this.ChangeFont}>
               <option value="times">Times New Roman</option>
               <option value="arial">Arial</option>
             </select>
+            <div id="Font"></div>
         </div>
         <div>
           <h3>Pick Your Color:</h3>
-            <select id="changeColor" onChange={this.myFunction}>
+            <select id="changeColor" onChange={this.ChangeColor}>
               <option value="blue">Blue</option>
               <option value="purple">Purple</option>
             </select>
 
-            <div id="demo"></div>
+            <div id="Color"></div>
         </div>
       </div>
     )
