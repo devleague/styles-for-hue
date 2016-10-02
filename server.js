@@ -13,11 +13,19 @@ const stylesSchema = mongoose.Schema({
 const Style = mongoose.model('Style', stylesSchema);
 
 app.set('port', (process.env.PORT || 3000))
+
+// CORS //
+app.use(function (req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Cache-Control', 'no-cache');
+  next();
+});
+
 app.use('/', express.static(path.join(__dirname, 'public')));
 
 app.get('/api/styles', (req, res) => {
   Style.find({})
-  .then(results => res.json(results));
+  .then(results => res.json(results[0]));
 });
 
 app.post('/update', function(req, res){

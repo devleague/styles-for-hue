@@ -8,11 +8,11 @@ class Footer extends Component {
         style={
           {
             width: "100%",
-            height: "40%",
+            height: "40px",
             backgroundColor: "#609CAB",
-            padding: "10px",
             textAlign: "center",
-            color: "#E6E8E6"
+            color: "#E6E8E6",
+            paddingTop: "15px"
           }
         }
       >
