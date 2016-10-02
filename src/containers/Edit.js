@@ -14,13 +14,13 @@ class Edit extends Component {
       return color;
   }
 
-  getStyle(){
-    var divStyles = document.getElementsByClassName('divComp')[0].style.backgroundColor;
+  saveStyle(){
+    var divStyles = document.getElementsByClassName('divComp')[0].style;
     console.log('div styles:', divStyles);
     $.ajax({
       url: 'http://127.0.0.1:3000/update',
       type: 'POST',
-      data: divStyles
+      data: {backgroundColor: divStyles.backgroundColor}
     })
   }
 
@@ -45,7 +45,7 @@ class Edit extends Component {
             </select>
         </div>
         <div>
-          <button type="button" onClick={this.getStyle}> Save </button>
+          <button type="button" onClick={this.saveStyle}> Save </button>
         </div>
       </div>
     )

@@ -8,7 +8,7 @@ const MONGO_URL = 'mongodb://localhost/styles-for-hue';
 mongoose.connect(MONGO_URL);
 
 const stylesSchema = mongoose.Schema({
-  data: {}
+  data: Object
 });
 
 const Style = mongoose.model('Style', stylesSchema);
@@ -31,12 +31,15 @@ app.get('/api/styles', (req, res) => {
   .then(results => res.json(results[0]));
 });
 
-app.post('/update', function(req, res){
+app.post('/update', (req, res) => {
   console.log('post', req.body);
-  // Style.save({
-  //   'background-color': req.body
-  // })
-  // .then(results => res.json(results));
+  console.log('req.body', req.body.backgroundColor);
+  Style.create({
+    data: {
+      backgroundColor: req.body.backgroundColor
+    }
+  })
+  .then(results => res.json(results));
 });
 
 app.get('*', function (req, res) {
