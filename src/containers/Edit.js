@@ -15,17 +15,12 @@ class Edit extends Component {
   }
 
   getStyle(){
-    console.log('hi');
     var divStyles = document.getElementsByClassName('divComp')[0].style.backgroundColor;
-    console.log(divStyles);
     console.log('div styles:', divStyles);
     $.ajax({
-      url: 'http://127.0.0.1:4567/update',
-      method: 'POST',
-      data: divStyles,
-      success: function(result){
-        console.log('success');
-      }
+      url: 'http://127.0.0.1:3000/update',
+      type: 'POST',
+      data: divStyles
     })
   }
 
