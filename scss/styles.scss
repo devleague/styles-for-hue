@@ -35,6 +35,10 @@ body{
   font-family: 'Lato', sans-serif;
 }
 
+img{
+  width: 100%;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -62,17 +66,6 @@ li a:hover:not(.active) {
 .active {
     background-color: #4CAF50;
 }
-
-// .index-contain{
-//   display: flex;
-//   flex-flow: row wrap;
-//   justify-content: space-between;
-// }
-
-// .index-page-wrap{
-//   display: block;
-//   align-content: space-between;
-// }
 
 .template-edit-container{
   display: flex;
