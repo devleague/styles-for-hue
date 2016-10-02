@@ -15,10 +15,13 @@ class Edit extends Component {
   }
 
   getStyle(){
-    console.log('hi');
-    var divStyles = document.getElementsByClassName('divComp');
-    console.log(divStyles[0].style.backgroundColor);
+    var divStyles = document.getElementsByClassName('divComp')[0].style.backgroundColor;
     console.log('div styles:', divStyles);
+    $.ajax({
+      url: 'http://127.0.0.1:3000/update',
+      type: 'POST',
+      data: divStyles
+    })
   }
 
   render () {
