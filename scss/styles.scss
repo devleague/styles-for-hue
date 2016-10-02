@@ -34,15 +34,25 @@ body{
   font-family: 'Lato', sans-serif;
 }
 
-.contain{
+
+// .index-contain{
+//   display: flex;
+//   flex-flow: row wrap;
+//   justify-content: space-between;
+// }
+
+// .index-page-wrap{
+//   display: block;
+//   align-content: space-between;
+// }
+
+.template-edit-container{
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
+  flex-flow: row no-wrap;
 }
 
-.page-wrap{
-  display: block;
-  align-content: space-between;
+.template-one{
+  flex: auto;
 }
 
 .editColumn{
@@ -51,10 +61,7 @@ body{
   color: $darkBlue;
   box-shadow: -10px 0px 10px 1px rgba(192, 192, 192, .3);
   background-color: #f0f0f0;
-  position: absolute;
-  left: 84.5%;
-  top: 0;
-  z-index: 2;
+  right: 0;
   h1{
     font-family: 'Galada', cursive;
     font-size: 2rem;

@@ -8,8 +8,7 @@ class Header extends Component {
         style={
           {
             width: "100%",
-            height: "40%",
-            padding: "10px",
+            height: "20px",
             backgroundColor: "#48E5C2"
           }
         }

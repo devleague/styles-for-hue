@@ -11,7 +11,9 @@ function mapStateToProps (state) {
 class TemplateEdit extends Component {
   render() {
     return(
-      <div>
+      <div
+        className="template-edit-container"
+      >
         <Template style={this.props.divComp}/>
         <Edit
           changeColor={this.props.changeColor}

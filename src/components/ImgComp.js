@@ -6,17 +6,14 @@ class ImgComp extends Component {
       <div
         style={
           {
-            margin: "30px"
+            justifyContent: "center"
           }
         }
       >
         <img
           className="imgComp"
-          // src="http://buzzsharer.com/wp-content/uploads/2015/07/cute-corgi-face.jpg"
-          // alt="I like rice!"
           style={
             {
-              display: "inline-block",
               width: "960px",
               height: "360px",
               backgroundColor: "#3C6E71"

@@ -36,7 +36,9 @@ class App extends Component {
             </div>
           </ul>
         </div>
-        <div>
+        <div
+          className="app-container"
+        >
           { this.props.children }
         </div>
       </div>
