@@ -3,7 +3,10 @@
 @import 'partials/index';
 @import 'partials/nav';
 
-@import 'https://fonts.googleapis.com/css?family=Lato';
+@import 'https://fonts.googleapis.com/css?family=Lato|Galada';
+
+$darkBlue: #373F47;
+$lightGrey: #E6E8E6;
 
 body{
   font-family: 'Lato', sans-serif;
@@ -18,4 +21,23 @@ body{
 .page-wrap{
   display: block;
   align-content: space-between;
+}
+
+.editColumn{
+  width: 300px;
+  height: 100%;
+  float: right;
+  color: $darkBlue;
+  box-shadow: -10px 0px 10px 1px #c0c0c0;
+  h1{
+    font-family: 'Galada', cursive;
+    font-size: 2rem;
+    text-align: center;
+    background-color: $darkBlue;
+    color: $lightGrey;
+    padding-top: 10px;
+  }
+  h3{
+    padding: 8px;
+  }
 }

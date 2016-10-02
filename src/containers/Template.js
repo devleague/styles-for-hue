@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { DivComp, PComp, ImgComp, ListComp, Header, Footer } from '../components';
+import { DivComp, PComp, ImgComp, ListComp, Header, Footer, EditComp } from '../components';
 
 class Template extends Component {
   constructor(props) {
@@ -10,6 +10,7 @@ class Template extends Component {
     return (
       <div>
         <Header />
+        <EditComp />
         <ImgComp />
         <DivComp
           backgroundColor={this.state.backgroundColor}

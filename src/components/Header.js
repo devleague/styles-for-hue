@@ -4,7 +4,7 @@ class Header extends Component {
   render () {
     return (
       <div
-        className="headerDiv"
+        id="headerDiv"
         style={
           {
             width: "100%",
