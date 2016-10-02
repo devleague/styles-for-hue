@@ -1,1 +1,1 @@
-export { default as divComp } from './divComp';
+export * from './divComp';

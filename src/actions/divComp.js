@@ -6,3 +6,12 @@ export function changeColor (color) {
     }
   }
 }
+
+export function changeFont (font) {
+  return {
+    type: 'CHANGE_FONT',
+    data: {
+      fontFamily: font
+    }
+  }
+}
