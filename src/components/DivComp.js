@@ -5,12 +5,7 @@ class DivComp extends Component {
     return (
       <div
         className="divComp"
-        style={
-          {
-            display: "inline-block",
-            backgroundColor: this.props.backgroundColor
-          }
-        }
+        style={ this.props.style }
       >
       I'm a div component!
       </div>
