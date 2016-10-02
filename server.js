@@ -10,7 +10,7 @@ app.get('*', function (req, res) {
 })
 
 app.use((req, res) => {
-  res.status(404).send('Fix Dis Stuff!');
+  res.status(404).render('Fix Dis Stuff!');
 })
 
 const server = app.listen(app.get('port'), () => {
