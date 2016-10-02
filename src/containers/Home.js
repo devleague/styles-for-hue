@@ -11,6 +11,7 @@ class Home extends Component {
           <br/>
           for Hue!
         </h1>
+        <img src="/images/computer.jpg"/>
       </div>
     )
   }
