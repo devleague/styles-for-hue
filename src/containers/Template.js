@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import { DivComp, PComp, ImgComp, ListComp, Header, Footer, EditComp } from '../components';
+import { connect } from 'react-redux';
+
+import { changeColor } from '../actions';
+
+function mapStateToProps (state) {
+  return { ...state};
+}
 
 class Template extends Component {
   constructor(props) {
     super(props);
-    this.state = {backgroundColor: 'red'};
   }
   render() {
     return (
@@ -13,7 +19,7 @@ class Template extends Component {
         <EditComp />
         <ImgComp />
         <DivComp
-          backgroundColor={this.state.backgroundColor}
+          style={this.props.divComp}
         />
         <PComp />
         <ListComp />
@@ -23,4 +29,6 @@ class Template extends Component {
   }
 }
 
-export default Template;
+export default connect(mapStateToProps, {
+  changeColor
+})(Template);
