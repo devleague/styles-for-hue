@@ -20,6 +20,14 @@ app.get('/api/styles', (req, res) => {
   .then(results => res.json(results));
 });
 
+app.post('/update', function(req, res){
+  console.log('post', req.body);
+  // Style.save({
+  //   'background-color': req.body
+  // })
+  // .then(results => res.json(results));
+});
+
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, 'index.html'))
 })
