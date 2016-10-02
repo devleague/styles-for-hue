@@ -1,3 +1,10 @@
+export function setInitialState (style) {
+  return {
+    type: 'SET_INITIAL_STATE',
+    data: style
+  }
+}
+
 export function changeColor (color) {
   return {
     type: 'CHANGE_COLOR',

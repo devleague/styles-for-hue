@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Template , Edit } from './';
 import { connect } from 'react-redux';
 
-import { changeColor, changeFont } from '../actions';
+import { changeColor, changeFont, setInitialState } from '../actions';
 
 function mapStateToProps (state) {
   return { ...state};
