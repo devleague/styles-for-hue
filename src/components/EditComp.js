@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 
 class EditComp extends Component {
+  myFunction() {
+      var x = document.getElementById("changeColor").value;
+
+      document.getElementById("demo").innerHTML = "You selected: " + x;
+      document.getElementById("demo").style.backgroundColor = x;
+  }
   render () {
     return (
       <div
@@ -16,10 +22,12 @@ class EditComp extends Component {
         </div>
         <div>
           <h3>Pick Your Color:</h3>
-            <select>
+            <select id="changeColor" onChange={this.myFunction}>
               <option value="blue">Blue</option>
               <option value="purple">Purple</option>
             </select>
+
+            <div id="demo"></div>
         </div>
       </div>
     )
