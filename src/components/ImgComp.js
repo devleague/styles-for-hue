@@ -18,7 +18,8 @@ class ImgComp extends Component {
             {
               display: "inline-block",
               width: "960px",
-              height: "360px"
+              height: "360px",
+              backgroundColor: "#3C6E71"
             }
           }
         />

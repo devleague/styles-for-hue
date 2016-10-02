@@ -5,8 +5,30 @@
 
 @import 'https://fonts.googleapis.com/css?family=Lato|Galada';
 
+$small: "(min-width: 100px) and (max-width: 600px)";
+$medium: "(min-width: 601px) and (max-width: 900px)";
+$large: "(min-width: 900px)";
+
 $darkBlue: #373F47;
 $lightGrey: #E6E8E6;
+
+@mixin small{
+  @media #{$small} {
+    @content;
+  }
+}
+
+@mixin medium{
+  @media #{$medium} {
+    @content;
+  }
+}
+
+@mixin large{
+  @media #{$large} {
+    @content;
+  }
+}
 
 body{
   font-family: 'Lato', sans-serif;
@@ -30,7 +52,7 @@ body{
   box-shadow: -10px 0px 10px 1px rgba(192, 192, 192, .3);
   background-color: #f0f0f0;
   position: absolute;
-  left: 1114px;
+  left: 84.5%;
   top: 0;
   z-index: 2;
   h1{
