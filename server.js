@@ -6,7 +6,7 @@ const path = require('path');
 const CONFIG = require('./config.json');
 
 // SET UP CONNECTION TO MONGO DATABASE //
-mongoose.connect('mongodb://localhost:27017/styles-for-hue');
+mongoose.connect(CONFIG.MONGO_URI);
 // CHECK MONGODB CONNECTION ONCE MONGOOSE CONNECTS //
 mongoose.connection.on('error', console.error.bind(console, 'connection error:'));
 mongoose.connection.once('open', function(){
