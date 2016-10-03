@@ -3,14 +3,21 @@ const mongoose = require('mongoose');
 const app = express();
 const bodyParser = require('body-parser');
 const path = require('path');
+const CONFIG = require('./config.json');
 
-const MONGO_URL = 'mongodb://localhost/styles-for-hue';
-mongoose.connect(MONGO_URL);
+// SET UP CONNECTION TO MONGO DATABASE //
+mongoose.connect('mongodb://localhost:27017/styles-for-hue');
+// CHECK MONGODB CONNECTION ONCE MONGOOSE CONNECTS //
+mongoose.connection.on('error', console.error.bind(console, 'connection error:'));
+mongoose.connection.once('open', function(){
+  console.log("Connected to MongoDB");
+});
 
+// CREATE SCHEMA & MODEL FOR 'styles' COLLECTION //
 const stylesSchema = mongoose.Schema({
   data: Object
 });
-
+// mongoose will lowercase and pluralize for mongodb //
 const Style = mongoose.model('Style', stylesSchema);
 
 app.set('port', (process.env.PORT || 3000))
@@ -28,7 +35,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.get('/api/styles', (req, res) => {
   Style.find({})
-  .then(results => res.json(results[0]));
+  .then(results => res.json(results));
 });
 
 app.post('/update', (req, res) => {
@@ -51,8 +58,6 @@ app.use((req, res) => {
   res.status(404).send('Fix Dis Stuff!');
 })
 
-mongoose.connection.once('open', function (){
-  const server = app.listen(app.get('port'), () => {
-    console.log(`Connected on port ${server.address().port}`);
-  });
+const server = app.listen(app.get('port'), () => {
+  console.log(`Connected on port ${server.address().port}`);
 });
