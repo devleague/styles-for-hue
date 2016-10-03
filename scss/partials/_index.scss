@@ -1,7 +1,19 @@
 @import 'https://fonts.googleapis.com/css?family=Galada';
 
+$greyFont: #4A4A4A;
+
 .home-page{
   font-family: 'Galada', cursive;
   font-size: 3.4rem;
   text-align: center;
+  color: $greyFont; 
+}
+
+.home-msg{
+  h1{
+    position: absolute;
+    left: 0;
+    top: 60px;
+    right: 0;
+  }
 }
