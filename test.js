@@ -8,7 +8,7 @@ db.createCollection("styles");
 print("styles");
 db.styles.insert([
   {
-    id: 1,
+    elementId: 1,
     type: 'div',
     style: {
       backgroundColor: 'blue',
@@ -17,7 +17,7 @@ db.styles.insert([
     }
   },
   {
-    id: 2,
+    elementId: 2,
     type: 'p',
     style: {
       backgroundColor: 'green',
@@ -25,21 +25,21 @@ db.styles.insert([
     }
   },
   {
-    id: 3,
+    elementId: 3,
     type: 'img',
     style: {
       border: '15px black solid'
     }
   },
   {
-    id: 4,
+    elementId: 4,
     type: 'ul',
     style: {
       color: 'red'
     }
   },
   {
-    id: 5,
+    elementId: 5,
     type: 'div',
     style: {
       backgroundColor: 'red',
