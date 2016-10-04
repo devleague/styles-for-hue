@@ -1,17 +1,9 @@
 import React, { Component } from 'react';
-
+import { FontMenu, ColorMenu } from '../components';
 
 class Edit extends Component {
   constructor (props) {
     super(props);
-  }
-  changeFont() {
-      var font = document.getElementById("fontMenu").value;
-      return font;
-  }
-  changeColor() {
-      var color = document.getElementById("colorMenu").value;
-      return color;
   }
 
   saveStyle(){
@@ -44,25 +36,20 @@ class Edit extends Component {
     // console.log('styles', newStyles);
   }
 
-  render () {
+  render() {
     return (
       <div
         className="editColumn"
       >
         <h1> Edit </h1>
+        <FontMenu
+          changeFont={this.props.changeFont}
+        />
+        <ColorMenu
+          changeColor={this.props.changeColor}
+        />
         <div>
-          <h3>Pick Your Font:</h3>
-            <select id="fontMenu" onChange={() => this.props.changeFont(this.changeFont())}>
-              <option value="times">Times New Roman</option>
-              <option value="arial">Arial</option>
-            </select>
-        </div>
-        <div>
-          <h3>Pick Your Color:</h3>
-            <select id="colorMenu" onChange={() => this.props.changeColor(this.changeColor())}>
-              <option value="blue">Blue</option>
-              <option value="purple">Purple</option>
-            </select>
+          <button type="button">Export CSS</button>
         </div>
         <div>
           <button type="button" onClick={this.saveStyle}> Save </button>
