@@ -12,10 +12,10 @@ class ImgComp extends Component {
       >
         <img
           className="imgComp"
+          src="/images/city_night.jpg"
           style={
             {
-              width: "960px",
-              height: "360px",
+              width: "100%",
               backgroundColor: "#3C6E71"
             }
           }
