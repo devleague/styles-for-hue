@@ -16,7 +16,13 @@ mongoose.connection.once('open', function(){
 
 // CREATE SCHEMA & MODEL FOR 'styles' COLLECTION //
 const stylesSchema = mongoose.Schema({
-  data: Object
+  elementId: Number,
+  type: String,
+  style: {
+    backgroundColor: String,
+    fontFamily: String,
+    display: String
+  }
 });
 // mongoose will lowercase and pluralize for mongodb //
 const Style = mongoose.model('Style', stylesSchema);
@@ -40,11 +46,13 @@ app.get('/api/styles', (req, res) => {
 });
 
 app.post('/update', (req, res) => {
-  console.log('post', req.body);
+  console.log('post', req.body.fontFamily);
   console.log('req.body', req.body.backgroundColor);
   Style.create({
-    data: {
-      backgroundColor: req.body.backgroundColor
+    style: {
+      backgroundColor: req.body.backgroundColor,
+      fontFamily: req.body.fontFamily,
+      display: req.body.display
     }
   })
   .then(results => res.json(results));
