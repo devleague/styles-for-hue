@@ -16,6 +16,13 @@ class Home extends Component {
           </h1>
         </div>
         <img src="/images/computer.jpg"/>
+        <div
+          className="home-footer"
+        >
+          <h3>
+            &copy; Copyright 2016 Hue
+          </h3>
+        </div>
       </div>
     )
   }
