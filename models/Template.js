@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
 // CREATE SCHEMA & MODEL FOR 'themes' COLLECTION //
-const themeSchema = mongoose.Schema({
+const templateSchema = mongoose.Schema({
   data: Object
 });
 // mongoose will lowercase and pluralize for mongodb //
-const Theme = mongoose.model('Theme', themeSchema);
+const Template = mongoose.model('Template', templateSchema);
 
-module.exports = Theme;
+module.exports = Template;
