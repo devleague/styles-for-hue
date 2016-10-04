@@ -12,6 +12,10 @@ $large: "(min-width: 900px)";
 
 $darkBlue: #373F47;
 $lightGrey: #E6E8E6;
+$darkGrey: #535353;
+$teal: #30B3AA;
+$whiteGrey: #E9E9E9;
+$greyFont: #4A4A4A;
 
 @mixin small{
   @media #{$small} {
@@ -35,44 +39,50 @@ body{
   font-family: 'Lato', sans-serif;
 }
 
+
+img{
+  width: 100%;
+}
+
+///// Nav /////
+
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: $darkGrey;
 }
 
 li {
-    float: left;
+  float: left;
 }
 
 li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  color: $lightGrey;
+
+  a:visited{
+    color: $lightGrey;
+  }
 }
 
-li a:hover:not(.active) {
-    background-color: #111;
-}
+// li a:hover:not(.active) {
+//     background-color: #111;
+// }
 
 .active {
-    background-color: #4CAF50;
+  background-color: $teal;
+  color: $greyFont;
+  a:visited{
+    color: $greyFont;
+  }
 }
 
-// .index-contain{
-//   display: flex;
-//   flex-flow: row wrap;
-//   justify-content: space-between;
-// }
-
-// .index-page-wrap{
-//   display: block;
-//   align-content: space-between;
-// }
+///// Edit /////
 
 .template-edit-container{
   display: flex;
@@ -87,15 +97,15 @@ li a:hover:not(.active) {
   width: 300px;
   height: 100%;
   color: $darkBlue;
-  box-shadow: -10px 0px 10px 1px rgba(192, 192, 192, .3);
+  box-shadow: -10px 0px 10px 1px rgba(192, 192, 192, .2);
   background-color: #f0f0f0;
   right: 0;
   h1{
     font-family: 'Galada', cursive;
     font-size: 2rem;
     text-align: center;
-    background-color: $darkBlue;
-    color: $lightGrey;
+    background-color: $teal;
+    color: $whiteGrey;
     padding-top: 10px;
   }
   h3{

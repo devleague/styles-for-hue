@@ -6,11 +6,16 @@ class Home extends Component {
       <div
         className="home-page"
       >
-        <h1>
-          Welcome to Colors 
-          <br/>
-          for Hue!
-        </h1>
+        <div
+          className="home-msg"
+        >
+          <h1>
+            Welcome to Colors 
+            <br/>
+            for Hue!
+          </h1>
+        </div>
+        <img src="/images/computer.jpg"/>
       </div>
     )
   }
