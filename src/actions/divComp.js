@@ -5,14 +5,16 @@ export function setDivs (divs) {
   }
 }
 
-export function changeColor (color) {
+export function changeColor (divId, color) {
   return {
     type: 'CHANGE_COLOR',
     data: {
+      divId: divId,
       backgroundColor: color
     }
   }
 }
+
 
 export function changeFont (font) {
   return {
