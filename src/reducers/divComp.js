@@ -1,10 +1,12 @@
-const initialState = {};
+const initialState = {
+  divs: []
+};
 
 const reducer = (state = initialState, action) => {
   let newState = { ...state };
   switch (action.type) {
-    case "SET_DIV_STYLE":
-      newState = action.data;
+    case "SET_DIVS":
+      newState.divs = action.data;
       return newState;
     case "CHANGE_COLOR":
       newState.backgroundColor = action.data.backgroundColor;
