@@ -45,7 +45,8 @@ app.post('/update', (req, res) => {
   Style.create({
     data: {
       backgroundColor: req.body.backgroundColor,
-      fontFamily: req.body.fontFamily
+      fontFamily: req.body.fontFamily,
+      display: req.body.display
     }
   })
   .then(results => res.json(results));

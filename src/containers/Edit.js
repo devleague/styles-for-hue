@@ -24,6 +24,12 @@ class Edit extends Component {
     })
   }
 
+  selectElement(container){
+  var el = document.getSelection();
+  console.log('el', el);
+  console.log('new el', el.anchorNode.parentElement.attributes.style);
+  }
+
   render () {
     return (
       <div
@@ -46,6 +52,9 @@ class Edit extends Component {
         </div>
         <div>
           <button type="button" onClick={this.saveStyle}> Save </button>
+        </div>
+        <div>
+          <button type="button" onClick={this.selectElement}> Get Element </button>
         </div>
       </div>
     )
