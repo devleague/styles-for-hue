@@ -16,6 +16,7 @@ $darkGrey: #535353;
 $teal: #30B3AA;
 $whiteGrey: #E9E9E9;
 $greyFont: #4A4A4A;
+$mintGreen: #48DDB9;
 
 @mixin small{
   @media #{$small} {
@@ -37,11 +38,6 @@ $greyFont: #4A4A4A;
 
 body{
   font-family: 'Lato', sans-serif;
-}
-
-
-img{
-  width: 100%;
 }
 
 ///// Nav /////
@@ -75,7 +71,7 @@ li a {
 // }
 
 .active {
-  background-color: $teal;
+  background-color: $mintGreen;
   color: $greyFont;
   a:visited{
     color: $greyFont;
@@ -85,6 +81,7 @@ li a {
 ///// Edit /////
 
 .template-edit-container{
+  padding-top: 47px;
   display: flex;
   flex-flow: row no-wrap;
 }
