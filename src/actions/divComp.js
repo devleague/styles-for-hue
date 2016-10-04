@@ -16,10 +16,11 @@ export function changeColor (divId, color) {
 }
 
 
-export function changeFont (font) {
+export function changeFont (divId, font) {
   return {
     type: 'CHANGE_FONT',
     data: {
+      divId: divId,
       fontFamily: font
     }
   }

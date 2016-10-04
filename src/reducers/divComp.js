@@ -8,7 +8,7 @@ const reducer = (state = initialState, action) => {
     case "SET_DIVS":
       return { ...state, divs: action.data};
     case "CHANGE_COLOR":
-      let changeDiv = newDivs.map((div, index) => {
+      let changeDivColor = newDivs.map((div, index) => {
         switch (div.elementId) {
           case action.data.divId:
             return { elementId: div.elementId, style: { ...div.style, backgroundColor: action.data.backgroundColor}};
@@ -16,12 +16,17 @@ const reducer = (state = initialState, action) => {
             return { ...div };
         }
       });
-      return {...state, divs: changeDiv };
+      return { ...state, divs: changeDivColor };
     case "CHANGE_FONT":
-      newDivs = newDivs.map((div, index) => {
-        return { style: { ...div.style, fontFamily: action.data.fontFamily}};
+      let changeDivFont = newDivs.map((div, index) => {
+        switch (div.elementId) {
+          case action.data.divId:
+            return { elementId: div.elementId, style: { ...div.style, fontFamily: action.data.fontFamily}};
+          default:
+            return { ...div };
+        }
       });
-      return { ...state, divs: newDivs};
+      return { ...state, divs: changeDivFont };
     default:
       return { ...state};
   }
