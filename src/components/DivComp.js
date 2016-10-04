@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-
-
 class DivComp extends Component {
   render() {
     return (
@@ -9,7 +7,7 @@ class DivComp extends Component {
         className="divComp"
         style={ this.props.style }
       >
-      I'm a div component!
+        I'm a div component!
       </div>
     )
   }
