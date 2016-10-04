@@ -34,6 +34,7 @@ class Edit extends Component {
     newStyles.style = {newPunc};
     cart.push({newStyles: newStyles});
     console.log('newstyles', newStyles);
+    console.log('test');
 
     // var slice = styles.split('-').map(function capitalize(part){
     //     return part.charAt(0).toUpperCase() + part.slice(1);
