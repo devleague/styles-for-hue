@@ -1,7 +1,7 @@
-export function setDivStyle (style) {
+export function setDivs (divs) {
   return {
-    type: 'SET_DIV_STYLE',
-    data: style
+    type: 'SET_DIVS',
+    data: divs
   }
 }
 

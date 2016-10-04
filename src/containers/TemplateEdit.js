@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Template , Edit } from './';
 import { connect } from 'react-redux';
 
-import { changeColor, changeFont, setDivStyle } from '../actions';
+import { changeColor, changeFont, setDivs } from '../actions';
 
 function mapStateToProps (state) {
   return { ...state};
@@ -20,9 +20,15 @@ class TemplateEdit extends Component {
   }
   componentDidMount () {
     this.loadTheme()
-      .then((style) => {
-        this.props.setDivStyle(style);
-      });
+      .then((elementArray) => {
+        let div = elementArray.filter((elem, index) => {
+          return elem.type === 'div';
+        })
+        return div;
+      })
+      .then((div) => {
+        return this.props.setDivs(div);
+      })
   }
   render() {
     return(
@@ -30,7 +36,7 @@ class TemplateEdit extends Component {
         className="template-edit-container"
       >
         <Template
-          style={this.props.divComp}
+          divs={this.props.divComp.divs}
         />
         <Edit
           changeColor={this.props.changeColor}
@@ -41,8 +47,6 @@ class TemplateEdit extends Component {
   }
 }
 
-console.log('reducers', changeFont);
-
 export default connect(mapStateToProps, {
-  changeColor, changeFont, setDivStyle
+  changeColor, changeFont, setDivs
 })(TemplateEdit);
