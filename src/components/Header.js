@@ -7,9 +7,10 @@ class Header extends Component {
         id="headerDiv"
         style={
           {
+            fontFamily: "Lato",
             width: "100%",
-            height: "20px",
-            backgroundColor: "#48E5C2"
+            height: "40px",
+            backgroundColor: "#30B3AA"
           }
         }
       >
