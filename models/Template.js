@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-// CREATE SCHEMA & MODEL FOR 'themes' COLLECTION //
+// CREATE SCHEMA & MODEL FOR 'template' COLLECTION //
 const templateSchema = mongoose.Schema({
   data: Object
 });
