@@ -50,14 +50,6 @@ class Edit extends Component {
         />
         <div>
           <button 
-            className="export-css"
-            type="button"
-          >
-            Export CSS
-          </button>
-        </div>
-        <div>
-          <button 
             className="save"
             type="button" 
             onClick={this.saveStyle}
@@ -66,7 +58,13 @@ class Edit extends Component {
           </button>
         </div>
         <div>
-          <button type="button" onClick={this.selectElement}> Get Element </button>
+          <button 
+            className="export-css"
+            type="button" 
+            onClick={this.selectElement}
+          > 
+            Get Element 
+          </button>
         </div>
       </div>
     )
