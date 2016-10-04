@@ -49,13 +49,22 @@ class Edit extends Component {
           changeColor={this.props.changeColor}
         />
         <div>
-          <button type="button">Export CSS</button>
+          <button 
+            className="save"
+            type="button" 
+            onClick={this.saveStyle}
+          > 
+            Save 
+          </button>
         </div>
         <div>
-          <button type="button" onClick={this.saveStyle}> Save </button>
-        </div>
-        <div>
-          <button type="button" onClick={this.selectElement}> Get Element </button>
+          <button 
+            className="export-css"
+            type="button" 
+            onClick={this.selectElement}
+          > 
+            Get Element 
+          </button>
         </div>
       </div>
     )
