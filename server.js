@@ -4,6 +4,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const path = require('path');
 const CONFIG = require('./config.json');
+const models = require('./models'); //MongoDB models
 
 // SET UP CONNECTION TO MONGO DATABASE //
 mongoose.connect(CONFIG.MONGO_URI);
