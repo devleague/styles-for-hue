@@ -16,6 +16,7 @@ class Edit extends Component {
 
   saveStyle(){
     var divStyles = document.getElementsByClassName('divComp')[0].style;
+    console.log('div', divStyles);
     console.log('div styles:', divStyles.fontFamily);
     $.ajax({
       url: 'http://127.0.0.1:3000/update',
@@ -25,9 +26,21 @@ class Edit extends Component {
   }
 
   selectElement(container){
-  var el = document.getSelection();
-  console.log('el', el);
-  console.log('new el', el.anchorNode.parentElement.attributes.style);
+    var newStyles = {}, cart =[];
+    var el = document.getSelection();
+    var styles = el.anchorNode.parentElement.attributes.style.nodeValue;
+    var newPunc = styles.replace(/;/g, ',');
+    console.log('new punc', newPunc);
+    newStyles.style = {newPunc};
+    cart.push({newStyles: newStyles});
+    console.log('newstyles', newStyles);
+
+    // var slice = styles.split('-').map(function capitalize(part){
+    //     return part.charAt(0).toUpperCase() + part.slice(1);
+    //   }).join('');
+    // newStyles.push(slice);
+
+    // console.log('styles', newStyles);
   }
 
   render () {
