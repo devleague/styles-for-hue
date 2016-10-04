@@ -10,7 +10,7 @@ const reducer = (state = initialState, action) => {
     case "CHANGE_COLOR":
       let changeDiv = newDivs.map((div, index) => {
         switch (div.elementId) {
-          case 5:
+          case action.data.divId:
             return { elementId: div.elementId, style: { ...div.style, backgroundColor: action.data.backgroundColor}};
           default:
             return { ...div };
