@@ -115,4 +115,20 @@ li a {
   option{
     height: 40px;
   }
+  .export-css{
+    margin: 5px 15px 5px 10px;
+  }
+  .save{
+    margin: 0 15px 0 10px;
+  }
+  button{
+    background-color: $teal;
+    border: none;
+    color: $whiteGrey;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 90%;
+  }
 }
