@@ -9,7 +9,7 @@ class Header extends Component {
           {
             fontFamily: "Lato",
             width: "100%",
-            height: "40px",
+            height: "42px",
             backgroundColor: "#30B3AA"
           }
         }
