@@ -31,8 +31,9 @@ class Edit extends Component {
       >
         <h1> Edit </h1>
         <div>
-          <h3>Pick Your Font:</h3>
+          <h3>Font Type</h3>
             <select id="fontMenu" onChange={() => this.props.changeFont(this.changeFont())}>
+              <option>Choose Your Font</option>
               <option value="times">Times New Roman</option>
               <option value="arial">Arial</option>
             </select>
@@ -43,6 +44,9 @@ class Edit extends Component {
               <option value="blue">Blue</option>
               <option value="purple">Purple</option>
             </select>
+        </div>
+        <div>
+          <button type="button">Export CSS</button>
         </div>
         <div>
           <button type="button" onClick={this.saveStyle}> Save </button>

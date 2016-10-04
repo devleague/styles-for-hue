@@ -1,12 +1,17 @@
-@import 'https://fonts.googleapis.com/css?family=Galada';
+@import 'https://fonts.googleapis.com/css?family=Galada|Lato';
 
 $greyFont: #4A4A4A;
+$darkGrey: #535353;
+$whiteGrey: #E9E9E9;
 
 .home-page{
   font-family: 'Galada', cursive;
   font-size: 3.4rem;
   text-align: center;
-  color: $greyFont; 
+  color: $greyFont;
+  img{
+    width: 100%;
+  }
 }
 
 .home-msg{
@@ -15,5 +20,16 @@ $greyFont: #4A4A4A;
     left: 0;
     top: 60px;
     right: 0;
+  }
+}
+
+.home-footer{
+  background-color: $darkGrey;
+  height: 40px;
+  h3{
+  font-family: 'Lato', sans-serif;
+  font-size: .8rem;
+  color: $whiteGrey;
+  padding-top: 10px;
   }
 }
