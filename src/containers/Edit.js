@@ -16,11 +16,11 @@ class Edit extends Component {
 
   saveStyle(){
     var divStyles = document.getElementsByClassName('divComp')[0].style;
-    console.log('div styles:', divStyles);
+    console.log('div styles:', divStyles.fontFamily);
     $.ajax({
       url: 'http://127.0.0.1:3000/update',
       type: 'POST',
-      data: {backgroundColor: divStyles.backgroundColor}
+      data: {backgroundColor: divStyles.backgroundColor, fontFamily: divStyles.fontFamily}
     })
   }
 

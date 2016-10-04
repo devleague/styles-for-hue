@@ -40,11 +40,12 @@ app.get('/api/styles', (req, res) => {
 });
 
 app.post('/update', (req, res) => {
-  console.log('post', req.body);
+  console.log('post', req.body.fontFamily);
   console.log('req.body', req.body.backgroundColor);
   Style.create({
     data: {
-      backgroundColor: req.body.backgroundColor
+      backgroundColor: req.body.backgroundColor,
+      fontFamily: req.body.fontFamily
     }
   })
   .then(results => res.json(results));
