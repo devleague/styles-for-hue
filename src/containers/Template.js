@@ -10,7 +10,8 @@ class Template extends Component {
     const divs = this.props.divs.map((div, index) => {
       return (
         <DivComp
-          key={index}
+          key={div.elementId}
+          elementId={div.elementId}
           style={div.style}
         />
       )

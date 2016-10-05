@@ -14,6 +14,7 @@ $darkBlue: #373F47;
 $lightGrey: #E6E8E6;
 $darkGrey: #535353;
 $teal: #30B3AA;
+$darkerTeal: #2C9F97;
 $whiteGrey: #E9E9E9;
 $greyFont: #4A4A4A;
 $mintGreen: #48DDB9;
@@ -39,36 +40,6 @@ $mintGreen: #48DDB9;
 body{
   font-family: 'Lato', sans-serif;
 }
-
-///// Nav /////
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: $darkGrey;
-}
-
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  color: $lightGrey;
-
-  a:visited{
-    color: $lightGrey;
-  }
-}
-
-// li a:hover:not(.active) {
-//     background-color: #111;
-// }
 
 .active {
   background-color: $mintGreen;
@@ -114,5 +85,60 @@ li a {
   }
   option{
     height: 40px;
+  }
+  .export-css{
+    margin: 8px 15px 8px 11px;
+  }
+  .save{
+    margin: 8px 15px 8px 11px;
+  }
+  button{
+    background-color: $teal;
+    border: none;
+    color: $whiteGrey;
+    font-size: 0.9rem;
+    padding: 9px 9px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 90%;
+    letter-spacing: .1rem;
+    box-shadow: 0 3px #999;
+    &:hover{
+      outline: none;
+      transition: all 0.5s ease;
+      background-color: $darkerTeal;
+    }
+    &:active{
+      outline: none;
+      background-color: $darkerTeal;
+      transform: translateY(4px);
+    }
+  }
+  select{
+    width: 90%;
+    background: transparent;
+    padding: 2px;
+    font-size: 0.9rem;
+    border: 0;
+    border-radius: 3px;
+    height: 30px;
+    -webkit-appearance: none;
+    border: 1px solid #ccc;
+    color: #c0c0c0;
+    background-image:
+      linear-gradient(45deg, transparent 50%, gray 50%),
+      linear-gradient(135deg, gray 50%, transparent 50%),
+      linear-gradient(to right, #ccc, #ccc);
+    background-position:
+      calc(100% - 20px) calc(1em + 2px),
+      calc(100% - 15px) calc(1em + 2px),
+      calc(100% - 2.5em) 0.5em;
+    background-size:
+      5px 5px,
+      5px 5px,
+      1px 1px;
+    background-repeat: no-repeat;
+    outline: none;
   }
 }
