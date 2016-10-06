@@ -39,14 +39,14 @@ class TemplateEdit extends Component {
         className="template-edit-container"
       >
         <Template
-          divTags={this.props.divComp.elements.divTags}
-          pTags={this.props.divComp.elements.pTags}
+          divTags={this.props.elementsReducer.elements.divTags}
+          pTags={this.props.elementsReducer.elements.pTags}
           selectElement={this.props.selectElement}
         />
         <Edit
           changeColor={this.props.changeColor}
           changeFont={this.props.changeFont}
-          selectedElement={this.props.divComp.selectedElementId}
+          selectedElement={this.props.elementsReducer.selectedElementId}
         />
       </div>
     )
