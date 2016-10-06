@@ -87,15 +87,18 @@ class Edit extends Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <div
         className="editColumn"
       >
         <h1> Edit </h1>
         <FontMenu
+          selectedElement={this.props.selectedElement}
           changeFont={this.props.changeFont}
         />
         <ColorMenu
+          selectedElement={this.props.selectedElement}
           changeColor={this.props.changeColor}
         />
         <div>

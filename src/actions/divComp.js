@@ -5,6 +5,15 @@ export function setDivs (divs) {
   }
 }
 
+export function selectDiv (elementId) {
+  return {
+    type: 'SELECT_DIV',
+    data: {
+      elementId: elementId
+    }
+  }
+}
+
 export function changeColor (divId, color) {
   return {
     type: 'CHANGE_COLOR',

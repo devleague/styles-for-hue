@@ -1,5 +1,6 @@
 const initialState = {
-  divs: []
+  divs: [],
+  selectedElementId: 0
 };
 
 const reducer = (state = initialState, action) => {
@@ -7,6 +8,9 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case "SET_DIVS":
       return { ...state, divs: action.data};
+    case "SELECT_DIV":
+      console.log(action.data);
+      return { ...state, selectedElementId: action.data.elementId};
     case "CHANGE_COLOR":
       let changeDivColor = newDivs.map((div, index) => {
         switch (div.elementId) {
