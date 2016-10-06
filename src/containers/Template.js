@@ -13,7 +13,17 @@ class Template extends Component {
           key={div.elementId}
           elementId={div.elementId}
           style={div.style}
-          selectDiv={this.props.selectDiv}
+          selectDiv={this.props.selectElement}
+        />
+      )
+    })
+    const ps = this.props.ps.map((p, index) => {
+      return (
+        <PComp
+          key={p.elementId}
+          elementId={p.elementId}
+          style={p.style}
+          selectP={this.props.selectElement}
         />
       )
     })
@@ -24,7 +34,7 @@ class Template extends Component {
         <Header />
         <ImgComp />
         {divs}
-        <PComp />
+        {ps}
         <ListComp />
         <Footer />
       </div>

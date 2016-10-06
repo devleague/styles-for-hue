@@ -1,35 +1,42 @@
-export function setDivs (divs) {
+export function setElements (elem) {
   return {
-    type: 'SET_DIVS',
-    data: divs
+    type: 'SET_ELEMENTS',
+    data: elem
   }
 }
 
-export function selectDiv (elementId) {
+export function setPs (ps) {
   return {
-    type: 'SELECT_DIV',
+    type: 'SET_PS',
+    data: ps
+  }
+}
+
+export function selectElement (elementId) {
+  return {
+    type: 'SELECT_ELEMENT',
     data: {
       elementId: elementId
     }
   }
 }
 
-export function changeColor (divId, color) {
+export function changeColor (elemId, color) {
   return {
     type: 'CHANGE_COLOR',
     data: {
-      divId: divId,
+      elemId: elemId,
       backgroundColor: color
     }
   }
 }
 
 
-export function changeFont (divId, font) {
+export function changeFont (elemId, font) {
   return {
     type: 'CHANGE_FONT',
     data: {
-      divId: divId,
+      elemId: elemId,
       fontFamily: font
     }
   }

@@ -5,13 +5,8 @@ class PComp extends Component {
     return (
       <p
         className="pComp"
-        style={
-          {
-            display: "inline-block",
-            backgroundColor: "blue",
-            color: "white"
-          }
-        }
+        style={this.props.style}
+        onClick={() => this.props.selectP(this.props.elementId)}
       >I'm a p component!
       </p>
     )

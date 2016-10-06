@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Template , Edit } from './';
 import { connect } from 'react-redux';
 
-import { changeColor, changeFont, setDivs, selectDiv } from '../actions';
+import { changeColor, changeFont, setElements, selectElement } from '../actions';
 
 function mapStateToProps (state) {
   return { ...state};
@@ -21,13 +21,16 @@ class TemplateEdit extends Component {
   componentDidMount () {
     this.loadTheme()
       .then((elementArray) => {
-        let div = elementArray.filter((elem, index) => {
+        let divs = elementArray.filter((elem, index) => {
           return elem.type === 'div';
         })
-        return div;
+        let ps = elementArray.filter((elem, index) => {
+          return elem.type === 'p';
+        })
+        return {divs: divs, ps: ps};
       })
-      .then((div) => {
-        return this.props.setDivs(div);
+      .then((elementObj) => {
+        this.props.setElements(elementObj);
       })
   }
   render() {
@@ -36,8 +39,9 @@ class TemplateEdit extends Component {
         className="template-edit-container"
       >
         <Template
-          divs={this.props.divComp.divs}
-          selectDiv={this.props.selectDiv}
+          divs={this.props.divComp.elements.divs}
+          ps={this.props.divComp.elements.ps}
+          selectElement={this.props.selectElement}
         />
         <Edit
           changeColor={this.props.changeColor}
@@ -50,5 +54,5 @@ class TemplateEdit extends Component {
 }
 
 export default connect(mapStateToProps, {
-  changeColor, changeFont, setDivs, selectDiv
+  changeColor, changeFont, setElements, selectElement
 })(TemplateEdit);
