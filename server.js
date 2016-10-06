@@ -18,10 +18,21 @@ mongoose.connection.once('open', function(){
 const stylesSchema = mongoose.Schema({
   elementId: Number,
   type: String,
+  subtype: [{
+    elementId: String,
+    type: String,
+    style: {
+      backgroundColor: String,
+      fontFamily: String,
+      display: String,
+      color: String
+    }
+  }],
   style: {
     backgroundColor: String,
     fontFamily: String,
-    display: String
+    display: String,
+    color: String
   }
 });
 // mongoose will lowercase and pluralize for mongodb //
@@ -46,13 +57,40 @@ app.get('/api/styles', (req, res) => {
 });
 
 app.post('/update', (req, res) => {
-  console.log('post', req.body.fontFamily);
+  console.log('post', req.body);
   console.log('req.body', req.body.backgroundColor);
   Style.create({
+    type: req.body.type,
     style: {
       backgroundColor: req.body.backgroundColor,
       fontFamily: req.body.fontFamily,
       display: req.body.display
+    }
+  })
+  .then(results => res.json(results));
+});
+
+app.post('/elements', (req, res) => {
+  Style.create({
+    elementId: req.body.elementId,
+    type: req.body.type,
+    subtype: [
+      {
+        elementId: req.body.elementId,
+        type: req.body.type,
+        style: {
+          backgroundColor: req.body.backgroundColor,
+          fontFamily: req.body.fontFamily,
+          display: req.body.display,
+          color: req.body.color
+        }
+      }
+    ],
+    style: {
+      backgroundColor: req.body.backgroundColor,
+      fontFamily: req.body.fontFamily,
+      display: req.body.display,
+      color: req.body.color
     }
   })
   .then(results => res.json(results));
