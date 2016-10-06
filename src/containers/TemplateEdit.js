@@ -11,6 +11,9 @@ function mapStateToProps (state) {
 class TemplateEdit extends Component {
   constructor (props) {
     super(props);
+    this.state = {};
+    this.showElementStyles = this.showElementStyles.bind(this);
+    this.selectElementAndShowStyles = this.selectElementAndShowStyles.bind(this);
   }
   loadTheme () {
     return $.ajax({
@@ -40,8 +43,27 @@ class TemplateEdit extends Component {
         this.props.setElements(elementObj);
       })
   }
+
+  selectElementAndShowStyles(elementId) {
+    this.props.selectElement(elementId);
+    this.showElementStyles();
+  }
+
+  showElementStyles(container){
+    console.log("testing");
+    var newStyles = {};
+    var el = document.getSelection();
+    // console.log(el);
+    var styles = el.anchorNode.parentElement.attributes.style.nodeValue;
+    // console.log(el.anchorNode.parentElement.className);
+    // console.log(el.anchorNode.data)
+    // console.log("STYLES OBJECT" + styles);
+
+    this.setState({styles: styles});
+  }
+
   render() {
-    console.log(this.props.elementsReducer.elements.imgTags);
+    //console.log(this.props.elementsReducer.elements.imgTags);
     return(
       <div
         className="template-edit-container"
@@ -50,7 +72,9 @@ class TemplateEdit extends Component {
           divTags={this.props.elementsReducer.elements.divTags}
           pTags={this.props.elementsReducer.elements.pTags}
           imgTags={this.props.elementsReducer.elements.imgTags}
-          selectElement={this.props.selectElement}
+          selectElement={this.selectElementAndShowStyles}
+          showElementStyles={this.showElementStyles}
+          styles={this.state.styles}
         />
         <Edit
           colorPalette={this.props.colors.colorPalette}
