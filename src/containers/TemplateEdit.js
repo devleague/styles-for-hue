@@ -40,6 +40,7 @@ class TemplateEdit extends Component {
           selectDiv={this.props.selectDiv}
         />
         <Edit
+          colorPalette={this.props.colors.colorPalette}
           changeColor={this.props.changeColor}
           changeFont={this.props.changeFont}
           selectedElement={this.props.divComp.selectedElementId}
