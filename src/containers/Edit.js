@@ -55,6 +55,7 @@ class Edit extends Component {
           changeFont={this.props.changeFont}
         />
         <ColorMenu
+          colorPalette={this.props.colorPalette}
           selectedElement={this.props.selectedElement}
           changeColor={this.props.changeColor}
         />

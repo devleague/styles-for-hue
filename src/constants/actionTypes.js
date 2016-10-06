@@ -1,0 +1,1 @@
+export const GET_COLOR_PALETTE = "GET_COLOR_PALETTE";
