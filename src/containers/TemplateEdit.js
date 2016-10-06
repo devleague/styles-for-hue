@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Template , Edit } from './';
 import { connect } from 'react-redux';
 
-import { changeColor, changeFont, setDivs } from '../actions';
+import { changeColor, changeFont, setDivs, selectDiv } from '../actions';
 
 function mapStateToProps (state) {
   return { ...state};
@@ -37,10 +37,12 @@ class TemplateEdit extends Component {
       >
         <Template
           divs={this.props.divComp.divs}
+          selectDiv={this.props.selectDiv}
         />
         <Edit
           changeColor={this.props.changeColor}
           changeFont={this.props.changeFont}
+          selectedElement={this.props.divComp.selectedElementId}
         />
       </div>
     )
@@ -48,5 +50,5 @@ class TemplateEdit extends Component {
 }
 
 export default connect(mapStateToProps, {
-  changeColor, changeFont, setDivs
+  changeColor, changeFont, setDivs, selectDiv
 })(TemplateEdit);
