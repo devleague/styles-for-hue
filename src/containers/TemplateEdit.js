@@ -10,7 +10,8 @@ function mapStateToProps (state) {
 
 class TemplateEdit extends Component {
   constructor (props) {
-    super(props);
+    super(props)
+    this.showElementStyles = this.showElementStyles.bind(this);
   }
   loadTheme () {
     return $.ajax({
@@ -44,6 +45,15 @@ class TemplateEdit extends Component {
         this.props.setElements(elementObj);
       })
   }
+
+  showElementStyles(styles){
+    let stylesArray = [];
+    for (let style in styles) {
+      stylesArray.push(`${style}: ${styles[style]}`);
+    }
+    return stylesArray;
+  }
+
   render() {
     return(
       <div
@@ -55,8 +65,11 @@ class TemplateEdit extends Component {
           imgTags={this.props.elementsReducer.elements.imgTags}
           ulTags={this.props.elementsReducer.elements.ulTags}
           selectElement={this.props.selectElement}
+          selectedElementStyle={this.props.elementsReducer.selectedElement.selectedStyle}
+          showElementStyles={this.showElementStyles}
         />
         <Edit
+          colorPalette={this.props.colors.colorPalette}
           changeColor={this.props.changeColor}
           changeFont={this.props.changeFont}
           selectedElement={this.props.elementsReducer.selectedElementId}

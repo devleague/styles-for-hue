@@ -6,6 +6,7 @@ class Template extends Component {
   constructor(props) {
     super(props);
   }
+
   render() {
     const divTags = this.props.divTags.map((div, index) => {
       return (
@@ -15,6 +16,7 @@ class Template extends Component {
           style={div.style}
           selectElement={this.props.selectElement}
           pTags={this.props.pTags}
+          onClick={this.props.showElementStyles}
         />
       )
     })
@@ -61,6 +63,10 @@ class Template extends Component {
         {pTags}
         {ulTags}
         <Footer />
+        <div
+        >
+          {this.props.showElementStyles(this.props.selectedElementStyle)}
+        </div>
       </div>
     )
   }

@@ -6,7 +6,7 @@ class PComp extends Component {
       <p
         className="pComp"
         style={this.props.style}
-        onClick={() => this.props.selectElement(this.props.elementId)}
+        onClick={() => this.props.selectElement(this.props.elementId, this.props.style)}
       >I'm a p component!
       </p>
     )
