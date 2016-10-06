@@ -9,7 +9,6 @@ const reducer = (state = initialState, action) => {
     case "SET_DIVS":
       return { ...state, divs: action.data};
     case "SELECT_DIV":
-      console.log(action.data);
       return { ...state, selectedElementId: action.data.elementId};
     case "CHANGE_COLOR":
       let changeDivColor = newDivs.map((div, index) => {
