@@ -45,6 +45,27 @@ class Edit extends Component {
         <FontMenu
           changeFont={this.props.changeFont}
         />
+        <div
+          className="font-size"
+        >
+          <h3>Font Size</h3>
+            <select>
+              <option>--px</option>
+              <option>12px</option>
+              <option>13px</option>
+            </select>  
+        </div>
+        <div
+          className="font-weight"
+        >
+          <h3>Font Weight</h3>
+            <select>
+              <option> --- </option>
+              <option>300</option>
+              <option>400</option>
+              <option>700</option>
+            </select>
+        </div>
         <ColorMenu
           changeColor={this.props.changeColor}
         />
