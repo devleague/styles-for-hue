@@ -3,10 +3,10 @@ import React, { Component } from 'react';
 class ListComp extends Component {
   render() {
     const listArray = this.props.list.map((listItem, index) => {
+      console.log(listItem);
       return (
         <li
           key={listItem.elementId}
-          elementId={listItem.elementId}
           className="listItem"
           style={listItem.style}
         >

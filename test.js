@@ -41,14 +41,14 @@ db.styles.insert([
         elementId: 6,
         type: 'li',
         style: {
-          backgroundColor: 'blue'
+          backgroundColor: 'pink'
         }
       },
       {
         elementId: 7,
         type: 'li',
         style: {
-          backgroundColor: 'red'
+          backgroundColor: 'orange'
         }
       }
     ],

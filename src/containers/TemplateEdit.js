@@ -31,7 +31,6 @@ class TemplateEdit extends Component {
           return elem.type === 'img';
         });
         let ulTags = elementArray.filter((elem, index) => {
-          console.log(elem.type);
           return elem.type === 'ul';
         });
         return {

@@ -14,6 +14,7 @@ const reducer = (state = initialState, action) => {
     case "SET_ELEMENTS":
       return { ...state, elements: action.data};
     case "SELECT_ELEMENT":
+      console.log(action.data.elementId);
       return { ...state, selectedElementId: action.data.elementId};
     case "CHANGE_COLOR":
       for (let element in newElems) {
