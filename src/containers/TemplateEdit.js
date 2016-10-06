@@ -11,9 +11,7 @@ function mapStateToProps (state) {
 class TemplateEdit extends Component {
   constructor (props) {
     super(props)
-    this.state = {};
     this.showElementStyles = this.showElementStyles.bind(this);
-    this.selectElementAndShowStyles = this.selectElementAndShowStyles.bind(this);
   }
   loadTheme () {
     return $.ajax({
@@ -33,10 +31,14 @@ class TemplateEdit extends Component {
         let imgTags = elementArray.filter((elem, index) => {
           return elem.type === 'img';
         });
+        let ulTags = elementArray.filter((elem, index) => {
+          return elem.type === 'ul';
+        });
         return {
           divTags: divTags,
           pTags: pTags,
-          imgTags: imgTags
+          imgTags: imgTags,
+          ulTags: ulTags
         };
       })
       .then((elementObj) => {
@@ -44,20 +46,16 @@ class TemplateEdit extends Component {
       })
   }
 
-  selectElementAndShowStyles(elementId) {
-    this.props.selectElement(elementId);
-    this.showElementStyles();
-  }
-
-  showElementStyles(container){
-    var newStyles = {};
-    var el = document.getSelection();
-    var styles = el.anchorNode.parentElement.attributes.style.nodeValue;
-    this.setState({styles: styles});
+  showElementStyles(styles){
+    let stylesArray = [];
+    for (let style in styles) {
+      stylesArray.push(`${style}: ${styles[style]},  `);
+    }
+    return stylesArray;
   }
 
   render() {
-    //console.log(this.props.elementsReducer.elements.imgTags);
+    console.log(this.props.elementsReducer);
     return(
       <div
         className="template-edit-container"
@@ -66,15 +64,16 @@ class TemplateEdit extends Component {
           divTags={this.props.elementsReducer.elements.divTags}
           pTags={this.props.elementsReducer.elements.pTags}
           imgTags={this.props.elementsReducer.elements.imgTags}
-          selectElement={this.selectElementAndShowStyles}
+          ulTags={this.props.elementsReducer.elements.ulTags}
+          selectElement={this.props.selectElement}
+          selectedElementStyle={this.props.elementsReducer.selectedElement.selectedStyle}
           showElementStyles={this.showElementStyles}
-          styles={this.state.styles}
         />
         <Edit
           colorPalette={this.props.colors.colorPalette}
           changeColor={this.props.changeColor}
           changeFont={this.props.changeFont}
-          selectedElement={this.props.elementsReducer.selectedElementId}
+          selectedElement={this.props.elementsReducer.selectedElement.selectedElementId}
         />
       </div>
     )

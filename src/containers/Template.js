@@ -15,18 +15,21 @@ class Template extends Component {
           elementId={div.elementId}
           style={div.style}
           selectElement={this.props.selectElement}
+          pTags={this.props.pTags}
           onClick={this.props.showElementStyles}
         />
       )
     })
     const pTags = this.props.pTags.map((p, index) => {
       return (
-        <PComp
-          key={p.elementId}
-          elementId={p.elementId}
-          style={p.style}
-          selectElement={this.props.selectElement}
-        />
+        <div>
+          <PComp
+            key={p.elementId}
+            elementId={p.elementId}
+            style={p.style}
+            selectElement={this.props.selectElement}
+          />
+        </div>
       )
     })
     const imgTags = this.props.imgTags.map((img, index) => {
@@ -40,6 +43,16 @@ class Template extends Component {
         />
       )
     })
+    const ulTags = this.props.ulTags.map((ul, index) => {
+      return (
+        <ListComp
+          key={ul.elementId}
+          style={ul.style}
+          list={ul.subType}
+          selectElement={this.props.selectElement}
+        />
+      )
+    })
     return (
       <div
         className="template-one"
@@ -48,14 +61,11 @@ class Template extends Component {
         {imgTags}
         {divTags}
         {pTags}
-        <ListComp
-          selectElement={this.props.selectElement}
-        />
+        {ulTags}
         <Footer />
         <div
-          onChange={this.props.showElementStyles}
         >
-        {this.props.styles}
+          {this.props.showElementStyles(this.props.selectedElementStyle)}
         </div>
       </div>
     )

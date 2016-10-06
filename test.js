@@ -8,6 +8,15 @@ db.createCollection("styles");
 print("styles");
 db.styles.insert([
   {
+    elementId: 1,
+    type: 'div',
+    style: {
+      backgroundColor: 'blue',
+      fontFamily: 'sans-serif',
+      display: 'inline-block'
+    }
+  },
+  {
     elementId: 2,
     type: 'p',
     style: {
@@ -27,6 +36,22 @@ db.styles.insert([
   {
     elementId: 4,
     type: 'ul',
+    subType: [
+      {
+        elementId: 6,
+        type: 'li',
+        style: {
+          backgroundColor: 'pink'
+        }
+      },
+      {
+        elementId: 7,
+        type: 'li',
+        style: {
+          backgroundColor: 'orange'
+        }
+      }
+    ],
     style: {
       color: 'red'
     }
