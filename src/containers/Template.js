@@ -7,13 +7,35 @@ class Template extends Component {
     super(props);
   }
   render() {
-    const divs = this.props.divs.map((div, index) => {
+    console.log(this.props);
+    const divTags = this.props.divTags.map((div, index) => {
       return (
         <DivComp
           key={div.elementId}
           elementId={div.elementId}
           style={div.style}
-          selectDiv={this.props.selectDiv}
+          selectElement={this.props.selectElement}
+        />
+      )
+    })
+    const pTags = this.props.pTags.map((p, index) => {
+      return (
+        <PComp
+          key={p.elementId}
+          elementId={p.elementId}
+          style={p.style}
+          selectElement={this.props.selectElement}
+        />
+      )
+    })
+    const imgTags = this.props.imgTags.map((img, index) => {
+      return (
+        <ImgComp
+          key={img.elementId}
+          elementId={img.elementId}
+          src={img.src}
+          style={img.style}
+          selectElement={this.props.selectElement}
         />
       )
     })
@@ -22,9 +44,9 @@ class Template extends Component {
         className="template-one"
       >
         <Header />
-        <ImgComp />
-        {divs}
-        <PComp />
+        {imgTags}
+        {divTags}
+        {pTags}
         <ListComp />
         <Footer />
       </div>
