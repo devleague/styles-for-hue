@@ -55,7 +55,7 @@ class Template extends Component {
         <div
           onChange={this.props.showElementStyles}
         >
-        HELLO{this.props.styles}
+        {this.props.styles}
         </div>
       </div>
     )

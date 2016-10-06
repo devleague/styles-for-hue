@@ -10,7 +10,7 @@ function mapStateToProps (state) {
 
 class TemplateEdit extends Component {
   constructor (props) {
-    super(props);
+    super(props)
     this.state = {};
     this.showElementStyles = this.showElementStyles.bind(this);
     this.selectElementAndShowStyles = this.selectElementAndShowStyles.bind(this);
@@ -50,15 +50,9 @@ class TemplateEdit extends Component {
   }
 
   showElementStyles(container){
-    console.log("testing");
     var newStyles = {};
     var el = document.getSelection();
-    // console.log(el);
     var styles = el.anchorNode.parentElement.attributes.style.nodeValue;
-    // console.log(el.anchorNode.parentElement.className);
-    // console.log(el.anchorNode.data)
-    // console.log("STYLES OBJECT" + styles);
-
     this.setState({styles: styles});
   }
 
