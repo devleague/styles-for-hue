@@ -7,13 +7,24 @@ class Template extends Component {
     super(props);
   }
   render() {
-    const divs = this.props.divs.map((div, index) => {
+    console.log(this.props);
+    const divTags = this.props.divTags.map((div, index) => {
       return (
         <DivComp
           key={div.elementId}
           elementId={div.elementId}
           style={div.style}
-          selectDiv={this.props.selectDiv}
+          selectDiv={this.props.selectElement}
+        />
+      )
+    })
+    const pTags = this.props.pTags.map((p, index) => {
+      return (
+        <PComp
+          key={p.elementId}
+          elementId={p.elementId}
+          style={p.style}
+          selectP={this.props.selectElement}
         />
       )
     })
@@ -23,8 +34,8 @@ class Template extends Component {
       >
         <Header />
         <ImgComp />
-        {divs}
-        <PComp />
+        {divTags}
+        {pTags}
         <ListComp />
         <Footer />
       </div>

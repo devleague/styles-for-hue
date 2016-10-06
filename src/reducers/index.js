@@ -1,9 +1,9 @@
 import { combineReducers, compose } from 'redux';
 
-import { default as divCompReducer } from './divComp';
+import { default as elementsReducer } from './elementsReducer';
 
 const rootReducer = combineReducers({
-  divComp: divCompReducer
+  elementsReducer: elementsReducer
 })
 
 const finalCreateStore = compose(
