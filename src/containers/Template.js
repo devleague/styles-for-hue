@@ -6,8 +6,8 @@ class Template extends Component {
   constructor(props) {
     super(props);
   }
+
   render() {
-    console.log(this.props);
     const divTags = this.props.divTags.map((div, index) => {
       return (
         <DivComp
@@ -15,6 +15,7 @@ class Template extends Component {
           elementId={div.elementId}
           style={div.style}
           selectElement={this.props.selectElement}
+          onClick={this.props.showElementStyles}
         />
       )
     })
@@ -47,8 +48,15 @@ class Template extends Component {
         {imgTags}
         {divTags}
         {pTags}
-        <ListComp />
+        <ListComp
+          selectElement={this.props.selectElement}
+        />
         <Footer />
+        <div
+          onChange={this.props.showElementStyles}
+        >
+        HELLO{this.props.styles}
+        </div>
       </div>
     )
   }
