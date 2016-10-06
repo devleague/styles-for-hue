@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Template , Edit } from './';
 import { connect } from 'react-redux';
 
-import { changeColor, changeFont, setElements, selectElement } from '../actions';
+import { changeColor, changeFont, setElements, selectElement,  getColorPalette } from '../actions';
 
 function mapStateToProps (state) {
   return { ...state};
@@ -22,6 +22,7 @@ class TemplateEdit extends Component {
     });
   }
   componentDidMount () {
+    this.props.getColorPalette();
     this.loadTheme()
       .then((elementArray) => {
         let divTags = elementArray.filter((elem, index) => {
@@ -88,5 +89,5 @@ class TemplateEdit extends Component {
 }
 
 export default connect(mapStateToProps, {
-  changeColor, changeFont, setElements, selectElement
+  changeColor, changeFont, setElements, selectElement, getColorPalette
 })(TemplateEdit);
