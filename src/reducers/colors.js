@@ -1,18 +1,5 @@
 const initialState = {
-  colorPalette: [
-    {
-      label: "blue",
-      value: "blue",
-    },
-    {
-      label: "red",
-      value: "red",
-    },
-    {
-      label: "green",
-      value: "green",
-    }
-  ]
+  colorPalette: []
 };
 
 const colors = (state = initialState, action) => {
