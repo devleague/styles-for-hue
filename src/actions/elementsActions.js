@@ -9,7 +9,7 @@ export function selectElement (elementId) {
   return {
     type: 'SELECT_ELEMENT',
     data: {
-      elementId: elementId,
+      elementId: elementId
     }
   }
 }
