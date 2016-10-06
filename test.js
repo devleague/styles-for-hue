@@ -36,6 +36,22 @@ db.styles.insert([
   {
     elementId: 4,
     type: 'ul',
+    subType: [
+      {
+        elementId: 6,
+        type: 'li',
+        style: {
+          backgroundColor: 'blue'
+        }
+      },
+      {
+        elementId: 7,
+        type: 'li',
+        style: {
+          backgroundColor: 'red'
+        }
+      }
+    ],
     style: {
       color: 'red'
     }

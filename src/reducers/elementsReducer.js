@@ -2,7 +2,8 @@ const initialState = {
   elements: {
     divTags: [],
     pTags: [],
-    imgTags: []
+    imgTags: [],
+    ulTags: []
   },
   selectedElementId: 0
 };

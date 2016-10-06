@@ -39,6 +39,16 @@ class Template extends Component {
         />
       )
     })
+    const ulTags = this.props.ulTags.map((ul, index) => {
+      return (
+        <ListComp
+          key={ul.elementId}
+          style={ul.style}
+          list={ul.subType}
+          selectElement={this.props.selectElement}
+        />
+      )
+    })
     return (
       <div
         className="template-one"
@@ -47,7 +57,7 @@ class Template extends Component {
         {imgTags}
         {divTags}
         {pTags}
-        <ListComp />
+        {ulTags}
         <Footer />
       </div>
     )
