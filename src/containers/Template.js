@@ -13,6 +13,7 @@ class Template extends Component {
           key={div.elementId}
           elementId={div.elementId}
           style={div.style}
+          selectDiv={this.props.selectDiv}
         />
       )
     })

@@ -9,7 +9,7 @@ class FontMenu extends Component {
     return(
       <div>
         <h3>Pick Your Font:</h3>
-          <select id="fontMenu" onChange={() => this.props.changeFont(5, this.changeFont())}>
+          <select id="fontMenu" onChange={() => this.props.changeFont(this.props.selectedElement, this.changeFont())}>
             <option value="times">Times New Roman</option>
             <option value="arial">Arial</option>
           </select>
