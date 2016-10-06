@@ -4,6 +4,8 @@ import { FontMenu, ColorMenu } from '../components';
 class Edit extends Component {
   constructor (props) {
     super(props);
+    this.state = {};
+    this.showElementStyles = this.showElementStyles.bind(this);
   }
 
   saveStyle(){
@@ -18,47 +20,6 @@ class Edit extends Component {
   }
 
   selectElement(container){
-  //   var newStyles = {};
-  //   var camelCase = {};
-  //   var el = document.getSelection();
-  //   var styles = el.anchorNode.parentElement.attributes.style.nodeValue;
-  //   console.log('styles', styles);
-  //   var newPunc = styles.replace(/;/g, ',');
-  //   console.log('newPunc', newPunc);
-  //   var test = newPunc.split(',');
-  //   console.log('test:', test);
-  //   test.forEach(function(property) {
-  //     var tup = property.split(': ');
-  //     newStyles[tup[0]] = tup[1];
-  //     var keys = Object.keys(newStyles);
-  //     console.log('console keys', keys);
-  //   // var camelStyles = keys.split('-').map(function capitalize(part){
-  //   //     return part.charAt(0).toUpperCase() + part.slice(1);
-  //   //   }).join('');
-  //   // camelCase.push(camelStyles);
-
-  //   console.log('newstyles', newStyles);
-  //   // console.log(camelCase);
-  //   });
-
-    // var newStyles = {};
-    // var el = document.getSelection();
-    // var styles = el.anchorNode.parentElement.attributes.style.nodeValue;
-    // var newPunc = styles.replace(/;/g, ',');
-    // var test = newPunc.split(',');
-    // test.forEach(function(property) {
-    //   var tup = property.split(': ');
-    //   newStyles[tup[0]] = tup[1];
-    // // var camelCase = [];
-    // var camelStyles = tup[0].split('-').map(function capitalize(part){
-    //     return part.charAt(0).toUpperCase() + part.slice(1);
-    //   }).join('');
-    // // camelCase.push(camelStyles);
-    // console.log('camel', camelStyles);
-    // newStyles[camelStyles] = tup[1];
-    // });
-    // console.log(newStyles);
-
     var newStyles = {};
     var el = document.getSelection();
     console.log(el);
@@ -83,10 +44,37 @@ class Edit extends Component {
       type: 'POST',
       data: newStyles
     });
+  }
 
+  showElementStyles(container){
+    var newStyles = {};
+    var el = document.getSelection();
+    console.log(el);
+    var styles = el.anchorNode.parentElement.attributes.style.nodeValue;
+    console.log(el.anchorNode.parentElement.className);
+    console.log(el.anchorNode.data)
+    console.log(styles);
+
+    // var test = styles.split('; ');
+    // console.log("test"  + test);
+
+    // test.forEach(function(property) {
+    //   var tup = property.split(': ');
+    //   //console.log("Line 32" + tup[0]);
+    //   var slice = tup[0].split('-').map(function capitalize(part){
+    //     return part.charAt(0).toUpperCase() + part.slice(1);
+    //   }).join('');
+    //   var good = slice.charAt(0).toLowerCase() + slice.slice(1);
+    //   tup[0] = good;
+    //   newStyles[tup[0]] = tup[1].replace(';', '');
+    // });
+    //change to object
+    //console.log(newStyles);
+    this.setState({styles: styles});
   }
 
   render() {
+    {this.props}
     return (
       <div
         className="editColumn"
@@ -117,6 +105,22 @@ class Edit extends Component {
           >
             Get Element
           </button>
+        </div>
+        <div>
+          <button
+            className="showCSS"
+            type="button"
+            onClick={this.showElementStyles}
+          >
+            Show Element Style
+          </button>
+        </div>
+        <div>
+          <div
+            onChange={this.showElementStyles}
+          >
+          {this.state.styles}
+          </div>
         </div>
       </div>
     )
