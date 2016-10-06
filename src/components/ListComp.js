@@ -7,6 +7,7 @@ class ListComp extends Component {
         <li
           key={index}
           className="listItem"
+          onClick={() => this.props.selectElement(this.props.elementId)}
           style={
             {
               backgroundColor: color
