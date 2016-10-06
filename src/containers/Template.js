@@ -7,7 +7,8 @@ class Template extends Component {
     super(props);
   }
   render() {
-    const divs = this.props.divs.map((div, index) => {
+    console.log(this.props);
+    const divTags = this.props.divTags.map((div, index) => {
       return (
         <DivComp
           key={div.elementId}
@@ -17,7 +18,7 @@ class Template extends Component {
         />
       )
     })
-    const ps = this.props.ps.map((p, index) => {
+    const pTags = this.props.pTags.map((p, index) => {
       return (
         <PComp
           key={p.elementId}
@@ -33,8 +34,8 @@ class Template extends Component {
       >
         <Header />
         <ImgComp />
-        {divs}
-        {ps}
+        {divTags}
+        {pTags}
         <ListComp />
         <Footer />
       </div>

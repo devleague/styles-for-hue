@@ -21,13 +21,13 @@ class TemplateEdit extends Component {
   componentDidMount () {
     this.loadTheme()
       .then((elementArray) => {
-        let divs = elementArray.filter((elem, index) => {
+        let divTags = elementArray.filter((elem, index) => {
           return elem.type === 'div';
         })
-        let ps = elementArray.filter((elem, index) => {
+        let pTags = elementArray.filter((elem, index) => {
           return elem.type === 'p';
         })
-        return {divs: divs, ps: ps};
+        return {divTags: divTags, pTags: pTags};
       })
       .then((elementObj) => {
         this.props.setElements(elementObj);
@@ -39,8 +39,8 @@ class TemplateEdit extends Component {
         className="template-edit-container"
       >
         <Template
-          divs={this.props.divComp.elements.divs}
-          ps={this.props.divComp.elements.ps}
+          divTags={this.props.divComp.elements.divTags}
+          pTags={this.props.divComp.elements.pTags}
           selectElement={this.props.selectElement}
         />
         <Edit

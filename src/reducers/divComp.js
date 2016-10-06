@@ -1,7 +1,7 @@
 const initialState = {
   elements: {
-    divs: [],
-    ps: []
+    divTags: [],
+    pTags: []
   },
   selectedElementId: 0
 };

@@ -5,13 +5,6 @@ export function setElements (elem) {
   }
 }
 
-export function setPs (ps) {
-  return {
-    type: 'SET_PS',
-    data: ps
-  }
-}
-
 export function selectElement (elementId) {
   return {
     type: 'SELECT_ELEMENT',
