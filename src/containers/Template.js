@@ -14,7 +14,7 @@ class Template extends Component {
           key={div.elementId}
           elementId={div.elementId}
           style={div.style}
-          selectDiv={this.props.selectElement}
+          selectElement={this.props.selectElement}
         />
       )
     })
@@ -24,7 +24,18 @@ class Template extends Component {
           key={p.elementId}
           elementId={p.elementId}
           style={p.style}
-          selectP={this.props.selectElement}
+          selectElement={this.props.selectElement}
+        />
+      )
+    })
+    const imgTags = this.props.imgTags.map((img, index) => {
+      return (
+        <ImgComp
+          key={img.elementId}
+          elementId={img.elementId}
+          src={img.src}
+          style={img.style}
+          selectElement={this.props.selectElement}
         />
       )
     })
@@ -33,7 +44,7 @@ class Template extends Component {
         className="template-one"
       >
         <Header />
-        <ImgComp />
+        {imgTags}
         {divTags}
         {pTags}
         <ListComp />
