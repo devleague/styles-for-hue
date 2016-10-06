@@ -76,15 +76,6 @@ class Edit extends Component {
             Get Element
           </button>
         </div>
-        <div>
-          <button
-            className="showCSS"
-            type="button"
-            onClick={this.showElementStyles}
-          >
-            Show Element Style
-          </button>
-        </div>
       </div>
     )
   }
