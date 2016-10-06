@@ -23,6 +23,7 @@ class Template extends Component {
         <Header />
         <ImgComp />
         {divs}
+        <DivComp />
         <PComp />
         <ListComp />
         <Footer />
