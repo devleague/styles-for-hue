@@ -49,12 +49,13 @@ class TemplateEdit extends Component {
   showElementStyles(styles){
     let stylesArray = [];
     for (let style in styles) {
-      stylesArray.push(`${style}: ${styles[style]}`);
+      stylesArray.push(`${style}: ${styles[style]},  `);
     }
     return stylesArray;
   }
 
   render() {
+    console.log(this.props.elementsReducer);
     return(
       <div
         className="template-edit-container"
@@ -72,7 +73,7 @@ class TemplateEdit extends Component {
           colorPalette={this.props.colors.colorPalette}
           changeColor={this.props.changeColor}
           changeFont={this.props.changeFont}
-          selectedElement={this.props.elementsReducer.selectedElementId}
+          selectedElement={this.props.elementsReducer.selectedElement.selectedElementId}
         />
       </div>
     )
