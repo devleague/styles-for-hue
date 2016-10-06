@@ -23,17 +23,25 @@ class TemplateEdit extends Component {
       .then((elementArray) => {
         let divTags = elementArray.filter((elem, index) => {
           return elem.type === 'div';
-        })
+        });
         let pTags = elementArray.filter((elem, index) => {
           return elem.type === 'p';
-        })
-        return {divTags: divTags, pTags: pTags};
+        });
+        let imgTags = elementArray.filter((elem, index) => {
+          return elem.type === 'img';
+        });
+        return {
+          divTags: divTags,
+          pTags: pTags,
+          imgTags: imgTags
+        };
       })
       .then((elementObj) => {
         this.props.setElements(elementObj);
       })
   }
   render() {
+    console.log(this.props.elementsReducer.elements.imgTags);
     return(
       <div
         className="template-edit-container"
@@ -41,6 +49,7 @@ class TemplateEdit extends Component {
         <Template
           divTags={this.props.elementsReducer.elements.divTags}
           pTags={this.props.elementsReducer.elements.pTags}
+          imgTags={this.props.elementsReducer.elements.imgTags}
           selectElement={this.props.selectElement}
         />
         <Edit

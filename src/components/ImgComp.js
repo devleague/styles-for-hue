@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 class ImgComp extends Component {
   render () {
+    console.log('img', this.props);
     return (
       <div
         style={
@@ -12,13 +13,8 @@ class ImgComp extends Component {
       >
         <img
           className="imgComp"
-          src="/images/city_night.jpg"
-          style={
-            {
-              width: "100%",
-              backgroundColor: "#3C6E71"
-            }
-          }
+          src={this.props.src}
+          style={ this.props.style }
         />
       </div>
     )
