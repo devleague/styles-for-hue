@@ -11,6 +11,7 @@ class ColorMenu extends Component {
       <div>
         <h3>Pick Your Color:</h3>
           <select id="colorMenu" onChange={() => this.props.changeColor(5, this.changeColor())}>
+            <option>Choose Your Color</option>
             <option value="blue">Blue</option>
             <option value="purple">Purple</option>
           </select>
