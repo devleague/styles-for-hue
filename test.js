@@ -27,8 +27,10 @@ db.styles.insert([
   {
     elementId: 3,
     type: 'img',
+    src: '/images/city_night.jpg',
     style: {
-      border: '15px black solid'
+      width: "100%",
+      backgroundColor: "#3C6E71"
     }
   },
   {

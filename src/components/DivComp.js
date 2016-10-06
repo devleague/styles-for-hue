@@ -6,7 +6,7 @@ class DivComp extends Component {
       <div
         className="divComp"
         style={ this.props.style }
-        onClick={() => this.props.selectDiv(this.props.elementId)}
+        onClick={() => this.props.selectElement(this.props.elementId)}
       >
         I'm a div component!
       </div>
