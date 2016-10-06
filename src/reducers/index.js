@@ -1,10 +1,10 @@
 import { combineReducers, compose } from 'redux';
 
-import { default as divCompReducer } from './divComp';
+import { default as elementsReducer } from './elementsReducer';
 import { default as colorReducer } from './colors';
 
 const rootReducer = combineReducers({
-  divComp: divCompReducer,
+  elementsReducer: elementsReducer,
   colors: colorReducer
 })
 

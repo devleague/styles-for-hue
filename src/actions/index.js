@@ -1,1 +1,1 @@
-export * from './divComp';
+export * from './elementsActions';
