@@ -1,5 +1,3 @@
-// import { GET_COLOR_PALETTE } from './constant/actionTypes';
-
 export default {
   getColorPalette
 };
@@ -7,6 +5,19 @@ export default {
 export function getColorPalette(color) {
   return {
     type: "GET_COLOR_PALETTE",
-    data: color
+    data: [
+      {
+        label: "blue",
+        value: "blue",
+      },
+      {
+        label: "red",
+        value: "red",
+      },
+      {
+        label: "green",
+        value: "greenw",
+      }
+    ]
   }
 }
