@@ -2,11 +2,7 @@ import React, { Component } from 'react';
 import { Template , Edit } from './';
 import { connect } from 'react-redux';
 
-<<<<<<< HEAD
-import { changeColor, changeFont, setElements, selectElement,  getColorPalette } from '../actions';
-=======
 import * as Actions from '../actions';
->>>>>>> master
 
 function mapStateToProps (state) {
   return { ...state};

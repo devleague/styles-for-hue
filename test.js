@@ -7,14 +7,6 @@ db.createCollection("styles");
 
 print("styles");
 db.styles.insert([
-{
-  elementId: 1,
-  type: 'div',
-  style: {
-  backgroundColor: 'blue',
-  fontFamily: 'sans-serif',
-  display: 'inline-block'
-},
   {
     elementId: 1,
     type: 'div',
