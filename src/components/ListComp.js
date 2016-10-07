@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
+import { ListItem } from './';
 
 class ListComp extends Component {
   render() {
     const listArray = this.props.list.map((listItem, index) => {
       return (
-        <li
+        <ListItem
           key={listItem.elementId}
-          className="listItem"
           style={listItem.style}
         >
-          I'm a list item!
-        </li>
+        </ListItem>
       )
     })
     return (

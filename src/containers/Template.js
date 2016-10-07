@@ -22,14 +22,12 @@ class Template extends Component {
     })
     const pTags = this.props.pTags.map((p, index) => {
       return (
-        <div>
-          <PComp
-            key={p.elementId}
-            elementId={p.elementId}
-            style={p.style}
-            selectElement={this.props.selectElement}
-          />
-        </div>
+        <PComp
+          key={p.elementId}
+          elementId={p.elementId}
+          style={p.style}
+          selectElement={this.props.selectElement}
+        />
       )
     })
     const imgTags = this.props.imgTags.map((img, index) => {
