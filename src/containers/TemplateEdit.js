@@ -60,6 +60,7 @@ class TemplateEdit extends Component {
   //     value: "#00FF00",
   //   }
   // ]);
+    this.props.fontTypes();
     this.loadTheme()
       .then((elementArray) => {
         let divTags = elementArray.filter((elem, index) => {
