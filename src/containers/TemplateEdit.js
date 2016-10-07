@@ -20,6 +20,7 @@ class TemplateEdit extends Component {
     });
   }
   componentDidMount () {
+    this.props.getColorPalette();
     this.loadTheme()
       .then((elementArray) => {
         let divTags = elementArray.filter((elem, index) => {

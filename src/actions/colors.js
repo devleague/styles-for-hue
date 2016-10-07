@@ -1,5 +1,3 @@
-// import { GET_COLOR_PALETTE } from './constant/actionTypes';
-
 export default {
   getColorPalette
 };
