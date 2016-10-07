@@ -17,24 +17,13 @@ mongoose.connection.once('open', function(){
 // CREATE SCHEMA & MODEL FOR 'styles' COLLECTION //
 const Schema = mongoose.Schema;
 const stylesSchema = new Schema({
-  style: {
-    backgroundColor: String,
-    fontFamily: String,
-    display: String,
-    color: String
-  }
+  elementId: Number,
+  style: {type: Object}
 });
 // mongoose will lowercase and pluralize for mongodb //
 const Style = mongoose.model('Style', stylesSchema);
 
 app.set('port', (process.env.PORT || 3000))
-
-// CORS //
-app.use(function (req, res, next) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Cache-Control', 'no-cache');
-  next();
-});
 
 app.use('/', express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
@@ -46,8 +35,9 @@ app.get('/api/styles', (req, res) => {
 });
 
 app.post('/update', (req, res) => {
-  console.log('req.body', req.body);
+  console.log('req.body', req.body.style);
   Style.create({
+    elementId: req.body.id,
     style: req.body
   })
   .then(results => res.json(results));
@@ -80,7 +70,7 @@ app.post('/api/styles', (req, res) => {
 });
 
 app.get('*', function (req, res) {
-  res.sendFile(path.join(__dirname, 'index.html'))
+  res.sendFile(path.join(__dirname, 'public', 'index.html'))
 })
 
 app.use((req, res) => {
