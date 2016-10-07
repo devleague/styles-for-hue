@@ -2,17 +2,12 @@ import React, { Component } from 'react';
 
 class ListComp extends Component {
   render() {
-    const listArray = ['yellow', 'green', 'orange', 'pink'].map((color, index) => {
+    const listArray = this.props.list.map((listItem, index) => {
       return (
         <li
-          key={index}
+          key={listItem.elementId}
           className="listItem"
-          onClick={() => this.props.selectElement(this.props.elementId)}
-          style={
-            {
-              backgroundColor: color
-            }
-          }
+          style={listItem.style}
         >
           I'm a list item!
         </li>

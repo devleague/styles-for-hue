@@ -2,18 +2,30 @@ const initialState = {
   elements: {
     divTags: [],
     pTags: [],
-    imgTags: []
+    imgTags: [],
+    ulTags: []
   },
-  selectedElementId: 0
+  selectedElement: {
+    selectedElementId: 0,
+    selectedStyle: {}
+  }
 };
 
 const reducer = (state = initialState, action) => {
   let newElems = { ...state.elements};
+  let selectedElement = { ...state.selectedElement};
   switch (action.type) {
     case "SET_ELEMENTS":
       return { ...state, elements: action.data};
     case "SELECT_ELEMENT":
-      return { ...state, selectedElementId: action.data.elementId};
+      for (let element in newElems) {
+        newElems[element].forEach((elem, index) => {
+          if (elem.elementId === action.data.elementId) {
+            return selectedElement = { selectedElementId: elem.elementId, selectedStyle: elem.style };
+          }
+        })
+      }
+      return { ...state, selectedElement: selectedElement};
     case "CHANGE_COLOR":
       for (let element in newElems) {
         newElems[element] = newElems[element].map((elem, index) => {
