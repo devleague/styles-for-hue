@@ -6,14 +6,14 @@ class Edit extends Component {
     super(props);
   }
 
-  saveStyle(elementId, style){
+  saveStyle(doc){
     console.log('props', this.props);
     $.ajax({
       url: '/update',
       type: 'POST',
       dataType: 'json',
       contentType: 'application/json',
-      data: JSON.stringify({elementId: elementId, style: style}),
+      data: JSON.stringify({doc: doc}),
     });
   }
 
@@ -37,7 +37,7 @@ class Edit extends Component {
           <button
             className="save"
             type="button"
-            onClick={this.saveStyle(this.props.selectedElement, this.props.selectedElementStyle)}
+            onClick={this.saveStyle(this.props.elements)}
           >
             Save
           </button>

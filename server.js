@@ -35,36 +35,10 @@ app.get('/api/styles', (req, res) => {
 });
 
 app.post('/update', (req, res) => {
-  console.log('req.body', req.body.style);
-  Style.create({
-    elementId: req.body.id,
-    style: req.body
-  })
-  .then(results => res.json(results));
-});
-
-app.post('/api/styles', (req, res) => {
+  console.log('req.body', req.body);
   Style.create({
     elementId: req.body.elementId,
-    type: req.body.type,
-    subtype: [
-      {
-        elementId: req.body.elementId,
-        type: req.body.type,
-        style: {
-          backgroundColor: req.body.backgroundColor,
-          fontFamily: req.body.fontFamily,
-          display: req.body.display,
-          color: req.body.color
-        }
-      }
-    ],
-    style: {
-      backgroundColor: req.body.backgroundColor,
-      fontFamily: req.body.fontFamily,
-      display: req.body.display,
-      color: req.body.color
-    }
+    style: req.body.doc
   })
   .then(results => res.json(results));
 });
