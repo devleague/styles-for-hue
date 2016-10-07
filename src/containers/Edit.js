@@ -54,8 +54,6 @@ class Edit extends Component {
             Save
           </button>
         </div>
-<<<<<<< HEAD
-=======
         <div>
           <button
             className="export-css"
@@ -74,7 +72,6 @@ class Edit extends Component {
             Export As CSS File
           </button>
         </div>
->>>>>>> master
       </div>
     )
   }
