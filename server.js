@@ -15,19 +15,8 @@ mongoose.connection.once('open', function(){
 });
 
 // CREATE SCHEMA & MODEL FOR 'styles' COLLECTION //
-const stylesSchema = mongoose.Schema({
-  elementId: Number,
-  type: String,
-  subtype: [{
-    elementId: String,
-    type: String,
-    style: {
-      backgroundColor: String,
-      fontFamily: String,
-      display: String,
-      color: String
-    }
-  }],
+const Schema = mongoose.Schema;
+const stylesSchema = new Schema({
   style: {
     backgroundColor: String,
     fontFamily: String,
@@ -57,20 +46,14 @@ app.get('/api/styles', (req, res) => {
 });
 
 app.post('/update', (req, res) => {
-  console.log('post', req.body);
-  console.log('req.body', req.body.backgroundColor);
+  console.log('req.body', req.body);
   Style.create({
-    type: req.body.type,
-    style: {
-      backgroundColor: req.body.backgroundColor,
-      fontFamily: req.body.fontFamily,
-      display: req.body.display
-    }
+    style: req.body
   })
   .then(results => res.json(results));
 });
 
-app.post('/elements', (req, res) => {
+app.post('/api/styles', (req, res) => {
   Style.create({
     elementId: req.body.elementId,
     type: req.body.type,
@@ -108,3 +91,5 @@ app.use((req, res) => {
 const server = app.listen(app.get('port'), () => {
   console.log(`Connected on port ${server.address().port}`);
 });
+
+module.exports = Style;
