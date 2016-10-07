@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Template , Edit } from './';
 import { connect } from 'react-redux';
 
-import { changeColor, changeFont, setElements, selectElement } from '../actions';
+import * as Actions from '../actions';
 
 function mapStateToProps (state) {
   return { ...state};
@@ -55,7 +55,6 @@ class TemplateEdit extends Component {
   }
 
   render() {
-    console.log(this.props.elementsReducer);
     return(
       <div
         className="template-edit-container"
@@ -80,6 +79,4 @@ class TemplateEdit extends Component {
   }
 }
 
-export default connect(mapStateToProps, {
-  changeColor, changeFont, setElements, selectElement
-})(TemplateEdit);
+export default connect(mapStateToProps, Actions)(TemplateEdit);
