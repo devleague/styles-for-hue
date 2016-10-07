@@ -2,15 +2,15 @@ const initialState = {
   colorPalette: [
     {
       label: "blue",
-      value: "1",
+      value: "#0000FF",
     },
     {
       label: "red",
-      value: "2",
+      value: "#FF0000",
     },
     {
       label: "green",
-      value: "3",
+      value: "#00FF00",
     }
   ]
 };
