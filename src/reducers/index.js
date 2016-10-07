@@ -1,9 +1,13 @@
 import { combineReducers, compose } from 'redux';
 
 import { default as elementsReducer } from './elementsReducer';
+import { default as colorReducer } from './colors';
+import { default as fontReducer } from './fontDropdown';
 
 const rootReducer = combineReducers({
-  elementsReducer: elementsReducer
+  elementsReducer: elementsReducer,
+  colors: colorReducer,
+  fonts: fontReducer
 })
 
 const finalCreateStore = compose(

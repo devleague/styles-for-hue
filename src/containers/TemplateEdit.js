@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Template , Edit } from './';
 import { connect } from 'react-redux';
 
-import { changeColor, changeFont, setElements, selectElement } from '../actions';
+import * as Actions from '../actions';
 
 function mapStateToProps (state) {
   return { ...state};
@@ -10,7 +10,8 @@ function mapStateToProps (state) {
 
 class TemplateEdit extends Component {
   constructor (props) {
-    super(props);
+    super(props)
+    this.showElementStyles = this.showElementStyles.bind(this);
   }
   loadTheme () {
     return $.ajax({
@@ -30,18 +31,30 @@ class TemplateEdit extends Component {
         let imgTags = elementArray.filter((elem, index) => {
           return elem.type === 'img';
         });
+        let ulTags = elementArray.filter((elem, index) => {
+          return elem.type === 'ul';
+        });
         return {
           divTags: divTags,
           pTags: pTags,
-          imgTags: imgTags
+          imgTags: imgTags,
+          ulTags: ulTags
         };
       })
       .then((elementObj) => {
         this.props.setElements(elementObj);
       })
   }
+
+  showElementStyles(styles){
+    let stylesArray = [];
+    for (let style in styles) {
+      stylesArray.push(`${style}: ${styles[style]},  `);
+    }
+    return stylesArray;
+  }
+
   render() {
-    console.log(this.props.elementsReducer.elements.imgTags);
     return(
       <div
         className="template-edit-container"
@@ -50,18 +63,21 @@ class TemplateEdit extends Component {
           divTags={this.props.elementsReducer.elements.divTags}
           pTags={this.props.elementsReducer.elements.pTags}
           imgTags={this.props.elementsReducer.elements.imgTags}
+          ulTags={this.props.elementsReducer.elements.ulTags}
           selectElement={this.props.selectElement}
+          selectedElementStyle={this.props.elementsReducer.selectedElement.selectedStyle}
+          showElementStyles={this.showElementStyles}
         />
         <Edit
+          colorPalette={this.props.colors.colorPalette}
+          fontList={this.props.fonts.items}
           changeColor={this.props.changeColor}
           changeFont={this.props.changeFont}
-          selectedElement={this.props.elementsReducer.selectedElementId}
+          selectedElement={this.props.elementsReducer.selectedElement.selectedElementId}
         />
       </div>
     )
   }
 }
 
-export default connect(mapStateToProps, {
-  changeColor, changeFont, setElements, selectElement
-})(TemplateEdit);
+export default connect(mapStateToProps, Actions)(TemplateEdit);
