@@ -20,7 +20,20 @@ class TemplateEdit extends Component {
     });
   }
   componentDidMount () {
-    this.props.getColorPalette();
+    this.props.getColorPalette([
+    {
+      label: "blue",
+      value: "#0000FF",
+    },
+    {
+      label: "red",
+      value: "#FF0000",
+    },
+    {
+      label: "green",
+      value: "#00FF00",
+    }
+  ]);
     this.loadTheme()
       .then((elementArray) => {
         let divTags = elementArray.filter((elem, index) => {
