@@ -17,8 +17,7 @@ mongoose.connection.once('open', function(){
 // CREATE SCHEMA & MODEL FOR 'styles' COLLECTION //
 const Schema = mongoose.Schema;
 const stylesSchema = new Schema({
-  elementId: Number,
-  style: {type: Object}
+  doc: {type: Object}
 });
 // mongoose will lowercase and pluralize for mongodb //
 const Style = mongoose.model('Style', stylesSchema);
@@ -35,10 +34,8 @@ app.get('/api/styles', (req, res) => {
 });
 
 app.post('/update', (req, res) => {
-  console.log('req.body', req.body);
   Style.create({
-    elementId: req.body.elementId,
-    style: req.body.doc
+    doc: req.body.doc,
   })
   .then(results => res.json(results));
 });
