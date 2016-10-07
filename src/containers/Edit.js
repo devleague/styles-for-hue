@@ -7,7 +7,6 @@ class Edit extends Component {
   }
 
   saveStyle(doc){
-    console.log('props', this.props);
     $.ajax({
       url: '/update',
       type: 'POST',
@@ -51,16 +50,7 @@ class Edit extends Component {
             type="button"
             onClick={this.saveStyle(this.props.elements)}
           >
-            Save
-          </button>
-        </div>
-        <div>
-          <button
-            className="export-css"
-            type="button"
-            onClick={this.selectElement}
-          >
-            Get Element
+            Save Template
           </button>
         </div>
         <div>
