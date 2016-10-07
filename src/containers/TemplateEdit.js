@@ -19,21 +19,47 @@ class TemplateEdit extends Component {
       dataType: 'json',
     });
   }
+  loadColorApi () {
+      return $.ajax({
+      url : "http://www.colourlovers.com/api/colors",
+      data: {
+        format: 'json',
+        numResults: 5,
+        resultOffset: 2
+      },
+      dataType:"jsonp",
+      xhrFields:{'withCredentials': true},
+      jsonp: 'jsonCallback',
+    })
+  }
   componentDidMount () {
-    this.props.getColorPalette([
-    {
-      label: "blue",
-      value: "#0000FF",
-    },
-    {
-      label: "red",
-      value: "#FF0000",
-    },
-    {
-      label: "green",
-      value: "#00FF00",
-    }
-  ]);
+    this.loadColorApi()
+      .then(
+        function(data){
+          var colorPalette = [];
+          data.map(function (elem, i) {
+            return colorPalette.push({label: elem.title, value: "#" + elem.hex});
+        })
+        return colorPalette;
+      })
+      .then((colors) => {
+        return this.props.getColorPalette(colors)
+      })
+
+  //   this.props.getColorPalette([
+  //   {
+  //     label: "blue",
+  //     value: "#0000FF",
+  //   },
+  //   {
+  //     label: "red",
+  //     value: "#FF0000",
+  //   },
+  //   {
+  //     label: "green",
+  //     value: "#00FF00",
+  //   }
+  // ]);
     this.loadTheme()
       .then((elementArray) => {
         let divTags = elementArray.filter((elem, index) => {

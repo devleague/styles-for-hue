@@ -7,7 +7,7 @@ class Edit extends Component {
   }
 
   saveStyle(style){
-    console.log('props', this.props);
+    // console.log('props', this.props);
     //console.log('div', divStyles);
     //console.log('div styles:', divStyles.fontFamily);
     $.ajax({
