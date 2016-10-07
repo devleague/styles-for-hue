@@ -44,6 +44,18 @@ class Edit extends Component {
     });
   }
 
+  exportAsCSSFile() {
+    var incomingString = 'background-color: red; font-family: arial; display: inline-block;';
+
+    var lineBreaks = incomingString.replace(/; /g, ';\n  ');
+    var initialBracket = '{ \n  ';
+    var endBracket = '\n}';
+    var initialSCSS = initialBracket.concat(lineBreaks);
+    var finishedSCSS = initialSCSS.concat(endBracket);
+
+    console.log(finishedSCSS);
+  }
+
   render() {
     return (
       <div
@@ -76,6 +88,15 @@ class Edit extends Component {
             onClick={this.selectElement}
           >
             Get Element
+          </button>
+        </div>
+        <div>
+          <button
+            className="export-as-css-file"
+            type="button"
+            onClick={this.exportAsCSSFile}
+          >
+            Export As CSS File
           </button>
         </div>
       </div>
