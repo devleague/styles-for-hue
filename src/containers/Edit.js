@@ -6,41 +6,14 @@ class Edit extends Component {
     super(props);
   }
 
-  saveStyle(style){
-    // console.log('props', this.props);
-    //console.log('div', divStyles);
-    //console.log('div styles:', divStyles.fontFamily);
+  saveStyle(doc){
+    console.log('props', this.props);
     $.ajax({
-      url: 'http://127.0.0.1:3000/update',
+      url: '/update',
       type: 'POST',
-      data: style
-    });
-  }
-
-  selectElement(container){
-    var newStyles = {};
-    var el = document.getSelection();
-    //console.log(el);
-    var styles = el.anchorNode.parentElement.attributes.style.nodeValue;
-    //console.log("styles " + styles);
-
-    var test = styles.split('; ');
-    //console.log("test"  + test);
-
-    test.forEach(function(property) {
-      var tup = property.split(': ');
-      //console.log("Line 32" + tup[0]);
-      var slice = tup[0].split('-').map(function capitalize(part){
-        return part.charAt(0).toUpperCase() + part.slice(1);
-      }).join('');
-      var good = slice.charAt(0).toLowerCase() + slice.slice(1);
-      tup[0] = good;
-      newStyles[tup[0]] = tup[1].replace(';', '');
-    });
-    $.ajax({
-      url: 'http://127.0.0.1:3000/update',
-      type: 'POST',
-      data: newStyles
+      dataType: 'json',
+      contentType: 'application/json',
+      data: JSON.stringify({doc: doc}),
     });
   }
 
@@ -76,7 +49,7 @@ class Edit extends Component {
           <button
             className="save"
             type="button"
-            onClick={this.saveStyle(this.props.selectedElementStyle)}
+            onClick={this.saveStyle(this.props.elements)}
           >
             Save
           </button>
