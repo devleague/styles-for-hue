@@ -74,6 +74,7 @@ class TemplateEdit extends Component {
           changeColor={this.props.changeColor}
           changeFont={this.props.changeFont}
           selectedElement={this.props.elementsReducer.selectedElement.selectedElementId}
+          selectedElementStyle={this.props.elementsReducer.selectedElement.selectedStyle}
         />
       </div>
     )

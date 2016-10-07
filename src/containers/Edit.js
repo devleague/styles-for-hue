@@ -6,15 +6,15 @@ class Edit extends Component {
     super(props);
   }
 
-  saveStyle(){
-    var divStyles = document.getElementsByClassName('divComp')[0].style;
+  saveStyle(style){
+    console.log('props', this.props);
     //console.log('div', divStyles);
     //console.log('div styles:', divStyles.fontFamily);
     $.ajax({
       url: 'http://127.0.0.1:3000/update',
       type: 'POST',
-      data: {backgroundColor: divStyles.backgroundColor, fontFamily: divStyles.fontFamily}
-    })
+      data: style
+    });
   }
 
   selectElement(container){
@@ -64,7 +64,7 @@ class Edit extends Component {
           <button
             className="save"
             type="button"
-            onClick={this.saveStyle}
+            onClick={this.saveStyle(this.props.selectedElementStyle)}
           >
             Save
           </button>
