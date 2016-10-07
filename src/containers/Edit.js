@@ -51,6 +51,7 @@ class Edit extends Component {
       >
         <h1> Edit </h1>
         <FontMenu
+          fontList={this.props.fontList}
           selectedElement={this.props.selectedElement}
           changeFont={this.props.changeFont}
         />
