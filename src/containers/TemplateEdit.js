@@ -20,6 +20,20 @@ class TemplateEdit extends Component {
     });
   }
   componentDidMount () {
+    this.props.getColorPalette([
+    {
+      label: "blue",
+      value: "#0000FF",
+    },
+    {
+      label: "red",
+      value: "#FF0000",
+    },
+    {
+      label: "green",
+      value: "#00FF00",
+    }
+  ]);
     this.loadTheme()
       .then((elementArray) => {
         let divTags = elementArray.filter((elem, index) => {
@@ -74,6 +88,7 @@ class TemplateEdit extends Component {
           changeColor={this.props.changeColor}
           changeFont={this.props.changeFont}
           selectedElement={this.props.elementsReducer.selectedElement.selectedElementId}
+          selectedElementStyle={this.props.elementsReducer.selectedElement.selectedStyle}
         />
       </div>
     )
