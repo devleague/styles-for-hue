@@ -38,7 +38,7 @@ const reducer = (state = initialState, action) => {
         newElems[element] = newElems[element].map((elem, index) => {
           switch (elem.elementId) {
             case action.data.elemId:
-              return { elementId: elem.elementId, style: { ...elem.style, backgroundColor: action.data.backgroundColor}};
+              return { ...elem, elementId: elem.elementId, style: { ...elem.style, backgroundColor: action.data.backgroundColor}};
             default:
               return { ...elem};
           }
@@ -50,7 +50,7 @@ const reducer = (state = initialState, action) => {
         newElems[element] = newElems[element].map((elem, index) => {
           switch (elem.elementId) {
             case action.data.elemId:
-              return { elementId: elem.elementId, style: { ...elem.style, fontFamily: action.data.fontFamily}};
+              return { ...elem, elementId: elem.elementId, style: { ...elem.style, fontFamily: action.data.fontFamily}};
             default:
               return { ...elem };
           }
