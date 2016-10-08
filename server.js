@@ -17,7 +17,45 @@ mongoose.connection.once('open', function(){
 // CREATE SCHEMA & MODEL FOR 'styles' COLLECTION //
 const Schema = mongoose.Schema;
 const stylesSchema = new Schema({
-  doc: {type: Object}
+  doc: {
+    divTags: [{
+      elementId: Number,
+      style: {
+        backgroundColor: String,
+        fontFamily: String,
+        display: String,
+        color: String
+      }
+    }],
+    pTags: [{
+      elementId: Number,
+      style: {
+        backgroundColor: String,
+        fontFamily: String,
+        display: String,
+        color: String
+      }
+    }],
+    imgTags: [{
+      elementId: Number,
+      src: String,
+      style: {
+        backgroundColor: String,
+        width: String,
+        height: String,
+        display: String,
+      }
+    }],
+    ulTags: [{
+      elementId: Number,
+      style: {
+        backgroundColor: String,
+        fontFamily: String,
+        display: String,
+        color: String
+      }
+    }]
+  }
 });
 // mongoose will lowercase and pluralize for mongodb //
 const Style = mongoose.model('Style', stylesSchema);
