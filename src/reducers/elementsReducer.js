@@ -19,26 +19,30 @@ const reducer = (state = initialState, action) => {
       return { ...state, elements: action.data};
     case "SELECT_ELEMENT":
       for (let element in newElems) {
-        newElems[element].forEach((elem, index) => {
+        newElems[element] = newElems[element].map((elem, index) => {
           if (elem.elementId === action.data.elementId) {
-            return selectedElement = { selectedElementId: elem.elementId, selectedStyle: elem.style };
+            selectedElement = { selectedElementId: elem.elementId, selectedStyle: elem.style };
+            return { ...elem, style: { ...elem.style, outline: '5px solid blue'} };
           }
           if (elem.subType) {
-            elem.subType.forEach((child, index) => {
+            elem.subType = elem.subType.map((child, index) => {
               if (child.elementId === action.data.elementId) {
-                return selectedElement = { selectedElementId: child.elementId, selectedStyle: child.style };
+                selectedElement = { selectedElementId: child.elementId, selectedStyle: child.style };
+                return { ...child, style: { ...child.style, outline: '5px solid blue'} };
               }
+              return { ...child, style: { ...child.style, outline: 'none'}}
             })
           }
+          return { ...elem, style: { ...elem.style, outline: 'none'}};
         })
       }
-      return { ...state, selectedElement: selectedElement};
+      return { ...state, elements: newElems, selectedElement: selectedElement};
     case "CHANGE_COLOR":
       for (let element in newElems) {
         newElems[element] = newElems[element].map((elem, index) => {
           switch (elem.elementId) {
             case action.data.elemId:
-              return { ...elem, elementId: elem.elementId, style: { ...elem.style, backgroundColor: action.data.backgroundColor}};
+              return { ...elem, style: { ...elem.style, backgroundColor: action.data.backgroundColor}};
             default:
               return { ...elem};
           }
@@ -50,7 +54,7 @@ const reducer = (state = initialState, action) => {
         newElems[element] = newElems[element].map((elem, index) => {
           switch (elem.elementId) {
             case action.data.elemId:
-              return { ...elem, elementId: elem.elementId, style: { ...elem.style, fontFamily: action.data.fontFamily}};
+              return { ...elem, style: { ...elem.style, fontFamily: action.data.fontFamily}};
             default:
               return { ...elem };
           }
