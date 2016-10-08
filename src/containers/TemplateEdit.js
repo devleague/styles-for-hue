@@ -15,7 +15,7 @@ class TemplateEdit extends Component {
   }
   loadTheme () {
     return $.ajax({
-      url: 'http://localhost:3000/api/styles',
+      url: '/api/styles',
       dataType: 'json',
     });
   }
@@ -45,21 +45,6 @@ class TemplateEdit extends Component {
       .then((colors) => {
         return this.props.getColorPalette(colors)
       })
-
-  //   this.props.getColorPalette([
-  //   {
-  //     label: "blue",
-  //     value: "#0000FF",
-  //   },
-  //   {
-  //     label: "red",
-  //     value: "#FF0000",
-  //   },
-  //   {
-  //     label: "green",
-  //     value: "#00FF00",
-  //   }
-  // ]);
     this.props.fontTypes();
     this.loadTheme()
       .then((elementArray) => {

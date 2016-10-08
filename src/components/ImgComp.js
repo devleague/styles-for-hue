@@ -14,6 +14,7 @@ class ImgComp extends Component {
           className="imgComp"
           src={this.props.src}
           style={ this.props.style }
+          onClick={() => this.props.selectElement(this.props.elementId, this.props.style)}
         />
       </div>
     )

@@ -7,7 +7,9 @@ class ListComp extends Component {
       return (
         <ListItem
           key={listItem.elementId}
+          elementId={listItem.elementId}
           style={listItem.style}
+          selectElement={this.props.selectElement}
         >
         </ListItem>
       )
