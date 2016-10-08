@@ -23,17 +23,6 @@ class TemplateEdit extends Component {
     return $.ajax({
       url: "http://www.colr.org/json/colors/random/5"
     });
-    // return $.ajax({
-    //   url : "http://www.colourlovers.com/api/colors",
-    //   data: {
-    //     format: 'json',
-    //     numResults: 5,
-    //     resultOffset: 2
-    //   },
-    //   dataType:"jsonp",
-    //   xhrFields:{'withCredentials': true},
-    //   jsonp: 'jsonCallback',
-    // })
   }
   componentDidMount () {
     this.loadColorApi()
@@ -52,18 +41,6 @@ class TemplateEdit extends Component {
       .then((colors) => {
         return this.props.getColorPalette(colors)
       })
-    // this.loadColorApi()
-    //   .then(
-    //     function(data){
-    //       var colorPalette = [];
-    //       data.map(function (elem, i) {
-    //         return colorPalette.push({label: elem.title, value: });
-    //     })
-    //     return colorPalette;
-    //   })
-    //   .then((colors) => {
-    //     return this.props.getColorPalette(colors)
-    //   })
     this.props.fontTypes();
     this.loadTheme()
       .then((elementArray) => {
