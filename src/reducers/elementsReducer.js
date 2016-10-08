@@ -23,6 +23,13 @@ const reducer = (state = initialState, action) => {
           if (elem.elementId === action.data.elementId) {
             return selectedElement = { selectedElementId: elem.elementId, selectedStyle: elem.style };
           }
+          if (elem.subType) {
+            elem.subType.forEach((child, index) => {
+              if (child.elementId === action.data.elementId) {
+                return selectedElement = { selectedElementId: child.elementId, selectedStyle: child.style };
+              }
+            })
+          }
         })
       }
       return { ...state, selectedElement: selectedElement};
