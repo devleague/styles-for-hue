@@ -40,18 +40,11 @@ class TemplateEdit extends Component {
       .then(function (data) {
         var colorsObject = JSON.parse(data);
         var colorPalette = [];
-
         colorsObject.colors.map(function (elem, i) {
-          if (elem.tags.length > 0){
-            var colorName = elem.tags[0].name;
-          }else{
-            var colorName = "NO COLOR";
-          }
-          if (elem.hex.length > 0){
-            var colorHex = "#" + elem.hex;
-          }else{
-            var colorHex = "#FFF";
-          }
+          var colorName = null;
+          var colorHex = null;
+          elem.tags.length > 0 ? colorName = elem.tags[0].name : colorName = "NO COLOR";
+          elem.hex.length > 0 ? colorHex = "#" + elem.hex : colorHex = "#FFF";
           return colorPalette.push({label: colorName, value: colorHex})
         })
         return colorPalette;
