@@ -7,13 +7,16 @@ class Edit extends Component {
   }
 
   saveStyle(doc){
-    $.ajax({
+    return $.ajax({
       url: '/update',
       type: 'POST',
       dataType: 'json',
       contentType: 'application/json',
       data: JSON.stringify({doc: doc}),
-    });
+    })
+    .then(data => {
+
+    })
   }
 
   exportAsCSSFile() {
@@ -48,7 +51,7 @@ class Edit extends Component {
           <button
             className="save"
             type="button"
-            onClick={this.saveStyle(this.props.elements)}
+            onClick={() => this.saveStyle(this.props.elements)}
           >
             Save Template
           </button>
