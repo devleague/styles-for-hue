@@ -10,7 +10,6 @@ class Edit extends Component {
   }
 
   saveStyle(doc){
-    console.log('args', arguments);
     return $.ajax({
       url: '/update',
       type: 'POST',
