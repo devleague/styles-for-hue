@@ -19,7 +19,15 @@ class Edit extends Component {
       dataType: 'json',
       contentType: 'application/json',
       data: JSON.stringify({doc: doc})
-    });
+    })
+    .then(() => {
+      this.props.showSave('visible');
+    })
+    .then(() => {
+      setTimeout(() => {
+        this.props.showSave('hidden');
+      }, 3000);
+    })
   }
 
   editStyle(doc){
@@ -68,6 +76,9 @@ class Edit extends Component {
           >
             Save Template
           </button>
+          <div style={this.props.savePopup}>
+            Saved!
+          </div>
         </div>
 
         <div>
