@@ -4,6 +4,9 @@ import { FontMenu, ColorMenu } from '../components';
 class Edit extends Component {
   constructor (props) {
     super(props);
+    this.save = () => {
+      this.saveStyle(this.props.elements);
+    }
   }
 
   saveStyle(doc){
@@ -12,11 +15,8 @@ class Edit extends Component {
       type: 'POST',
       dataType: 'json',
       contentType: 'application/json',
-      data: JSON.stringify({doc: doc}),
-    })
-    .then(data => {
-
-    })
+      data: JSON.stringify({doc: doc})
+    });
   }
 
   exportAsCSSFile() {
@@ -50,8 +50,8 @@ class Edit extends Component {
         <div>
           <button
             className="save"
-            type="button"
-            onClick={() => this.saveStyle(this.props.elements)}
+            type="submit"
+            onClick={this.save}
           >
             Save Template
           </button>
