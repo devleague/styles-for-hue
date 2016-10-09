@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { FontMenu, ColorMenu } from '../components';
 var fileSaver = require('file-saver');
-console.log(fileSaver);
+//console.log(fileSaver);
 
 class Edit extends Component {
   constructor (props) {
@@ -18,14 +18,26 @@ class Edit extends Component {
     });
   }
 
-  btnSave() {
-    console.log("enter");
-    var text = document.getElementById("textarea").value;
-    console.log(text);
+  btnSave(elements) {
+    var text = "";
+    var li = "liTags";
+    var liStyles = "";
+    for (var key in elements) {
+      var elementType = key.toString();
+      if (elementType === "ulTags") {
+        for (var i = 0; i < elements[key][0].subType.length; i++) {
+          liStyles += "liTags: " + JSON.stringify(elements[key][0].subType[i].style) + "\n";
+
+        }
+      }
+      for (var i = 0; i < elements[key].length; i++){
+        var elementStyle = (JSON.stringify(elements[key][i].style));
+        text += elementType + ": " + elementStyle + "\n";
+      }
+    }
+    text += liStyles;
     var filename = document.getElementById("input-fileName").value;
-    console.log(filename);
     var blob = new Blob([text], {type: "text/plain;charset=utf-8"});
-    console.log(blob);
     fileSaver.saveAs(blob, filename+".txt");
   };
 
@@ -136,22 +148,13 @@ class Edit extends Component {
             <input type="text"
               class="form-control"
               id="input-fileName"
-              value="textFile"
               placeholder="Enter file name"></input>
-          </div>
-          <div class="form-group">
-            <label for="textarea">Text</label>
-            <textarea id="textarea"
-              class="form-control"
-              rows="10"
-              placeholder="Enter text to save">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iure ab voluptate sunt reiciendis, officia, aliquam temporibus. Quo laudantium quaerat ad, deleniti optio ex, dignissimos, ea accusamus placeat tempora minima!
-            </textarea>
           </div>
           <button
             id="btn-save"
             type="submit"
             class="btn btn-primary"
-            onClick={this.btnSave}>Save to file</button>
+            onClick={()=> this.btnSave(this.props.elements)}>Save to file</button>
         </form>
       </div>
     )
