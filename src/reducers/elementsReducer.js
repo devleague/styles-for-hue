@@ -65,7 +65,7 @@ const reducer = (state = initialState, action) => {
       }
       return { ...state, doc: {elements: newElems} };
     case "NEW_DOC":
-      return { ...state, doc: { elements: { ...state.doc.elements }, _id: action.data} };
+      return { ...state, doc: { elements: { ...state.doc.elements }, _id: `ObjectId(${action.data})`} };
     default:
       return { ...state};
   }
