@@ -10,6 +10,7 @@ class ListComp extends Component {
           elementId={listItem.elementId}
           style={listItem.style}
           selectElement={this.props.selectElement}
+          selectedElementId={this.props.selectedElementId}
         >
         </ListItem>
       )
