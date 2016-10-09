@@ -62,7 +62,6 @@ class TemplateEdit extends Component {
       .then((fonts) => {
         return this.props.fontTypes(fonts)
       })
-    // this.props.fontTypes();
     this.loadTheme()
       .then((elementArray) => {
         let divTags = elementArray.filter((elem, index) => {
