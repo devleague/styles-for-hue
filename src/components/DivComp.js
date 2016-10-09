@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 class DivComp extends Component {
   isActive () {
     if (this.props.elementId === this.props.selectedElementId) {
-      return "divComp selected"
+      return `divComp${this.props.elementId} selected`
     }
-    return "divComp";
+    return `divComp${this.props.elementId}`;
   }
 
   render() {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { FontMenu, ColorMenu } from '../components';
+
 import { connect } from 'react-redux';
 
 import * as Actions from '../actions';
@@ -7,6 +8,10 @@ import * as Actions from '../actions';
 function mapStateToProps (state) {
   return { ...state};
 }
+
+var fileSaver = require('file-saver');
+//console.log(fileSaver);
+
 
 class Edit extends Component {
   constructor (props) {
@@ -34,17 +39,34 @@ class Edit extends Component {
     })
   }
 
-  exportAsCSSFile() {
-    var incomingString = 'background-color: red; font-family: arial; display: inline-block;';
+  exportAsSCSSFile(elements) {
+    var text = "";
+    var li = "liTags";
+    var liStyles = "";
+    for (var key in elements) {
+      var elementType = key.toString();
+      if (elementType === "ulTags") {
+        for (var i = 0; i < elements[key][0].subType.length; i++) {
+          liStyles += "liTags " + JSON.stringify(elements[key][0].subType[i].style) + "\n";
 
-    var lineBreaks = incomingString.replace(/; /g, ';\n  ');
-    var initialBracket = '{ \n  ';
-    var endBracket = '\n}';
-    var initialSCSS = initialBracket.concat(lineBreaks);
-    var finishedSCSS = initialSCSS.concat(endBracket);
+        }
+      }
+      for (var i = 0; i < elements[key].length; i++){
+        var elementStyle = (JSON.stringify(elements[key][i].style));
+        text += elementType + " " + elementStyle + "\n";
+      }
+    }
+    text += liStyles;
+    text = text.replace(/['"]+/g, '');
+    text = text.replace(/,/g, ';\n  ');
 
-    console.log(finishedSCSS);
-  }
+    var filename = document.getElementById("input-fileName").value;
+    if (filename === "") {
+      filename = new Date().toTimeString();
+    }
+    var blob = new Blob([text], {type: "text/plain;charset=utf-8"});
+    fileSaver.saveAs(blob, filename+".scss");
+  };
 
   render() {
     return (
@@ -86,15 +108,17 @@ class Edit extends Component {
             Saved!
           </div>
         </div>
-        <div>
+        <form>
+          <div>
+            <label>File name</label>
+            <input type="text"
+              id="input-fileName"
+              placeholder="Enter file name"></input>
+          </div>
           <button
-            className="export-as-css-file"
-            type="button"
-            onClick={this.exportAsCSSFile}
-          >
-            Export As CSS File
-          </button>
-        </div>
+            type="submit"
+            onClick={()=> this.exportAsSCSSFile(this.props.elements)}>Save to file</button>
+        </form>
       </div>
     )
   }
