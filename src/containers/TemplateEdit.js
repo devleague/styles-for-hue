@@ -91,16 +91,18 @@ class TemplateEdit extends Component {
           selectedElementStyle={this.props.elementsReducer.selectedElement.selectedStyle}
           showElementStyles={this.showElementStyles}
         />
-        <Edit
-          colorPalette={this.props.colors.colorPalette}
-          fontList={this.props.fonts.items}
-          changeColor={this.props.changeColor}
-          changeFont={this.props.changeFont}
-          selectedElement={this.props.elementsReducer.selectedElement.selectedElementId}
-          selectedElementStyle={this.props.elementsReducer.selectedElement.selectedStyle}
-          elements={this.props.elementsReducer.elements}
-        />
-        <CssView />
+        <div>
+          <Edit
+            colorPalette={this.props.colors.colorPalette}
+            fontList={this.props.fonts.items}
+            changeColor={this.props.changeColor}
+            changeFont={this.props.changeFont}
+            selectedElement={this.props.elementsReducer.selectedElement.selectedElementId}
+            selectedElementStyle={this.props.elementsReducer.selectedElement.selectedStyle}
+            elements={this.props.elementsReducer.elements}
+          />
+          <CssView />
+        </div>
       </div>
     )
   }
