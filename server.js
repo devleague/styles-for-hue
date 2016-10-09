@@ -78,6 +78,10 @@ app.post('/update', (req, res) => {
   .then(results => res.json(results));
 });
 
+app.put('/update/:id', (req, res) => {
+  Style.where({ _id: id }).update({ doc: req.body.doc});
+});
+
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, 'public', 'index.html'))
 })
