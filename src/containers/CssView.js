@@ -4,10 +4,12 @@ class CssView extends Component {
   render() {
     return (
       <div
-        className="cssView"
+        className="css-contain"
       >
         <h1> &lt; CSS &gt; </h1>
-        <div>
+        <div
+          className="view-css"
+        >
           VIEWING THE CSS HERE...
         </div>
         <div 
