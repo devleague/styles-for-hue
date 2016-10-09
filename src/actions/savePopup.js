@@ -1,4 +1,6 @@
-export default function showSave (visibility) {
-  type: "SAVE_CLICKED"
-  data: visibility
+export function showSave (visibility) {
+  return {
+    type: "SAVE_CLICKED",
+    data: visibility
+  }
 }

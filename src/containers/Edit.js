@@ -6,6 +6,7 @@ class Edit extends Component {
     super(props);
     this.save = () => {
       this.saveStyle(this.props.elements);
+      this.props.showSave('visible')
     }
   }
 
@@ -55,6 +56,9 @@ class Edit extends Component {
           >
             Save Template
           </button>
+          <div style={this.props.savePopup}>
+            I am here!
+          </div>
         </div>
         <div>
           <button
