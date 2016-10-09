@@ -87,6 +87,7 @@ class TemplateEdit extends Component {
           imgTags={this.props.elementsReducer.elements.imgTags}
           ulTags={this.props.elementsReducer.elements.ulTags}
           selectElement={this.props.selectElement}
+          selectedElementId={this.props.elementsReducer.selectedElement.selectedElementId}
           selectedElementStyle={this.props.elementsReducer.selectedElement.selectedStyle}
           showElementStyles={this.showElementStyles}
         />
