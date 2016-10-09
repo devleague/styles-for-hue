@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
 import { FontMenu, ColorMenu } from '../components';
+import { connect } from 'react-redux';
+
+import * as Actions from '../actions';
+
+function mapStateToProps (state) {
+  return { ...state};
+}
 
 class Edit extends Component {
   constructor (props) {
@@ -46,6 +53,17 @@ class Edit extends Component {
         className="editColumn"
       >
         <h1> Edit </h1>
+        <button
+          onClick={ ()=> {
+            if (this.props.sideBar.showCss === false) {
+              this.props.showCss(true);
+            } else {
+              this.props.showCss(false);
+            }
+          }
+        }>
+          View CSS
+        </button>
         <FontMenu
           fontList={this.props.fontList}
           selectedElement={this.props.selectedElement}
@@ -82,4 +100,4 @@ class Edit extends Component {
   }
 }
 
-export default Edit;
+export default connect(mapStateToProps, Actions)(Edit);
