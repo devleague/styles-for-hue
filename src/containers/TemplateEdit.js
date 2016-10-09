@@ -126,6 +126,8 @@ class TemplateEdit extends Component {
             selectedElement={this.props.elementsReducer.selectedElement.selectedElementId}
             selectedElementStyle={this.props.elementsReducer.selectedElement.selectedStyle}
             elements={this.props.elementsReducer.elements}
+            savePopup={this.props.savePopup}
+            showSave={this.props.showSave}
           />
           <CssView />
         </div>
