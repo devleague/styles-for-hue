@@ -97,6 +97,10 @@ class TemplateEdit extends Component {
   }
 
   render() {
+    let cssComponent = null;
+    if (this.props.sideBar.showCss === true) {
+      cssComponent = <CssView />;
+    }
     return(
       <div
         className="template-edit-container"
@@ -111,7 +115,9 @@ class TemplateEdit extends Component {
           selectedElementStyle={this.props.elementsReducer.selectedElement.selectedStyle}
           showElementStyles={this.showElementStyles}
         />
-        <div>
+        <div
+          className="views"
+        >
           <Edit
             colorPalette={this.props.colors.colorPalette}
             fontList={this.props.fonts.items}
@@ -125,7 +131,7 @@ class TemplateEdit extends Component {
             newDoc={this.props.newDoc}
             docId={this.props.elementsReducer.doc._id}
           />
-          <CssView />
+          { cssComponent }
         </div>
       </div>
     )

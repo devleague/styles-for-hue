@@ -4,6 +4,7 @@ class CssView extends Component {
   render() {
     return (
       <div
+        onClick={this.props.handleClick}
         className="css-contain"
       >
         <h1> &lt; CSS &gt; </h1>
