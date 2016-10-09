@@ -13,9 +13,6 @@ class TemplateEdit extends Component {
   constructor (props) {
     super(props)
     this.showElementStyles = this.showElementStyles.bind(this);
-    this.toggleView = this.toggleView.bind(this);
-  }
-  toggleView (view, index) { 
   }
   loadTheme () {
     return $.ajax({
@@ -101,6 +98,10 @@ class TemplateEdit extends Component {
   }
 
   render() {
+    let cssComponent = null;
+    if (this.props.sideBar.showCss === true) {
+      cssComponent = <CssView />;
+    }
     return(
       <div
         className="template-edit-container"
@@ -129,7 +130,7 @@ class TemplateEdit extends Component {
             savePopup={this.props.savePopup}
             showSave={this.props.showSave}
           />
-          <CssView />
+          { cssComponent }
         </div>
       </div>
     )
