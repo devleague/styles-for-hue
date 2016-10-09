@@ -15,6 +15,7 @@ class Template extends Component {
           elementId={div.elementId}
           style={div.style}
           selectElement={this.props.selectElement}
+          selectedElementId={this.props.selectedElementId}
           pTags={this.props.pTags}
           onClick={this.props.showElementStyles}
         />
@@ -27,6 +28,7 @@ class Template extends Component {
           elementId={p.elementId}
           style={p.style}
           selectElement={this.props.selectElement}
+          selectedElementId={this.props.selectedElementId}
         />
       )
     })
@@ -38,6 +40,7 @@ class Template extends Component {
           src={img.src}
           style={img.style}
           selectElement={this.props.selectElement}
+          selectedElementId={this.props.selectedElementId}
         />
       )
     })
@@ -45,9 +48,11 @@ class Template extends Component {
       return (
         <ListComp
           key={ul.elementId}
+          elementId={ul.elementId}
           style={ul.style}
           list={ul.subType}
           selectElement={this.props.selectElement}
+          selectedElementId={this.props.selectedElementId}
         />
       )
     })

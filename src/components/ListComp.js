@@ -10,13 +10,14 @@ class ListComp extends Component {
           elementId={listItem.elementId}
           style={listItem.style}
           selectElement={this.props.selectElement}
+          selectedElementId={this.props.selectedElementId}
         >
         </ListItem>
       )
     })
     return (
       <ul
-        className="listComp"
+        className={`listComp${this.props.elementId}`}
       >
         {listArray}
       </ul>

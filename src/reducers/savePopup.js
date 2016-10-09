@@ -1,11 +1,11 @@
 const initialState = {
-  items: []
-};
+  visibility: 'hidden'
+}
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case "FONT_TYPES":
-      return { ...state, items: action.data };
+    case "SAVE_CLICKED":
+      return {...state, visibility: action.data};
     default:
       return state;
   }
