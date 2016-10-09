@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Template , Edit } from './';
+import { Template , Edit, CssView } from './';
 import { connect } from 'react-redux';
 
 import * as Actions from '../actions';
@@ -99,6 +99,7 @@ class TemplateEdit extends Component {
           selectedElementStyle={this.props.elementsReducer.selectedElement.selectedStyle}
           elements={this.props.elementsReducer.elements}
         />
+        <CssView />
       </div>
     )
   }
