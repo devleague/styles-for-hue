@@ -97,21 +97,27 @@ class TemplateEdit extends Component {
   }
 
   render() {
+    let cssComponent = null;
+    if (this.props.sideBar.showCss === true) {
+      cssComponent = <CssView />;
+    }
     return(
       <div
         className="template-edit-container"
       >
         <Template
-          divTags={this.props.elementsReducer.elements.divTags}
-          pTags={this.props.elementsReducer.elements.pTags}
-          imgTags={this.props.elementsReducer.elements.imgTags}
-          ulTags={this.props.elementsReducer.elements.ulTags}
+          divTags={this.props.elementsReducer.doc.elements.divTags}
+          pTags={this.props.elementsReducer.doc.elements.pTags}
+          imgTags={this.props.elementsReducer.doc.elements.imgTags}
+          ulTags={this.props.elementsReducer.doc.elements.ulTags}
           selectElement={this.props.selectElement}
           selectedElementId={this.props.elementsReducer.selectedElement.selectedElementId}
           selectedElementStyle={this.props.elementsReducer.selectedElement.selectedStyle}
           showElementStyles={this.showElementStyles}
         />
-        <div>
+        <div
+          className="views"
+        >
           <Edit
             colorPalette={this.props.colors.colorPalette}
             fontList={this.props.fonts.items}
@@ -119,11 +125,13 @@ class TemplateEdit extends Component {
             changeFont={this.props.changeFont}
             selectedElement={this.props.elementsReducer.selectedElement.selectedElementId}
             selectedElementStyle={this.props.elementsReducer.selectedElement.selectedStyle}
-            elements={this.props.elementsReducer.elements}
+            elements={this.props.elementsReducer.doc.elements}
             savePopup={this.props.savePopup}
             showSave={this.props.showSave}
+            newDoc={this.props.newDoc}
+            docId={this.props.elementsReducer.doc._id}
           />
-          <CssView />
+          { cssComponent }
         </div>
       </div>
     )

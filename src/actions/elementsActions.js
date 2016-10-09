@@ -24,7 +24,6 @@ export function changeColor (elemId, color) {
   }
 }
 
-
 export function changeFont (elemId, font) {
   return {
     type: 'CHANGE_FONT',
@@ -32,5 +31,12 @@ export function changeFont (elemId, font) {
       elemId: elemId,
       fontFamily: font
     }
+  }
+}
+
+export function newDoc (docId) {
+  return {
+    type: 'NEW_DOC',
+    data: docId
   }
 }
