@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { FontMenu, ColorMenu } from '../components';
 var fileSaver = require('file-saver');
-//console.log(fileSaver);
 
 class Edit extends Component {
   constructor (props) {
