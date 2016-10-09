@@ -20,8 +20,6 @@ class FontMenu extends Component {
                 </option>
               )
             })}
-            <option value="times">Times New Roman</option>
-            <option value="arial">Arial</option>
           </select>
       </div>
     );
