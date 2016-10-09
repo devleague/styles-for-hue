@@ -6,10 +6,6 @@ class Edit extends Component {
     super(props);
     this.save = () => {
       this.saveStyle(this.props.elements);
-      this.props.showSave('visible');
-      setTimeout(() => {
-        this.props.showSave('hidden');
-      }, 3000);
     }
   }
 
@@ -20,7 +16,15 @@ class Edit extends Component {
       dataType: 'json',
       contentType: 'application/json',
       data: JSON.stringify({doc: doc})
-    });
+    })
+    .then(() => {
+      this.props.showSave('visible');
+    })
+    .then(() => {
+      setTimeout(() => {
+        this.props.showSave('hidden');
+      }, 3000);
+    })
   }
 
   exportAsCSSFile() {
