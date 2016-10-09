@@ -22,18 +22,18 @@ const reducer = (state = initialState, action) => {
         newElems[element] = newElems[element].map((elem, index) => {
           if (elem.elementId === action.data.elementId) {
             selectedElement = { selectedElementId: elem.elementId, selectedStyle: elem.style };
-            return { ...elem, style: { ...elem.style, outline: '5px solid blue'} };
+            return { ...elem, style: { ...elem.style} };
           }
           if (elem.subType) {
             elem.subType = elem.subType.map((child, index) => {
               if (child.elementId === action.data.elementId) {
                 selectedElement = { selectedElementId: child.elementId, selectedStyle: child.style };
-                return { ...child, style: { ...child.style, outline: '5px solid blue'} };
+                return { ...child, style: { ...child.style} };
               }
-              return { ...child, style: { ...child.style, outline: 'none'}}
+              return { ...child, style: { ...child.style}}
             })
           }
-          return { ...elem, style: { ...elem.style, outline: 'none'}};
+          return { ...elem, style: { ...elem.style}};
         })
       }
       return { ...state, elements: newElems, selectedElement: selectedElement};
