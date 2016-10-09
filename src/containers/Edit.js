@@ -60,7 +60,7 @@ class Edit extends Component {
             Save Template
           </button>
           <div style={this.props.savePopup}>
-            I am here!
+            Saved!
           </div>
         </div>
         <div>
