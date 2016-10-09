@@ -39,7 +39,7 @@ const reducer = (state = initialState, action) => {
           return { ...elem, style: { ...elem.style}};
         })
       }
-      return { ...state, doc: {elements: newElems}, selectedElement: selectedElement};
+      return { ...state, doc: { ...state.doc, elements: newElems}, selectedElement: selectedElement};
     case "CHANGE_COLOR":
       for (let element in newElems) {
         newElems[element] = newElems[element].map((elem, index) => {
