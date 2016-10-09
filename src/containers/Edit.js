@@ -6,7 +6,10 @@ class Edit extends Component {
     super(props);
     this.save = () => {
       this.saveStyle(this.props.elements);
-      this.props.showSave('visible')
+      this.props.showSave('visible');
+      setTimeout(() => {
+        this.props.showSave('hidden');
+      }, 3000);
     }
   }
 
