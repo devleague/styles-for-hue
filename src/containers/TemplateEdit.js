@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Template , Edit, CssView } from './';
 import { connect } from 'react-redux';
+import { EditLink } from '../components';
 
 import * as Actions from '../actions';
 
@@ -12,6 +13,9 @@ class TemplateEdit extends Component {
   constructor (props) {
     super(props)
     this.showElementStyles = this.showElementStyles.bind(this);
+    this.toggleView = this.toggleView.bind(this);
+  }
+  toggleView (view, index) { 
   }
   loadTheme () {
     return $.ajax({
@@ -111,7 +115,9 @@ class TemplateEdit extends Component {
           selectedElementStyle={this.props.elementsReducer.selectedElement.selectedStyle}
           showElementStyles={this.showElementStyles}
         />
-        <div>
+        <div
+          className="views"
+        >
           <Edit
             colorPalette={this.props.colors.colorPalette}
             fontList={this.props.fonts.items}

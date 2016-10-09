@@ -34,6 +34,7 @@ class Edit extends Component {
   render() {
     return (
       <div
+        onClick={this.props.handleClick}
         className="editColumn"
       >
         <h1> Edit </h1>
