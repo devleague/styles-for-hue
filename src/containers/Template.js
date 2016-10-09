@@ -48,6 +48,7 @@ class Template extends Component {
       return (
         <ListComp
           key={ul.elementId}
+          elementId={ul.elementId}
           style={ul.style}
           list={ul.subType}
           selectElement={this.props.selectElement}

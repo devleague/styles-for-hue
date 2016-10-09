@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 class ListItem extends Component {
   isActive () {
     if (this.props.elementId === this.props.selectedElementId) {
-      return "listItem selected"
+      return `listItem${this.props.elementId} selected`
     }
-    return "listItem";
+    return `listItem${this.props.elementId}`;
   }
 
   render () {
