@@ -10,7 +10,8 @@ class ColorMenu extends Component {
     return (
       <div>
         <h3>Pick Your Color:</h3>
-          <select id="colorMenu" onChange={() => this.props.changeColor(this.props.selectedElement, this.changeColor())}>
+          <select id="colorMenu" defaultValue="0" onChange={() => this.props.changeColor(this.props.selectedElement, this.changeColor())}>
+            <option value="0" disabled="disabled">SELECT COLOR</option>
             {this.props.colorPalette.map((color, index) => {
               return (
                 <option
