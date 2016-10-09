@@ -102,10 +102,10 @@ class TemplateEdit extends Component {
         className="template-edit-container"
       >
         <Template
-          divTags={this.props.elementsReducer.doc.divTags}
-          pTags={this.props.elementsReducer.doc.pTags}
-          imgTags={this.props.elementsReducer.doc.imgTags}
-          ulTags={this.props.elementsReducer.doc.ulTags}
+          divTags={this.props.elementsReducer.doc.elements.divTags}
+          pTags={this.props.elementsReducer.doc.elements.pTags}
+          imgTags={this.props.elementsReducer.doc.elements.imgTags}
+          ulTags={this.props.elementsReducer.doc.elements.ulTags}
           selectElement={this.props.selectElement}
           selectedElementId={this.props.elementsReducer.selectedElement.selectedElementId}
           selectedElementStyle={this.props.elementsReducer.selectedElement.selectedStyle}
@@ -119,9 +119,10 @@ class TemplateEdit extends Component {
             changeFont={this.props.changeFont}
             selectedElement={this.props.elementsReducer.selectedElement.selectedElementId}
             selectedElementStyle={this.props.elementsReducer.selectedElement.selectedStyle}
-            elements={this.props.elementsReducer.doc}
+            elements={this.props.elementsReducer.doc.elements}
             savePopup={this.props.savePopup}
             showSave={this.props.showSave}
+            newDoc={this.props.newDoc}
           />
           <CssView />
         </div>

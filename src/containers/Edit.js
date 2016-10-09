@@ -17,7 +17,8 @@ class Edit extends Component {
       contentType: 'application/json',
       data: JSON.stringify({doc: doc})
     })
-    .then(() => {
+    .then((data) => {
+      this.props.newDoc(data._id);
       this.props.showSave('visible');
     })
     .then(() => {
