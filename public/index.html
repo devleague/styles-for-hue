@@ -5,22 +5,8 @@
   <title>inHue</title>
   <link rel="stylesheet" type="text/css" href="/css/styles.css">
   <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-  <script type="text/javascript">
-        $.ajax({
-        url : "https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBifqNWX2_oCeWV1TZcsOZL-Sy1Q15eIIs",
-        success:function(data)
-        {
-          var fontArr = data.items
-          fontArr
-          .filter(function (elem, i) {
-            return elem.category === "sans-serif" && i < 10;
-          })
-          .map(function (elem, i) {
-            console.log(elem);
-          })
-        }
-    });
-  </script>
+
+  <!-- SOURCE FILES TO LOAD GOOGLE FONTS (TO BE REFACTORED LATER) -->
   <style type="text/css">
     @font-face { font-family: 'ABeeZee'; src: url("http://fonts.gstatic.com/s/abeezee/v9/mE5BOuZKGln_Ex0uYKpIaw.ttf") format('truetype'); }
     @font-face { font-family: 'Abel'; src: url("http://fonts.gstatic.com/s/abel/v6/RpUKfqNxoyNe_ka23bzQ2A.ttf") format('truetype'); }
