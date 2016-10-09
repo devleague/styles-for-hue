@@ -7,12 +7,25 @@ class Edit extends Component {
     this.save = () => {
       this.saveStyle(this.props.elements);
     }
+    this.update = () => {
+      this.editStyle(this.props.elements);
+    }
   }
 
   saveStyle(doc){
     return $.ajax({
       url: '/update',
       type: 'POST',
+      dataType: 'json',
+      contentType: 'application/json',
+      data: JSON.stringify({doc: doc})
+    });
+  }
+
+  editStyle(doc){
+    return $.ajax({
+      url: '/update/' + id,
+      type: 'PUT',
       dataType: 'json',
       contentType: 'application/json',
       data: JSON.stringify({doc: doc})
@@ -56,6 +69,18 @@ class Edit extends Component {
             Save Template
           </button>
         </div>
+
+        <div>
+          <button
+            className="update"
+            type="button"
+            onClick={this.update}
+          >
+            Update Template
+          </button>
+        </div>
+
+
         <div>
           <button
             className="export-as-css-file"

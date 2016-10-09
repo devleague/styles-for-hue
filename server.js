@@ -75,11 +75,19 @@ app.post('/update', (req, res) => {
   Style.create({
     doc: req.body.doc,
   })
-  .then(results => res.json(results));
+  .then(results => res.json(results))
+  .catch(err => res.json(err));
 });
 
+app.get('/update/:id', (req, res) => {
+  Style.where({_id: req.params.id}).findOne()
+  .then(results => res.json(results));
+  });
+
 app.put('/update/:id', (req, res) => {
-  Style.where({ _id: id }).update({ doc: req.body.doc});
+  console.log('req body: ', req.body);
+  Style.where({_id: req.params.id}).update({doc: req.body.doc})
+  .then(results => res.json(results));
 });
 
 app.get('*', function (req, res) {
