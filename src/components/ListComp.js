@@ -17,7 +17,7 @@ class ListComp extends Component {
     })
     return (
       <ul
-        className="listComp"
+        className={`listComp${this.props.elementId}`}
       >
         {listArray}
       </ul>
