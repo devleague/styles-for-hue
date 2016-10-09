@@ -1,5 +1,5 @@
 const initialState = {
-  elements: {
+  doc: {
     divTags: [],
     pTags: [],
     imgTags: [],
@@ -12,11 +12,11 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action) => {
-  let newElems = { ...state.elements};
+  let newElems = { ...state.doc};
   let selectedElement = { ...state.selectedElement};
   switch (action.type) {
     case "SET_ELEMENTS":
-      return { ...state, elements: action.data};
+      return { ...state, doc: action.data};
     case "SELECT_ELEMENT":
       for (let element in newElems) {
         newElems[element] = newElems[element].map((elem, index) => {
@@ -36,7 +36,7 @@ const reducer = (state = initialState, action) => {
           return { ...elem, style: { ...elem.style}};
         })
       }
-      return { ...state, elements: newElems, selectedElement: selectedElement};
+      return { ...state, doc: newElems, selectedElement: selectedElement};
     case "CHANGE_COLOR":
       for (let element in newElems) {
         newElems[element] = newElems[element].map((elem, index) => {
@@ -48,7 +48,7 @@ const reducer = (state = initialState, action) => {
           }
         });
       }
-      return { ...state, elements: newElems };
+      return { ...state, doc: newElems };
     case "CHANGE_FONT":
       for (let element in newElems) {
         newElems[element] = newElems[element].map((elem, index) => {
@@ -60,7 +60,7 @@ const reducer = (state = initialState, action) => {
           }
         });
       }
-      return { ...state, elements: newElems };
+      return { ...state, doc: newElems };
     default:
       return { ...state};
   }
