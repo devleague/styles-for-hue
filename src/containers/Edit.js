@@ -43,8 +43,9 @@ class Edit extends Component {
   }
 
   editSave(doc){
+    console.log('props in editSave', this.props.docId);
     return $.ajax({
-      url: '/update' + id,
+      url: '/new',
       type: 'PUT',
       dataType: 'json',
       contentType: 'application/json',
@@ -82,6 +83,7 @@ class Edit extends Component {
   };
 
   render() {
+    console.log(this.props.docId);
     return (
       <div
         onClick={this.props.handleClick}

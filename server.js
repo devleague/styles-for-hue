@@ -18,43 +18,46 @@ mongoose.connection.once('open', function(){
 const Schema = mongoose.Schema;
 const stylesSchema = new Schema({
   doc: {
-    divTags: [{
-      elementId: Number,
-      style: {
-        backgroundColor: String,
-        fontFamily: String,
-        display: String,
-        color: String
-      }
-    }],
-    pTags: [{
-      elementId: Number,
-      style: {
-        backgroundColor: String,
-        fontFamily: String,
-        display: String,
-        color: String
-      }
-    }],
-    imgTags: [{
-      elementId: Number,
-      src: String,
-      style: {
-        backgroundColor: String,
-        width: String,
-        height: String,
-        display: String,
-      }
-    }],
-    ulTags: [{
-      elementId: Number,
-      style: {
-        backgroundColor: String,
-        fontFamily: String,
-        display: String,
-        color: String
-      }
-    }]
+    _id: String,
+    elements: {
+      divTags: [{
+        elementId: Number,
+        style: {
+          backgroundColor: String,
+          fontFamily: String,
+          display: String,
+          color: String
+        }
+      }],
+      pTags: [{
+        elementId: Number,
+        style: {
+          backgroundColor: String,
+          fontFamily: String,
+          display: String,
+          color: String
+        }
+      }],
+      imgTags: [{
+        elementId: Number,
+        src: String,
+        style: {
+          backgroundColor: String,
+          width: String,
+          height: String,
+          display: String,
+        }
+      }],
+      ulTags: [{
+        elementId: Number,
+        style: {
+          backgroundColor: String,
+          fontFamily: String,
+          display: String,
+          color: String
+        }
+      }]
+    }
   }
 });
 // mongoose will lowercase and pluralize for mongodb //
@@ -85,9 +88,9 @@ app.get('/update/:id', (req, res) => {
   });
 
 app.put('/update/:id', (req, res) => {
-  console.log('req body: ', req.body);
-  Style.where({_id: req.params.id}).update({doc: req.body.doc})
-  .then(results => res.json(results));
+  console.log('req: ', req.body);
+  // Style.where({_id: req.params.id}).update({doc: req.body.doc})
+  // .then(results => res.json(results));
 });
 
 app.get('*', function (req, res) {
