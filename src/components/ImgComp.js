@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 class ImgComp extends Component {
   isActive () {
     if (this.props.elementId === this.props.selectedElementId) {
-      return "imgComp selected"
+      return `imgComp${this.props.elementId} selected`
     }
-    return "imgComp";
+    return `imgComp${this.props.elementId}`;
   }
   render () {
     return (
