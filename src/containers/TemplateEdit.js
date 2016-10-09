@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Template , Edit, CssView } from './';
 import { connect } from 'react-redux';
-import { EditLink } from '../components';
 
 import * as Actions from '../actions';
 
