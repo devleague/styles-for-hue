@@ -10,12 +10,11 @@ class Home extends Component {
           className="home-msg"
         >
           <h1>
-            Welcome to Colors 
+            Welcome to Colors
             <br/>
             for Hue!
           </h1>
         </div>
-        <img src="/images/computer.jpg"/>
         <div
           className="home-footer"
         >
