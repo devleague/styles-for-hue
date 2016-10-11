@@ -11,12 +11,12 @@ class CssView extends Component {
         <div
           className="view-css"
         >
-          VIEWING THE CSS HERE...
+          <p>VIEWING THE CSS HERE...</p>
         </div>
         <div 
           className="footer-cssView"
         >
-         Stuck on the bottom
+         <p>Stuck on the bottom</p>
         </div>
       </div>
     )

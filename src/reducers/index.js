@@ -5,13 +5,15 @@ import { default as colorReducer } from './colors';
 import { default as fontReducer } from './fonts';
 import { default as savePopupReducer } from './savePopup';
 import { default as sideBarReducer } from './sideBar';
+import { default as showMenuReducer } from './menuShow';
 
 const rootReducer = combineReducers({
   elementsReducer: elementsReducer,
   colors: colorReducer,
   fonts: fontReducer,
   savePopup: savePopupReducer,
-  sideBar: sideBarReducer
+  sideBar: sideBarReducer,
+  menuShow: showMenuReducer
 })
 
 const finalCreateStore = compose(

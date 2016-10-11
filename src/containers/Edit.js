@@ -18,6 +18,13 @@ class Edit extends Component {
     this.save = () => {
       this.saveStyle(this.props.elements);
     }
+    this.state = {
+      showDiv: false
+    }
+  }
+  onClick(e){
+    e.preventDefault();
+    this.setState({showDiv: this.state.showDiv ? false : true})
   }
 
   saveStyle(doc){
@@ -75,27 +82,64 @@ class Edit extends Component {
         className="editColumn"
       >
         <h1> Edit </h1>
-        <button
-          onClick={ ()=> {
-            if (this.props.sideBar.showCss === false) {
-              this.props.showCss(true);
-            } else {
-              this.props.showCss(false);
+          <button
+            className="view-css"
+            onClick={ ()=> {
+              if (this.props.sideBar.showCss === false) {
+                this.props.showCss(true);
+              } else {
+                this.props.showCss(false);
+              }
             }
-          }
-        }>
-          View CSS
-        </button>
-        <FontMenu
-          fontList={this.props.fontList}
-          selectedElement={this.props.selectedElement}
-          changeFont={this.props.changeFont}
-        />
-        <ColorMenu
-          colorPalette={this.props.colorPalette}
-          selectedElement={this.props.selectedElement}
-          changeColor={this.props.changeColor}
-        />
+          }>
+            &lt;CSS&gt;
+          </button>
+        <div
+          className="font-menu">
+          <span>
+            <button
+              className="font-button"
+              onClick={
+                this.onClick.bind(this)
+            }>
+              <i className="fa fa-caret-down"></i>
+            </button>
+            <h3>Font</h3>
+          </span>
+          <div>
+            <FontMenu
+              fontList={this.props.fontList}
+              selectedElement={this.props.selectedElement}
+              changeFont={this.props.changeFont}
+            />
+          </div>
+        </div>
+        <div
+          className="div-menu"
+        >
+          <span>
+            <button
+              className="div-button"
+              onClick={ () => {
+                if (this.props.menuShow.showMenu === false) {
+                  this.props.showMenu(true);
+                } else {
+                  this.props.showMenu(false);
+                }
+              }
+            }>
+              <i className="fa fa-caret-down"></i>
+            </button>
+            <h3>Div</h3>
+          </span>
+          <div>
+            <ColorMenu
+              colorPalette={this.props.colorPalette}
+              selectedElement={this.props.selectedElement}
+              changeColor={this.props.changeColor}
+            />
+          </div>
+        </div>
         <div>
           <button
             className="save"
