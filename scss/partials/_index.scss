@@ -1,14 +1,13 @@
 @import 'https://fonts.googleapis.com/css?family=Galada|Lato';
 
-$greyFont: #4A4A4A;
-$darkGrey: #535353;
-$whiteGrey: #E9E9E9;
+$dark-grey: #535353;
+$light-grey: #E6E8E6;
 
 .home-page{
   font-family: 'Galada', cursive;
   font-size: 3.4rem;
   text-align: center;
-  color: $darkGrey;
+  color: $dark-grey;
 }
 
 .home-msg{
@@ -27,12 +26,12 @@ $whiteGrey: #E9E9E9;
 }
 
 .home-footer{
-  background-color: $darkGrey;
+  background-color: $dark-grey;
   height: 50px;
   line-height: 50px;
   h3{
-  font-family: 'Lato', sans-serif;
-  font-size: .8rem;
-  color: $whiteGrey;
+    font-family: 'Lato', sans-serif;
+    font-size: .8rem;
+    color: $light-grey;
   }
 }

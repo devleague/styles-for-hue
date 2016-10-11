@@ -1,9 +1,8 @@
 @import 'https://fonts.googleapis.com/css?family=Lato';
 
-$darkGrey: #535353;
-$darkTeal: #609CAB;
-$lightGrey: #E6E8E6;
-$mintGreen: #48DDB9;
+$dark-grey: #535353;
+$light-grey: #E6E8E6;
+$mint: #48DDB9;
 
 .nav{
   position: fixed;
@@ -12,12 +11,12 @@ $mintGreen: #48DDB9;
   z-index: 2;
   width: 100%;
   height: 50px;
-  background-color: $darkGrey;
+  background-color: $dark-grey;
   ul{
     list-style-type: none;
     margin: 0;
     padding: 0;
-    background-color: $darkGrey;
+    background-color: $dark-grey;
     a {
       display: block;
       float: left;
@@ -27,10 +26,10 @@ $mintGreen: #48DDB9;
       padding: 0 15px;
       text-decoration: none;
       font-size: 1.2rem;
-      color: $lightGrey;
+      color: $light-grey;
       &.active {
-        background-color: $mintGreen;
-        color: $darkGrey;
+        background-color: $mint;
+        color: $dark-grey;
       }
     }
   }
