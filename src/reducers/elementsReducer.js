@@ -1,12 +1,10 @@
 const initialState = {
   doc: {
     _id: null,
-    elements: {
-      divTags: [],
-      pTags: [],
-      imgTags: [],
-      ulTags: []
-    }
+    divTags: [],
+    pTags: [],
+    imgTags: [],
+    ulTags: []
   },
   selectedElement: {
     selectedElementId: 0,
@@ -15,31 +13,32 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action) => {
-  let newElems = { ...state.doc.elements};
+  let newElems = { ...state.doc};
   let selectedElement = { ...state.selectedElement};
   switch (action.type) {
     case "SET_ELEMENTS":
-      return { ...state, doc: {elements: action.data}};
+    console.log(action.data);
+      return {...state, doc: action.data.doc};
     case "SELECT_ELEMENT":
-      for (let element in newElems) {
-        newElems[element] = newElems[element].map((elem, index) => {
-          if (elem.elementId === action.data.elementId) {
-            selectedElement = { selectedElementId: elem.elementId, selectedStyle: elem.style };
-            return { ...elem, style: { ...elem.style} };
-          }
-          if (elem.subType) {
-            elem.subType = elem.subType.map((child, index) => {
-              if (child.elementId === action.data.elementId) {
-                selectedElement = { selectedElementId: child.elementId, selectedStyle: child.style };
-                return { ...child, style: { ...child.style} };
-              }
-              return { ...child, style: { ...child.style}}
-            })
-          }
-          return { ...elem, style: { ...elem.style}};
-        })
-      }
-      return { ...state, doc: { ...state.doc, elements: newElems}, selectedElement: selectedElement};
+        return runThroughElems(state, newElems, selectedElement, action.data.elementId);
+        // newElems[element] = newElems[element].map((elem, index) => {
+        //   if (elem.elementId === action.data.elementId) {
+        //     selectedElement = { selectedElementId: elem.elementId, selectedStyle: elem.style };
+        //     return { ...elem, style: { ...elem.style} };
+        //   }
+        //   if (elem.subType) {
+        //     elem.subType = elem.subType.map((child, index) => {
+        //       if (child.elementId === action.data.elementId) {
+        //         selectedElement = { selectedElementId: child.elementId, selectedStyle: child.style };
+        //         return { ...child, style: { ...child.style} };
+        //       }
+        //       return { ...child, style: { ...child.style}}
+        //     })
+        //   }
+        //   return { ...elem, style: { ...elem.style}};
+        // })
+      // return { ...state, doc: { ...state.doc, elements: newElems}, selectedElement: selectedElement};
+
     case "CHANGE_COLOR":
       for (let element in newElems) {
         newElems[element] = newElems[element].map((elem, index) => {
@@ -69,6 +68,40 @@ const reducer = (state = initialState, action) => {
     default:
       return { ...state};
   }
+}
+
+function runThroughElems (state, elements, selectedElement, id) {
+  if (!Array.isArray(elements)) {
+    for (let element in elements) {
+      elements[element] = elements[element].map((elem, index) => {
+        if (elem.elementId === id) {
+          selectedElement = { selectedElementId: elem.elementId, selectedStyle: elem.style };
+          return { ...elem};
+        }
+        if (elem.subType) {
+          runThroughElems(state, elem.subType, selectedElement, id);
+        }
+        return { ...elem};
+      })
+    }
+    return { ...state, selectedElement: selectedElement };
+  } else if (Array.isArray(elements)) {
+    elements = elements.map((elem, index) => {
+      if (elem.elementId === id) {
+        selectedElement = { selectedElementId: elem.elementId, selectedStyle: elem.style };
+        return { ...elem};
+      }
+      if (elem.subType) {
+        console.log('Am I triggering?!');
+        runThroughElems(state, elem.subType, selectedElement, id);
+      }
+      return { ...elem};
+    })
+    console.log(elements);
+    return { ...state, selectedElement: selectedElement };
+  }
+  console.log('DO SOMETHNG!!', {...state, selectedElement: selectedElement});
+  // return { ...state, selectedElement: selectedElement };
 }
 
 export default reducer;

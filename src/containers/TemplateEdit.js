@@ -64,27 +64,28 @@ class TemplateEdit extends Component {
       })
     this.loadTheme()
       .then((elementArray) => {
-        let divTags = elementArray.filter((elem, index) => {
-          return elem.type === 'div';
-        });
-        let pTags = elementArray.filter((elem, index) => {
-          return elem.type === 'p';
-        });
-        let imgTags = elementArray.filter((elem, index) => {
-          return elem.type === 'img';
-        });
-        let ulTags = elementArray.filter((elem, index) => {
-          return elem.type === 'ul';
-        });
-        return {
-          divTags: divTags,
-          pTags: pTags,
-          imgTags: imgTags,
-          ulTags: ulTags
-        };
+        return elementArray[0];
+      //   let divTags = elementArray.filter((elem, index) => {
+      //     return elem.type === 'div';
+      //   });
+      //   let pTags = elementArray.filter((elem, index) => {
+      //     return elem.type === 'p';
+      //   });
+      //   let imgTags = elementArray.filter((elem, index) => {
+      //     return elem.type === 'img';
+      //   });
+      //   let ulTags = elementArray.filter((elem, index) => {
+      //     return elem.type === 'ul';
+      //   });
+      //   return {
+      //     divTags: divTags,
+      //     pTags: pTags,
+      //     imgTags: imgTags,
+      //     ulTags: ulTags
+      //   };
       })
-      .then((elementObj) => {
-        this.props.setElements(elementObj);
+      .then((elements) => {
+        this.props.setElements(elements);
       })
   }
 
@@ -101,15 +102,16 @@ class TemplateEdit extends Component {
     if (this.props.sideBar.showCss === true) {
       cssComponent = <CssView />;
     }
+    console.log(this.props);
     return(
       <div
         className="template-edit-container"
       >
         <Template
-          divTags={this.props.elementsReducer.doc.elements.divTags}
-          pTags={this.props.elementsReducer.doc.elements.pTags}
-          imgTags={this.props.elementsReducer.doc.elements.imgTags}
-          ulTags={this.props.elementsReducer.doc.elements.ulTags}
+          divTags={this.props.elementsReducer.doc.divTags}
+          pTags={this.props.elementsReducer.doc.pTags}
+          imgTags={this.props.elementsReducer.doc.imgTags}
+          ulTags={this.props.elementsReducer.doc.ulTags}
           selectElement={this.props.selectElement}
           selectedElementId={this.props.elementsReducer.selectedElement.selectedElementId}
           selectedElementStyle={this.props.elementsReducer.selectedElement.selectedStyle}
