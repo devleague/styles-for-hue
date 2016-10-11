@@ -18,6 +18,9 @@ class Edit extends Component {
     this.save = () => {
       this.saveStyle(this.props.elements);
     }
+    this.update = () => {
+      this.editSave(this.props.elements);
+    }
     this.state = {
       showDiv: false
     }
@@ -43,6 +46,16 @@ class Edit extends Component {
       setTimeout(() => {
         this.props.showSave('hidden');
       }, 3000);
+    })
+  }
+
+  editSave(){
+    return $.ajax({
+      url: '/update/new',
+      type: 'POST',
+      dataType: 'json',
+      contentType: 'application/json',
+      data: JSON.stringify({doc: this.props.doc})
     })
   }
 
@@ -152,6 +165,17 @@ class Edit extends Component {
             Saved!
           </div>
         </div>
+
+        <div>
+          <button
+            className="update"
+            type="submit"
+            onClick={this.update}
+          >
+            Update Template
+          </button>
+        </div>
+
         <form>
           <div>
             <label>File name</label>
