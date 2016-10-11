@@ -64,6 +64,10 @@ body{
 .template-one{
   flex: auto;
 }
+.view-css{
+  width: 20px;
+  height: 40px;
+}
 
 .editColumn{
   width: 300px;
@@ -95,6 +99,25 @@ body{
   }
   .save{
     margin: 8px 15px 8px 11px;
+  }
+  .font-button, .div-button{
+      background-color: #f0f0f0;
+      width: 13px;
+      height: 30px;
+      color: $greyFont;
+      outline: none;
+      box-shadow: none;
+      &:hover{
+        background-color: #f0f0f0;
+      }
+      &:active{
+        background-color: #f0f0f0;
+      }
+  }
+  .view-css{
+    width: 80px;
+    border: none;
+    box-shadow: none;
   }
   button{
     background-color: $teal;
