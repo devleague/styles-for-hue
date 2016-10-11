@@ -18,13 +18,6 @@ class Edit extends Component {
     this.save = () => {
       this.saveStyle(this.props.elements);
     }
-    this.state = {
-      showDiv: false
-    }
-  }
-  onClick(e){
-    e.preventDefault();
-    this.setState({showDiv: this.state.showDiv ? false : true})
   }
 
   saveStyle(doc){
@@ -76,9 +69,13 @@ class Edit extends Component {
   };
 
   render() {
+    let fontComponent = null;
+    if (this.props.menuShow.showMenu === true) {
+      console.log(this.props.menuShow);
+      fontComponent = <FontMenu />;
+    };
     return (
       <div
-        onClick={this.props.handleClick}
         className="editColumn"
       >
         <h1> Edit </h1>
@@ -99,27 +96,6 @@ class Edit extends Component {
           <span>
             <button
               className="font-button"
-              onClick={
-                this.onClick.bind(this)
-            }>
-              <i className="fa fa-caret-down"></i>
-            </button>
-            <h3>Font</h3>
-          </span>
-          <div>
-            <FontMenu
-              fontList={this.props.fontList}
-              selectedElement={this.props.selectedElement}
-              changeFont={this.props.changeFont}
-            />
-          </div>
-        </div>
-        <div
-          className="div-menu"
-        >
-          <span>
-            <button
-              className="div-button"
               onClick={ () => {
                 if (this.props.menuShow.showMenu === false) {
                   this.props.showMenu(true);
@@ -128,6 +104,23 @@ class Edit extends Component {
                 }
               }
             }>
+              <i className="fa fa-caret-down"></i>
+            </button>
+            <h3>Font</h3>
+          </span>
+          <FontMenu
+            fontList={this.props.fontList}
+            selectedElement={this.props.selectedElement}
+            changeFont={this.props.changeFont}
+          />
+        </div>
+        <div
+          className="div-menu"
+        >
+          <span>
+            <button
+              className="div-button"
+            >
               <i className="fa fa-caret-down"></i>
             </button>
             <h3>Div</h3>
