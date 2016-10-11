@@ -42,14 +42,14 @@ class Edit extends Component {
     })
   }
 
-  editSave(doc){
-    console.log('props in editSave', this.props.docId);
+  editSave(){
+    console.log('props in editSave', this.props.doc);
     return $.ajax({
-      url: '/new',
-      type: 'PUT',
+      url: '/update/new',
+      type: 'POST',
       dataType: 'json',
       contentType: 'application/json',
-      data: JSON.stringify({doc: doc})
+      data: JSON.stringify({doc: this.props.doc})
     })
   }
 
@@ -83,7 +83,7 @@ class Edit extends Component {
   };
 
   render() {
-    console.log(this.props.docId);
+    console.log('props docId: ', this.props.docId);
     return (
       <div
         onClick={this.props.handleClick}

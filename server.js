@@ -1,3 +1,4 @@
+'use strict'
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
@@ -18,46 +19,39 @@ mongoose.connection.once('open', function(){
 const Schema = mongoose.Schema;
 const stylesSchema = new Schema({
   doc: {
-    _id: String,
-    elements: {
-      divTags: [{
-        elementId: Number,
-        style: {
-          backgroundColor: String,
-          fontFamily: String,
-          display: String,
-          color: String
-        }
-      }],
-      pTags: [{
-        elementId: Number,
-        style: {
-          backgroundColor: String,
-          fontFamily: String,
-          display: String,
-          color: String
-        }
-      }],
-      imgTags: [{
-        elementId: Number,
-        src: String,
-        style: {
-          backgroundColor: String,
-          width: String,
-          height: String,
-          display: String,
-        }
-      }],
-      ulTags: [{
-        elementId: Number,
-        style: {
-          backgroundColor: String,
-          fontFamily: String,
-          display: String,
-          color: String
-        }
-      }]
-    }
+    _id: Object,
+    divTags: [{
+      elementId: Number,
+      style: {
+        backgroundColor: String,
+        fontFamily: String,
+        display: String
+      }
+    }],
+    pTags: [{
+      elementId: Number,
+      style: {
+        backgroundColor: String,
+        fontFamily: String,
+        display: String
+      }
+    }],
+    imgTags: [{
+      elementId: Number,
+      style: {
+        backgroundColor: String,
+        fontFamily: String,
+        display: String
+      }
+    }],
+    ulTags: [{
+      elementId: Number,
+      style: {
+        backgroundColor: String,
+        fontFamily: String,
+        display: String
+      }
+    }],
   }
 });
 // mongoose will lowercase and pluralize for mongodb //
@@ -82,15 +76,15 @@ app.post('/update', (req, res) => {
   .catch(err => res.json(err));
 });
 
-app.get('/update/:id', (req, res) => {
-  Style.where({_id: req.params.id}).findOne()
-  .then(results => res.json(results));
-  });
+// app.get('/update/new', (req, res) => {
+//   Style.where({_id: req.params.id}).findOne()
+//   .then(results => res.json(results));
+//   });
 
-app.put('/update/:id', (req, res) => {
-  console.log('req: ', req.body);
-  // Style.where({_id: req.params.id}).update({doc: req.body.doc})
-  // .then(results => res.json(results));
+app.post('/update/new', (req, res) => {
+  let id = req.body.doc._id;
+  Style.findOneAndUpdate(id, {doc: req.body.doc}, () => {
+  });
 });
 
 app.get('*', function (req, res) {
