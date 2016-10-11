@@ -18,6 +18,13 @@ class Edit extends Component {
     this.save = () => {
       this.saveStyle(this.props.elements);
     }
+    this.state = {
+      showDiv: false
+    }
+  }
+  onClick(e){
+    e.preventDefault();
+    this.setState({showDiv: this.state.showDiv ? false : true})
   }
 
   saveStyle(doc){
@@ -92,13 +99,8 @@ class Edit extends Component {
           <span>
             <button
               className="font-button"
-              onClick={ () => {
-                if (this.props.menuShow.showMenu === false) {
-                  this.props.showMenu(true);
-                } else {
-                  this.props.showMenu(false);
-                }
-              }
+              onClick={
+                this.onClick.bind(this)
             }>
               <i className="fa fa-caret-down"></i>
             </button>
