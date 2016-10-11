@@ -9,9 +9,6 @@ $whiteGrey: #E9E9E9;
   font-size: 3.4rem;
   text-align: center;
   color: $darkGrey;
-  // img{
-  //   width: 100%;
-  // }
 }
 
 .home-msg{
@@ -26,10 +23,6 @@ $whiteGrey: #E9E9E9;
   align-items: center;
   h1{
     flex: 0 0 100%;
-    // position: absolute;
-    // left: 0;
-    // top: 60px;
-    // right: 0;
   }
 }
 
@@ -41,6 +34,5 @@ $whiteGrey: #E9E9E9;
   font-family: 'Lato', sans-serif;
   font-size: .8rem;
   color: $whiteGrey;
-  // padding-top: 10px;
   }
 }
