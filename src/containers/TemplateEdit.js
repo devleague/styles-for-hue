@@ -101,10 +101,6 @@ class TemplateEdit extends Component {
     if (this.props.sideBar.showCss === true) {
       cssComponent = <CssView />;
     };
-    let menuComponent = null;
-    if(this.props.menuShow.showMenu === true) {
-      menuComponent = <Edit />;
-    }
     return(
       <div
         className="template-edit-container"
