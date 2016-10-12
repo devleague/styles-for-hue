@@ -25,7 +25,8 @@ $mint: #48DDB9;
       text-align: center;
       padding: 0 15px;
       text-decoration: none;
-      font-size: 1.2rem;
+      text-transform: uppercase;
+      font-size: 0.9rem;
       color: $light-grey;
       &.active {
         background-color: $mint;
