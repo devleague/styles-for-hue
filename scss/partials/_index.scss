@@ -1,35 +1,53 @@
-@import 'https://fonts.googleapis.com/css?family=Galada|Lato';
+@import 'https://fonts.googleapis.com/css?family=Lato:400,700|Yeseva+One';
 
-$greyFont: #4A4A4A;
-$darkGrey: #535353;
-$whiteGrey: #E9E9E9;
+$dark-grey: #535353;
+$light-grey: #E6E8E6;
+$white: #FFFFFF;
 
-.home-page{
-  font-family: 'Galada', cursive;
-  font-size: 3.4rem;
+.home-container{
   text-align: center;
-  color: $greyFont;
-  img{
-    width: 100%;
-  }
+  color: $dark-grey;
 }
 
-.home-msg{
+.home-background{
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.70)),
+    url('/images/computer.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 600px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-title{
+  border: 15px $white double;
+  padding: 25px;
+  color: $white;
+  flex: 0 0 50%;
   h1{
-    position: absolute;
-    left: 0;
-    top: 60px;
-    right: 0;
+    font-family: 'Yeseva One', cursive;
+    font-size: 3rem;
+  }
+  h5{
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    padding-bottom: 10px;
+    text-transform: uppercase;
   }
 }
 
 .home-footer{
-  background-color: $darkGrey;
-  height: 40px;
-  h3{
-  font-family: 'Lato', sans-serif;
-  font-size: .8rem;
-  color: $whiteGrey;
-  padding-top: 10px;
+  background-color: $dark-grey;
+  height: 50px;
+  line-height: 50px;
+  p{
+    font-family: 'Lato', sans-serif;
+    font-size: .8rem;
+    color: $light-grey;
   }
 }
