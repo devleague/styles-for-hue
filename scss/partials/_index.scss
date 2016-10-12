@@ -1,18 +1,18 @@
-@import 'https://fonts.googleapis.com/css?family=Galada|Lato';
+@import 'https://fonts.googleapis.com/css?family=Lato:400,700|Yeseva+One';
 
 $dark-grey: #535353;
 $light-grey: #E6E8E6;
+$white: #FFFFFF;
 
 .home-container{
   font-family: 'Galada', cursive;
-  font-size: 3.4rem;
   text-align: center;
   color: $dark-grey;
 }
 
 .home-background{
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    linear-gradient(rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.70)),
     url('/images/computer.jpg');
   background-repeat: no-repeat;
   background-position: center;
@@ -25,11 +25,20 @@ $light-grey: #E6E8E6;
 }
 
 .home-title{
-  border: 15px $light-grey double;
+  border: 15px $white double;
   padding: 25px;
-  color: $light-grey;
+  color: $white;
+  flex: 0 0 50%;
   h1{
-    flex: 0 0 100%;
+    font-family: 'Yeseva One', cursive;
+    font-size: 3rem;
+  }
+  h5{
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    padding-bottom: 10px;
+    text-transform: uppercase;
   }
 }
 
@@ -37,7 +46,7 @@ $light-grey: #E6E8E6;
   background-color: $dark-grey;
   height: 50px;
   line-height: 50px;
-  h3{
+  p{
     font-family: 'Lato', sans-serif;
     font-size: .8rem;
     color: $light-grey;
