@@ -3,15 +3,17 @@
 $dark-grey: #535353;
 $light-grey: #E6E8E6;
 
-.home-page{
+.home-container{
   font-family: 'Galada', cursive;
   font-size: 3.4rem;
   text-align: center;
   color: $dark-grey;
 }
 
-.home-msg{
-  background-image: url('/images/computer.jpg');
+.home-background{
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url('/images/computer.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -20,6 +22,12 @@ $light-grey: #E6E8E6;
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
+}
+
+.home-title{
+  border: 15px $light-grey double;
+  padding: 25px;
+  color: $light-grey;
   h1{
     flex: 0 0 100%;
   }
