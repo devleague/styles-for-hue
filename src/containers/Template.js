@@ -66,7 +66,8 @@ class Template extends Component {
         {pTags}
         {ulTags}
         <Footer />
-        <div
+        <hr />
+        <div className="current-elem-styles"
         >
           {this.props.showElementStyles(this.props.selectedElementStyle)}
         </div>
