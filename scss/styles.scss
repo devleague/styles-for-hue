@@ -10,6 +10,8 @@ $small: "(min-width: 100px) and (max-width: 600px)";
 $medium: "(min-width: 601px) and (max-width: 900px)";
 $large: "(min-width: 900px)";
 
+$black: #000000;
+$white: #FFFFFF;
 $grey-blue: #373F47;
 $teal: #30B3AA;
 $dark-teal: #2C9F97;
@@ -35,27 +37,50 @@ $mint: #48DDB9;
   }
 }
 
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
 body{
   font-family: 'Lato', sans-serif;
 }
 
-*{ margin: 0; padding: 0; box-sizing: border-box; }
+///////////////////////////////////////
+///// TEMPLATE & EDITOR CONTAINER /////
+///////////////////////////////////////
+.template-edit-container{
+  margin-top: 50px;
+  border-bottom: 1px $black solid;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+// ** Template (Left Side) ** //
+.template-one{
+  margin: 0 auto;
+  padding: 25px;
+}
+
+hr{
+  margin-top: 15px;
+  border-top: 1px solid #8c8b8b;
+}
+
+.current-elem-styles{
+  margin-top: 15px;
+  padding: 5px;
+  height: 50px;
+  border-radius: 3px;
+  border: $dark-teal 1px solid;
+  background-color: lighten($dark-teal, 50%);
+  -webkit-box-shadow: inset 0px 0px 25px -5px rgba(0,0,0,0.25);
+  -moz-box-shadow: inset 0px 0px 25px -5px rgba(0,0,0,0.25);
+  box-shadow: inset 0px 0px 25px -5px rgba(0,0,0,0.25);
+}
 
 .selected {
   outline: 5px solid blue;
 }
 
-///// Edit /////
-
-.template-edit-container{
-  padding-top: 47px;
-  display: flex;
-  flex-flow: row no-wrap;
-}
-
-.template-one{
-  flex: auto;
-}
+// ** Editor (Right Side) ** //
 .view-css{
   width: 20px;
   height: 40px;
