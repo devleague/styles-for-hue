@@ -12,19 +12,16 @@ class Home extends Component {
           <div
             className="home-title"
           >
-            <h1>
-              Welcome to Colors
-              <br/>
-              for Hue!
-            </h1>
+            <h5>Welcome To</h5>
+            <h1>Styles For Hue</h1>
           </div>
         </div>
         <div
           className="home-footer"
         >
-          <h3>
-            &copy; Copyright 2016 Hue
-          </h3>
+          <p>
+            &copy; 2016 Styles For Hue
+          </p>
         </div>
       </div>
     )
