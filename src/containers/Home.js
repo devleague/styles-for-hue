@@ -4,16 +4,20 @@ class Home extends Component {
   render() {
     return (
       <div
-        className="home-page"
+        className="home-container"
       >
         <div
-          className="home-msg"
+          className="home-background"
         >
-          <h1>
-            Welcome to Colors
-            <br/>
-            for Hue!
-          </h1>
+          <div
+            className="home-title"
+          >
+            <h1>
+              Welcome to Colors
+              <br/>
+              for Hue!
+            </h1>
+          </div>
         </div>
         <div
           className="home-footer"
