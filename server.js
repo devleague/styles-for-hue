@@ -14,7 +14,7 @@ mongoose.connection.on('error', console.error.bind(console, 'connection error:')
 mongoose.connection.once('open', function(){
   console.log("Connected to MongoDB");
 });
- 
+
 // CREATE SCHEMA & MODEL FOR 'styles' COLLECTION //
 const Schema = mongoose.Schema;
 const stylesSchema = new Schema({
@@ -51,9 +51,10 @@ const stylesSchema = new Schema({
         fontFamily: String,
         display: String
       }
-    }],
+    }]
   }
 });
+
 // mongoose will lowercase and pluralize for mongodb //
 const Style = mongoose.model('Style', stylesSchema);
 
@@ -76,16 +77,26 @@ app.post('/update', (req, res) => {
   .catch(err => res.json(err));
 });
 
-// app.get('/update/new', (req, res) => {
-//   Style.where({_id: req.params.id}).findOne()
-//   .then(results => res.json(results));
-//   });
+app.get('/update/new/:id', (req, res) => {
+  console.log('req: ', req.params.id);
+  let id = mongoose.Types.ObjectId;
+  Style.findOne({_id: req.params.id})
+    // .populate('divTags')
+    // .populate('pTags')
+    // .populate('imgTags')
+    // .populate('ulTags')
+    .exec(function(error, results){
+      console.log(JSON.stringify(results, null, "\t"))
+      res.json(results);
+    })
+});
 
-app.post('/update/new', (req, res) => {
+app.post('/update/new/:id', (req, res) => {
   let id = req.body.doc._id;
   Style.findOneAndUpdate(id, {doc: req.body.doc}, () => {
   });
 });
+
 
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, 'public', 'index.html'))
