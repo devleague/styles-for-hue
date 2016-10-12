@@ -32,7 +32,7 @@ class Edit extends Component {
 
   saveStyle(doc){
     return $.ajax({
-      url: '/update',
+      url: '/api/styles',
       type: 'POST',
       dataType: 'json',
       contentType: 'application/json',
@@ -50,9 +50,10 @@ class Edit extends Component {
   }
 
   editSave(){
+    console.log('props in editSave: ', this.props.doc);
     return $.ajax({
-      url: '/update/new',
-      type: 'POST',
+      url: '/update/new/' + this.props.docId,
+      type: 'PUT',
       dataType: 'json',
       contentType: 'application/json',
       data: JSON.stringify({doc: this.props.doc})

@@ -19,43 +19,51 @@ mongoose.connection.once('open', function(){
 const Schema = mongoose.Schema;
 const stylesSchema = new Schema({
   doc: {
-    _id: Object,
+    _id: String,
     divTags: [{
+      _id: String,
       elementId: Number,
       style: {
         backgroundColor: String,
         fontFamily: String,
         display: String
-      }
+      },
+      subType: Object
     }],
     pTags: [{
+      _id: String,
       elementId: Number,
       style: {
         backgroundColor: String,
         fontFamily: String,
         display: String
-      }
+      },
+      subType: Object
     }],
     imgTags: [{
+      _id: String,
       elementId: Number,
       style: {
         backgroundColor: String,
         fontFamily: String,
         display: String
-      }
+      },
+      subType: Object
     }],
     ulTags: [{
+      _id: String,
       elementId: Number,
       style: {
         backgroundColor: String,
         fontFamily: String,
         display: String
-      }
+      },
+      subType: Object
     }],
   }
 });
 // mongoose will lowercase and pluralize for mongodb //
-const Style = mongoose.model('Style', stylesSchema);
+let Style = mongoose.model('Style', stylesSchema);
 
 app.set('port', (process.env.PORT || 3000))
 
@@ -68,7 +76,7 @@ app.get('/api/styles', (req, res) => {
   .then(results => res.json(results));
 });
 
-app.post('/update', (req, res) => {
+app.post('/api/styles', (req, res) => {
   Style.create({
     doc: req.body.doc,
   })
@@ -76,12 +84,7 @@ app.post('/update', (req, res) => {
   .catch(err => res.json(err));
 });
 
-// app.get('/update/new', (req, res) => {
-//   Style.where({_id: req.params.id}).findOne()
-//   .then(results => res.json(results));
-//   });
-
-app.post('/update/new', (req, res) => {
+app.put('/update/new/:id', (req, res) => {
   let id = req.body.doc._id;
   Style.findOneAndUpdate(id, {doc: req.body.doc}, () => {
   });
