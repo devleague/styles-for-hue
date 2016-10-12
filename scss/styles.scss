@@ -10,14 +10,12 @@ $small: "(min-width: 100px) and (max-width: 600px)";
 $medium: "(min-width: 601px) and (max-width: 900px)";
 $large: "(min-width: 900px)";
 
-$darkBlue: #373F47;
-$lightGrey: #E6E8E6;
-$darkGrey: #535353;
+$grey-blue: #373F47;
 $teal: #30B3AA;
-$darkerTeal: #2C9F97;
-$whiteGrey: #E9E9E9;
-$greyFont: #4A4A4A;
-$mintGreen: #48DDB9;
+$dark-teal: #2C9F97;
+$dark-grey: #535353;
+$light-grey: #E6E8E6;
+$mint: #48DDB9;
 
 @mixin small{
   @media #{$small} {
@@ -66,7 +64,7 @@ body{
 .editColumn{
   width: 300px;
   height: 100%;
-  color: $darkBlue;
+  color: $grey-blue;
   box-shadow: -10px 0px 10px 1px rgba(192, 192, 192, .2);
   background-color: #f0f0f0;
   right: 0;
@@ -75,7 +73,7 @@ body{
     font-size: 2rem;
     text-align: center;
     background-color: $teal;
-    color: $whiteGrey;
+    color: $light-grey;
     padding-top: 10px;
   }
   h3{
@@ -98,7 +96,7 @@ body{
       background-color: #f0f0f0;
       width: 13px;
       height: 30px;
-      color: $greyFont;
+      color: $dark-grey;
       outline: none;
       box-shadow: none;
       &:hover{
@@ -116,7 +114,7 @@ body{
   button{
     background-color: $teal;
     border: none;
-    color: $whiteGrey;
+    color: $light-grey;
     font-size: 0.9rem;
     padding: 9px 9px;
     text-align: center;
@@ -128,11 +126,11 @@ body{
     &:hover{
       outline: none;
       transition: all 0.5s ease;
-      background-color: $darkerTeal;
+      background-color: $dark-teal;
     }
     &:active{
       outline: none;
-      background-color: $darkerTeal;
+      background-color: $dark-teal;
       transform: translateY(4px);
     }
   }
