@@ -84,6 +84,13 @@ app.post('/api/styles', (req, res) => {
   .catch(err => res.json(err));
 });
 
+app.get('/update/new/:id', (req, res) => {
+  let id = mongoose.Types.ObjectId;
+  Style.findOne({_id: req.params.id})
+  .exec((error, results) => {res.json(results);
+  });
+});
+
 app.put('/update/new/:id', (req, res) => {
   let id = req.body.doc._id;
   Style.findOneAndUpdate(id, {doc: req.body.doc}, () => {
