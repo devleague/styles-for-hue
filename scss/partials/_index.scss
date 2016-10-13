@@ -18,7 +18,7 @@ $white: #FFFFFF;
   background-size: cover;
   height: 600px;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
 }
