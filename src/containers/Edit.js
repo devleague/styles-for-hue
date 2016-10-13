@@ -50,9 +50,8 @@ class Edit extends Component {
   }
 
   editSave(){
-    console.log('props in editSave: ', this.props.doc);
     return $.ajax({
-      url: '/update/new/' + this.props.docId,
+      url: '/doc/' + this.props.docId,
       type: 'PUT',
       dataType: 'json',
       contentType: 'application/json',
@@ -201,7 +200,6 @@ class Edit extends Component {
               placeholder="Enter file name"></input>
           </div>
           <button
-            className="download"
             type="submit"
             onClick={()=> this.exportAsSCSSFile(this.props.elements)}>Save to file</button>
         </form>
