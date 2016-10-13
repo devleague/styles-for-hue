@@ -20,46 +20,48 @@ const Schema = mongoose.Schema;
 const stylesSchema = new Schema({
   doc: {
     _id: String,
-    divTags: [{
-      _id: String,
-      elementId: Number,
-      style: {
-        backgroundColor: String,
-        fontFamily: String,
-        display: String
-      },
-      subType: Object
-    }],
-    pTags: [{
-      _id: String,
-      elementId: Number,
-      style: {
-        backgroundColor: String,
-        fontFamily: String,
-        display: String
-      },
-      subType: Object
-    }],
-    imgTags: [{
-      _id: String,
-      elementId: Number,
-      style: {
-        backgroundColor: String,
-        fontFamily: String,
-        display: String
-      },
-      subType: Object
-    }],
-    ulTags: [{
-      _id: String,
-      elementId: Number,
-      style: {
-        backgroundColor: String,
-        fontFamily: String,
-        display: String
-      },
-      subType: Object
-    }],
+    elements: {
+      divTags: [{
+        _id: String,
+        elementId: Number,
+        style: {
+          backgroundColor: String,
+          fontFamily: String,
+          display: String
+        },
+        subType: Object
+      }],
+      pTags: [{
+        _id: String,
+        elementId: Number,
+        style: {
+          backgroundColor: String,
+          fontFamily: String,
+          display: String
+        },
+        subType: Object
+      }],
+      imgTags: [{
+        _id: String,
+        elementId: Number,
+        style: {
+          backgroundColor: String,
+          fontFamily: String,
+          display: String
+        },
+        subType: Object
+      }],
+      ulTags: [{
+        _id: String,
+        elementId: Number,
+        style: {
+          backgroundColor: String,
+          fontFamily: String,
+          display: String
+        },
+        subType: Object
+      }],
+    }
   }
 });
 // mongoose will lowercase and pluralize for mongodb //
