@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const bodyParser = require('body-parser');
+const shortid = require('shortid');
 const path = require('path');
 const CONFIG = require('./config.json');
 const models = require('./models'); //MongoDB models
@@ -18,50 +19,51 @@ mongoose.connection.once('open', function(){
 // CREATE SCHEMA & MODEL FOR 'styles' COLLECTION //
 const Schema = mongoose.Schema;
 const stylesSchema = new Schema({
+  _id: {type: String, 'default': shortid.generate},
   doc: {
-    _id: String,
-    elements: {
-      divTags: [{
-        _id: String,
-        elementId: Number,
-        style: {
-          backgroundColor: String,
-          fontFamily: String,
-          display: String
-        },
-        subType: Object
-      }],
-      pTags: [{
-        _id: String,
-        elementId: Number,
-        style: {
-          backgroundColor: String,
-          fontFamily: String,
-          display: String
-        },
-        subType: Object
-      }],
-      imgTags: [{
-        _id: String,
-        elementId: Number,
-        style: {
-          backgroundColor: String,
-          fontFamily: String,
-          display: String
-        },
-        subType: Object
-      }],
-      ulTags: [{
-        _id: String,
-        elementId: Number,
-        style: {
-          backgroundColor: String,
-          fontFamily: String,
-          display: String
-        },
-        subType: Object
-      }],
-    }
+    divTags: [{
+      _id: String,
+      elementId: Number,
+      style: {
+        backgroundColor: String,
+        fontFamily: String,
+        display: String
+      },
+      subType: Object
+    }],
+    pTags: [{
+      _id: String,
+      elementId: Number,
+      style: {
+        backgroundColor: String,
+        fontFamily: String,
+        display: String
+      },
+      subType: Object
+    }],
+    imgTags: [{
+      _id: String,
+      elementId: Number,
+      src: String,
+      style: {
+        backgroundColor: String,
+        fontFamily: String,
+        display: String,
+        height: String,
+        width: String,
+      },
+      subType: Object
+    }],
+    ulTags: [{
+      _id: String,
+      elementId: Number,
+      style: {
+        backgroundColor: String,
+        fontFamily: String,
+        display: String
+      },
+      subType: Object
+    }],
   }
 });
 // mongoose will lowercase and pluralize for mongodb //
@@ -86,16 +88,17 @@ app.post('/api/styles', (req, res) => {
   .catch(err => res.json(err));
 });
 
-app.get('/update/new/:id', (req, res) => {
+app.get('/doc/:id', (req, res) => {
   let id = mongoose.Types.ObjectId;
   Style.findOne({_id: req.params.id})
   .exec((error, results) => {res.json(results);
   });
 });
 
-app.put('/update/new/:id', (req, res) => {
+app.put('/doc/:id', (req, res) => {
   let id = req.body.doc._id;
-  Style.findOneAndUpdate(id, {doc: req.body.doc}, () => {
+  let numbers = shortid.generate(id);
+  Style.findOneAndUpdate(numbers, {doc: req.body.doc}, () => {
   });
 });
 
