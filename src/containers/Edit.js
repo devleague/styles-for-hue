@@ -21,14 +21,7 @@ class Edit extends Component {
     this.update = () => {
       this.editSave(this.props.elements);
     }
-    this.hide = {
-      showDiv: false
-    }
   }
-  // onClick(e){
-  //   e.preventDefault();
-  //   this.setState({showDiv: this.hide.showDiv ? false : true})
-  // }
 
   saveStyle(doc){
     return $.ajax({
@@ -107,9 +100,26 @@ class Edit extends Component {
 
   render() {
     let fontComponent = null;
-    if (this.props.menuShow.showMenu === true) {
-      console.log(this.props.menuShow);
-      fontComponent = <FontMenu />;
+    if (this.props.menuShow.showFontMenu === true) {
+      console.log(this.props.showFontMenu);
+      fontComponent = (
+        <FontMenu
+          fontList={this.props.fontList}
+          selectedElement={this.props.selectedElement}
+          changeFont={this.props.changeFont}
+        />
+      );
+    };
+    let divComponent = null;
+    if (this.props.menuShow.showDivMenu === true) {
+      console.log(this.props.showDivMenu);
+      divComponent = (
+        <ColorMenu
+          colorPalette={this.props.colorPalette}
+          selectedElement={this.props.selectedElement}
+          changeColor={this.props.changeColor}
+        />
+      );
     };
     return (
       <div
@@ -133,21 +143,17 @@ class Edit extends Component {
           <button
             className="font-button"
             onClick={ () => {
-              if (this.props.menuShow.showMenu === false) {
-                this.props.showMenu(true);
+              if (this.props.menuShow.showFontMenu === false) {
+                this.props.showFontMenu(true);
               } else {
-                this.props.showMenu(false);
+                this.props.showFontMenu(false);
               }
             }
           }>
             <i className="fa fa-caret-down"></i>
           </button>
           <h3>Font</h3>
-          <FontMenu
-            fontList={this.props.fontList}
-            selectedElement={this.props.selectedElement}
-            changeFont={this.props.changeFont}
-          />
+          { fontComponent }
         </div>
         <div
           className="div-menu"
@@ -155,17 +161,20 @@ class Edit extends Component {
           <span>
             <button
               className="div-button"
+              onClick={ () => {
+                if (this.props.menuShow.showDivMenu === false) {
+                  this.props.showDivMenu(true);
+                } else {
+                  this.props.showDivMenu(false);
+                }
+              }}
             >
               <i className="fa fa-caret-down"></i>
             </button>
             <h3>Div</h3>
           </span>
           <div>
-            <ColorMenu
-              colorPalette={this.props.colorPalette}
-              selectedElement={this.props.selectedElement}
-              changeColor={this.props.changeColor}
-            />
+            { divComponent }
           </div>
         </div>
         <div>
