@@ -1,10 +1,18 @@
 export default {
-  showMenu
+  showFontMenu,
+  showDivMenu
 };
 
-export function showMenu (show) {
+export function showFontMenu (show) {
   return {
-    type: "SHOW_MENU",
+    type: "SHOW_FONTMENU",
+    show: show
+  }
+}
+
+export function showDivMenu (show) {
+  return {
+    type: "SHOW_DIVMENU",
     show: show
   }
 }
