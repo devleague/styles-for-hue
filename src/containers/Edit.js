@@ -63,32 +63,50 @@ class Edit extends Component {
     var text = "";
     var li = "liTags";
     var liStyles = "";
-    //console.log(elements.divTags[0]._id);
+    var liId = "";
+    var test = "";
     for (var key in elements) {
       var elementType = key.toString();
       if (elementType === "ulTags") {
-        for (var i = 0; i < elements[key][0].subType.length; i++) {
-          liStyles += JSON.stringify(elements[key][0].subType[i].style) + "\n";
-          var liSplit = liStyles.split(/(?=[A-Z])/);
+      var elementKeySubTypeLi = elements[key][0].subType;
+        for (var i = 0; i < elementKeySubTypeLi.liTags.length; i++){
+          var elementKeySubTypeLiStyle = JSON.stringify(elementKeySubTypeLi.liTags[i].style);
+          var elementKeySubTypeLiId = elementKeySubTypeLi.liTags[i].elementId;
+          var liTag = elementKeySubTypeLiId + elementKeySubTypeLiStyle;
+          var liSplit = liTag.split(/(?=[A-Z])/);
           liSplit = liSplit[0] + "-" + liSplit[1].toLowerCase();
-          liStyles = liSplit;
+          console.log(liSplit);
+          liStyles += ".listItem" + liSplit;
         }
       }
-      for (var i = 0; i < elements[key].length; i++){
-        var elementStyle = (JSON.stringify(elements[key][i].style));
-        // elementStyle = elementStyle.replace(/,/g, ';\n  ');
-        // console.log(elementStyle);
-        // var elemSplit = elementStyle.split(/(?=[A-Z])/);
-        // console.log(elemSplit);
-        // elemSplit = elemSplit[0] + "-" + elemSplit[1].toLowerCase();
+      if(elementType != "ulTags"){
+        for (var i = 0; i < elements[key].length; i++){
+          var elementStyle = (JSON.stringify(elements[key][i].style));
+          // elementStyle = elementStyle.replace(/,/g, ';\n  ');
+          // console.log(elementStyle);
+          // var elemSplit = elementStyle.split(/(?=[A-Z])/);
+          // console.log(elemSplit);
+          // elemSplit = elemSplit[0] + "-" + elemSplit[1].toLowerCase();
 
-        // elementStyle = elemSplit;
-        elementStyle = elementStyle.slice(0, 1) + " \n  " + elementStyle.slice(1);
-        elementStyle = elementStyle.slice(0, -2) + elementStyle.slice(-2, -1) + ";\n" + elementStyle.slice(-1);
-        text += elementType + " " + elementStyle + "\n";
+          // elementStyle = elemSplit;
+          elementStyle = elementStyle.slice(0, 1) + " \n  " + elementStyle.slice(1);
+          elementStyle = elementStyle.slice(0, -2) + elementStyle.slice(-2, -1) + ";\n" + elementStyle.slice(-1);
+          text += elementType + " " + elementStyle + "\n";
+        }
       }
+      // if(elementType === "imgTags"){
+      //   for (var i = 0; i < elements[key].length; i++){
+      //     var elementStyle = (JSON.stringify(elements[key][i].style));
+      //     var imgSrc = (JSON.stringify(elements[key][i].src));
+      //     var HTMLimgSrc = '<img src=' + imgSrc + '>';
+      //     //console.log(HTMLimgSrc);
+      //     elementStyle = elementStyle.slice(0, 1) + " \n  " + elementStyle.slice(1);
+      //     elementStyle = elementStyle.slice(0, -2) + elementStyle.slice(-2, -1) + ";\n" + elementStyle.slice(-1);
+      //     text += elementType + " " + elementStyle + "\n";
+      //   }
+      // }
     }
-    liStyles = liStyles.replace(/\{/g, 'liStyles {\n  ');
+    liStyles = liStyles.replace(/\{/g, ' {\n  ');
     liStyles = liStyles.replace(/\}/g, ';\n}\n');
     text += liStyles;
     text = text.replace(/['"]+/g, '');
@@ -100,7 +118,7 @@ class Edit extends Component {
       filename = new Date().toTimeString();
     }
     var blob = new Blob([text], {type: "text/plain;charset=utf-8"});
-    //console.log(text);
+    console.log(text);
     //fileSaver.saveAs(blob, filename+".scss");
   };
 
