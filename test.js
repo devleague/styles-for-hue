@@ -32,7 +32,11 @@ db.styles.insert({
           "_id" : ObjectId("57fc9789aa00d38a26228233"),
           "elementId" : 3,
           "src" : "/images/city_night.jpg",
-          "style" : { "backgroundColor" : "#3C6E71" } } ],
+          "style" : {
+            "backgroundColor" : "#3C6E71",
+            "width": "100%"
+             }
+          } ],
         "pTags" : [
         {
           "_id" : ObjectId("57fc9789aa00d38a26228232"),
