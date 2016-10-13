@@ -61,27 +61,29 @@ const reducer = (state = initialState, action) => {
             }
           }
           return { ...elem};
-          // switch (elem.elementId) {
-          //   case action.data.elemId:
-          //     return { ...elem, style: { ...elem.style, backgroundColor: action.data.backgroundColor}};
-          //   default:
-          //     return { ...elem};
-          // }
         });
       }
       return { ...state, doc: { ...state.doc, elements: newElems} };
     case "CHANGE_FONT":
       for (let element in newElems) {
         newElems[element] = newElems[element].map((elem, index) => {
-          switch (elem.elementId) {
-            case action.data.elemId:
-              return { ...elem, style: { ...elem.style, fontFamily: action.data.fontFamily}};
-            default:
-              return { ...elem };
+          if (elem.elementId === action.data.elementId) {
+            return { ...elem, style: { ...elem.style, fontFamily: action.data.fontFamily}};
           }
+          if (elem.subType) {
+            for (let children in elem.subType) {
+              elem.subType[children] = elem.subType[children].map((child, index) => {
+                if (child.elementId === action.data.elementId) {
+                  return { ...child, style: { ...child.style, fontFamily: action.data.fontFamily}};
+                }
+                return { ...child};
+              })
+            }
+          }
+          return { ...elem};
         });
       }
-      return { ...state, doc: {elements: newElems} };
+      return { ...state, doc: { ...state.doc, elements: newElems} };
     case "NEW_DOC":
       return { ...state, doc: { elements: { ...state.doc.elements }, _id: `ObjectId(${action.data})`} };
     default:
