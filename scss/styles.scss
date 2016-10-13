@@ -4,12 +4,14 @@
 @import 'partials/nav';
 @import 'partials/cssview';
 
-@import 'https://fonts.googleapis.com/css?family=Lato|Galada';
+@import 'https://fonts.googleapis.com/css?family=Lato:400,700|Yeseva+One';
 
 $small: "(min-width: 100px) and (max-width: 600px)";
 $medium: "(min-width: 601px) and (max-width: 900px)";
 $large: "(min-width: 900px)";
 
+$black: #000000;
+$white: #FFFFFF;
 $grey-blue: #373F47;
 $teal: #30B3AA;
 $dark-teal: #2C9F97;
@@ -35,46 +37,74 @@ $mint: #48DDB9;
   }
 }
 
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
 body{
   font-family: 'Lato', sans-serif;
 }
 
-*{ margin: 0; padding: 0; box-sizing: border-box; }
+///////////////////////////////////////
+///// TEMPLATE & EDITOR CONTAINER /////
+///////////////////////////////////////
+.template-edit-container{
+  margin-top: 50px;
+  border-bottom: 2px $teal solid;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: stretch;
+}
+
+// ** Template (Left Side) ** //
+.template-one{
+  margin: 0 auto;
+  padding: 25px;
+}
+
+hr{
+  margin-top: 15px;
+  border-top: 1px solid #8c8b8b;
+}
+
+.current-styles-container{
+  margin-top: 15px;
+  padding: 10px;
+  height: 90px;
+  background-color: $teal;
+  h6{
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $white;
+  }
+}
+
+.current-elem-styles{
+  margin-top: 10px;
+  padding: 5px;
+  height: 50px;
+  background-color: $white;
+}
 
 .selected {
   outline: 5px solid blue;
 }
 
-///// Edit /////
-
-.template-edit-container{
-  padding-top: 47px;
-  display: flex;
-  flex-flow: row no-wrap;
-}
-
-.template-one{
-  flex: auto;
-}
-.view-css{
-  width: 20px;
-  height: 40px;
-}
-
+// ** Editor (Right Side) ** //
 .editColumn{
   width: 300px;
   height: 100%;
-  color: $grey-blue;
-  box-shadow: -10px 0px 10px 1px rgba(192, 192, 192, .2);
-  background-color: #f0f0f0;
-  right: 0;
+  border-left: 2px $teal solid;
+  // color: $grey-blue;
+  // box-shadow: -10px 0px 10px 1px rgba(192, 192, 192, .2);
+  // background-color: #f0f0f0;
+  // right: 0;
   h1{
-    font-family: 'Galada', cursive;
-    font-size: 2rem;
+    padding: 10px;
+    font-family: 'Yeseva One', cursive;
+    font-size: 1.75rem;
     text-align: center;
     background-color: $teal;
-    color: $light-grey;
-    padding-top: 10px;
+    color: $white;
   }
   h3{
     padding: 8px;
@@ -89,7 +119,7 @@ body{
   .export-css{
     margin: 8px 15px 8px 11px;
   }
-  .save{
+  .save, .update, .download{
     margin: 8px 15px 8px 11px;
   }
   .font-button, .div-button{
@@ -108,6 +138,7 @@ body{
   }
   .view-css{
     width: 80px;
+    height: 40px;
     border: none;
     box-shadow: none;
   }
