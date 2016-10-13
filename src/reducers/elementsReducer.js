@@ -21,29 +21,7 @@ const reducer = (state = initialState, action) => {
     case "SET_ELEMENTS":
       return {...state, doc: action.data.doc};
     case "SELECT_ELEMENT":
-        // return runThroughElems(state, newElems, selectedElement, action.data.elementId);
-      for (let element in newElems) {
-        newElems[element] = newElems[element].map((elem, index) => {
-          if (elem.elementId === action.data.elementId) {
-            selectedElement = { selectedElementId: elem.elementId, selectedStyle: elem.style };
-            return { ...elem};
-          }
-          if (elem.subType) {
-            for (let children in elem.subType) {
-              elem.subType[children] = elem.subType[children].map((child, index) => {
-                if (child.elementId === action.data.elementId) {
-                  selectedElement = { selectedElementId: child.elementId, selectedStyle: child.style };
-                  return { ...child};
-                }
-                return { ...child}
-              })
-            }
-          }
-          return { ...elem};
-        })
-      }
-      return { ...state, selectedElement: selectedElement};
-
+      return selectElement(state, newElems, selectedElement, action.data.elementId);
     case "CHANGE_COLOR":
       for (let element in newElems) {
         newElems[element] = newElems[element].map((elem, index) => {
@@ -91,23 +69,21 @@ const reducer = (state = initialState, action) => {
   }
 }
 
-// function runThroughElems (state, elements, selectedElement, id) {
-//   for (let element in elements) {
-//     elements[element] = elements[element].map((elem, index) => {
-//       if (elem.elementId === id) {
-//         selectedElement = { selectedElementId: elem.elementId, selectedStyle: elem.style };
-//         return { ...elem};
-//       }
-//       if (elem.subType) {
-//         console.log( {...elem});
-//         console.log(runThroughElems(state, elem.subType, selectedElement, id));
-//         runThroughElems(state, elem.subType, selectedElement, id);
-//       }
-//       return { ...elem} ;
-//     })
-//   }
-//   console.log({ doc: {...state.doc, elements: {...state.doc.elements}}, selectedElement: selectedElement });
-//   return { ...state, doc: {...state.doc}, selectedElement: selectedElement };
-// }
+function selectElement (state, elements, selectedElement, id) {
+  for (let element in elements) {
+    elements[element] = elements[element].map((elem, index) => {
+      if (elem.elementId === id) {
+        selectedElement = { selectedElementId: elem.elementId, selectedStyle: elem.style };
+        return { ...elem};
+      }
+      if (elem.subType) {
+        return selectedElement = selectElement(state, elem.subType, selectedElement, id).selectedElement;
+      }
+      return { ...elem};
+    })
+  }
+  console.log({ doc: {...state.doc, elements: {...state.doc.elements}}, selectedElement: selectedElement });
+  return { ...state, selectedElement: selectedElement };
+}
 
 export default reducer;
