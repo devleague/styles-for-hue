@@ -21,14 +21,14 @@ class Edit extends Component {
     this.update = () => {
       this.editSave(this.props.elements);
     }
-    this.state = {
+    this.hide = {
       showDiv: false
     }
   }
-  onClick(e){
-    e.preventDefault();
-    this.setState({showDiv: this.state.showDiv ? false : true})
-  }
+  // onClick(e){
+  //   e.preventDefault();
+  //   this.setState({showDiv: this.hide.showDiv ? false : true})
+  // }
 
   saveStyle(doc){
     return $.ajax({
@@ -130,21 +130,19 @@ class Edit extends Component {
           </button>
         <div
           className="font-menu">
-          <span>
-            <button
-              className="font-button"
-              onClick={ () => {
-                if (this.props.menuShow.showMenu === false) {
-                  this.props.showMenu(true);
-                } else {
-                  this.props.showMenu(false);
-                }
+          <button
+            className="font-button"
+            onClick={ () => {
+              if (this.props.menuShow.showMenu === false) {
+                this.props.showMenu(true);
+              } else {
+                this.props.showMenu(false);
               }
-            }>
-              <i className="fa fa-caret-down"></i>
-            </button>
-            <h3>Font</h3>
-          </span>
+            }
+          }>
+            <i className="fa fa-caret-down"></i>
+          </button>
+          <h3>Font</h3>
           <FontMenu
             fontList={this.props.fontList}
             selectedElement={this.props.selectedElement}
