@@ -42,6 +42,26 @@ const reducer = (state = initialState, action) => {
         });
       }
       return { ...state, doc: { ...state.doc, elements: newElems} };
+    case "CHANGE_FONT_COLOR":
+      for (let element in newElems) {
+        newElems[element] = newElems[element].map((elem, index) => {
+          if (elem.elementId === action.data.elementId) {
+            return { ...elem, style: { ...elem.style, color: action.data.color}};
+          }
+          if (elem.subType) {
+            for (let children in elem.subType) {
+              elem.subType[children] = elem.subType[children].map((child, index) => {
+                if (child.elementId === action.data.elementId) {
+                  return { ...child, style: { ...child.style, color: action.data.color}};
+                }
+                return { ...child};
+              })
+            }
+          }
+          return { ...elem};
+        });
+      }
+      return { ...state, doc: { ...state.doc, elements: newElems} };
     case "CHANGE_FONT":
       for (let element in newElems) {
         newElems[element] = newElems[element].map((elem, index) => {
