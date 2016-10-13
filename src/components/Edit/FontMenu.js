@@ -5,6 +5,10 @@ class FontMenu extends Component {
     var font = document.getElementById("fontMenu").value;
     return font;
   }
+  changeFontColor() {
+    var font = document.getElementById("fontColors").value;
+    return font;
+  }
   render() {
     return(
       <div>
@@ -21,6 +25,12 @@ class FontMenu extends Component {
                 </option>
               )
             })}
+          </select>
+          <p>Font Color</p>
+          <select id="fontColors" defaultValue="0" onChange={() => this.props.changeFontColor(this.props.selectedElement, this.changeFontColor())}>
+            <option value="red">red</option>
+            <option value="pink">pink</option>
+            <option value="purple">purple</option>
           </select>
       </div>
     );
