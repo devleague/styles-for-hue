@@ -1,10 +1,12 @@
 const initialState = {
   doc: {
     _id: null,
-    divTags: [],
-    pTags: [],
-    imgTags: [],
-    ulTags: []
+    elements: {
+      divTags: [],
+      pTags: [],
+      imgTags: [],
+      ulTags: []
+    }
   },
   selectedElement: {
     selectedElementId: 0,
@@ -13,11 +15,10 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action) => {
-  let newElems = { ...state.doc};
+  let newElems = { ...state.doc.elements};
   let selectedElement = { ...state.selectedElement};
   switch (action.type) {
     case "SET_ELEMENTS":
-    console.log(action.data);
       return {...state, doc: action.data.doc};
     case "SELECT_ELEMENT":
         return runThroughElems(state, newElems, selectedElement, action.data.elementId);
@@ -71,37 +72,22 @@ const reducer = (state = initialState, action) => {
 }
 
 function runThroughElems (state, elements, selectedElement, id) {
-  if (!Array.isArray(elements)) {
-    for (let element in elements) {
-      elements[element] = elements[element].map((elem, index) => {
-        if (elem.elementId === id) {
-          selectedElement = { selectedElementId: elem.elementId, selectedStyle: elem.style };
-          return { ...elem};
-        }
-        if (elem.subType) {
-          runThroughElems(state, elem.subType, selectedElement, id);
-        }
-        return { ...elem};
-      })
-    }
-    return { ...state, selectedElement: selectedElement };
-  } else if (Array.isArray(elements)) {
-    elements = elements.map((elem, index) => {
+  for (let element in elements) {
+    elements[element] = elements[element].map((elem, index) => {
       if (elem.elementId === id) {
         selectedElement = { selectedElementId: elem.elementId, selectedStyle: elem.style };
         return { ...elem};
       }
       if (elem.subType) {
-        console.log('Am I triggering?!');
+        console.log( {...elem});
+        console.log(runThroughElems(state, elem.subType, selectedElement, id));
         runThroughElems(state, elem.subType, selectedElement, id);
       }
-      return { ...elem};
+      return { ...elem} ;
     })
-    console.log(elements);
-    return { ...state, selectedElement: selectedElement };
   }
-  console.log('DO SOMETHNG!!', {...state, selectedElement: selectedElement});
-  // return { ...state, selectedElement: selectedElement };
+  console.log({ doc: {...state.doc, elements: {...state.doc.elements}}, selectedElement: selectedElement });
+  return { ...state, doc: {...state.doc}, selectedElement: selectedElement };
 }
 
 export default reducer;

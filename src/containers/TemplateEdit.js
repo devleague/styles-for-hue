@@ -102,16 +102,15 @@ class TemplateEdit extends Component {
     if (this.props.sideBar.showCss === true) {
       cssComponent = <CssView />;
     }
-    console.log(this.props);
     return(
       <div
         className="template-edit-container"
       >
         <Template
-          divTags={this.props.elementsReducer.doc.divTags}
-          pTags={this.props.elementsReducer.doc.pTags}
-          imgTags={this.props.elementsReducer.doc.imgTags}
-          ulTags={this.props.elementsReducer.doc.ulTags}
+          divTags={this.props.elementsReducer.doc.elements.divTags}
+          pTags={this.props.elementsReducer.doc.elements.pTags}
+          imgTags={this.props.elementsReducer.doc.elements.imgTags}
+          ulTags={this.props.elementsReducer.doc.elements.ulTags}
           selectElement={this.props.selectElement}
           selectedElementId={this.props.elementsReducer.selectedElement.selectedElementId}
           selectedElementStyle={this.props.elementsReducer.selectedElement.selectedStyle}

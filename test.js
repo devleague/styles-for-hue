@@ -9,58 +9,60 @@ print("styles");
 db.styles.insert({
   "doc" : {
     "_id" : ObjectId("57fc994396ee4215990d9091"),
-    "ulTags" : [
-      {
-        "_id" : ObjectId("57fc9789aa00d38a26228234"),
-        "elementId" : 4,
-        "subType": {
-          "liTags" : [
-            {
-             "elementId" : 6,
-              "style" : { "backgroundColor" : "pink"}
-            },
-            {
-              "elementId" : 7,
-              "style" : {"backgroundColor" : "orange"}
-            }
-          ]
-        }
-      } ],
-      "imgTags" : [
-      {
-        "_id" : ObjectId("57fc9789aa00d38a26228233"),
-        "elementId" : 3,
-        "src" : "/images/city_night.jpg",
-        "style" : { "backgroundColor" : "#3C6E71" } } ],
-      "pTags" : [
-      {
-        "_id" : ObjectId("57fc9789aa00d38a26228232"),
-        "elementId" : 2,
-        "style" :
+    "elements": {
+      "ulTags" : [
         {
-          "backgroundColor" : "green",
-          "fontFamily" : "arial"
-        }
-      } ],
-      "divTags" : [
-      {
-        "_id" : ObjectId("57fc9789aa00d38a26228231"),
-        "elementId" : 1,
-        "style" : {
-          "backgroundColor" : "blue",
-          "fontFamily" : "sans-serif",
-          "display" : "inline-block"
-        }
-      },
-      {
-        "_id" : ObjectId("57fc9789aa00d38a26228235"),
-        "elementId" : 5,
-        "style" : {
-          "backgroundColor" : "red",
-          "fontFamily" : "arial",
-          "display" : "inline-block"
-        }
-      } ]
+          "_id" : ObjectId("57fc9789aa00d38a26228234"),
+          "elementId" : 4,
+          "subType": {
+            "liTags" : [
+              {
+               "elementId" : 6,
+                "style" : { "backgroundColor" : "pink"}
+              },
+              {
+                "elementId" : 7,
+                "style" : {"backgroundColor" : "orange"}
+              }
+            ]
+          }
+        } ],
+        "imgTags" : [
+        {
+          "_id" : ObjectId("57fc9789aa00d38a26228233"),
+          "elementId" : 3,
+          "src" : "/images/city_night.jpg",
+          "style" : { "backgroundColor" : "#3C6E71" } } ],
+        "pTags" : [
+        {
+          "_id" : ObjectId("57fc9789aa00d38a26228232"),
+          "elementId" : 2,
+          "style" :
+          {
+            "backgroundColor" : "green",
+            "fontFamily" : "arial"
+          }
+        } ],
+        "divTags" : [
+        {
+          "_id" : ObjectId("57fc9789aa00d38a26228231"),
+          "elementId" : 1,
+          "style" : {
+            "backgroundColor" : "blue",
+            "fontFamily" : "sans-serif",
+            "display" : "inline-block"
+          }
+        },
+        {
+          "_id" : ObjectId("57fc9789aa00d38a26228235"),
+          "elementId" : 5,
+          "style" : {
+            "backgroundColor" : "red",
+            "fontFamily" : "arial",
+            "display" : "inline-block"
+          }
+        } ]
+      }
     }
   })
 
