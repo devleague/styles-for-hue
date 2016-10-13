@@ -100,8 +100,9 @@ class TemplateEdit extends Component {
   render() {
     let cssComponent = null;
     if (this.props.sideBar.showCss === true) {
+      console.log(this.props.sideBar);
       cssComponent = <CssView />;
-    }
+    };
     return(
       <div
         className="template-edit-container"
