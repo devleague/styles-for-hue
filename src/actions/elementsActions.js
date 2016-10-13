@@ -14,21 +14,21 @@ export function selectElement (elementId) {
   }
 }
 
-export function changeColor (elemId, color) {
+export function changeColor (elementId, color) {
   return {
     type: 'CHANGE_COLOR',
     data: {
-      elemId: elemId,
+      elementId: elementId,
       backgroundColor: color
     }
   }
 }
 
-export function changeFont (elemId, font) {
+export function changeFont (elementId, font) {
   return {
     type: 'CHANGE_FONT',
     data: {
-      elemId: elemId,
+      elementId: elementId,
       fontFamily: font
     }
   }
