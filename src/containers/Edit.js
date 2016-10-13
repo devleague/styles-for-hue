@@ -149,6 +149,7 @@ class Edit extends Component {
             fontList={this.props.fontList}
             selectedElement={this.props.selectedElement}
             changeFont={this.props.changeFont}
+            changeFontColor={this.props.changeFontColor}
           />
         </div>
         <div
