@@ -21,29 +21,11 @@ const Schema = mongoose.Schema;
 const stylesSchema = new Schema({
   _id: {type: String, 'default': shortid.generate},
   doc: {
-    divTags: [{
+    _id: String,
+    elements: [{
       _id: String,
       elementId: Number,
-      style: {
-        backgroundColor: String,
-        fontFamily: String,
-        display: String
-      },
-      subType: Object
-    }],
-    pTags: [{
-      _id: String,
-      elementId: Number,
-      style: {
-        backgroundColor: String,
-        fontFamily: String,
-        display: String
-      },
-      subType: Object
-    }],
-    imgTags: [{
-      _id: String,
-      elementId: Number,
+      tag: String,
       src: String,
       style: {
         backgroundColor: String,
@@ -52,18 +34,8 @@ const stylesSchema = new Schema({
         height: String,
         width: String,
       },
-      subType: Object
-    }],
-    ulTags: [{
-      _id: String,
-      elementId: Number,
-      style: {
-        backgroundColor: String,
-        fontFamily: String,
-        display: String
-      },
-      subType: Object
-    }],
+      children: Object
+    }]
   }
 });
 
