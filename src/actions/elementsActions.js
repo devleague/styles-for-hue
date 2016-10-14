@@ -40,3 +40,24 @@ export function newDoc (docId) {
     data: docId
   }
 }
+
+export function divWidth (elementId, width) {
+  return {
+    type: 'CHANGE_WIDTH',
+    data: {
+      elementId: elementId,
+      width: width
+    }
+  }
+
+}
+
+export function divHeight (elementId, height) {
+  return {
+    type: 'CHANGE_HEIGHT',
+    data: {
+      elementId: elementId,
+      height: height
+    }
+  }
+}
