@@ -26,8 +26,6 @@ class DivComp extends Component {
               </div>
             )
           })
-        }
-        if (child.children) {
           return (
             <div
               key={index}
@@ -52,7 +50,6 @@ class DivComp extends Component {
         }
       })
     }
-    console.log(children);
     return (
       <div
           className={this.isActive(this.props.elementId)}

@@ -11,7 +11,7 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action) => {
-  let newElems = { ...state.doc.elements};
+  let newElems = [ ...state.doc.elements];
   let selectedElement = { ...state.selectedElement};
   switch (action.type) {
     case "SET_ELEMENTS":
@@ -19,84 +19,68 @@ const reducer = (state = initialState, action) => {
     case "SELECT_ELEMENT":
       return selectElement(state, newElems, selectedElement, action.data.elementId);
     case "CHANGE_COLOR":
-      for (let element in newElems) {
-        newElems[element] = newElems[element].map((elem, index) => {
-          if (elem.elementId === action.data.elementId) {
-            return { ...elem, style: { ...elem.style, backgroundColor: action.data.backgroundColor}};
-          }
-          if (elem.subType) {
-            for (let children in elem.subType) {
-              elem.subType[children] = elem.subType[children].map((child, index) => {
-                if (child.elementId === action.data.elementId) {
-                  return { ...child, style: { ...child.style, backgroundColor: action.data.backgroundColor}};
-                }
-                return { ...child};
-              })
+      newElems = newElems.map((elem, index) => {
+        if (elem.elementId === action.data.elementId) {
+          return { ...elem, style: { ...elem.style, backgroundColor: action.data.backgroundColor}};
+        }
+        if (elem.children) {
+          elem.children = elem.children.map((child, index) => {
+            if (child.elementId === action.data.elementId) {
+              return { ...child, style: { ...child.style, backgroundColor: action.data.backgroundColor}};
             }
-          }
-          return { ...elem};
-        });
-      }
+            return { ...child};
+          })
+        }
+        return { ...elem};
+      });
       return { ...state, doc: { ...state.doc, elements: newElems} };
     case "CHANGE_FONT_COLOR":
-      for (let element in newElems) {
-        newElems[element] = newElems[element].map((elem, index) => {
-          if (elem.elementId === action.data.elementId) {
-            return { ...elem, style: { ...elem.style, color: action.data.color}};
-          }
-          if (elem.subType) {
-            for (let children in elem.subType) {
-              elem.subType[children] = elem.subType[children].map((child, index) => {
-                if (child.elementId === action.data.elementId) {
-                  return { ...child, style: { ...child.style, color: action.data.color}};
-                }
-                return { ...child};
-              })
+      newElems = newElems.map((elem, index) => {
+        if (elem.elementId === action.data.elementId) {
+          return { ...elem, style: { ...elem.style, color: action.data.color}};
+        }
+        if (elem.children) {
+          elem.children = elem.children.map((child, index) => {
+            if (child.elementId === action.data.elementId) {
+              return { ...child, style: { ...child.style, color: action.data.color}};
             }
-          }
-          return { ...elem};
-        });
-      }
+            return { ...child};
+          })
+        }
+        return { ...elem};
+      });
       return { ...state, doc: { ...state.doc, elements: newElems} };
     case "CHANGE_FONT_SIZE":
-      for (let element in newElems) {
-        newElems[element] = newElems[element].map((elem, index) => {
-          if (elem.elementId === action.data.elementId) {
-            return { ...elem, style: { ...elem.style, fontSize: action.data.fontSize}};
-          }
-          if (elem.subType) {
-            for (let children in elem.subType) {
-              elem.subType[children] = elem.subType[children].map((child, index) => {
-                if (child.elementId === action.data.elementId) {
-                  return { ...child, style: { ...child.style, fontSize: action.data.fontSize}};
-                }
-                return { ...child};
-              })
+      newElems = newElems.map((elem, index) => {
+        if (elem.elementId === action.data.elementId) {
+          return { ...elem, style: { ...elem.style, fontSize: action.data.fontSize}};
+        }
+        if (elem.children) {
+          elem.children = elem.children.map((child, index) => {
+            if (child.elementId === action.data.elementId) {
+              return { ...child, style: { ...child.style, fontSize: action.data.fontSize}};
             }
-          }
-          return { ...elem};
-        });
-      }
+            return { ...child};
+          })
+        }
+        return { ...elem};
+      });
       return { ...state, doc: { ...state.doc, elements: newElems} };
     case "CHANGE_FONT":
-      for (let element in newElems) {
-        newElems[element] = newElems[element].map((elem, index) => {
-          if (elem.elementId === action.data.elementId) {
-            return { ...elem, style: { ...elem.style, fontFamily: action.data.fontFamily}};
-          }
-          if (elem.subType) {
-            for (let children in elem.subType) {
-              elem.subType[children] = elem.subType[children].map((child, index) => {
-                if (child.elementId === action.data.elementId) {
-                  return { ...child, style: { ...child.style, fontFamily: action.data.fontFamily}};
-                }
-                return { ...child};
-              })
+      newElems = newElems.map((elem, index) => {
+        if (elem.elementId === action.data.elementId) {
+          return { ...elem, style: { ...elem.style, fontFamily: action.data.fontFamily}};
+        }
+        if (elem.children) {
+          elem.children = elem.children.map((child, index) => {
+            if (child.elementId === action.data.elementId) {
+              return { ...child, style: { ...child.style, fontFamily: action.data.fontFamily}};
             }
-          }
-          return { ...elem};
-        });
-      }
+            return { ...child};
+          })
+        }
+        return { ...elem};
+      });
       return { ...state, doc: { ...state.doc, elements: newElems} };
     case "NEW_DOC":
       return { ...state, doc: { elements: { ...state.doc.elements }, _id: `ObjectId(${action.data})`} };
@@ -106,24 +90,23 @@ const reducer = (state = initialState, action) => {
 }
 
 function selectElement (state, elements, selectedElement, id) {
-  for (let element in elements) {
-    elements[element] = elements[element].map((elem, index) => {
-      if (elem.elementId === id) {
-        selectedElement = { selectedElementId: elem.elementId, selectedStyle: elem.style };
-        return { ...elem};
-      }
-      if (elem.subType) {
-        const _selectedElement = selectElement(state, elem.subType, selectedElement, id);
-        if (id === _selectedElement.selectedElement.selectedElementId) {
-          selectedElement = _selectedElement.selectedElement;
-          return { ...elem};
-        }
-        _selectedElement
-        return { ...elem};
-      }
+  console.log(elements);
+  elements = elements.map((elem, index) => {
+    if (elem.elementId === id) {
+      selectedElement = { selectedElementId: elem.elementId, selectedStyle: elem.style };
       return { ...elem};
-    })
-  }
+    }
+    if (elem.children) {
+      const _selectedElement = selectElement(state, elem.children, selectedElement, id);
+      if (id === _selectedElement.selectedElement.selectedElementId) {
+        selectedElement = _selectedElement.selectedElement;
+        return { ...elem};
+      }
+      _selectedElement
+      return { ...elem};
+    }
+    return { ...elem};
+  })
   return { ...state, selectedElement: selectedElement };
 }
 

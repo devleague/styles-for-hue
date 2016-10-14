@@ -79,6 +79,17 @@ db.styles.insert(
               "style" : {"backgroundColor" : "orange"}
             }
           ]
+        },
+        {
+          "_id" : ObjectId("57fc9789aa00d38a26228235"),
+          "elementId" : 5,
+          "tag" : "div",
+          "children" : null,
+          "style" : {
+            "backgroundColor" : "red",
+            "fontFamily" : "arial",
+            "display" : "inline-block"
+          }
         }
       ]
     }
