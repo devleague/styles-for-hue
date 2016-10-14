@@ -13,6 +13,10 @@ class FontMenu extends Component {
     var font = document.getElementById("fontSizes").value;
     return font;
   }
+  changeFontSizeUnit() {
+    var font = document.getElementById("fontSizeUnits").value;
+    return font;
+  }
   render() {
     return(
       <div>
@@ -35,9 +39,12 @@ class FontMenu extends Component {
             <input type="color" defaultValue="#ff0000" />
           </form>
           <p>Font Size</p>
-          <form onChange={(event) => this.props.changeFontSize(this.props.selectedElement, event.target.value + "px")}>
+          <form onChange={(event) => this.props.changeFontSize(this.props.selectedElement, event.target.value + this.changeFontSizeUnit())}>
             <input type="number" min="10" max="100" id="fontSizes" placeholder="Font Size" />
-            <input type="text" value="px" disabled/>
+            <select id="fontSizeUnits">
+              <option value="px">px</option>
+              <option value="em">em</option>
+            </select>
           </form>
       </div>
     );
