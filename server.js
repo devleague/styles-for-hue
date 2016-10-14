@@ -66,6 +66,7 @@ const stylesSchema = new Schema({
     }],
   }
 });
+
 // mongoose will lowercase and pluralize for mongodb //
 let Style = mongoose.model('Style', stylesSchema);
 
@@ -101,6 +102,7 @@ app.put('/doc/:id', (req, res) => {
   Style.findOneAndUpdate(numbers, {doc: req.body.doc}, () => {
   });
 });
+
 
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, 'public', 'index.html'))

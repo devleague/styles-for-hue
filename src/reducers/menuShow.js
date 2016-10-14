@@ -1,11 +1,14 @@
 const initialState = {
-  showMenu: false
+  showFontMenu: false,
+  showDivMenu: false
 }
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case "SHOW_MENU":
-      return {...state, showMenu: action.show};
+    case "SHOW_FONTMENU":
+      return {...state, showFontMenu: action.show};
+    case "SHOW_DIVMENU":
+      return {...state, showDivMenu: action.show};
     default:
       return state;
   }
