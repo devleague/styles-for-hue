@@ -45,17 +45,17 @@ class Template extends Component {
               selectedElementId={this.props.selectedElementId}
             />
           )
-        // case 'ul':
-        //   return (
-        //     <ListComp
-        //       key={elem.elementId}
-        //       elementId={elem.elementId}
-        //       style={elem.style}
-        //       list={elem.children}
-        //       selectElement={this.props.selectElement}
-        //       selectedElementId={this.props.selectedElementId}
-        //     />
-        //   )
+        case 'ul':
+          return (
+            <ListComp
+              key={elem.elementId}
+              elementId={elem.elementId}
+              style={elem.style}
+              list={elem.children}
+              selectElement={this.props.selectElement}
+              selectedElementId={this.props.selectedElementId}
+            />
+          )
       }
     })
     // const divTags = this.props.divTags.map((div, index) => {
