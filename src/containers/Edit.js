@@ -125,6 +125,7 @@ class Edit extends Component {
           selectedElement={this.props.selectedElement}
           changeFont={this.props.changeFont}
           changeFontColor={this.props.changeFontColor}
+          changeFontSize={this.props.changeFontSize}
         />
       );
     };
