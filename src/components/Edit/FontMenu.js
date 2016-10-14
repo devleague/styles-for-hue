@@ -31,11 +31,9 @@ class FontMenu extends Component {
             })}
           </select>
           <p>Font Color</p>
-          <select id="fontColors" defaultValue="0" onChange={() => this.props.changeFontColor(this.props.selectedElement, this.changeFontColor())}>
-            <option value="red">red</option>
-            <option value="pink">pink</option>
-            <option value="purple">purple</option>
-          </select>
+          <form onChange={(event) => {this.props.changeFontColor(this.props.selectedElement, event.target.value)}}>
+            <input type="color" defaultValue="#ff0000" />
+          </form>
           <p>Font Size</p>
           <select id="fontSizes" defaultValue="0" onChange={() => this.props.changeFontSize(this.props.selectedElement, this.changeFontSize())}>
             <option value="10px">10px</option>
