@@ -117,6 +117,7 @@ class Edit extends Component {
           selectedElement={this.props.selectedElement}
           changeFont={this.props.changeFont}
           changeFontColor={this.props.changeFontColor}
+          changeFontSize={this.props.changeFontSize}
         />
       );
     };
@@ -218,6 +219,7 @@ class Edit extends Component {
               placeholder="Enter file name"></input>
           </div>
           <button
+            className="save"
             type="submit"
             onClick={()=> this.exportAsSCSSFile(this.props.elements)}>Save to file</button>
         </form>

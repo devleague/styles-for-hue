@@ -44,6 +44,16 @@ export function changeFontColor (elementId, color) {
   }
 }
 
+export function changeFontSize (elementId, size) {
+  return {
+    type: 'CHANGE_FONT_SIZE',
+    data: {
+      elementId: elementId,
+      fontSize: size
+    }
+  }
+}
+
 export function newDoc (docId) {
   return {
     type: 'NEW_DOC',
