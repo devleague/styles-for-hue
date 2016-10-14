@@ -47,6 +47,30 @@ db.styles.insert({
         {
           "_id" : ObjectId("57fc9789aa00d38a26228231"),
           "elementId" : 1,
+          "subType": {
+            "divTags" : [
+              {
+                "elementId" : 8,
+                "subType": {
+                  "divTags" : [
+                    {
+                      "elementId" : 10,
+                      "style" : { "backgroundColor" : "yellow"}
+                    },
+                    {
+                      "elementId" : 11,
+                      "style" : {"backgroundColor" : "blue"}
+                    }
+                  ]
+                },
+                "style" : { "backgroundColor" : "red"}
+              },
+              {
+                "elementId" : 9,
+                "style" : {"backgroundColor" : "black"}
+              }
+            ]
+          },
           "style" : {
             "backgroundColor" : "blue",
             "fontFamily" : "sans-serif",
@@ -56,6 +80,7 @@ db.styles.insert({
         {
           "_id" : ObjectId("57fc9789aa00d38a26228235"),
           "elementId" : 5,
+          "subType" : null,
           "style" : {
             "backgroundColor" : "red",
             "fontFamily" : "arial",

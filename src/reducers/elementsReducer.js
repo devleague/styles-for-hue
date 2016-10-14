@@ -77,12 +77,17 @@ function selectElement (state, elements, selectedElement, id) {
         return { ...elem};
       }
       if (elem.subType) {
-        return selectedElement = selectElement(state, elem.subType, selectedElement, id).selectedElement;
+        const _selectedElement = selectElement(state, elem.subType, selectedElement, id);
+        if (id === _selectedElement.selectedElement.selectedElementId) {
+          selectedElement = _selectedElement.selectedElement;
+          return { ...elem};
+        }
+        _selectedElement
+        return { ...elem};
       }
       return { ...elem};
     })
   }
-  console.log({ doc: {...state.doc, elements: {...state.doc.elements}}, selectedElement: selectedElement });
   return { ...state, selectedElement: selectedElement };
 }
 

@@ -65,24 +65,6 @@ class TemplateEdit extends Component {
     this.loadTheme()
       .then((elementArray) => {
         return elementArray[0];
-      //   let divTags = elementArray.filter((elem, index) => {
-      //     return elem.type === 'div';
-      //   });
-      //   let pTags = elementArray.filter((elem, index) => {
-      //     return elem.type === 'p';
-      //   });
-      //   let imgTags = elementArray.filter((elem, index) => {
-      //     return elem.type === 'img';
-      //   });
-      //   let ulTags = elementArray.filter((elem, index) => {
-      //     return elem.type === 'ul';
-      //   });
-      //   return {
-      //     divTags: divTags,
-      //     pTags: pTags,
-      //     imgTags: imgTags,
-      //     ulTags: ulTags
-      //   };
       })
       .then((elements) => {
         this.props.setElements(elements);

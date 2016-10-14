@@ -13,12 +13,13 @@ class Template extends Component {
         <DivComp
           key={div.elementId}
           elementId={div.elementId}
+          children={div.subType}
           style={div.style}
           selectElement={this.props.selectElement}
           selectedElementId={this.props.selectedElementId}
-          pTags={this.props.pTags}
           onClick={this.props.showElementStyles}
-        />
+        >
+        </DivComp>
       )
     })
     const pTags = this.props.pTags.map((p, index) => {
