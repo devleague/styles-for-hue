@@ -1,12 +1,8 @@
 const initialState = {
+  _id: null,
   doc: {
     _id: null,
-    elements: {
-      divTags: [],
-      pTags: [],
-      imgTags: [],
-      ulTags: []
-    }
+    elements: []
   },
   selectedElement: {
     selectedElementId: 0,
@@ -19,7 +15,8 @@ const reducer = (state = initialState, action) => {
   let selectedElement = { ...state.selectedElement};
   switch (action.type) {
     case "SET_ELEMENTS":
-      return {...state, doc: action.data.doc};
+      console.log(action.data);
+      return {...state, _id: action.data._id, doc: action.data.doc};
     case "SELECT_ELEMENT":
       return selectElement(state, newElems, selectedElement, action.data.elementId);
     case "CHANGE_COLOR":

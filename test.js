@@ -6,38 +6,42 @@ db.dropDatabase();
 db.createCollection("styles");
 
 print("styles");
-db.styles.insert({
-  "doc" : {
-    "_id" : ObjectId("57fc994396ee4215990d9091"),
-    "elements": {
-      "ulTags" : [
+db.styles.insert(
+  {
+    "doc" : {
+      "_id" : ObjectId("57fc994396ee4215990d9091"),
+      elements: [
         {
-          "_id" : ObjectId("57fc9789aa00d38a26228234"),
-          "elementId" : 4,
-          "subType": {
-            "liTags" : [
-              {
-               "elementId" : 6,
-                "style" : { "backgroundColor" : "pink"}
+          "_id" : ObjectId("57fc9789aa00d38a26228231"),
+          "elementId" : 1,
+          "subType": [
+            {
+              "elementId" : 8,
+              "subType": {
+                "divTags" : [
+                  {
+                    "elementId" : 10,
+                    "style" : { "backgroundColor" : "yellow"}
+                  },
+                  {
+                    "elementId" : 11,
+                    "style" : {"backgroundColor" : "blue"}
+                  }
+                ]
               },
-              {
-                "elementId" : 7,
-                "style" : {"backgroundColor" : "orange"}
-              }
-            ]
-          }
-        } ],
-        "imgTags" : [
-        {
-          "_id" : ObjectId("57fc9789aa00d38a26228233"),
-          "elementId" : 3,
-          "src" : "/images/city_night.jpg",
+              "style" : { "backgroundColor" : "red"}
+            },
+            {
+              "elementId" : 9,
+              "style" : {"backgroundColor" : "black"}
+            }
+          ],
           "style" : {
-            "backgroundColor" : "#3C6E71",
-            "width": "100%"
-             }
-          } ],
-        "pTags" : [
+            "backgroundColor" : "blue",
+            "fontFamily" : "sans-serif",
+            "display" : "inline-block"
+          }
+        },
         {
           "_id" : ObjectId("57fc9789aa00d38a26228232"),
           "elementId" : 2,
@@ -46,54 +50,122 @@ db.styles.insert({
             "backgroundColor" : "green",
             "fontFamily" : "arial"
           }
-        } ],
-        "divTags" : [
+        },
         {
-          "_id" : ObjectId("57fc9789aa00d38a26228231"),
-          "elementId" : 1,
-          "subType": {
-            "divTags" : [
-              {
-                "elementId" : 8,
-                "subType": {
-                  "divTags" : [
-                    {
-                      "elementId" : 10,
-                      "style" : { "backgroundColor" : "yellow"}
-                    },
-                    {
-                      "elementId" : 11,
-                      "style" : {"backgroundColor" : "blue"}
-                    }
-                  ]
-                },
-                "style" : { "backgroundColor" : "red"}
-              },
-              {
-                "elementId" : 9,
-                "style" : {"backgroundColor" : "black"}
-              }
-            ]
-          },
+          "_id" : ObjectId("57fc9789aa00d38a26228233"),
+          "elementId" : 3,
+          "src" : "/images/city_night.jpg",
           "style" : {
-            "backgroundColor" : "blue",
-            "fontFamily" : "sans-serif",
-            "display" : "inline-block"
+            "backgroundColor" : "#3C6E71",
+            "width": "100%"
           }
         },
         {
-          "_id" : ObjectId("57fc9789aa00d38a26228235"),
-          "elementId" : 5,
-          "subType" : null,
-          "style" : {
-            "backgroundColor" : "red",
-            "fontFamily" : "arial",
-            "display" : "inline-block"
-          }
-        } ]
-      }
+          "_id" : ObjectId("57fc9789aa00d38a26228234"),
+          "elementId" : 4,
+          "subType":[
+            {
+             "elementId" : 6,
+              "style" : { "backgroundColor" : "pink"}
+            },
+            {
+              "elementId" : 7,
+              "style" : {"backgroundColor" : "orange"}
+            }
+          ]
+        }
+      ]
     }
-  })
+  }
+// {
+//   "doc" : {
+//     "_id" : ObjectId("57fc994396ee4215990d9091"),
+//     "elements": {
+//       "ulTags" : [
+//         {
+//           "_id" : ObjectId("57fc9789aa00d38a26228234"),
+//           "elementId" : 4,
+//           "subType": {
+//             "liTags" : [
+//               {
+//                "elementId" : 6,
+//                 "style" : { "backgroundColor" : "pink"}
+//               },
+//               {
+//                 "elementId" : 7,
+//                 "style" : {"backgroundColor" : "orange"}
+//               }
+//             ]
+//           }
+//         } ],
+//         "imgTags" : [
+//         {
+//           "_id" : ObjectId("57fc9789aa00d38a26228233"),
+//           "elementId" : 3,
+//           "src" : "/images/city_night.jpg",
+//           "style" : {
+//             "backgroundColor" : "#3C6E71",
+//             "width": "100%"
+//              }
+//           } ],
+//         "pTags" : [
+//         {
+//           "_id" : ObjectId("57fc9789aa00d38a26228232"),
+//           "elementId" : 2,
+//           "style" :
+//           {
+//             "backgroundColor" : "green",
+//             "fontFamily" : "arial"
+//           }
+//         } ],
+//         "divTags" : [
+//         {
+//           "_id" : ObjectId("57fc9789aa00d38a26228231"),
+//           "elementId" : 1,
+//           "subType": {
+//             "divTags" : [
+//               {
+//                 "elementId" : 8,
+//                 "subType": {
+//                   "divTags" : [
+//                     {
+//                       "elementId" : 10,
+//                       "style" : { "backgroundColor" : "yellow"}
+//                     },
+//                     {
+//                       "elementId" : 11,
+//                       "style" : {"backgroundColor" : "blue"}
+//                     }
+//                   ]
+//                 },
+//                 "style" : { "backgroundColor" : "red"}
+//               },
+//               {
+//                 "elementId" : 9,
+//                 "style" : {"backgroundColor" : "black"}
+//               }
+//             ]
+//           },
+//           "style" : {
+//             "backgroundColor" : "blue",
+//             "fontFamily" : "sans-serif",
+//             "display" : "inline-block"
+//           }
+//         },
+//         {
+//           "_id" : ObjectId("57fc9789aa00d38a26228235"),
+//           "elementId" : 5,
+//           "subType" : null,
+//           "style" : {
+//             "backgroundColor" : "red",
+//             "fontFamily" : "arial",
+//             "display" : "inline-block"
+//           }
+//         } ]
+//       }
+//     }
+//   }
+)
 
 print('styles database');
 

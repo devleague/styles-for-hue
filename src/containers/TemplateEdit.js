@@ -63,11 +63,12 @@ class TemplateEdit extends Component {
         return this.props.fontTypes(fonts)
       })
     this.loadTheme()
-      .then((elementArray) => {
-        return elementArray[0];
+      .then((docArray) => {
+        console.log(docArray);
+        return docArray[0];
       })
-      .then((elements) => {
-        this.props.setElements(elements);
+      .then((doc) => {
+        this.props.setElements(doc);
       })
   }
 
@@ -85,20 +86,24 @@ class TemplateEdit extends Component {
       console.log(this.props.sideBar);
       cssComponent = <CssView />;
     };
+    console.log(this.props.elementsReducer);
     return(
       <div
         className="template-edit-container"
       >
-        <Template
-          divTags={this.props.elementsReducer.doc.elements.divTags}
-          pTags={this.props.elementsReducer.doc.elements.pTags}
-          imgTags={this.props.elementsReducer.doc.elements.imgTags}
-          ulTags={this.props.elementsReducer.doc.elements.ulTags}
-          selectElement={this.props.selectElement}
-          selectedElementId={this.props.elementsReducer.selectedElement.selectedElementId}
-          selectedElementStyle={this.props.elementsReducer.selectedElement.selectedStyle}
-          showElementStyles={this.showElementStyles}
-        />
+        <div className="template-container">
+          <Template
+
+            // divTags={this.props.elementsReducer.doc.elements.divTags}
+            // pTags={this.props.elementsReducer.doc.elements.pTags}
+            // imgTags={this.props.elementsReducer.doc.elements.imgTags}
+            // ulTags={this.props.elementsReducer.doc.elements.ulTags}
+            selectElement={this.props.selectElement}
+            selectedElementId={this.props.elementsReducer.selectedElement.selectedElementId}
+            selectedElementStyle={this.props.elementsReducer.selectedElement.selectedStyle}
+            showElementStyles={this.showElementStyles}
+          />
+        </div>
         <div
           className="views"
         >
