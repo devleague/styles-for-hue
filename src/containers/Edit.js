@@ -68,36 +68,27 @@ class Edit extends Component {
           var liTag = elementKeySubTypeLiId + elementKeySubTypeLiStyle;
           var liSplit = liTag.split(/(?=[A-Z])/);
           liSplit = liSplit[0] + "-" + liSplit[1].toLowerCase();
-          console.log(liSplit);
           liStyles += ".listItem" + liSplit;
         }
       }
       if(elementType != "ulTags"){
+
         for (var i = 0; i < elements[key].length; i++){
           var elementStyle = (JSON.stringify(elements[key][i].style));
-          // elementStyle = elementStyle.replace(/,/g, ';\n  ');
-          // console.log(elementStyle);
-          // var elemSplit = elementStyle.split(/(?=[A-Z])/);
-          // console.log(elemSplit);
-          // elemSplit = elemSplit[0] + "-" + elemSplit[1].toLowerCase();
-
-          // elementStyle = elemSplit;
           elementStyle = elementStyle.slice(0, 1) + " \n  " + elementStyle.slice(1);
           elementStyle = elementStyle.slice(0, -2) + elementStyle.slice(-2, -1) + ";\n" + elementStyle.slice(-1);
-          text += elementType + " " + elementStyle + "\n";
+          var elementId = elements[key][i].elementId;
+          if (elementType === "divTags") {
+            elementType = ".divComp";
+          }
+          if (elementType === "pTags") {
+            elementType = ".pComp";
+          }
+          text += elementType + elementId + " " + elementStyle + "\n";
+          text = text.replace("backgroundColor", "background-color");
+          text = text.replace("fontFamily", "font-family");
         }
       }
-      // if(elementType === "imgTags"){
-      //   for (var i = 0; i < elements[key].length; i++){
-      //     var elementStyle = (JSON.stringify(elements[key][i].style));
-      //     var imgSrc = (JSON.stringify(elements[key][i].src));
-      //     var HTMLimgSrc = '<img src=' + imgSrc + '>';
-      //     //console.log(HTMLimgSrc);
-      //     elementStyle = elementStyle.slice(0, 1) + " \n  " + elementStyle.slice(1);
-      //     elementStyle = elementStyle.slice(0, -2) + elementStyle.slice(-2, -1) + ";\n" + elementStyle.slice(-1);
-      //     text += elementType + " " + elementStyle + "\n";
-      //   }
-      // }
     }
     liStyles = liStyles.replace(/\{/g, ' {\n  ');
     liStyles = liStyles.replace(/\}/g, ';\n}\n');
@@ -112,13 +103,13 @@ class Edit extends Component {
     }
     var blob = new Blob([text], {type: "text/plain;charset=utf-8"});
     console.log(text);
-    //fileSaver.saveAs(blob, filename+".scss");
+    fileSaver.saveAs(blob, filename+".scss");
   };
 
   render() {
     let fontComponent = null;
     if (this.props.menuShow.showFontMenu === true) {
-      console.log(this.props.showFontMenu);
+      //console.log(this.props.showFontMenu);
       fontComponent = (
         <FontMenu
           fontList={this.props.fontList}
