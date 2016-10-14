@@ -226,6 +226,7 @@ class Edit extends Component {
               placeholder="Enter file name"></input>
           </div>
           <button
+            className="save"
             type="submit"
             onClick={()=> this.exportAsSCSSFile(this.props.elements)}>Save to file</button>
         </form>
