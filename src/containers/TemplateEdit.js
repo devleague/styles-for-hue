@@ -64,7 +64,6 @@ class TemplateEdit extends Component {
       })
     this.loadTheme()
       .then((docArray) => {
-        console.log(docArray);
         return docArray[0];
       })
       .then((doc) => {
@@ -86,14 +85,13 @@ class TemplateEdit extends Component {
       console.log(this.props.sideBar);
       cssComponent = <CssView />;
     };
-    console.log(this.props.elementsReducer);
     return(
       <div
         className="template-edit-container"
       >
         <div className="template-container">
           <Template
-
+            elements={this.props.elementsReducer.doc.elements}
             // divTags={this.props.elementsReducer.doc.elements.divTags}
             // pTags={this.props.elementsReducer.doc.elements.pTags}
             // imgTags={this.props.elementsReducer.doc.elements.imgTags}

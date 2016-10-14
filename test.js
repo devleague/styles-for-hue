@@ -14,25 +14,26 @@ db.styles.insert(
         {
           "_id" : ObjectId("57fc9789aa00d38a26228231"),
           "elementId" : 1,
-          "subType": [
+          "tag" : 'div',
+          "children": [
             {
               "elementId" : 8,
-              "subType": {
-                "divTags" : [
-                  {
-                    "elementId" : 10,
-                    "style" : { "backgroundColor" : "yellow"}
-                  },
-                  {
-                    "elementId" : 11,
-                    "style" : {"backgroundColor" : "blue"}
-                  }
-                ]
-              },
+              "tag" : 'div',
+              "children": [
+                {
+                  "elementId" : 10,
+                  "style" : { "backgroundColor" : "yellow"}
+                },
+                {
+                  "elementId" : 11,
+                  "style" : {"backgroundColor" : "blue"}
+                }
+              ],
               "style" : { "backgroundColor" : "red"}
             },
             {
               "elementId" : 9,
+              "tag" : 'div',
               "style" : {"backgroundColor" : "black"}
             }
           ],
@@ -45,6 +46,7 @@ db.styles.insert(
         {
           "_id" : ObjectId("57fc9789aa00d38a26228232"),
           "elementId" : 2,
+          "tag" : "p",
           "style" :
           {
             "backgroundColor" : "green",
@@ -54,6 +56,7 @@ db.styles.insert(
         {
           "_id" : ObjectId("57fc9789aa00d38a26228233"),
           "elementId" : 3,
+          "tag" : "img",
           "src" : "/images/city_night.jpg",
           "style" : {
             "backgroundColor" : "#3C6E71",
@@ -63,13 +66,16 @@ db.styles.insert(
         {
           "_id" : ObjectId("57fc9789aa00d38a26228234"),
           "elementId" : 4,
-          "subType":[
+          "tag" : "ul",
+          "children":[
             {
              "elementId" : 6,
+             "tag" : "li",
               "style" : { "backgroundColor" : "pink"}
             },
             {
               "elementId" : 7,
+              "tag" : "li",
               "style" : {"backgroundColor" : "orange"}
             }
           ]

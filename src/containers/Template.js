@@ -8,6 +8,56 @@ class Template extends Component {
   }
 
   render() {
+    const elements = this.props.elements.map((elem, index) => {
+      console.log(elem.tag);
+      switch (elem.tag) {
+        case 'div':
+          return (
+            <DivComp
+              key={elem.elementId}
+              elementId={elem.elementId}
+              children={elem.children}
+              style={elem.style}
+              selectElement={this.props.selectElement}
+              selectedElementId={this.props.selectedElementId}
+              onClick={this.props.showElementStyles}
+            >
+            </DivComp>
+          )
+        case 'p':
+          return (
+            <PComp
+              key={elem.elementId}
+              elementId={elem.elementId}
+              style={elem.style}
+              selectElement={this.props.selectElement}
+              selectedElementId={this.props.selectedElementId}
+            />
+          )
+        case 'img':
+          return (
+            <ImgComp
+              key={elem.elementId}
+              elementId={elem.elementId}
+              src={elem.src}
+              style={elem.style}
+              selectElement={this.props.selectElement}
+              selectedElementId={this.props.selectedElementId}
+            />
+          )
+        // case 'ul':
+        //   return (
+        //     <ListComp
+        //       key={elem.elementId}
+        //       elementId={elem.elementId}
+        //       style={elem.style}
+        //       list={elem.children}
+        //       selectElement={this.props.selectElement}
+        //       selectedElementId={this.props.selectedElementId}
+        //     />
+        //   )
+      }
+    })
     // const divTags = this.props.divTags.map((div, index) => {
     //   return (
     //     <DivComp
@@ -62,7 +112,7 @@ class Template extends Component {
         className="template-1"
       >
         <Header />
-
+        {elements}
         <Footer />
         <hr />
         <div className="current-styles-container">

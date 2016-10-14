@@ -15,7 +15,6 @@ const reducer = (state = initialState, action) => {
   let selectedElement = { ...state.selectedElement};
   switch (action.type) {
     case "SET_ELEMENTS":
-      console.log(action.data);
       return {...state, _id: action.data._id, doc: action.data.doc};
     case "SELECT_ELEMENT":
       return selectElement(state, newElems, selectedElement, action.data.elementId);
