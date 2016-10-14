@@ -87,6 +87,7 @@ class Edit extends Component {
           text += elementType + elementId + " " + elementStyle + "\n";
           text = text.replace("backgroundColor", "background-color");
           text = text.replace("fontFamily", "font-family");
+          text = text.replace("fontSize", "font-size");
         }
       }
     }
