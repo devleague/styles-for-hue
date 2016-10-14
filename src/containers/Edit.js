@@ -136,6 +136,7 @@ class Edit extends Component {
           colorPalette={this.props.colorPalette}
           selectedElement={this.props.selectedElement}
           changeColor={this.props.changeColor}
+          changeDivWidth={this.props.divWidth}
         />
       );
     };
