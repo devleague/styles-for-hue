@@ -35,14 +35,10 @@ class FontMenu extends Component {
             <input type="color" defaultValue="#ff0000" />
           </form>
           <p>Font Size</p>
-          <select id="fontSizes" defaultValue="0" onChange={() => this.props.changeFontSize(this.props.selectedElement, this.changeFontSize())}>
-            <option value="10px">10px</option>
-            <option value="12px">12px</option>
-            <option value="16px">16px</option>
-            <option value="20px">20px</option>
-            <option value="24px">24px</option>
-            <option value="36px">36px</option>
-          </select>
+          <form onChange={(event) => this.props.changeFontSize(this.props.selectedElement, event.target.value + "px")}>
+            <input type="number" min="10" max="100" id="fontSizes" placeholder="Font Size" />
+            <input type="text" value="px" disabled/>
+          </form>
       </div>
     );
   }
