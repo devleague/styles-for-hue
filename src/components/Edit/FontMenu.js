@@ -43,7 +43,7 @@ class FontMenu extends Component {
             <input type="number" min="10" max="100" id="fontSizes" placeholder="Font Size" />
             <select id="fontSizeUnits">
               <option value="px">px</option>
-              <option value="em">em</option>
+              <option value="em">rem</option>
             </select>
           </form>
       </div>
