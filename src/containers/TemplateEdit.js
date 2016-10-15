@@ -92,10 +92,6 @@ class TemplateEdit extends Component {
         <div className="template-container">
           <Template
             elements={this.props.elementsReducer.doc.elements}
-            // divTags={this.props.elementsReducer.doc.elements.divTags}
-            // pTags={this.props.elementsReducer.doc.elements.pTags}
-            // imgTags={this.props.elementsReducer.doc.elements.imgTags}
-            // ulTags={this.props.elementsReducer.doc.elements.ulTags}
             selectElement={this.props.selectElement}
             selectedElementId={this.props.elementsReducer.selectedElement.selectedElementId}
             selectedElementStyle={this.props.elementsReducer.selectedElement.selectedStyle}
@@ -108,6 +104,7 @@ class TemplateEdit extends Component {
           <Edit
             colorPalette={this.props.colors.colorPalette}
             fontList={this.props.fonts.items}
+            changeColorPalette={this.props.changeColorPalette}
             changeColor={this.props.changeColor}
             changeFont={this.props.changeFont}
             changeFontColor={this.props.changeFontColor}
