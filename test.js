@@ -37,6 +37,7 @@ db.styles.insert(
                     {
                       "elementId" : 5,
                       "tag" : "h1",
+                      "text" : "This Is An H1 Tag",
                       "style" : {
                         "backgroundColor" : "orange"
                       }
@@ -44,6 +45,7 @@ db.styles.insert(
                     {
                       "elementId" : 6,
                       "tag" : "h2",
+                      "text" : "This Is An H2 Tag",
                       "style" : {
                         "backgroundColor" : "yellow"
                       }
@@ -51,6 +53,7 @@ db.styles.insert(
                     {
                       "elementId" : 7,
                       "tag" : "p",
+                      "text" : "This is a p tag. Oat cake dragée cheesecake chocolate cake. Jelly dessert dessert chocolate liquorice caramels sweet ice cream liquorice. Gummi bears tart topping gummies jelly bear claw. Lemon drops tootsie roll topping. Dragée gingerbread jelly beans cake dragée cake caramels. Icing sesame snaps bonbon sweet roll.",
                       "style" : {
                         "backgroundColor" : "pink"
                       }

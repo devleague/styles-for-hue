@@ -14,7 +14,7 @@ class PComp extends Component {
         className={this.isActive()}
         style={this.props.style}
         onClick={() => this.props.selectElement(this.props.elementId, this.props.style)}
-      >I'm a p component!
+      >{this.props.text}
       </p>
     )
   }

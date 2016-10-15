@@ -27,6 +27,7 @@ class DivComp extends Component {
                         key={index}
                         elementId={thirdChild.elementId}
                         tag={thirdChild.tag}
+                        text={thirdChild.text}
                         style={thirdChild.style}
                         selectElement={this.props.selectElement}
                       >
@@ -37,6 +38,7 @@ class DivComp extends Component {
                       <PComp
                         key={index}
                         elementId={thirdChild.elementId}
+                        text={thirdChild.text}
                         style={thirdChild.style}
                         selectElement={this.props.selectElement}
                       >

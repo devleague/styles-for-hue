@@ -27,6 +27,7 @@ const stylesSchema = new Schema({
       elementId: Number,
       tag: String,
       src: String,
+      text: String,
       style: {
         backgroundColor: String,
         fontFamily: String,

@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 class HComp extends Component {
   isActive () {
     if (this.props.elementId === this.props.selectedElementId) {
-      return `imgComp${this.props.elementId} selected`
+      return `hComp${this.props.elementId} selected`
     }
-    return `imgComp${this.props.elementId}`;
+    return `hComp${this.props.elementId}`;
   }
 
   render () {
@@ -17,7 +17,7 @@ class HComp extends Component {
             style={this.props.style}
             onClick={() => this.props.selectElement(this.props.elementId, this.props.style)}
           >
-            This Is An H1 Tag
+            {this.props.text}
           </h1>
         )
       case 'h2':
@@ -27,7 +27,7 @@ class HComp extends Component {
             style={this.props.style}
             onClick={() => this.props.selectElement(this.props.elementId, this.props.style)}
           >
-            This Is An H2 Tag
+            {this.props.text}
           </h2>
         )
       case 'h3':
@@ -37,7 +37,7 @@ class HComp extends Component {
             style={this.props.style}
             onClick={() => this.props.selectElement(this.props.elementId, this.props.style)}
           >
-            This Is An H3 Tag
+            {this.props.text}
           </h3>
         )
       default:
