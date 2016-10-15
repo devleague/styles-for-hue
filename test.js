@@ -124,6 +124,76 @@ db.styles.insert(
                   "style" : {
                     "backgroundColor" : "blue"
                   }
+                },
+                {
+                  "elementId" : 14,
+                  "tag" : "div",
+                  "className" : "col-third",
+                  "children" : [
+                    {
+                      "elementId" : 15,
+                      "tag" : "h3",
+                      "text" : "This Is An H3 Tag",
+                      "style" : {
+                        "backgroundColor" : "orange"
+                      }
+                    },
+                    {
+                      "elementId" : 16,
+                      "tag" : "p",
+                      "text" : "This is a p tag. Apple pie chocolate apple pie gummi bears. Candy biscuit cheesecake gummi bears powder.",
+                      "style" : {
+                        "backgroundColor" : "yellow"
+                      }
+                    },
+                    {
+                      "elementId" : 17,
+                      "tag" : "p",
+                      "text" : "Click the",
+                      "linkText": "a tag",
+                      "style" : {
+                        "backgroundColor" : "pink"
+                      }
+                    }
+                  ],
+                  "style" : {
+                    "backgroundColor" : "blue"
+                  }
+                },
+                {
+                  "elementId" : 18,
+                  "tag" : "div",
+                  "className" : "col-third",
+                  "children" : [
+                    {
+                      "elementId" : 19,
+                      "tag" : "h3",
+                      "text" : "This Is An H3 Tag",
+                      "style" : {
+                        "backgroundColor" : "orange"
+                      }
+                    },
+                    {
+                      "elementId" : 20,
+                      "tag" : "p",
+                      "text" : "This is a p tag. Tootsie roll sugar plum chocolate cake jelly beans chupa chups bear claw apple pie.",
+                      "style" : {
+                        "backgroundColor" : "yellow"
+                      }
+                    },
+                    {
+                      "elementId" : 21,
+                      "tag" : "p",
+                      "text" : "Click the",
+                      "linkText": "a tag",
+                      "style" : {
+                        "backgroundColor" : "pink"
+                      }
+                    }
+                  ],
+                  "style" : {
+                    "backgroundColor" : "blue"
+                  }
                 }
               ],
               "style": {

@@ -4,7 +4,7 @@ class Header extends Component {
   render () {
     return (
       <div
-        className="headerContainer"
+        className="header-container"
         style={
           {
             fontFamily: "Lato",
