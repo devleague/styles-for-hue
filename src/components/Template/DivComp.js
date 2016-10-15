@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PComp from './PComp';
+import HComp from './HComp';
 
 class DivComp extends Component {
   isActive (elementId) {
@@ -14,15 +16,48 @@ class DivComp extends Component {
       let children2 = [];
       children = this.props.children.map((child, index) => {
         if (child.children) {
-          children2 = child.children.map((youngerChlid, index) => {
+          let children3 = [];
+          children2 = child.children.map((secondChild, index) => {
+            if (secondChild.children) {
+              children3 = secondChild.children.map((thirdChild, index) => {
+                switch (thirdChild.tag[0]) {
+                  case 'h':
+                    return (
+                      <HComp
+                        key={index}
+                        elementId={thirdChild.elementId}
+                        tag={thirdChild.tag}
+                        style={thirdChild.style}
+                        selectElement={this.props.selectElement}
+                      >
+                      </HComp>
+                    )
+                  case 'p':
+                    return (
+                      <PComp
+                        key={index}
+                        elementId={thirdChild.elementId}
+                        style={thirdChild.style}
+                        selectElement={this.props.selectElement}
+                      >
+                      </PComp>
+                    )
+                  default:
+                    return (
+                      <div> Cannot find child element. </div>
+                    )
+                }
+              })
+            }
             return (
               <div
                 key={index}
-                className={this.isActive(youngerChlid.elementId)}
-                style={ youngerChlid.style }
-                onClick={() => this.props.selectElement(youngerChlid.elementId, child.style)}
+                className={this.isActive(secondChild.elementId)}
+                style={secondChild.style}
+                onClick={() => this.props.selectElement(secondChild.elementId, child.style)}
               >
                 I'm a div component!
+                {children3}
               </div>
             )
           })
@@ -30,7 +65,7 @@ class DivComp extends Component {
             <div
               key={index}
               className={this.isActive(child.elementId)}
-              style={ child.style }
+              style={child.style}
             >
               I'm a div component!
               {children2}
@@ -41,7 +76,7 @@ class DivComp extends Component {
             <div
               key={index}
               className={this.isActive(child.elementId)}
-              style={ child.style }
+              style={child.style}
               onClick={() => this.props.selectElement(child.elementId, child.style)}
             >
               I'm a div component!
@@ -53,7 +88,7 @@ class DivComp extends Component {
     return (
       <div
           className={this.isActive(this.props.elementId)}
-          style={ this.props.style }
+          style={this.props.style}
           // onClick={() => this.props.selectElement(this.props.elementId, this.props.style)}
         >
           I'm a div component!

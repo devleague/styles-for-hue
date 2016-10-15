@@ -90,7 +90,6 @@ const reducer = (state = initialState, action) => {
 }
 
 function selectElement (state, elements, selectedElement, id) {
-  console.log(elements);
   elements = elements.map((elem, index) => {
     if (elem.elementId === id) {
       selectedElement = { selectedElementId: elem.elementId, selectedStyle: elem.style };
