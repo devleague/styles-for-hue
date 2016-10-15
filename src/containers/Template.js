@@ -8,63 +8,67 @@ class Template extends Component {
   }
 
   render() {
-    const divTags = this.props.divTags.map((div, index) => {
-      return (
-        <DivComp
-          key={div.elementId}
-          elementId={div.elementId}
-          style={div.style}
-          selectElement={this.props.selectElement}
-          selectedElementId={this.props.selectedElementId}
-          pTags={this.props.pTags}
-          onClick={this.props.showElementStyles}
-        />
-      )
-    })
-    const pTags = this.props.pTags.map((p, index) => {
-      return (
-        <PComp
-          key={p.elementId}
-          elementId={p.elementId}
-          style={p.style}
-          selectElement={this.props.selectElement}
-          selectedElementId={this.props.selectedElementId}
-        />
-      )
-    })
-    const imgTags = this.props.imgTags.map((img, index) => {
-      return (
-        <ImgComp
-          key={img.elementId}
-          elementId={img.elementId}
-          src={img.src}
-          style={img.style}
-          selectElement={this.props.selectElement}
-          selectedElementId={this.props.selectedElementId}
-        />
-      )
-    })
-    const ulTags = this.props.ulTags.map((ul, index) => {
-      return (
-        <ListComp
-          key={ul.elementId}
-          elementId={ul.elementId}
-          style={ul.style}
-          list={ul.subType}
-          selectElement={this.props.selectElement}
-          selectedElementId={this.props.selectedElementId}
-        />
-      )
+    const elements = this.props.elements.map((elem, index) => {
+      switch (elem.tag) {
+        case 'div':
+          return (
+            <DivComp
+              key={elem.elementId}
+              elementId={elem.elementId}
+              className={elem.className}
+              children={elem.children}
+              style={elem.style}
+              selectElement={this.props.selectElement}
+              selectedElementId={this.props.selectedElementId}
+              onClick={this.props.showElementStyles}
+            >
+            </DivComp>
+          )
+        case 'p':
+          return (
+            <PComp
+              key={elem.elementId}
+              elementId={elem.elementId}
+              style={elem.style}
+              selectElement={this.props.selectElement}
+              selectedElementId={this.props.selectedElementId}
+            />
+          )
+        case 'img':
+          return (
+            <ImgComp
+              key={elem.elementId}
+              elementId={elem.elementId}
+              className={elem.className}
+              src={elem.src}
+              style={elem.style}
+              selectElement={this.props.selectElement}
+              selectedElementId={this.props.selectedElementId}
+            />
+          )
+        case 'ul':
+          return (
+            <ListComp
+              key={elem.elementId}
+              elementId={elem.elementId}
+              style={elem.style}
+              list={elem.children}
+              selectElement={this.props.selectElement}
+              selectedElementId={this.props.selectedElementId}
+            />
+          )
+        default:
+          return (
+            <div> Document Not Found! </div>
+          )
+      }
     })
     return (
       <div
-        className="template-one"
+        className="template-1"
       >
         <Header />
-        {imgTags}
-        {divTags}
-        {pTags}
-        {ulTags}
+        {elements}
         <Footer />
         <hr />
         <div className="current-styles-container">
