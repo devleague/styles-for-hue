@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 
 import * as Actions from '../actions';
 
+import { browserHistory } from 'react-router'
+
 function mapStateToProps (state) {
   return { ...state};
 }
@@ -32,8 +34,10 @@ class Edit extends Component {
       data: JSON.stringify({doc: doc})
     })
     .then((data) => {
+      console.log(data);
       this.props.newDoc(data._id);
       this.props.showSave('visible');
+      browserHistory.push('/template/' + data._id);
     })
     .then(() => {
       setTimeout(() => {
@@ -44,7 +48,7 @@ class Edit extends Component {
 
   editSave(){
     return $.ajax({
-      url: '/doc/' + this.props.docId,
+      url: '/template/' + this.props.docId,
       type: 'PUT',
       dataType: 'json',
       contentType: 'application/json',

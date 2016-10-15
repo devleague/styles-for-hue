@@ -78,7 +78,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.get('/api/styles', (req, res) => {
   Style.find({})
-  .then(results => res.json(results));
+  .then(results => res.send(results));
 });
 
 app.post('/api/styles', (req, res) => {
@@ -86,17 +86,17 @@ app.post('/api/styles', (req, res) => {
     doc: req.body.doc,
   })
   .then(results => res.json(results))
-  .catch(err => res.json(err));
+  .catch(err => res.send(err));
 });
 
-app.get('/doc/:id', (req, res) => {
+app.get('/template/:id', (req, res) => {
   let id = mongoose.Types.ObjectId;
   Style.findOne({_id: req.params.id})
-  .exec((error, results) => {res.json(results);
+  .exec((error, results) => {res.send(results);
   });
 });
 
-app.put('/doc/:id', (req, res) => {
+app.put('/template/:id', (req, res) => {
   let id = req.body.doc._id;
   let numbers = shortid.generate(id);
   Style.findOneAndUpdate(numbers, {doc: req.body.doc}, () => {
