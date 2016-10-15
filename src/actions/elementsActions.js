@@ -14,6 +14,13 @@ export function selectElement (elementId) {
   }
 }
 
+export function changeColorPalette (colorArray) {
+  return {
+    type: 'CHANGE_COLOR_PALETTE',
+    data: colorArray
+  }
+}
+
 export function changeColor (elementId, color) {
   return {
     type: 'CHANGE_COLOR',
