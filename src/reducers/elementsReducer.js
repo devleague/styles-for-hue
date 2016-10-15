@@ -115,9 +115,16 @@ function selectElement (state, elements, selectedElement, id) {
 function changeColorPalette (state, elements, colorPalette) {
   elements = elements.map((elem, index) => {
     if (elem.children) {
-      elem.children = elem.children.map((child, index) => {
-        return { ...child, style: { ...child.style, backgroundColor: colorPalette[1].value}};
-      })
+      debugger;
+      let i = 1;
+      while (i < colorPalette.length) {
+        elem.children = elem.children.map((child, index) => {
+          return { ...child, style: { ...child.style, backgroundColor: colorPalette[1].value}};
+        })
+        i++;
+        changeColorPalette(state, elem.children, colorPalette);
+        return { ...elem};
+      }
     }
       return { ...elem, style: { ...elem.style, backgroundColor: colorPalette[0].value}}
     })
