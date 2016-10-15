@@ -15,6 +15,7 @@ class Template extends Component {
             <DivComp
               key={elem.elementId}
               elementId={elem.elementId}
+              className={elem.className}
               children={elem.children}
               style={elem.style}
               selectElement={this.props.selectElement}
@@ -38,6 +39,7 @@ class Template extends Component {
             <ImgComp
               key={elem.elementId}
               elementId={elem.elementId}
+              className={elem.className}
               src={elem.src}
               style={elem.style}
               selectElement={this.props.selectElement}

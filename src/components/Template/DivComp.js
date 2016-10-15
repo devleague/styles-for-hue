@@ -3,11 +3,11 @@ import PComp from './PComp';
 import HComp from './HComp';
 
 class DivComp extends Component {
-  isActive (elementId) {
+  isActive (elementId, className) {
     if (elementId === this.props.selectedElementId) {
-      return `divComp${elementId} selected`
+      return `${className} selected`
     }
-    return `divComp${elementId}`;
+    return className;
   }
 
   render() {
@@ -54,7 +54,7 @@ class DivComp extends Component {
             return (
               <div
                 key={index}
-                className={this.isActive(secondChild.elementId)}
+                className={this.isActive(secondChild.elementId, secondChild.className)}
                 style={secondChild.style}
                 onClick={() => this.props.selectElement(secondChild.elementId, child.style)}
               >
@@ -66,7 +66,7 @@ class DivComp extends Component {
           return (
             <div
               key={index}
-              className={this.isActive(child.elementId)}
+              className={this.isActive(child.elementId, child.className)}
               style={child.style}
             >
               I'm a div component!
@@ -77,7 +77,7 @@ class DivComp extends Component {
           return (
             <div
               key={index}
-              className={this.isActive(child.elementId)}
+              className={this.isActive(child.elementId, child.className)}
               style={child.style}
               onClick={() => this.props.selectElement(child.elementId, child.style)}
             >
@@ -89,7 +89,7 @@ class DivComp extends Component {
     }
     return (
       <div
-          className={this.isActive(this.props.elementId)}
+          className={this.isActive(this.props.elementId, this.props.className)}
           style={this.props.style}
           // onClick={() => this.props.selectElement(this.props.elementId, this.props.style)}
         >

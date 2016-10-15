@@ -16,6 +16,7 @@ db.styles.insert(
           "elementId" : 1,
           "tag" : 'img',
           "src" : "http://placehold.it/800x250",
+          "className" : "hero-container",
           "style" : {
             "backgroundColor" : "#3C6E71",
             "width": "100%"
@@ -25,14 +26,17 @@ db.styles.insert(
           "_id" : ObjectId("57fc9789aa00d38a26228232"),
           "elementId" : 2,
           "tag" : "div",
+          "className" : "row-container",
           "children" : [
             {
               "elementId" : 3,
               "tag" : "div",
+              "className" : "column-container",
               "children" : [
                 {
                   "elementId" : 4,
                   "tag" : "div",
+                  "className" : "col-100",
                   "children" : [
                     {
                       "elementId" : 5,
