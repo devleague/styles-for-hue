@@ -15,7 +15,7 @@ class ColorMenu extends Component {
           defaultValue="0"
           onChange={() => this.props.changeColorPalette(this.props.colorPalette)}
         >
-          <option value="0" disabled="disabled">SELECT COLOR</option>
+          <option value="0" disabled="disabled">SELECT PALETTE</option>
           {this.props.colorPalette.map((color, index) => {
             return (
               <option
