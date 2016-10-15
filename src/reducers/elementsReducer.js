@@ -19,7 +19,27 @@ const reducer = (state = initialState, action) => {
     case "SELECT_ELEMENT":
       return selectElement(state, newElems, selectedElement, action.data.elementId);
     case "CHANGE_COLOR_PALETTE":
-      return changeColorPalette(state, newElems, action.data);
+      newElems = newElems.map((elem, index) => {
+        if (elem.children) {
+          elem.children = elem.children.map((child, index) => {
+            if (child.children) {
+              child.children = child.children.map((secondChild, index) => {
+                console.log('second child', secondChild);
+                if (secondChild.children) {
+                  secondChild.children = secondChild.children.map((thirdChild, index) => {
+                    console.log('third child', thirdChild);
+                    return { ...thirdChild, style: { ...thirdChild.style, backgroundColor: action.data[3].value}}
+                  })
+                }
+                return { ...secondChild, style: { ...secondChild.style, backgroundColor: action.data[2].value}}
+              })
+            }
+            return { ...child, style: { ...child.style, backgroundColor: action.data[1].value}};
+          })
+        }
+        return { ...elem, style: { ...elem.style, backgroundColor: action.data[0].value}}
+      })
+      return { ...state, doc: { ...state.doc, elements: newElems}};
 
     case "CHANGE_COLOR":
       newElems = newElems.map((elem, index) => {
@@ -113,20 +133,22 @@ function selectElement (state, elements, selectedElement, id) {
 }
 
 function changeColorPalette (state, elements, colorPalette) {
+  let counter = 1;
   elements = elements.map((elem, index) => {
     if (elem.children) {
-      debugger;
-      let i = 1;
-      while (i < colorPalette.length) {
-        elem.children = elem.children.map((child, index) => {
-          return { ...child, style: { ...child.style, backgroundColor: colorPalette[1].value}};
-        })
-        i++;
-        changeColorPalette(state, elem.children, colorPalette);
-        return { ...elem};
-      }
+      elem.children = elem.children.map((child, index) => {
+        if (counter < colorPalette.length) {
+          return { ...child, style: { ...child.style, backgroundColor: colorPalette[counter].value}};
+        }
+        return { ...child};
+      })
+      counter = 1;
+      counter++;
+      // debugger;
+      changeColorPalette(state, elem.children, colorPalette);
+      return { ...elem, style: { ...elem.style, backgroundColor: colorPalette[0].value}};
     }
-      return { ...elem, style: { ...elem.style, backgroundColor: colorPalette[0].value}}
+    return { ...elem, style: { ...elem.style, backgroundColor: colorPalette[0].value}}
     })
   return { ...state, doc: { ...state.doc, elements: elements}};
 }
