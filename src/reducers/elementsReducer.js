@@ -19,15 +19,7 @@ const reducer = (state = initialState, action) => {
     case "SELECT_ELEMENT":
       return selectElement(state, newElems, selectedElement, action.data.elementId);
     case "CHANGE_COLOR_PALETTE":
-      newElems = newElems.map((elem, index) => {
-      if (elem.children) {
-        elem.children = elem.children.map((child, index) => {
-          return { ...child, style: { ...child.style, backgroundColor: action.data[1].value}};
-        })
-      }
-        return { ...elem, style: { ...elem.style, backgroundColor: action.data[0].value}}
-      })
-      return { ...state, doc: { ...state.doc, elements: newElems}};
+      return changeColorPalette(state, newElems, action.data);
 
     case "CHANGE_COLOR":
       newElems = newElems.map((elem, index) => {
@@ -118,6 +110,18 @@ function selectElement (state, elements, selectedElement, id) {
     return { ...elem};
   })
   return { ...state, selectedElement: selectedElement };
+}
+
+function changeColorPalette (state, elements, colorPalette) {
+  elements = elements.map((elem, index) => {
+    if (elem.children) {
+      elem.children = elem.children.map((child, index) => {
+        return { ...child, style: { ...child.style, backgroundColor: colorPalette[1].value}};
+      })
+    }
+      return { ...elem, style: { ...elem.style, backgroundColor: colorPalette[0].value}}
+    })
+  return { ...state, doc: { ...state.doc, elements: elements}};
 }
 
 export default reducer;
