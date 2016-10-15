@@ -4,7 +4,7 @@ class Header extends Component {
   render () {
     return (
       <div
-        id="headerDiv"
+        className="header-container"
         style={
           {
             fontFamily: "Lato",
@@ -14,6 +14,14 @@ class Header extends Component {
           }
         }
       >
+        <img
+          src="http://www.hsdtaxlaw.com/wp-content/uploads/2016/05/logo_placeholder.png"
+          style={
+            {
+              height: "50px"
+            }
+          }
+        />
         <ul>
           <li>
             Home

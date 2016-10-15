@@ -4,7 +4,7 @@ class Footer extends Component {
   render () {
     return (
       <div
-        className="FooterDiv"
+        className="footer-container"
         style={
           {
             width: "100%",
@@ -16,9 +16,9 @@ class Footer extends Component {
           }
         }
       >
-        <h4>
+        <h6>
           &copy; Copyright 2016 inHue
-        </h4>
+        </h6>
       </div>
     )
   }

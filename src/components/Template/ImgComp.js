@@ -10,6 +10,7 @@ class ImgComp extends Component {
   render () {
     return (
       <div
+        className={this.props.className}
         style={
           {
             justifyContent: "center"

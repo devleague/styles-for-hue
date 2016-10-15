@@ -1,66 +1,97 @@
 import React, { Component } from 'react';
+import PComp from './PComp';
+import HComp from './HComp';
 
 class DivComp extends Component {
-  isActive (elementId) {
+  isActive (elementId, className) {
     if (elementId === this.props.selectedElementId) {
-      return `divComp${elementId} selected`
+      return `${className} selected`
     }
-    return `divComp${elementId}`;
+    return className;
   }
 
   render() {
     let children = [];
     if(this.props.children) {
-      for (let child in this.props.children) {
-        let children2 = [];
-        children = this.props.children[child].map((child, index) => {
-          if (child.subType) {
-            for (let child2 in child.subType) {
-              children2 = child.subType[child2].map((youngerChlid, index) => {
-                return (
-                  <div
-                    key={index}
-                    className={this.isActive(youngerChlid.elementId)}
-                    style={ youngerChlid.style }
-                    onClick={() => this.props.selectElement(youngerChlid.elementId, child.style)}
-                  >
-                    I'm a div component!
-                  </div>
-                )
+      let children2 = [];
+      children = this.props.children.map((child, index) => {
+        if (child.children) {
+          let children3 = [];
+          children2 = child.children.map((secondChild, index) => {
+            if (secondChild.children) {
+              children3 = secondChild.children.map((thirdChild, index) => {
+                switch (thirdChild.tag[0]) {
+                  case 'h':
+                    return (
+                      <HComp
+                        key={index}
+                        elementId={thirdChild.elementId}
+                        tag={thirdChild.tag}
+                        text={thirdChild.text}
+                        style={thirdChild.style}
+                        selectElement={this.props.selectElement}
+                      >
+                      </HComp>
+                    )
+                  case 'p':
+                    return (
+                      <PComp
+                        key={index}
+                        elementId={thirdChild.elementId}
+                        text={thirdChild.text}
+                        linkText={thirdChild.linkText}
+                        style={thirdChild.style}
+                        selectElement={this.props.selectElement}
+                      >
+                      </PComp>
+                    )
+                  default:
+                    return (
+                      <div> Cannot find child element. </div>
+                    )
+                }
               })
             }
-          }
-          if (child.subType) {
             return (
               <div
                 key={index}
-                className={this.isActive(child.elementId)}
-                style={ child.style }
+                className={this.isActive(secondChild.elementId, secondChild.className)}
+                style={secondChild.style}
+                onClick={() => this.props.selectElement(secondChild.elementId, child.style)}
               >
                 I'm a div component!
-                {children2}
+                {children3}
               </div>
             )
-          } else {
-            return (
-              <div
-                key={index}
-                className={this.isActive(child.elementId)}
-                style={ child.style }
-                onClick={() => this.props.selectElement(child.elementId, child.style)}
-              >
-                I'm a div component!
-              </div>
-            )
-          }
-        })
-      }
+          })
+          return (
+            <div
+              key={index}
+              className={this.isActive(child.elementId, child.className)}
+              style={child.style}
+            >
+              I'm a div component!
+              {children2}
+            </div>
+          )
+        } else {
+          return (
+            <div
+              key={index}
+              className={this.isActive(child.elementId, child.className)}
+              style={child.style}
+              onClick={() => this.props.selectElement(child.elementId, child.style)}
+            >
+              I'm a div component!
+            </div>
+          )
+        }
+      })
     }
-    console.log(children);
     return (
       <div
-          className={this.isActive(this.props.elementId)}
-          style={ this.props.style }
+          className={this.isActive(this.props.elementId, this.props.className)}
+          style={this.props.style}
           // onClick={() => this.props.selectElement(this.props.elementId, this.props.style)}
         >
           I'm a div component!
