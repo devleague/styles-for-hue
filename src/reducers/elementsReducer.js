@@ -18,6 +18,10 @@ const reducer = (state = initialState, action) => {
       return {...state, _id: action.data._id, doc: action.data.doc};
     case "SELECT_ELEMENT":
       return selectElement(state, newElems, selectedElement, action.data.elementId);
+    case "CHANGE_COLOR_PALETTE":
+      newElems = newElems.map((elem, index) => {
+        return { ...elem, style: { ...elem.style, backgroundColor: action.data[0].value}}
+      })
     case "CHANGE_COLOR":
       newElems = newElems.map((elem, index) => {
         if (elem.elementId === action.data.elementId) {
