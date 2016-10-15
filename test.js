@@ -78,6 +78,64 @@ db.styles.insert(
             "backgroundColor" : "green",
             "fontFamily" : "arial"
           }
+        },
+        {
+          "_id" : ObjectId("57fc9789aa00d38a26228233"),
+          "elementId" : 8,
+          "tag" : "div",
+          "className" : "row-container",
+          "children" : [
+            {
+              "elementId" : 9,
+              "tag" : "div",
+              "className" : "column-container",
+              "children" : [
+                {
+                  "elementId" : 10,
+                  "tag" : "div",
+                  "className" : "col-third",
+                  "children" : [
+                    {
+                      "elementId" : 11,
+                      "tag" : "h3",
+                      "text" : "This Is An H3 Tag",
+                      "style" : {
+                        "backgroundColor" : "orange"
+                      }
+                    },
+                    {
+                      "elementId" : 12,
+                      "tag" : "p",
+                      "text" : "This is a p tag. Marzipan bear claw sweet donut. Jujubes croissant candy wafer cheesecake caramels carrot cake tart.",
+                      "style" : {
+                        "backgroundColor" : "yellow"
+                      }
+                    },
+                    {
+                      "elementId" : 13,
+                      "tag" : "p",
+                      "text" : "Click the",
+                      "linkText": "a tag",
+                      "style" : {
+                        "backgroundColor" : "pink"
+                      }
+                    }
+                  ],
+                  "style" : {
+                    "backgroundColor" : "blue"
+                  }
+                }
+              ],
+              "style": {
+                "backgroundColor" : "red"
+              }
+            }
+          ],
+          "style" :
+          {
+            "backgroundColor" : "green",
+            "fontFamily" : "arial"
+          }
         }
       ]
     }

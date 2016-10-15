@@ -39,6 +39,7 @@ class DivComp extends Component {
                         key={index}
                         elementId={thirdChild.elementId}
                         text={thirdChild.text}
+                        linkText={thirdChild.linkText}
                         style={thirdChild.style}
                         selectElement={this.props.selectElement}
                       >

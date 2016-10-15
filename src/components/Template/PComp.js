@@ -9,6 +9,16 @@ class PComp extends Component {
   }
 
   render() {
+    if (this.props.linkText) {
+      return (
+        <p
+          className={this.isActive()}
+          style={this.props.style}
+          onClick={() => this.props.selectElement(this.props.elementId, this.props.style)}
+        >{this.props.text} <a href="#">{this.props.linkText}</a>.
+        </p>
+      )
+    }
     return (
       <p
         className={this.isActive()}
