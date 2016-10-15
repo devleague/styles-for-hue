@@ -64,17 +64,20 @@ class Edit extends Component {
       var elementKeySubTypeLi = elements[key][0].subType;
         for (var i = 0; i < elementKeySubTypeLi.liTags.length; i++){
           var elementKeySubTypeLiStyle = JSON.stringify(elementKeySubTypeLi.liTags[i].style);
+          elementKeySubTypeLiStyle = elementKeySubTypeLiStyle.replace("backgroundColor", "background-color");
+          elementKeySubTypeLiStyle = elementKeySubTypeLiStyle.replace("fontFamily", "font-family");
+          elementKeySubTypeLiStyle = elementKeySubTypeLiStyle.replace("fontSize", "font-size");
           var elementKeySubTypeLiId = elementKeySubTypeLi.liTags[i].elementId;
           var liTag = elementKeySubTypeLiId + elementKeySubTypeLiStyle;
-          var liSplit = liTag.split(/(?=[A-Z])/);
-          liSplit = liSplit[0] + "-" + liSplit[1].toLowerCase();
-          liStyles += ".listItem" + liSplit;
+          liStyles += ".listItem" + liTag;
         }
       }
       if(elementType != "ulTags"){
-
         for (var i = 0; i < elements[key].length; i++){
           var elementStyle = (JSON.stringify(elements[key][i].style));
+          elementStyle = elementStyle.replace("backgroundColor", "background-color");
+          elementStyle = elementStyle.replace("fontFamily", "font-family");
+          elementStyle = elementStyle.replace("fontSize", "font-size");
           elementStyle = elementStyle.slice(0, 1) + " \n  " + elementStyle.slice(1);
           elementStyle = elementStyle.slice(0, -2) + elementStyle.slice(-2, -1) + ";\n" + elementStyle.slice(-1);
           var elementId = elements[key][i].elementId;
@@ -85,8 +88,6 @@ class Edit extends Component {
             elementType = ".pComp";
           }
           text += elementType + elementId + " " + elementStyle + "\n";
-          text = text.replace("backgroundColor", "background-color");
-          text = text.replace("fontFamily", "font-family");
         }
       }
     }
@@ -102,7 +103,7 @@ class Edit extends Component {
       filename = new Date().toTimeString();
     }
     var blob = new Blob([text], {type: "text/plain;charset=utf-8"});
-    console.log(text);
+    //console.log(text);
     fileSaver.saveAs(blob, filename+".scss");
   };
 
@@ -116,12 +117,13 @@ class Edit extends Component {
           selectedElement={this.props.selectedElement}
           changeFont={this.props.changeFont}
           changeFontColor={this.props.changeFontColor}
+          changeFontSize={this.props.changeFontSize}
         />
       );
     };
     let divComponent = null;
     if (this.props.menuShow.showDivMenu === true) {
-      console.log(this.props.showDivMenu);
+      //console.log(this.props.showDivMenu);
       divComponent = (
         <ColorMenu
           colorPalette={this.props.colorPalette}
@@ -218,6 +220,7 @@ class Edit extends Component {
               placeholder="Enter file name"></input>
           </div>
           <button
+            className="save"
             type="submit"
             onClick={()=> this.exportAsSCSSFile(this.props.elements)}>Save to file</button>
         </form>

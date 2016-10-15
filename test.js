@@ -6,69 +6,293 @@ db.dropDatabase();
 db.createCollection("styles");
 
 print("styles");
-db.styles.insert({
-  "doc" : {
-    "_id" : ObjectId("57fc994396ee4215990d9091"),
-    "elements": {
-      "ulTags" : [
+db.styles.insert(
+  {
+    "doc" : {
+      "_id" : ObjectId("57fc994396ee4215990d9091"),
+      elements: [
         {
-          "_id" : ObjectId("57fc9789aa00d38a26228234"),
-          "elementId" : 4,
-          "subType": {
-            "liTags" : [
-              {
-               "elementId" : 6,
-                "style" : { "backgroundColor" : "pink"}
-              },
-              {
-                "elementId" : 7,
-                "style" : {"backgroundColor" : "orange"}
-              }
-            ]
-          }
-        } ],
-        "imgTags" : [
-        {
-          "_id" : ObjectId("57fc9789aa00d38a26228233"),
-          "elementId" : 3,
-          "src" : "/images/city_night.jpg",
+          "_id" : ObjectId("57fc9789aa00d38a26228231"),
+          "elementId" : 1,
+          "tag" : 'img',
+          "src" : "http://placehold.it/800x250",
+          "className" : "hero-container",
           "style" : {
             "backgroundColor" : "#3C6E71",
             "width": "100%"
-             }
-          } ],
-        "pTags" : [
+          }
+        },
         {
           "_id" : ObjectId("57fc9789aa00d38a26228232"),
           "elementId" : 2,
+          "tag" : "div",
+          "className" : "row-container",
+          "children" : [
+            {
+              "elementId" : 3,
+              "tag" : "div",
+              "className" : "column-container",
+              "children" : [
+                {
+                  "elementId" : 4,
+                  "tag" : "div",
+                  "className" : "col-100",
+                  "children" : [
+                    {
+                      "elementId" : 5,
+                      "tag" : "h1",
+                      "text" : "This Is An H1 Tag",
+                      "style" : {
+                        "backgroundColor" : "orange"
+                      }
+                    },
+                    {
+                      "elementId" : 6,
+                      "tag" : "h2",
+                      "text" : "This Is An H2 Tag",
+                      "style" : {
+                        "backgroundColor" : "yellow"
+                      }
+                    },
+                    {
+                      "elementId" : 7,
+                      "tag" : "p",
+                      "text" : "This is a p tag. Oat cake dragée cheesecake chocolate cake. Jelly dessert dessert chocolate liquorice caramels sweet ice cream liquorice. Gummi bears tart topping gummies jelly bear claw. Lemon drops tootsie roll topping. Dragée gingerbread jelly beans cake dragée cake caramels. Icing sesame snaps bonbon sweet roll.",
+                      "style" : {
+                        "backgroundColor" : "pink"
+                      }
+                    }
+                  ],
+                  "style" : {
+                    "backgroundColor" : "blue"
+                  }
+                }
+              ],
+              "style": {
+                "backgroundColor" : "red"
+              }
+            }
+          ],
           "style" :
           {
             "backgroundColor" : "green",
             "fontFamily" : "arial"
           }
-        } ],
-        "divTags" : [
-        {
-          "_id" : ObjectId("57fc9789aa00d38a26228231"),
-          "elementId" : 1,
-          "style" : {
-            "backgroundColor" : "blue",
-            "fontFamily" : "sans-serif",
-            "display" : "inline-block"
-          }
         },
         {
-          "_id" : ObjectId("57fc9789aa00d38a26228235"),
-          "elementId" : 5,
-          "style" : {
-            "backgroundColor" : "red",
-            "fontFamily" : "arial",
-            "display" : "inline-block"
+          "_id" : ObjectId("57fc9789aa00d38a26228233"),
+          "elementId" : 8,
+          "tag" : "div",
+          "className" : "row-container",
+          "children" : [
+            {
+              "elementId" : 9,
+              "tag" : "div",
+              "className" : "column-container",
+              "children" : [
+                {
+                  "elementId" : 10,
+                  "tag" : "div",
+                  "className" : "col-third",
+                  "children" : [
+                    {
+                      "elementId" : 11,
+                      "tag" : "h3",
+                      "text" : "This Is An H3 Tag",
+                      "style" : {
+                        "backgroundColor" : "orange"
+                      }
+                    },
+                    {
+                      "elementId" : 12,
+                      "tag" : "p",
+                      "text" : "This is a p tag. Marzipan bear claw sweet donut. Jujubes croissant candy wafer cheesecake caramels carrot cake tart.",
+                      "style" : {
+                        "backgroundColor" : "yellow"
+                      }
+                    },
+                    {
+                      "elementId" : 13,
+                      "tag" : "p",
+                      "text" : "Click the",
+                      "linkText": "a tag",
+                      "style" : {
+                        "backgroundColor" : "pink"
+                      }
+                    }
+                  ],
+                  "style" : {
+                    "backgroundColor" : "blue"
+                  }
+                },
+                {
+                  "elementId" : 14,
+                  "tag" : "div",
+                  "className" : "col-third",
+                  "children" : [
+                    {
+                      "elementId" : 15,
+                      "tag" : "h3",
+                      "text" : "This Is An H3 Tag",
+                      "style" : {
+                        "backgroundColor" : "orange"
+                      }
+                    },
+                    {
+                      "elementId" : 16,
+                      "tag" : "p",
+                      "text" : "This is a p tag. Apple pie chocolate apple pie gummi bears. Candy biscuit cheesecake gummi bears powder.",
+                      "style" : {
+                        "backgroundColor" : "yellow"
+                      }
+                    },
+                    {
+                      "elementId" : 17,
+                      "tag" : "p",
+                      "text" : "Click the",
+                      "linkText": "a tag",
+                      "style" : {
+                        "backgroundColor" : "pink"
+                      }
+                    }
+                  ],
+                  "style" : {
+                    "backgroundColor" : "blue"
+                  }
+                },
+                {
+                  "elementId" : 18,
+                  "tag" : "div",
+                  "className" : "col-third",
+                  "children" : [
+                    {
+                      "elementId" : 19,
+                      "tag" : "h3",
+                      "text" : "This Is An H3 Tag",
+                      "style" : {
+                        "backgroundColor" : "orange"
+                      }
+                    },
+                    {
+                      "elementId" : 20,
+                      "tag" : "p",
+                      "text" : "This is a p tag. Tootsie roll sugar plum chocolate cake jelly beans chupa chups bear claw apple pie.",
+                      "style" : {
+                        "backgroundColor" : "yellow"
+                      }
+                    },
+                    {
+                      "elementId" : 21,
+                      "tag" : "p",
+                      "text" : "Click the",
+                      "linkText": "a tag",
+                      "style" : {
+                        "backgroundColor" : "pink"
+                      }
+                    }
+                  ],
+                  "style" : {
+                    "backgroundColor" : "blue"
+                  }
+                }
+              ],
+              "style": {
+                "backgroundColor" : "red"
+              }
+            }
+          ],
+          "style" :
+          {
+            "backgroundColor" : "green",
+            "fontFamily" : "arial"
           }
-        } ]
-      }
+        }
+      ]
     }
-  })
+  }
+)
+      // [
+      //   {
+      //     "_id" : ObjectId("57fc9789aa00d38a26228231"),
+      //     "elementId" : 1,
+      //     "tag" : 'div',
+      //     "children": [
+      //       {
+      //         "elementId" : 8,
+      //         "tag" : 'div',
+      //         "children": [
+      //           {
+      //             "elementId" : 10,
+      //             "style" : { "backgroundColor" : "yellow"}
+      //           },
+      //           {
+      //             "elementId" : 11,
+      //             "style" : {"backgroundColor" : "blue"}
+      //           }
+      //         ],
+      //         "style" : { "backgroundColor" : "red"}
+      //       },
+      //       {
+      //         "elementId" : 9,
+      //         "tag" : 'div',
+      //         "style" : {"backgroundColor" : "black"}
+      //       }
+      //     ],
+      //     "style" : {
+      //       "backgroundColor" : "blue",
+      //       "fontFamily" : "sans-serif",
+      //       "display" : "inline-block"
+      //     }
+      //   },
+      //   {
+      //     "_id" : ObjectId("57fc9789aa00d38a26228232"),
+      //     "elementId" : 2,
+      //     "tag" : "p",
+      //     "style" :
+      //     {
+      //       "backgroundColor" : "green",
+      //       "fontFamily" : "arial"
+      //     }
+      //   },
+      //   {
+      //     "_id" : ObjectId("57fc9789aa00d38a26228233"),
+      //     "elementId" : 3,
+      //     "tag" : "img",
+      //     "src" : "/images/city_night.jpg",
+      //     "style" : {
+      //       "backgroundColor" : "#3C6E71",
+      //       "width": "100%"
+      //     }
+      //   },
+      //   {
+      //     "_id" : ObjectId("57fc9789aa00d38a26228234"),
+      //     "elementId" : 4,
+      //     "tag" : "ul",
+      //     "children":[
+      //       {
+      //        "elementId" : 6,
+      //        "tag" : "li",
+      //         "style" : { "backgroundColor" : "pink"}
+      //       },
+      //       {
+      //         "elementId" : 7,
+      //         "tag" : "li",
+      //         "style" : {"backgroundColor" : "orange"}
+      //       }
+      //     ]
+      //   },
+      //   {
+      //     "_id" : ObjectId("57fc9789aa00d38a26228235"),
+      //     "elementId" : 5,
+      //     "tag" : "div",
+      //     "children" : null,
+      //     "style" : {
+      //       "backgroundColor" : "red",
+      //       "fontFamily" : "arial",
+      //       "display" : "inline-block"
+      //     }
+      //   }
+      // ]
 
 print('styles database');
 
