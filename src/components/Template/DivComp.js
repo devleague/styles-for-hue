@@ -59,7 +59,6 @@ class DivComp extends Component {
                 style={secondChild.style}
                 onClick={() => this.props.selectElement(secondChild.elementId, child.style)}
               >
-                I'm a div component!
                 {children3}
               </div>
             )
@@ -70,7 +69,6 @@ class DivComp extends Component {
               className={this.isActive(child.elementId, child.className)}
               style={child.style}
             >
-              I'm a div component!
               {children2}
             </div>
           )
@@ -82,7 +80,6 @@ class DivComp extends Component {
               style={child.style}
               onClick={() => this.props.selectElement(child.elementId, child.style)}
             >
-              I'm a div component!
             </div>
           )
         }
@@ -94,7 +91,6 @@ class DivComp extends Component {
           style={this.props.style}
           // onClick={() => this.props.selectElement(this.props.elementId, this.props.style)}
         >
-          I'm a div component!
           {children}
       </div>
     )
