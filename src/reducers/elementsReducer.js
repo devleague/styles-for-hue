@@ -40,21 +40,23 @@ const reducer = (state = initialState, action) => {
       return { ...state, doc: { ...state.doc, elements: newElems}};
 
     case "CHANGE_COLOR":
-      newElems = newElems.map((elem, index) => {
-        if (elem.elementId === action.data.elementId) {
-          return { ...elem, style: { ...elem.style, backgroundColor: action.data.backgroundColor}};
-        }
-        if (elem.children) {
-          elem.children = elem.children.map((child, index) => {
-            if (child.elementId === action.data.elementId) {
-              return { ...child, style: { ...child.style, backgroundColor: action.data.backgroundColor}};
-            }
-            return { ...child};
-          })
-        }
-        return { ...elem};
-      });
-      return { ...state, doc: { ...state.doc, elements: newElems} };
+      // newElems = newElems.map((elem, index) => {
+      //   if (elem.elementId === action.data.elementId) {
+      //     return { ...elem, style: { ...elem.style, backgroundColor: action.data.backgroundColor}};
+      //   }
+      //   if (elem.children) {
+      //     elem.children = elem.children.map((child, index) => {
+      //       if (child.elementId === action.data.elementId) {
+      //         return { ...child, style: { ...child.style, backgroundColor: action.data.backgroundColor}};
+      //       }
+      //       return { ...child};
+      //     })
+      //   }
+      //   return { ...elem};
+      // });
+      newElems = action.data;
+      console.log('State', { ...state, doc: { ...state.doc, elements: newElems} });
+      return { ...state, doc: { ...state.doc, elements: action.data} };
     case "CHANGE_FONT_COLOR":
       newElems = newElems.map((elem, index) => {
         if (elem.elementId === action.data.elementId) {

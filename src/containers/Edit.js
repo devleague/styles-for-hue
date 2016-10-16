@@ -16,10 +16,10 @@ class Edit extends Component {
   constructor (props) {
     super(props);
     this.save = () => {
-      this.saveStyle(this.props.elements);
+      this.saveStyle(this.props.elementsReducer.doc.elements);
     }
     this.update = () => {
-      this.editSave(this.props.elements);
+      this.editSave(this.props.elementsReducer.doc.elements);
     }
   }
 
@@ -44,11 +44,11 @@ class Edit extends Component {
 
   editSave(){
     return $.ajax({
-      url: '/doc/' + this.props.docId,
+      url: '/doc/' + this.props.elementsReducer._id,
       type: 'PUT',
       dataType: 'json',
       contentType: 'application/json',
-      data: JSON.stringify({doc: this.props.doc})
+      data: JSON.stringify({doc: this.props.elementsReducer.doc})
     })
   }
 
@@ -107,13 +107,20 @@ class Edit extends Component {
     fileSaver.saveAs(blob, filename+".scss");
   };
 
+  // switchTheme(elements, styleArray) {
+  //   let newElems = this.props.elementsReducer.doc.elements;
+  //   newElems = newElems.map((elem, index) => {
+  //     this.props.dispatch(elem.elementId, styleArray[0]);
+  //   })
+  // }
+
   render() {
     let fontComponent = null;
     if (this.props.menuShow.showFontMenu === true) {
       //console.log(this.props.showFontMenu);
       fontComponent = (
         <FontMenu
-          fontList={this.props.fontList}
+          fontList={this.props.fonts.items}
           selectedElement={this.props.selectedElement}
           changeFont={this.props.changeFont}
           changeFontColor={this.props.changeFontColor}
@@ -126,9 +133,9 @@ class Edit extends Component {
       //console.log(this.props.showDivMenu);
       divComponent = (
         <ColorMenu
-          colorPalette={this.props.colorPalette}
+          colorPalette={this.props.colors.colorPalette}
           selectedElement={this.props.selectedElement}
-          changeColorPalette={this.props.changeColorPalette}
+          elements={this.props.elementsReducer.doc.elements}
           changeColor={this.props.changeColor}
         />
       );
@@ -222,7 +229,7 @@ class Edit extends Component {
           <button
             className="save"
             type="submit"
-            onClick={()=> this.exportAsSCSSFile(this.props.elements)}>Save to file</button>
+            onClick={()=> this.exportAsSCSSFile(this.props.elementsReducer.doc.elements)}>Save to file</button>
         </form>
       </div>
     )
