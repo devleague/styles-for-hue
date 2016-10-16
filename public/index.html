@@ -15,6 +15,94 @@
     @font-face { font-family: 'Acme'; src: url("http://fonts.gstatic.com/s/acme/v5/-J6XNtAHPZBEbsifCdBt-g.ttf") format('truetype'); }
     @font-face { font-family: 'Actor'; src: url("http://fonts.gstatic.com/s/actor/v6/ugMf40CrRK6Jf6Yz_xNSmQ.ttf") format('truetype'); }
     @font-face { font-family: 'Advent Pro'; src: url("http://fonts.gstatic.com/s/adventpro/v4/1NxMBeKVcNNH2H46AUR3wfesZW2xOQ-xsNqO47m55DA.ttf") format('truetype'); }
+        /* RESET CSS DEFAULTS */
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed,
+    figure, figcaption, footer, header, hgroup,
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 100%;
+      font: inherit;
+      vertical-align: baseline; }
+
+    /* HTML5 display-role reset for older browsers */
+    article, aside, details, figcaption, figure,
+    footer, header, hgroup, menu, nav, section {
+      display: block; }
+
+    body {
+      line-height: 1; }
+
+    ol, ul {
+      list-style: none; }
+
+    blockquote, q {
+      quotes: none; }
+
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+      content: "";
+      content: none; }
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0; }
+    * { box-sizing: border-box; }
+
+    /* CONTAINER TO HOLD TEMPLATE */
+    .template-container{
+      width: 900px;
+      margin: 0 auto;
+      padding: 25px;
+      border: 1px solid #000;
+    }
+
+    /* BASIC CSS FOR TEMPLATE*/
+    .template-1{
+      width: 800px;
+      margin: 0 auto;
+      background-color: pink;
+    }
+    .header-container{
+      height: 50px;
+      padding-left: 20px
+    }
+    .row-container{
+      margin: 15px 20px;
+    }
+    .column-container{
+      display:flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+    }
+    .col-100{
+      flex: 0 0 760px;
+      border: 1px #000 solid;
+      padding: 10px;
+      background-color: white;
+    }
+    .col-third{
+      flex: 0 0 240px;
+      border: 1px #000 solid;
+      padding: 10px;
+      background-color: white;
+    }
+    .footer-container{
+      height: 50px;
+      line-height: 50px;
+      padding-left: 20px;
+    }
   </style>
 
 </head>
