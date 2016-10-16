@@ -96,7 +96,7 @@ app.get('/template/:id', (req, res) => {
 });
 
 app.put('/template/:id', (req, res) => {
-  let id = req.body.doc._id;
+  let id = req.body.template._id;
   let numbers = shortid.generate(id);
   UserTemplate.findOneAndUpdate(numbers, {template: req.body.template}, () => {
   });

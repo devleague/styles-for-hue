@@ -47,12 +47,13 @@ class Edit extends Component {
   }
 
   editSave(){
+    console.log('Updated!');
     return $.ajax({
       url: '/template/' + this.props.docId,
       type: 'PUT',
       dataType: 'json',
       contentType: 'application/json',
-      data: JSON.stringify({doc: this.props.doc})
+      data: JSON.stringify({template: this.props.doc})
     })
   }
 
