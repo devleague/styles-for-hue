@@ -116,7 +116,7 @@ class TemplateEdit extends Component {
             savePopup={this.props.savePopup}
             showSave={this.props.showSave}
             newDoc={this.props.newDoc}
-            docId={this.props.elementsReducer.doc._id}
+            docId={this.props.elementsReducer._id}
             doc={this.props.elementsReducer.doc}
           />
           { cssComponent }
