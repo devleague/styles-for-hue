@@ -18,10 +18,10 @@ class Edit extends Component {
   constructor (props) {
     super(props);
     this.save = () => {
-      this.saveStyle(this.props.elements);
+      this.saveStyle(this.props.elementsReducer.doc.elements);
     }
     this.update = () => {
-      this.editSave(this.props.elements);
+      this.editSave(this.props.elementsReducer.doc.elements);
     }
   }
 
@@ -134,12 +134,19 @@ class Edit extends Component {
   }
 
   render() {
+    let fontComponentOpenClass = " ";
+    if(this.props.menuShow.showFontMenu === true){
+      fontComponentOpenClass = "open";
+    };
+    let divComponentOpenClass = " ";
+    if(this.props.menuShow.showDivMenu === true){
+      divComponentOpenClass = "open";
+    };
     let fontComponent = null;
     if (this.props.menuShow.showFontMenu === true) {
-      //console.log(this.props.showFontMenu);
       fontComponent = (
         <FontMenu
-          fontList={this.props.fontList}
+          fontList={this.props.fonts.items}
           selectedElement={this.props.selectedElement}
           changeFont={this.props.changeFont}
           changeFontColor={this.props.changeFontColor}
@@ -149,13 +156,13 @@ class Edit extends Component {
     };
     let divComponent = null;
     if (this.props.menuShow.showDivMenu === true) {
-      //console.log(this.props.showDivMenu);
       divComponent = (
         <ColorMenu
-          colorPalette={this.props.colorPalette}
+          colorPalette={this.props.colors.colorPalette}
           selectedElement={this.props.selectedElement}
-          changeColorPalette={this.props.changeColorPalette}
+          elements={this.props.elementsReducer.doc.elements}
           changeColor={this.props.changeColor}
+          changeDivWidth={this.props.divWidth}
         />
       );
     };
@@ -179,6 +186,7 @@ class Edit extends Component {
         <div
           className="font-menu">
           <button
+            id="button-show"
             className="font-button"
             onClick={ () => {
               if (this.props.menuShow.showFontMenu === false) {
@@ -188,7 +196,8 @@ class Edit extends Component {
               }
             }
           }>
-            <i className="fa fa-caret-down"></i>
+            <i id="icon" className={"fa fa-caret-right" + " " +
+            fontComponentOpenClass}></i>
           </button>
           <h3>Font</h3>
           { fontComponent }
@@ -198,6 +207,7 @@ class Edit extends Component {
         >
           <span>
             <button
+              id="button-show"
               className="div-button"
               onClick={ () => {
                 if (this.props.menuShow.showDivMenu === false) {
@@ -207,7 +217,7 @@ class Edit extends Component {
                 }
               }}
             >
-              <i className="fa fa-caret-down"></i>
+              <i id="icon" className={"fa fa-caret-right" + " " + divComponentOpenClass}></i>
             </button>
             <h3>Div</h3>
           </span>
@@ -248,7 +258,7 @@ class Edit extends Component {
           <button
             className="save"
             type="submit"
-            onClick={()=> this.exportAsSCSSFile(this.props.elements)}>Save to file</button>
+            onClick={()=> this.exportAsSCSSFile(this.props.elementsReducer.doc.elements)}>Save to file</button>
         </form>
         <form>
           <div>

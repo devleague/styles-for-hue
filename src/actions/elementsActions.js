@@ -21,13 +21,10 @@ export function changeColorPalette (colorArray) {
   }
 }
 
-export function changeColor (elementId, color) {
+export function changeColor (elements) {
   return {
     type: 'CHANGE_COLOR',
-    data: {
-      elementId: elementId,
-      backgroundColor: color
-    }
+    data: elements
   }
 }
 
@@ -65,5 +62,26 @@ export function newDoc (docId) {
   return {
     type: 'NEW_DOC',
     data: docId
+  }
+}
+
+export function divWidth (elementId, width) {
+  return {
+    type: 'CHANGE_WIDTH',
+    data: {
+      elementId: elementId,
+      width: width
+    }
+  }
+
+}
+
+export function divHeight (elementId, height) {
+  return {
+    type: 'CHANGE_HEIGHT',
+    data: {
+      elementId: elementId,
+      height: height
+    }
   }
 }

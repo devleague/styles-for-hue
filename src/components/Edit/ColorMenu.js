@@ -1,9 +1,38 @@
 import React, { Component } from 'react';
 
 class ColorMenu extends Component {
+  constructor(props) {
+    super(props);
+    this.switchThemeColor = this.switchThemeColor.bind(this);
+  }
   changeColor() {
     var color = document.getElementById("colorMenu").value;
     return color;
+  }
+
+  switchThemeColor(styleArray) {
+    console.log(this.props.elements);
+    let newElems = this.props.elements;
+    newElems = newElems.map((elem) => {
+      if (elem.children) {
+        elem.children = elem.children.map((child) => {
+          if (child.children) {
+            child.children = child.children.map((secondChild) => {
+              if (secondChild.children) {
+                secondChild.children = secondChild.children.map((thirdChild) => {
+                  return { ...thirdChild, style: { backgroundColor: styleArray[3].value}};
+                })
+              }
+              return { ...secondChild, style: { ...secondChild.style, backgroundColor: styleArray[2].value}};
+            })
+          }
+          return { ...child, style: { ...child.style, backgroundColor: styleArray[1].value}};
+        })
+      }
+      return { ...elem, style: { ...elem.style, backgroundColor: styleArray[0].value}};
+    })
+    console.log(this.props.changeColor(newElems));
+    return this.props.changeColor(newElems);
   }
 
   render() {
@@ -13,7 +42,7 @@ class ColorMenu extends Component {
         <select
           id="colorPalette"
           defaultValue="0"
-          onChange={() => this.props.changeColorPalette(this.props.colorPalette)}
+          onChange={() => this.switchThemeColor(this.props.colorPalette)}
         >
           <option value="0" disabled="disabled">SELECT PALETTE</option>
           {this.props.colorPalette.map((color, index) => {
@@ -40,6 +69,13 @@ class ColorMenu extends Component {
                 </option>
               )
             })}
+          </select>
+        <h3>Div Size</h3>
+          <select id="divWidth"
+            defaultValue="0" onChange={() => this.props.changeDivWidth(this.props.selectedElement, this.changeDivWidth())}
+          >
+            <option value="20px">20px</option>
+            <option value="30px">30px</option>
           </select>
       </div>
     );
