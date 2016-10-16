@@ -108,8 +108,29 @@ class Edit extends Component {
     }
     var blob = new Blob([text], {type: "text/plain;charset=utf-8"});
     //console.log(text);
-    fileSaver.saveAs(blob, filename+".scss");
+    fileSaver.saveAs(blob, filename+".css");
   };
+
+  exportHTML(){
+    // var all = document.getElementsByTagName("*");
+    // console.log(all);
+    //$("*").each(function(i,e){console.log(i+' '+e)});
+    var output = $("html").html();
+    //console.log(output);
+    var re = /<!-- react-text/gi;
+    var test = output.replace(re, "\n<!-- react-text");
+    var end = /<!-- \/react-text -->/g;
+    var test2 = test.replace(end, "<!-- /react-text -->\n");
+    var text = '<!DOCTYPE html>\n<html lang="en">\n' + test2 + '\n</html>';
+    //console.log("HI2\n" + test2);
+    var filename = document.getElementById("input-fileName").value;
+    if (filename === "") {
+      filename = new Date().toTimeString();
+    }
+    var blob = new Blob([text], {type: "text/plain;charset=utf-8"});
+    console.log(text);
+    fileSaver.saveAs(blob, filename+".html");
+  }
 
   render() {
     let fontComponent = null;
@@ -227,6 +248,18 @@ class Edit extends Component {
             className="save"
             type="submit"
             onClick={()=> this.exportAsSCSSFile(this.props.elements)}>Save to file</button>
+        </form>
+        <form>
+          <div>
+            <label>File name</label>
+            <input type="text"
+              id="input-fileName"
+              placeholder="Enter file name"></input>
+          </div>
+          <button
+            className="save"
+            type="submit"
+            onClick={this.exportHTML}>Save HTML</button>
         </form>
       </div>
     )
