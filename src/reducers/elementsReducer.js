@@ -52,6 +52,26 @@ const reducer = (state = initialState, action) => {
         return { ...elem};
       });
       return { ...state, doc: { ...state.doc, elements: newElems} };
+    case "CHANGE_WIDTH":
+      for (let element in newElems) {
+        newElems[element] = newElems[element].map((elem, index) => {
+          if (elem.elementId === action.data.elementId) {
+            return { ...elem, style: { ...elem.style, width: action.data.width}};
+          }
+          if (elem.subType) {
+            for (let children in elem.subType) {
+              elem.subType[children] = elem.subType[children].map((child, index) => {
+                if (child.elementId === action.data.elementId) {
+                  return { ...child, style: { ...child.style, width: action.data.width}};
+                }
+                return { ...child};
+              })
+            }
+          }
+          return { ...elem};
+        });
+      }
+      return { ...state, doc: { ...state.doc, elements: newElems} };
     case "CHANGE_FONT":
       newElems = newElems.map((elem, index) => {
         if (elem.elementId === action.data.elementId) {

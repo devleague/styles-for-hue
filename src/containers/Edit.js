@@ -104,20 +104,41 @@ class Edit extends Component {
     }
     var blob = new Blob([text], {type: "text/plain;charset=utf-8"});
     //console.log(text);
-    fileSaver.saveAs(blob, filename+".scss");
+    fileSaver.saveAs(blob, filename+".css");
   };
 
-  // switchTheme(elements, styleArray) {
-  //   let newElems = this.props.elementsReducer.doc.elements;
-  //   newElems = newElems.map((elem, index) => {
-  //     this.props.dispatch(elem.elementId, styleArray[0]);
-  //   })
-  // }
+  exportHTML(){
+    // var all = document.getElementsByTagName("*");
+    // console.log(all);
+    //$("*").each(function(i,e){console.log(i+' '+e)});
+    var output = $("html").html();
+    //console.log(output);
+    var re = /<!-- react-text/gi;
+    var test = output.replace(re, "\n<!-- react-text");
+    var end = /<!-- \/react-text -->/g;
+    var test2 = test.replace(end, "<!-- /react-text -->\n");
+    var text = '<!DOCTYPE html>\n<html lang="en">\n' + test2 + '\n</html>';
+    //console.log("HI2\n" + test2);
+    var filename = document.getElementById("input-fileName").value;
+    if (filename === "") {
+      filename = new Date().toTimeString();
+    }
+    var blob = new Blob([text], {type: "text/plain;charset=utf-8"});
+    console.log(text);
+    fileSaver.saveAs(blob, filename+".html");
+  }
 
   render() {
+    let fontComponentOpenClass = " ";
+    if(this.props.menuShow.showFontMenu === true){
+      fontComponentOpenClass = "open";
+    };
+    let divComponentOpenClass = " ";
+    if(this.props.menuShow.showDivMenu === true){
+      divComponentOpenClass = "open";
+    };
     let fontComponent = null;
     if (this.props.menuShow.showFontMenu === true) {
-      //console.log(this.props.showFontMenu);
       fontComponent = (
         <FontMenu
           fontList={this.props.fonts.items}
@@ -130,13 +151,13 @@ class Edit extends Component {
     };
     let divComponent = null;
     if (this.props.menuShow.showDivMenu === true) {
-      //console.log(this.props.showDivMenu);
       divComponent = (
         <ColorMenu
           colorPalette={this.props.colors.colorPalette}
           selectedElement={this.props.selectedElement}
           elements={this.props.elementsReducer.doc.elements}
           changeColor={this.props.changeColor}
+          changeDivWidth={this.props.divWidth}
         />
       );
     };
@@ -160,6 +181,7 @@ class Edit extends Component {
         <div
           className="font-menu">
           <button
+            id="button-show"
             className="font-button"
             onClick={ () => {
               if (this.props.menuShow.showFontMenu === false) {
@@ -169,7 +191,8 @@ class Edit extends Component {
               }
             }
           }>
-            <i className="fa fa-caret-down"></i>
+            <i id="icon" className={"fa fa-caret-right" + " " +
+            fontComponentOpenClass}></i>
           </button>
           <h3>Font</h3>
           { fontComponent }
@@ -179,6 +202,7 @@ class Edit extends Component {
         >
           <span>
             <button
+              id="button-show"
               className="div-button"
               onClick={ () => {
                 if (this.props.menuShow.showDivMenu === false) {
@@ -188,7 +212,7 @@ class Edit extends Component {
                 }
               }}
             >
-              <i className="fa fa-caret-down"></i>
+              <i id="icon" className={"fa fa-caret-right" + " " + divComponentOpenClass}></i>
             </button>
             <h3>Div</h3>
           </span>
@@ -230,6 +254,18 @@ class Edit extends Component {
             className="save"
             type="submit"
             onClick={()=> this.exportAsSCSSFile(this.props.elementsReducer.doc.elements)}>Save to file</button>
+        </form>
+        <form>
+          <div>
+            <label>File name</label>
+            <input type="text"
+              id="input-fileName"
+              placeholder="Enter file name"></input>
+          </div>
+          <button
+            className="save"
+            type="submit"
+            onClick={this.exportHTML}>Save HTML</button>
         </form>
       </div>
     )
