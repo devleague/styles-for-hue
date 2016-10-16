@@ -21,13 +21,10 @@ export function changeColorPalette (colorArray) {
   }
 }
 
-export function changeColor (elementId, color) {
+export function changeColor (elements) {
   return {
     type: 'CHANGE_COLOR',
-    data: {
-      elementId: elementId,
-      backgroundColor: color
-    }
+    data: elements
   }
 }
 
