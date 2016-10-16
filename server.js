@@ -116,4 +116,4 @@ const server = app.listen(app.get('port'), () => {
   console.log(`Connected on port ${server.address().port}`);
 });
 
-module.exports = {Doc, Style};
+module.exports = {Doc, Style, UserTemplate};
