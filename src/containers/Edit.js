@@ -199,7 +199,7 @@ class Edit extends Component {
         </div>
         <div
           className="div-menu"
-        >
+        > 
           <span>
             <button
               id="button-show"
