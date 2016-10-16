@@ -25,16 +25,16 @@ class Edit extends Component {
     }
   }
 
-  saveStyle(doc){
+  saveStyle(){
     return $.ajax({
-      url: '/api/styles',
+      url: '/api/usertemplate',
       type: 'POST',
       dataType: 'json',
       contentType: 'application/json',
-      data: JSON.stringify({doc: doc})
+      data: JSON.stringify({template: this.props.doc})
     })
     .then((data) => {
-      console.log(data);
+      console.log('save style data', data);
       this.props.newDoc(data._id);
       this.props.showSave('visible');
       browserHistory.push('/template/' + data._id);
