@@ -10,6 +10,7 @@ const models = require('./models'); //MongoDB models
 
 // SET UP CONNECTION TO MONGO DATABASE //
 mongoose.connect(CONFIG.MONGO_URI);
+
 // CHECK MONGODB CONNECTION ONCE MONGOOSE CONNECTS //
 mongoose.connection.on('error', console.error.bind(console, 'connection error:'));
 mongoose.connection.once('open', function(){
@@ -18,24 +19,31 @@ mongoose.connection.once('open', function(){
 
 // CREATE SCHEMA & MODEL FOR 'styles' COLLECTION //
 const Schema = mongoose.Schema;
-const stylesSchema = new Schema({
+const docSchema = new Schema({
   _id: {type: String, 'default': shortid.generate},
-  doc: {
-    _id: String,
+  doc: Object
+});
+
+const stylesSchema = new Schema({
+  style: Object
+});
+
+const UserTemplateSchema = new Schema({
+  _id: {type: String, 'default': shortid.generate},
+  template: {
     elements: [{
       _id: String,
       elementId: Number,
       tag: String,
-      src: String,
-      text: String,
-      linkText: String,
       className: String,
+      src: String,
       style: {
         backgroundColor: String,
         fontFamily: String,
+        color: String,
         display: String,
-        height: String,
         width: String,
+        height: String
       },
       children: Object
     }]
@@ -43,7 +51,9 @@ const stylesSchema = new Schema({
 });
 
 // mongoose will lowercase and pluralize for mongodb //
-let Style = mongoose.model('Style', stylesSchema);
+let Doc = mongoose.model('Doc', docSchema, 'docs');
+let Style = mongoose.model('Style', stylesSchema, 'styles');
+let UserTemplate = mongoose.model('UserTemplate', UserTemplateSchema, 'usertemplates');
 
 app.set('port', (process.env.PORT || 3000))
 
@@ -51,13 +61,27 @@ app.use('/', express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-app.get('/api/styles', (req, res) => {
-  Style.find({})
+app.get('/api/usertemplate', (req, res) => {
+  UserTemplate.find({})
   .then(results => res.send(results));
 });
 
-app.post('/api/styles', (req, res) => {
-  Style.create({
+app.post('/api/usertemplate', (req, res) => {
+  console.log('req body', req.body.template);
+  UserTemplate.create({
+    template: req.body.template,
+  })
+  .then(results => res.json(results))
+  .catch(err => res.send(err));
+});
+
+app.get('/api/docs', (req, res) => {
+  Doc.find({})
+  .then(results => res.send(results));
+});
+
+app.post('/api/docs', (req, res) => {
+  Doc.create({
     doc: req.body.doc,
   })
   .then(results => res.json(results))
@@ -66,7 +90,7 @@ app.post('/api/styles', (req, res) => {
 
 app.get('/template/:id', (req, res) => {
   let id = mongoose.Types.ObjectId;
-  Style.findOne({_id: req.params.id})
+  UserTemplate.findOne({_id: req.params.id})
   .exec((error, results) => {res.send(results);
   });
 });
@@ -74,7 +98,7 @@ app.get('/template/:id', (req, res) => {
 app.put('/template/:id', (req, res) => {
   let id = req.body.doc._id;
   let numbers = shortid.generate(id);
-  Style.findOneAndUpdate(numbers, {doc: req.body.doc}, () => {
+  UserTemplate.findOneAndUpdate(numbers, {template: req.body.template}, () => {
   });
 });
 
@@ -92,4 +116,4 @@ const server = app.listen(app.get('port'), () => {
   console.log(`Connected on port ${server.address().port}`);
 });
 
-module.exports = Style;
+module.exports = {Doc, Style};
