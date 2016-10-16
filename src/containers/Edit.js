@@ -129,9 +129,16 @@ class Edit extends Component {
   }
 
   render() {
+    let fontComponentOpenClass = " ";
+    if(this.props.menuShow.showFontMenu === true){
+      fontComponentOpenClass = "open";
+    };
+    let divComponentOpenClass = " ";
+    if(this.props.menuShow.showDivMenu === true){
+      divComponentOpenClass = "open";
+    };
     let fontComponent = null;
     if (this.props.menuShow.showFontMenu === true) {
-      //console.log(this.props.showFontMenu);
       fontComponent = (
         <FontMenu
           fontList={this.props.fontList}
@@ -144,13 +151,13 @@ class Edit extends Component {
     };
     let divComponent = null;
     if (this.props.menuShow.showDivMenu === true) {
-      //console.log(this.props.showDivMenu);
       divComponent = (
         <ColorMenu
           colorPalette={this.props.colorPalette}
           selectedElement={this.props.selectedElement}
           changeColorPalette={this.props.changeColorPalette}
           changeColor={this.props.changeColor}
+          changeDivWidth={this.props.divWidth}
         />
       );
     };
@@ -174,6 +181,7 @@ class Edit extends Component {
         <div
           className="font-menu">
           <button
+            id="button-show"
             className="font-button"
             onClick={ () => {
               if (this.props.menuShow.showFontMenu === false) {
@@ -183,7 +191,8 @@ class Edit extends Component {
               }
             }
           }>
-            <i className="fa fa-caret-down"></i>
+            <i id="icon" className={"fa fa-caret-right" + " " + 
+            fontComponentOpenClass}></i>
           </button>
           <h3>Font</h3>
           { fontComponent }
@@ -193,6 +202,7 @@ class Edit extends Component {
         >
           <span>
             <button
+              id="button-show"
               className="div-button"
               onClick={ () => {
                 if (this.props.menuShow.showDivMenu === false) {
@@ -202,7 +212,7 @@ class Edit extends Component {
                 }
               }}
             >
-              <i className="fa fa-caret-down"></i>
+              <i id="icon" className={"fa fa-caret-right" + " " + divComponentOpenClass}></i>
             </button>
             <h3>Div</h3>
           </span>
