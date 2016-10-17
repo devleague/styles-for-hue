@@ -28,7 +28,7 @@ class ColorMenu extends Component {
           return { ...child};
         })
       }
-      return { ...elem};
+      return { ...elem, style: { ...elem.style, backgroundColor: styleArray[0].value}};
     })
     return this.props.changeColor(newElems);
   }
