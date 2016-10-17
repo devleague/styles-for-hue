@@ -25,10 +25,10 @@ class ColorMenu extends Component {
               return { ...secondChild, style: { ...secondChild.style, backgroundColor: styleArray[2].value}};
             })
           }
-          return { ...child, style: { ...child.style, backgroundColor: styleArray[1].value}};
+          return { ...child};
         })
       }
-      return { ...elem, style: { ...elem.style, backgroundColor: styleArray[0].value}};
+      return { ...elem};
     })
     return this.props.changeColor(newElems);
   }

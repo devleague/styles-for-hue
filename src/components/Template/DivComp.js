@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import PComp from './PComp';
 import HComp from './HComp';
+import { ImgComp } from '../../components';
+import Header from './Header';
+import Footer from './Footer';
 
 class DivComp extends Component {
   isActive (elementId, className) {
@@ -15,73 +18,122 @@ class DivComp extends Component {
     if(this.props.children) {
       let children2 = [];
       children = this.props.children.map((child, index) => {
-        if (child.children) {
-          let children3 = [];
-          children2 = child.children.map((secondChild, index) => {
-            if (secondChild.children) {
-              children3 = secondChild.children.map((thirdChild, index) => {
-                switch (thirdChild.tag[0]) {
-                  case 'h':
-                    return (
-                      <HComp
-                        key={index}
-                        elementId={thirdChild.elementId}
-                        tag={thirdChild.tag}
-                        text={thirdChild.text}
-                        style={thirdChild.style}
-                        selectElement={this.props.selectElement}
-                      >
-                      </HComp>
-                    )
-                  case 'p':
-                    return (
-                      <PComp
-                        key={index}
-                        elementId={thirdChild.elementId}
-                        text={thirdChild.text}
-                        linkText={thirdChild.linkText}
-                        style={thirdChild.style}
-                        selectElement={this.props.selectElement}
-                      >
-                      </PComp>
-                    )
-                  default:
-                    return (
-                      <div> Cannot find child element. </div>
-                    )
-                }
-              })
-            }
+        switch (child.tag) {
+          case 'Header':
             return (
-              <div
-                key={index}
-                className={this.isActive(secondChild.elementId, secondChild.className)}
-                style={secondChild.style}
-                onClick={() => this.props.selectElement(secondChild.elementId, child.style)}
+              <Header
+                key={child.elementId}
+                elementId={child.elementId}
+                className={this.isActive(child.elementId, child.className)}
+                style={child.style}
+                selectElement={this.props.selectElement}
               >
-                {children3}
-              </div>
+              </Header>
             )
-          })
-          return (
-            <div
-              key={index}
-              className={this.isActive(child.elementId, child.className)}
-              style={child.style}
-            >
-              {children2}
-            </div>
-          )
-        } else {
-          return (
-            <div
-              key={index}
-              className={this.isActive(child.elementId, child.className)}
-              style={child.style}
-              onClick={() => this.props.selectElement(child.elementId, child.style)}
-            >
-            </div>
-          )
+          case 'Footer':
+            return (
+              <Footer
+                key={child.elementId}
+                elementId={child.elementId}
+                className={this.isActive(child.elementId, child.className)}
+                style={child.style}
+                selectElement={this.props.selectElement}
+              >
+              </Footer>
+            )
+          case 'img':
+            return (
+              <ImgComp
+                key={child.elementId}
+                elementId={child.elementId}
+                className={child.className}
+                src={child.src}
+                style={child.style}
+                selectElement={this.props.selectElement}
+              />
+            )
+          case 'div':
+            if (child.children) {
+              let children3 = [];
+              children2 = child.children.map((secondChild, index) => {
+                if (secondChild.children) {
+                  children3 = secondChild.children.map((thirdChild, index) => {
+                    let children4 = [];
+                    children4 = thirdChild.children.map((fourthChild, index) => {
+                      switch (fourthChild.tag[0]) {
+                        case 'h':
+                          return (
+                            <HComp
+                              key={fourthChild.elementId}
+                              elementId={fourthChild.elementId}
+                              tag={fourthChild.tag}
+                              text={fourthChild.text}
+                              style={fourthChild.style}
+                              selectElement={this.props.selectElement}
+                            >
+                            </HComp>
+                          )
+                        case 'p':
+                          return (
+                            <PComp
+                              key={fourthChild.elementId}
+                              elementId={fourthChild.elementId}
+                              text={fourthChild.text}
+                              linkText={fourthChild.linkText}
+                              style={fourthChild.style}
+                              selectElement={this.props.selectElement}
+                            >
+                            </PComp>
+                          )
+                        default:
+                          return (
+                            <div> Cannot find child element. </div>
+                          )
+                      }
+                    })
+                    return (
+                      <div
+                        key={thirdChild.elementId}
+                        className={this.isActive(thirdChild.elementId, thirdChild.className)}
+                        style={thirdChild.style}
+                        onClick={() => this.props.selectElement(thirdChild.elementId, child.style)}
+                      >
+                        {children4}
+                      </div>
+                    )
+                  })
+                }
+                return (
+                  <div
+                    key={secondChild.elementId}
+                    className={this.isActive(secondChild.elementId, secondChild.className)}
+                    style={secondChild.style}
+                    onClick={() => this.props.selectElement(secondChild.elementId, child.style)}
+                  >
+                    {children3}
+                  </div>
+                )
+              })
+              return (
+                <div
+                  key={child.elementId}
+                  className={this.isActive(child.elementId, child.className)}
+                  style={child.style}
+                >
+                  {children2}
+                </div>
+              )
+            } else {
+              return (
+                <div
+                  key={child.elementId}
+                  className={this.isActive(child.elementId, child.className)}
+                  style={child.style}
+                  onClick={() => this.props.selectElement(child.elementId, child.style)}
+                >
+                </div>
+              )
+            }
         }
       })
     }
