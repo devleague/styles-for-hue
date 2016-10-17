@@ -46,7 +46,7 @@ class DivComp extends Component {
               <ImgComp
                 key={child.elementId}
                 elementId={child.elementId}
-                className={child.className}
+                className={this.isActive(child.elementId, child.className)}
                 src={child.src}
                 style={child.style}
                 selectElement={this.props.selectElement}
