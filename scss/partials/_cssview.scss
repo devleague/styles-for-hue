@@ -1,5 +1,8 @@
 .css-contain{
   text-align: center;
+  position: absolute;
+  ///// TO MAKE THE CSS VIEW APPEAR OVER THE EDIT ////
+  top: 48px;
   height: 100%;
   width: 100%;
   h1{

@@ -17,6 +17,10 @@ ReactDOM.render(
           path="/template" component={ TemplateEdit }
         >
         </Route>
+        <Route
+          path="/template/:hash" component={ TemplateEdit }
+        >
+        </Route>
       </Route>
     </Router>
   </Provider>,

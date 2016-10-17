@@ -15,7 +15,7 @@ class TemplateEdit extends Component {
   }
   loadTheme () {
     return $.ajax({
-      url: '/api/styles',
+      url: '/api/docs',
       dataType: 'json',
     });
   }

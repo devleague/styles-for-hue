@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 
 import * as Actions from '../actions';
 
+import { browserHistory } from 'react-router'
+
 function mapStateToProps (state) {
   return { ...state};
 }
@@ -23,17 +25,19 @@ class Edit extends Component {
     }
   }
 
-  saveStyle(doc){
+  saveStyle(){
     return $.ajax({
-      url: '/api/styles',
+      url: '/api/usertemplate',
       type: 'POST',
       dataType: 'json',
       contentType: 'application/json',
-      data: JSON.stringify({doc: doc})
+      data: JSON.stringify({template: this.props.doc})
     })
     .then((data) => {
+      console.log('save style data', data);
       this.props.newDoc(data._id);
       this.props.showSave('visible');
+      browserHistory.push('/template/' + data._id);
     })
     .then(() => {
       setTimeout(() => {
@@ -43,12 +47,13 @@ class Edit extends Component {
   }
 
   editSave(){
+    console.log('Updated!');
     return $.ajax({
-      url: '/doc/' + this.props.elementsReducer._id,
+      url: '/template/' + this.props.docId,
       type: 'PUT',
       dataType: 'json',
       contentType: 'application/json',
-      data: JSON.stringify({doc: this.props.elementsReducer.doc})
+      data: JSON.stringify({template: this.props.doc})
     })
   }
 
@@ -199,7 +204,7 @@ class Edit extends Component {
         </div>
         <div
           className="div-menu"
-        >
+        > 
           <span>
             <button
               id="button-show"
