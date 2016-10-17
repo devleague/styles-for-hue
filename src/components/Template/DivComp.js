@@ -108,7 +108,6 @@ class DivComp extends Component {
                     key={secondChild.elementId}
                     className={this.isActive(secondChild.elementId, secondChild.className)}
                     style={secondChild.style}
-                    onClick={() => this.props.selectElement(secondChild.elementId, child.style)}
                   >
                     {children3}
                   </div>
