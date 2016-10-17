@@ -15,7 +15,7 @@ class TemplateEdit extends Component {
   }
   loadTheme () {
     return $.ajax({
-      url: '/api/styles',
+      url: '/api/docs',
       dataType: 'json',
     });
   }
@@ -91,10 +91,10 @@ class TemplateEdit extends Component {
       >
         <div className="template-container">
           <Template
-            elements={this.props.elementsReducer.doc.elements}
-            selectElement={this.props.selectElement}
-            selectedElementId={this.props.elementsReducer.selectedElement.selectedElementId}
-            selectedElementStyle={this.props.elementsReducer.selectedElement.selectedStyle}
+            // elements={this.props.elementsReducer.doc.elements}
+            // selectElement={this.props.selectElement}
+            // selectedElementId={this.props.elementsReducer.selectedElement.selectedElementId}
+            // selectedElementStyle={this.props.elementsReducer.selectedElement.selectedStyle}
             showElementStyles={this.showElementStyles}
           />
         </div>
@@ -102,22 +102,6 @@ class TemplateEdit extends Component {
           className="views"
         >
           <Edit
-            colorPalette={this.props.colors.colorPalette}
-            fontList={this.props.fonts.items}
-            changeColorPalette={this.props.changeColorPalette}
-            changeColor={this.props.changeColor}
-            changeFont={this.props.changeFont}
-            changeFontColor={this.props.changeFontColor}
-            changeFontSize={this.props.changeFontSize}
-            changeDivWidth={this.props.divWidth}
-            selectedElement={this.props.elementsReducer.selectedElement.selectedElementId}
-            selectedElementStyle={this.props.elementsReducer.selectedElement.selectedStyle}
-            elements={this.props.elementsReducer.doc.elements}
-            savePopup={this.props.savePopup}
-            showSave={this.props.showSave}
-            newDoc={this.props.newDoc}
-            docId={this.props.elementsReducer._id}
-            doc={this.props.elementsReducer.doc}
           />
           { cssComponent }
         </div>

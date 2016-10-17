@@ -1,5 +1,6 @@
+load('TestTemplate.js');
 conn = new Mongo();
-db = conn.getDB("styles-for-hue");
+db = mongoose.getDB("styles-for-hue");
 
 db.dropDatabase();
 

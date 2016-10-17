@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 
 import * as Actions from '../actions';
 
+import { browserHistory } from 'react-router'
+
 function mapStateToProps (state) {
   return { ...state};
 }
@@ -16,24 +18,26 @@ class Edit extends Component {
   constructor (props) {
     super(props);
     this.save = () => {
-      this.saveStyle(this.props.elements);
+      this.saveStyle(this.props.elementsReducer.doc.elements);
     }
     this.update = () => {
-      this.editSave(this.props.elements);
+      this.editSave(this.props.elementsReducer.doc.elements);
     }
   }
 
-  saveStyle(doc){
+  saveStyle(){
     return $.ajax({
-      url: '/api/styles',
+      url: '/api/usertemplate',
       type: 'POST',
       dataType: 'json',
       contentType: 'application/json',
-      data: JSON.stringify({doc: doc})
+      data: JSON.stringify({template: this.props.doc})
     })
     .then((data) => {
+      console.log('save style data', data);
       this.props.newDoc(data._id);
       this.props.showSave('visible');
+      browserHistory.push('/template/' + data._id);
     })
     .then(() => {
       setTimeout(() => {
@@ -43,12 +47,13 @@ class Edit extends Component {
   }
 
   editSave(){
+    console.log('Updated!');
     return $.ajax({
-      url: '/doc/' + this.props.docId,
+      url: '/template/' + this.props.docId,
       type: 'PUT',
       dataType: 'json',
       contentType: 'application/json',
-      data: JSON.stringify({doc: this.props.doc})
+      data: JSON.stringify({template: this.props.doc})
     })
   }
 
@@ -141,7 +146,7 @@ class Edit extends Component {
     if (this.props.menuShow.showFontMenu === true) {
       fontComponent = (
         <FontMenu
-          fontList={this.props.fontList}
+          fontList={this.props.fonts.items}
           selectedElement={this.props.selectedElement}
           changeFont={this.props.changeFont}
           changeFontColor={this.props.changeFontColor}
@@ -153,9 +158,9 @@ class Edit extends Component {
     if (this.props.menuShow.showDivMenu === true) {
       divComponent = (
         <ColorMenu
-          colorPalette={this.props.colorPalette}
+          colorPalette={this.props.colors.colorPalette}
           selectedElement={this.props.selectedElement}
-          changeColorPalette={this.props.changeColorPalette}
+          elements={this.props.elementsReducer.doc.elements}
           changeColor={this.props.changeColor}
           changeDivWidth={this.props.divWidth}
         />
@@ -191,7 +196,7 @@ class Edit extends Component {
               }
             }
           }>
-            <i id="icon" className={"fa fa-caret-right" + " " + 
+            <i id="icon" className={"fa fa-caret-right" + " " +
             fontComponentOpenClass}></i>
           </button>
           <h3>Font</h3>
@@ -253,7 +258,7 @@ class Edit extends Component {
           <button
             className="save"
             type="submit"
-            onClick={()=> this.exportAsSCSSFile(this.props.elements)}>Save to file</button>
+            onClick={()=> this.exportAsSCSSFile(this.props.elementsReducer.doc.elements)}>Save to file</button>
         </form>
         <form>
           <div>

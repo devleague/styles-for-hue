@@ -18,43 +18,8 @@ const reducer = (state = initialState, action) => {
       return {...state, _id: action.data._id, doc: action.data.doc};
     case "SELECT_ELEMENT":
       return selectElement(state, newElems, selectedElement, action.data.elementId);
-    case "CHANGE_COLOR_PALETTE":
-      newElems = newElems.map((elem, index) => {
-        if (elem.children) {
-          elem.children = elem.children.map((child, index) => {
-            if (child.children) {
-              child.children = child.children.map((secondChild, index) => {
-                if (secondChild.children) {
-                  secondChild.children = secondChild.children.map((thirdChild, index) => {
-                    return { ...thirdChild, style: { ...thirdChild.style, backgroundColor: action.data[3].value}}
-                  })
-                }
-                return { ...secondChild, style: { ...secondChild.style, backgroundColor: action.data[2].value}}
-              })
-            }
-            return { ...child, style: { ...child.style, backgroundColor: action.data[1].value}};
-          })
-        }
-        return { ...elem, style: { ...elem.style, backgroundColor: action.data[0].value}}
-      })
-      return { ...state, doc: { ...state.doc, elements: newElems}};
-
     case "CHANGE_COLOR":
-      newElems = newElems.map((elem, index) => {
-        if (elem.elementId === action.data.elementId) {
-          return { ...elem, style: { ...elem.style, backgroundColor: action.data.backgroundColor}};
-        }
-        if (elem.children) {
-          elem.children = elem.children.map((child, index) => {
-            if (child.elementId === action.data.elementId) {
-              return { ...child, style: { ...child.style, backgroundColor: action.data.backgroundColor}};
-            }
-            return { ...child};
-          })
-        }
-        return { ...elem};
-      });
-      return { ...state, doc: { ...state.doc, elements: newElems} };
+      return { ...state, doc: { ...state.doc, elements: action.data} };
     case "CHANGE_FONT_COLOR":
       newElems = newElems.map((elem, index) => {
         if (elem.elementId === action.data.elementId) {

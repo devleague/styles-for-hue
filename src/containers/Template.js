@@ -2,13 +2,19 @@ import React, { Component } from 'react';
 import { DivComp, PComp, ImgComp, ListComp, Header, Footer, EditComp } from '../components';
 import { connect } from 'react-redux';
 
+import * as Actions from '../actions';
+
+function mapStateToProps (state) {
+  return { ...state};
+}
+
 class Template extends Component {
   constructor(props) {
     super(props);
   }
 
   render() {
-    const elements = this.props.elements.map((elem, index) => {
+    const elements = this.props.elementsReducer.doc.elements.map((elem, index) => {
       switch (elem.tag) {
         case 'div':
           return (
@@ -19,8 +25,8 @@ class Template extends Component {
               children={elem.children}
               style={elem.style}
               selectElement={this.props.selectElement}
-              selectedElementId={this.props.selectedElementId}
-              onClick={this.props.showElementStyles}
+              selectedElementId={this.props.elementsReducer.selectedElement.selectedElementId}
+              // onClick={this.props.showElementStyles}
             >
             </DivComp>
           )
@@ -75,7 +81,7 @@ class Template extends Component {
           <h6>Current Element Styles</h6>
           <div className="current-elem-styles"
           >
-            {this.props.showElementStyles(this.props.selectedElementStyle)}
+            {this.props.showElementStyles(this.props.elementsReducer.selectedElement.selectedStyle)}
           </div>
         </div>
       </div>
@@ -83,4 +89,4 @@ class Template extends Component {
   }
 }
 
-export default Template;
+export default connect(mapStateToProps, Actions)(Template);
