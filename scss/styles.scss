@@ -135,17 +135,17 @@ hr{
     margin: 8px 15px 8px 11px;
   }
   .font-button, .div-button{
-      background-color: #f0f0f0;
+      background-color: #fff;
       width: 13px;
       height: 30px;
       color: $dark-grey;
       outline: none;
       box-shadow: none;
       &:hover{
-        background-color: #f0f0f0;
+        background-color: #fff;
       }
       &:active{
-        background-color: #f0f0f0;
+        background-color: #fff;
       }
   }
   .view-css{
@@ -160,7 +160,7 @@ hr{
   button{
     background-color: $teal;
     border: none;
-    color: $light-grey;
+    color: #fff;
     font-size: 0.9rem;
     padding: 9px 9px;
     text-align: center;

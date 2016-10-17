@@ -4,17 +4,9 @@ class Footer extends Component {
   render () {
     return (
       <div
-        className="footer-container"
-        style={
-          {
-            width: "100%",
-            height: "30px",
-            backgroundColor: "#30B3AA",
-            textAlign: "center",
-            color: "#E9E9E9",
-            paddingTop: "10px"
-          }
-        }
+        className={this.props.className}
+        style={this.props.style}
+        onClick={() => this.props.selectElement(this.props.elementId, this.props.style)}
       >
         <h6>
           &copy; Copyright 2016 inHue

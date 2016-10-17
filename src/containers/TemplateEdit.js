@@ -82,7 +82,6 @@ class TemplateEdit extends Component {
   render() {
     let cssComponent = null;
     if (this.props.sideBar.showCss === true) {
-      console.log(this.props.sideBar);
       cssComponent = <CssView />;
     };
     return(
@@ -95,13 +94,13 @@ class TemplateEdit extends Component {
             // selectElement={this.props.selectElement}
             // selectedElementId={this.props.elementsReducer.selectedElement.selectedElementId}
             // selectedElementStyle={this.props.elementsReducer.selectedElement.selectedStyle}
-            showElementStyles={this.showElementStyles}
           />
         </div>
         <div
           className="views"
         >
           <Edit
+            showElementStyles={this.showElementStyles}
           />
           { cssComponent }
         </div>
