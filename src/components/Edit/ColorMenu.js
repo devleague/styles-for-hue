@@ -11,7 +11,6 @@ class ColorMenu extends Component {
   }
 
   switchThemeColor(styleArray) {
-    console.log(this.props.elements);
     let newElems = this.props.elements;
     newElems = newElems.map((elem) => {
       if (elem.children) {
@@ -31,7 +30,6 @@ class ColorMenu extends Component {
       }
       return { ...elem, style: { ...elem.style, backgroundColor: styleArray[0].value}};
     })
-    console.log(this.props.changeColor(newElems));
     return this.props.changeColor(newElems);
   }
 
