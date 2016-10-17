@@ -26,42 +26,8 @@ class Template extends Component {
               style={elem.style}
               selectElement={this.props.selectElement}
               selectedElementId={this.props.elementsReducer.selectedElement.selectedElementId}
-              // onClick={this.props.showElementStyles}
             >
             </DivComp>
-          )
-        case 'p':
-          return (
-            <PComp
-              key={elem.elementId}
-              elementId={elem.elementId}
-              style={elem.style}
-              selectElement={this.props.selectElement}
-              selectedElementId={this.props.selectedElementId}
-            />
-          )
-        case 'img':
-          return (
-            <ImgComp
-              key={elem.elementId}
-              elementId={elem.elementId}
-              className={elem.className}
-              src={elem.src}
-              style={elem.style}
-              selectElement={this.props.selectElement}
-              selectedElementId={this.props.selectedElementId}
-            />
-          )
-        case 'ul':
-          return (
-            <ListComp
-              key={elem.elementId}
-              elementId={elem.elementId}
-              style={elem.style}
-              list={elem.children}
-              selectElement={this.props.selectElement}
-              selectedElementId={this.props.selectedElementId}
-            />
           )
         default:
           return (
@@ -70,20 +36,8 @@ class Template extends Component {
       }
     })
     return (
-      <div
-        className="template-1"
-      >
-        <Header />
+      <div>
         {elements}
-        <Footer />
-        <hr />
-        <div className="current-styles-container">
-          <h6>Current Element Styles</h6>
-          <div className="current-elem-styles"
-          >
-            {this.props.showElementStyles(this.props.elementsReducer.selectedElement.selectedStyle)}
-          </div>
-        </div>
       </div>
     )
   }

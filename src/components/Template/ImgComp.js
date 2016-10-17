@@ -16,6 +16,7 @@ class ImgComp extends Component {
             justifyContent: "center"
           }
         }
+        onClick={() => this.props.selectElement(this.props.elementId, this.props.style)}
       >
         <img
           className={this.isActive()}
