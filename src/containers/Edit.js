@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FontMenu, ColorMenu } from '../components';
+import { FontMenu, ColorMenu, Modal } from '../components';
 
 import { connect } from 'react-redux';
 
@@ -23,6 +23,17 @@ class Edit extends Component {
     this.update = () => {
       this.editSave(this.props.elementsReducer.doc.elements);
     }
+    this.handleClick = this._handleClick.bind(this);
+  }
+
+  _handleClick(e) {
+    e.preventDefault();
+    if (this.props.showModal) {
+      this.props.dispatch(closeModalAction());
+    } else {
+      this.props.dispatch(openModalAction());
+    }
+
   }
 
   saveStyle(){
@@ -187,45 +198,58 @@ class Edit extends Component {
           </button>
         <div
           className="font-menu">
-          <button
-            id="button-show"
-            className="font-button"
-            onClick={ () => {
-              if (this.props.menuShow.showFontMenu === false) {
-                this.props.showFontMenu(true);
-              } else {
-                this.props.showFontMenu(false);
-              }
-            }
-          }>
-            <i id="icon" className={"fa fa-caret-right" + " " +
-            fontComponentOpenClass}></i>
-          </button>
-          <h3>Font</h3>
+          <div
+            className="font-choices"
+          >
+            <div
+              className="font-toggle"
+            >
+              <button
+                id="button-show"
+                className="font-button"
+                onClick={ () => {
+                  if (this.props.menuShow.showFontMenu === false) {
+                    this.props.showFontMenu(true);
+                  } else {
+                    this.props.showFontMenu(false);
+                  }
+                }
+              }>
+                <i id="icon" className={"fa fa-caret-right" + " " +
+                fontComponentOpenClass}></i>
+              </button>
+              <h3>Font</h3>
+            </div>
+          </div>
           { fontComponent }
         </div>
+        <br/>
         <div
           className="div-menu"
         >
-          <span>
-            <button
-              id="button-show"
-              className="div-button"
-              onClick={ () => {
-                if (this.props.menuShow.showDivMenu === false) {
-                  this.props.showDivMenu(true);
-                } else {
-                  this.props.showDivMenu(false);
-                }
-              }}
+          <div
+            className="div-choices"
+          >
+            <div
+              className="div-toggle"
             >
-              <i id="icon" className={"fa fa-caret-right" + " " + divComponentOpenClass}></i>
-            </button>
-            <h3>Div</h3>
-          </span>
-          <div>
-            { divComponent }
+              <button
+                id="button-show"
+                className="div-button"
+                onClick={ () => {
+                  if (this.props.menuShow.showDivMenu === false) {
+                    this.props.showDivMenu(true);
+                  } else {
+                    this.props.showDivMenu(false);
+                  }
+                }}
+              >
+                <i id="icon" className={"fa fa-caret-right" + " " + divComponentOpenClass}></i>
+              </button>
+              <h3>Div</h3>
+            </div>
           </div>
+          { divComponent }
         </div>
         <div>
           <button
