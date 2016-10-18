@@ -55,6 +55,9 @@ class Edit extends Component {
       contentType: 'application/json',
       data: JSON.stringify({template: this.props.doc})
     })
+    .then(() => {
+      this.props.showUpdate('hidden');
+    }, 3000);
   }
 
   exportAsSCSSFile(elements) {
@@ -166,6 +169,23 @@ class Edit extends Component {
         />
       );
     };
+    let updateComponent = null;
+    if (this.props.menuShow.showUpdate === true) {
+      updateComponent =(
+        <div>
+          <button
+            className="update"
+            type="submit"
+            onClick={this.update}
+          >
+            Update Template
+          </button>
+          <div style={this.props.updatePopup}>
+            Updated!
+          </div>
+        </div>
+      );
+    };
     return (
       <div
         className="editColumn"
@@ -233,21 +253,25 @@ class Edit extends Component {
           >
             Save Template
           </button>
-          <div style={this.props.savePopup}>
-            Saved!
+          <div
+            className="save-popup" 
+          >
+            <div
+              className="save-content"
+              style={this.props.savePopup}
+            >
+              <span
+                className="exit"
+              >
+                x
+              </span>
+              <p>
+                Saved!
+              </p>
+            </div>
           </div>
         </div>
-
-        <div>
-          <button
-            className="update"
-            type="submit"
-            onClick={this.update}
-          >
-            Update Template
-          </button>
-        </div>
-
+          { updateComponent }
         <form>
           <div>
             <label>File name</label>
