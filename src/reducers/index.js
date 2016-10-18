@@ -6,6 +6,7 @@ import { default as fontReducer } from './fonts';
 import { default as savePopupReducer } from './savePopup';
 import { default as sideBarReducer } from './sideBar';
 import { default as menuReducer } from './menuShow';
+import { default as updatePopupReducer } from './updatePopup';
 
 const rootReducer = combineReducers({
   elementsReducer: elementsReducer,
@@ -14,6 +15,7 @@ const rootReducer = combineReducers({
   savePopup: savePopupReducer,
   sideBar: sideBarReducer,
   menuShow: menuReducer,
+  updatePopup: updatePopupReducer
 })
 
 const finalCreateStore = compose(
