@@ -30,24 +30,14 @@ const stylesSchema = new Schema({
 
 const UserTemplateSchema = new Schema({
   _id: {type: String, 'default': shortid.generate},
-  template: {
-    elements: [{
-      _id: String,
-      elementId: Number,
-      tag: String,
-      className: String,
-      src: String,
-      style: {
-        backgroundColor: String,
-        fontFamily: String,
-        color: String,
-        display: String,
-        width: String,
-        height: String
-      },
-      children: Object
-    }]
-  }
+  template: [{
+    children: Object,
+    className: String,
+    tag: String,
+    elementId: Number,
+    _id: String,
+    style: Object
+  }]
 });
 
 // mongoose will lowercase and pluralize for mongodb //

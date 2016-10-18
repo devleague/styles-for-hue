@@ -31,7 +31,7 @@ class Edit extends Component {
       type: 'POST',
       dataType: 'json',
       contentType: 'application/json',
-      data: JSON.stringify({template: this.props.doc})
+      data: JSON.stringify({template: this.props.elementsReducer.doc.elements})
     })
     .then((data) => {
       console.log('save style data', data);
@@ -53,7 +53,7 @@ class Edit extends Component {
       type: 'PUT',
       dataType: 'json',
       contentType: 'application/json',
-      data: JSON.stringify({template: this.props.doc})
+      data: JSON.stringify({template: this.props.elementsReducer.doc.elements})
     })
     .then(() => {
       this.props.showUpdate('hidden');
