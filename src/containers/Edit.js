@@ -224,7 +224,7 @@ class Edit extends Component {
         </div>
         <div
           className="div-menu"
-        > 
+        >
           <span>
             <button
               id="button-show"
@@ -296,6 +296,13 @@ class Edit extends Component {
             type="submit"
             onClick={this.exportHTML}>Save HTML</button>
         </form>
+        <div className="current-styles-container">
+          <h6>Current Element Styles</h6>
+          <div className="current-elem-styles"
+          >
+            {this.props.showElementStyles(this.props.elementsReducer.selectedElement.selectedStyle)}
+          </div>
+        </div>
       </div>
     )
   }

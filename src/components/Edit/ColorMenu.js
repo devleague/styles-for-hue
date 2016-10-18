@@ -11,7 +11,6 @@ class ColorMenu extends Component {
   }
 
   switchThemeColor(styleArray) {
-    console.log(this.props.elements);
     let newElems = this.props.elements;
     newElems = newElems.map((elem) => {
       if (elem.children) {
@@ -20,18 +19,22 @@ class ColorMenu extends Component {
             child.children = child.children.map((secondChild) => {
               if (secondChild.children) {
                 secondChild.children = secondChild.children.map((thirdChild) => {
-                  return { ...thirdChild, style: { backgroundColor: styleArray[3].value}};
+                  if(thirdChild.children) {
+                    thirdChild.children = thirdChild.children.map((fourthChild) => {
+                       return { ...fourthChild, style: { backgroundColor: styleArray[3].value}};
+                    })
+                  }
+                  return { ...thirdChild, style: { backgroundColor: styleArray[2].value}};
                 })
               }
-              return { ...secondChild, style: { ...secondChild.style, backgroundColor: styleArray[2].value}};
+              return { ...secondChild};
             })
           }
-          return { ...child, style: { ...child.style, backgroundColor: styleArray[1].value}};
+          return { ...child};
         })
       }
       return { ...elem, style: { ...elem.style, backgroundColor: styleArray[0].value}};
     })
-    console.log(this.props.changeColor(newElems));
     return this.props.changeColor(newElems);
   }
 
