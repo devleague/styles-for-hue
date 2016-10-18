@@ -169,23 +169,6 @@ class Edit extends Component {
         />
       );
     };
-    let updateComponent = null;
-    if (this.props.menuShow.showUpdate === true) {
-      updateComponent =(
-        <div>
-          <button
-            className="update"
-            type="submit"
-            onClick={this.update}
-          >
-            Update Template
-          </button>
-          <div style={this.props.updatePopup}>
-            Updated!
-          </div>
-        </div>
-      );
-    };
     return (
       <div
         className="editColumn"
@@ -271,7 +254,18 @@ class Edit extends Component {
             </div>
           </div>
         </div>
-          { updateComponent }
+        <div>
+          <button
+            className="update"
+            type="submit"
+            onClick={this.update}
+          >
+            Update Template
+          </button>
+          <div>
+            Updated!
+          </div>
+        </div>
         <form>
           <div>
             <label>File name</label>
