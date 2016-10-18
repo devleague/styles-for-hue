@@ -54,6 +54,9 @@ class Edit extends Component {
       contentType: 'application/json',
       data: JSON.stringify({template: this.props.elementsReducer.doc.elements})
     })
+    .then(() => {
+      this.props.showUpdate('hidden');
+    }, 3000);
   }
 
   exportAsSCSSFile(elements) {
@@ -232,11 +235,24 @@ class Edit extends Component {
           >
             Save Template
           </button>
-          <div style={this.props.savePopup}>
-            Saved!
+          <div
+            className="save-popup" 
+          >
+            <div
+              className="save-content"
+              style={this.props.savePopup}
+            >
+              <span
+                className="exit"
+              >
+                x
+              </span>
+              <p>
+                Saved!
+              </p>
+            </div>
           </div>
         </div>
-
         <div>
           <button
             className="update"
@@ -245,8 +261,10 @@ class Edit extends Component {
           >
             Update Template
           </button>
+          <div>
+            Updated!
+          </div>
         </div>
-
         <form>
           <div>
             <label>File name</label>
