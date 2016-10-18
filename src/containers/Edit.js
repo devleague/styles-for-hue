@@ -262,7 +262,10 @@ class Edit extends Component {
           >
             Update Template
           </button>
-          <div>
+          <div
+            className="update-content"
+            style={this.props.updatePopup.updatePopup}
+          >
             Updated!
           </div>
         </div>
