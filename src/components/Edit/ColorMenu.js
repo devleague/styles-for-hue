@@ -19,7 +19,7 @@ class ColorMenu extends Component {
             child.children = child.children.map((secondChild) => {
               if (secondChild.children) {
                 secondChild.children = secondChild.children.map((thirdChild) => {
-                  if(thirdChild.children) {
+                  if (thirdChild.children) {
                     thirdChild.children = thirdChild.children.map((fourthChild) => {
                        return { ...fourthChild, style: { backgroundColor: styleArray[3].value}};
                     })
