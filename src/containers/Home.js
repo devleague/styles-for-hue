@@ -36,7 +36,7 @@ class Home extends Component {
                     <a href="#">About</a>
                   </li>
                 </ul>
-                <p>Copyright &copy; 2016, Styles For Hue. All Rights Reserved</p>
+                <p>Copyright &copy; 2016 Styles For Hue. All Rights Reserved</p>
               </div>
             </div>
           </div>
