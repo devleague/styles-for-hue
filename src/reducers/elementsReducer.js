@@ -21,38 +21,6 @@ const reducer = (state = initialState, action) => {
     case "CHANGE_COLOR":
       console.log(action.data);
       return { ...state, doc: { ...state.doc, elements: action.data} };
-    case "CHANGE_FONT_COLOR":
-      newElems = newElems.map((elem, index) => {
-        if (elem.elementId === action.data.elementId) {
-          return { ...elem, style: { ...elem.style, color: action.data.color}};
-        }
-        if (elem.children) {
-          elem.children = elem.children.map((child, index) => {
-            if (child.elementId === action.data.elementId) {
-              return { ...child, style: { ...child.style, color: action.data.color}};
-            }
-            return { ...child};
-          })
-        }
-        return { ...elem};
-      });
-      return { ...state, doc: { ...state.doc, elements: newElems} };
-    case "CHANGE_FONT_SIZE":
-      newElems = newElems.map((elem, index) => {
-        if (elem.elementId === action.data.elementId) {
-          return { ...elem, style: { ...elem.style, fontSize: action.data.fontSize}};
-        }
-        if (elem.children) {
-          elem.children = elem.children.map((child, index) => {
-            if (child.elementId === action.data.elementId) {
-              return { ...child, style: { ...child.style, fontSize: action.data.fontSize}};
-            }
-            return { ...child};
-          })
-        }
-        return { ...elem};
-      });
-      return { ...state, doc: { ...state.doc, elements: newElems} };
     case "CHANGE_WIDTH":
       for (let element in newElems) {
         newElems[element] = newElems[element].map((elem, index) => {

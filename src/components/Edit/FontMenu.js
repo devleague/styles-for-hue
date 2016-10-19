@@ -9,21 +9,26 @@ class FontMenu extends Component {
   }
 
   changeFontColor(fontColor) {
-    console.log(fontColor);
     var font = {
       color: fontColor
     }
     return this.switchThemeFonts(font);
   }
-  // changeFontSize() {
-  //   return font;
-  // }
+  changeFontSize(fontSize) {
+    if (fontSize !== 'em' && fontSize !== 'px' && fontSize !== '') {
+      var font = {
+        fontSize: `${fontSize + document.getElementById("fontSizeUnits").value}`
+      }
+      return this.switchThemeFonts(font);
+    }
+  }
   // changeFontSizeUnit() {
   //   return font;
   // }
 
   switchThemeFonts(fontObj) {
     // this.props.changeSelectedFont(newFont);
+    console.log(fontObj);
     let newElems = this.props.elements;
     newElems = newElems.map((elem) => {
       if (elem.children) {
@@ -39,6 +44,8 @@ class FontMenu extends Component {
                           return { ...fourthChild, style: { ...fourthChild.style, fontFamily: fontObj.fontFamily}};
                         case 'color':
                           return { ...fourthChild, style: { ...fourthChild.style, color: fontObj.color}};
+                        case 'fontSize':
+                          return { ...fourthChild, style: { ...fourthChild.style, fontSize: fontObj.fontSize}};
                         default:
                           return { ...fourthChild};
                       }
@@ -80,11 +87,11 @@ class FontMenu extends Component {
             <input type="color" defaultValue="#ff0000" />
           </form>
           <p>Font Size</p>
-          <form onChange={(event) => this.changeFont()}>
+          <form onChange={(event) => this.changeFontSize(event.target.value)}>
             <input type="number" min="10" max="100" id="fontSizes" placeholder="Font Size" />
             <select id="fontSizeUnits">
               <option value="px">px</option>
-              <option value="em">rem</option>
+              <option value="em">em</option>
             </select>
           </form>
       </div>
