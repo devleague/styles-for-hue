@@ -21,7 +21,7 @@ class TemplateEdit extends Component {
   }
   loadColorApi () {
     return $.ajax({
-      url: "http://www.colr.org/json/colors/random/5"
+      url: "http://www.colr.org/json/colors/random/8"
     });
   }
   loadFontApi () {
@@ -33,17 +33,26 @@ class TemplateEdit extends Component {
     this.loadColorApi()
       .then(function (data) {
         var colorsObject = JSON.parse(data);
+        var mainPalette = [];
         var colorPalette = [];
+        var colorPalette2 = [];
         colorsObject.colors.map(function (elem, i) {
           var colorName = null;
           var colorHex = null;
+          if (i < 4) {
+            elem.tags.length > 0 ? colorName = elem.tags[0].name : colorName = "NO COLOR";
+            elem.hex.length > 0 ? colorHex = "#" + elem.hex : colorHex = "#FFF";
+            return colorPalette.push({label: colorName, value: colorHex});
+          }
           elem.tags.length > 0 ? colorName = elem.tags[0].name : colorName = "NO COLOR";
           elem.hex.length > 0 ? colorHex = "#" + elem.hex : colorHex = "#FFF";
-          return colorPalette.push({label: colorName, value: colorHex})
+          return colorPalette2.push({label: colorName, value: colorHex});
         })
-        return colorPalette;
+        mainPalette.push(colorPalette, colorPalette2);
+        return mainPalette;
       })
       .then((colors) => {
+        console.log(colors);
         return this.props.getColorPalette(colors)
       })
     this.loadFontApi()
