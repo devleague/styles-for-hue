@@ -65,6 +65,24 @@ a{
   }
 }
 
+.row{
+  padding: 75px 0;
+  .flex-container{
+    margin: 0 50px;
+    display: flex;
+    flex-flow: row nowrap;
+    .flex-50{
+      flex: 0 0 50%;
+    }
+    .left{
+      padding-right: 25px;
+    }
+    .right{
+      padding-left: 25px;
+    }
+  }
+}
+
 ///////////////////////////////////////
 ///// TEMPLATE & EDITOR CONTAINER /////
 ///////////////////////////////////////
