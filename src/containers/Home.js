@@ -14,11 +14,9 @@ class Home extends Component {
           >
             <h5>Welcome To</h5>
             <h1>Styles For Hue</h1>
-            <div className="start-button">
-              <NavLink to="/template">
-                Start Styling
-              </NavLink>
-            </div>
+            <NavLink to="/template" className="start-button">
+              Start Styling
+            </NavLink>
           </div>
         </div>
         <footer>
