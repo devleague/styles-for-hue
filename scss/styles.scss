@@ -3,6 +3,7 @@
 @import 'partials/index';
 @import 'partials/nav';
 @import 'partials/cssview';
+@import 'partials/savePopup';
 
 @import 'https://fonts.googleapis.com/css?family=Lato:400,700|Yeseva+One';
 
@@ -55,6 +56,14 @@ body{
 }
 
 // ** Template (Left Side) ** //
+/* CONTAINER TO HOLD TEMPLATE */
+.template-container{
+  width: 900px;
+  margin: 10px auto;
+  padding: 25px;
+  border: 1px solid #000;
+}
+
 .template-one{
   margin: 0 auto;
   padding: 25px;
@@ -127,17 +136,17 @@ hr{
     margin: 8px 15px 8px 11px;
   }
   .font-button, .div-button{
-      background-color: #f0f0f0;
+      background-color: #fff;
       width: 13px;
       height: 30px;
       color: $dark-grey;
       outline: none;
       box-shadow: none;
       &:hover{
-        background-color: #f0f0f0;
+        background-color: #fff;
       }
       &:active{
-        background-color: #f0f0f0;
+        background-color: #fff;
       }
   }
   .view-css{
@@ -152,7 +161,7 @@ hr{
   button{
     background-color: $teal;
     border: none;
-    color: $light-grey;
+    color: #fff;
     font-size: 0.9rem;
     padding: 9px 9px;
     text-align: center;
@@ -209,5 +218,5 @@ hr{
 .fa-caret-right.open{
   transform: rotate(90deg);
   -webkit-transition: transform 0.3s linear;
-  transition: transform 0.3s linear; 
+  transition: transform 0.3s linear;
 }

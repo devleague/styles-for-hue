@@ -4,7 +4,7 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
 
 import store from './reducers';
-import { App, Home, TemplateEdit } from './containers';
+import { App, Home, TemplateEdit, About } from './containers';
 
 ReactDOM.render(
   <Provider store={store}>
@@ -19,6 +19,10 @@ ReactDOM.render(
         </Route>
         <Route
           path="/template/:hash" component={ TemplateEdit }
+        >
+        </Route>
+        <Route
+          path="/about" component={ About }
         >
         </Route>
       </Route>

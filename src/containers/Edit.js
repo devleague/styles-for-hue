@@ -31,7 +31,7 @@ class Edit extends Component {
       type: 'POST',
       dataType: 'json',
       contentType: 'application/json',
-      data: JSON.stringify({template: this.props.doc})
+      data: JSON.stringify({template: this.props.elementsReducer.doc.elements})
     })
     .then((data) => {
       console.log('save style data', data);
@@ -47,14 +47,16 @@ class Edit extends Component {
   }
 
   editSave(){
-    console.log('Updated!');
     return $.ajax({
-      url: '/template/' + this.props.docId,
+      url: '/template/' + this.props.elementsReducer._id,
       type: 'PUT',
       dataType: 'json',
       contentType: 'application/json',
-      data: JSON.stringify({template: this.props.doc})
+      data: JSON.stringify({template: this.props.elementsReducer.doc.elements})
     })
+    .then(() => {
+      this.props.showUpdate('hidden');
+    }, 3000);
   }
 
   exportAsSCSSFile(elements) {
@@ -233,11 +235,24 @@ class Edit extends Component {
           >
             Save Template
           </button>
-          <div style={this.props.savePopup}>
-            Saved!
+          <div
+            className="save-popup" 
+          >
+            <div
+              className="save-content"
+              style={this.props.savePopup}
+            >
+              <span
+                className="exit"
+              >
+                x
+              </span>
+              <p>
+                Saved!
+              </p>
+            </div>
           </div>
         </div>
-
         <div>
           <button
             className="update"
@@ -246,8 +261,10 @@ class Edit extends Component {
           >
             Update Template
           </button>
+          <div>
+            Updated!
+          </div>
         </div>
-
         <form>
           <div>
             <label>File name</label>
