@@ -3,10 +3,9 @@
 $dark-grey: #535353;
 $light-grey: #E6E8E6;
 $white: #FFFFFF;
+$mint: #48DDB9;
 
 .home-container{
-  text-align: center;
-  color: $dark-grey;
 }
 
 .home-background{
@@ -18,11 +17,12 @@ $white: #FFFFFF;
   background-size: cover;
   position:relative;
   height:100vh;
-  // height: 600px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  color: $dark-grey;
 }
 
 .home-title{
@@ -33,6 +33,7 @@ $white: #FFFFFF;
   h1{
     font-family: 'Yeseva One', cursive;
     font-size: 3rem;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
   }
   h5{
     font-family: 'Lato', sans-serif;
@@ -40,16 +41,28 @@ $white: #FFFFFF;
     font-weight: 700;
     padding-bottom: 10px;
     text-transform: uppercase;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
   }
 }
 
-.home-footer{
+footer{
   background-color: $dark-grey;
-  height: 50px;
-  line-height: 50px;
+  padding: 50px 0;
+  li{
+    color: $mint;
+    a{
+      font-size: 0.9rem;
+      color: $mint;
+      &:hover{
+        text-decoration: none;
+        color: darken($mint, 25%);
+      }
+    }
+  }
   p{
     font-family: 'Lato', sans-serif;
     font-size: .8rem;
     color: $light-grey;
+    margin: 15px 0 0;
   }
 }
