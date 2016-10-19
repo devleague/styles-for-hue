@@ -11,6 +11,7 @@ class ColorMenu extends Component {
   }
 
   switchThemeColor(styleArray) {
+    this.props.changeColorPalette(styleArray);
     let newElems = this.props.elements;
     newElems = newElems.map((elem) => {
       if (elem.children) {
@@ -27,10 +28,10 @@ class ColorMenu extends Component {
                   return { ...thirdChild, style: { backgroundColor: styleArray[2].value}};
                 })
               }
-              return { ...secondChild};
+              return { ...secondChild, style: { backgroundColor: styleArray[0].value}};
             })
           }
-          return { ...child};
+          return { ...child, style: { ...elem.style, backgroundColor: styleArray[1].value}};
         })
       }
       return { ...elem, style: { ...elem.style, backgroundColor: styleArray[0].value}};
