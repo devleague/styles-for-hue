@@ -67,7 +67,7 @@ a{
 
 .row{
   padding: 75px 0;
-  .flex-container{
+  .flex-nowrap-container{
     margin: 0 50px;
     display: flex;
     flex-flow: row nowrap;
@@ -81,6 +81,35 @@ a{
       padding-left: 25px;
     }
   }
+  .flex-wrap-container{
+    margin: 0 50px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    .flex-photos{
+      flex: 0 0 200px;
+      text-align: center;
+      padding: 10px 10px;
+      img{
+        width: 180px;
+        border-radius: 50%;
+      }
+      h2{
+        font-size: 0.9rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 10px 0 5px;
+      }
+      p{
+        font-size: 0.8rem;
+        color: $dark-grey;
+      }
+    }
+  }
+}
+
+.photos{
+  background-color: $light-grey;
 }
 
 ///////////////////////////////////////
