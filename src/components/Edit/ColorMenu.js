@@ -9,8 +9,13 @@ class ColorMenu extends Component {
     var color = document.getElementById("colorMenu").value;
     return color;
   }
+  changeColorPalette() {
+    var colorArrayIndex = document.getElementById("colorPalette").value;
+    return this.switchThemeColor(this.props.colorPalette[colorArrayIndex]);
+  }
 
-  switchThemeColor(styleArray) {
+  switchThemeColor(colorArray) {
+    this.props.changeColorPalette(colorArray);
     let newElems = this.props.elements;
     newElems = newElems.map((elem) => {
       if (elem.children) {
@@ -19,21 +24,21 @@ class ColorMenu extends Component {
             child.children = child.children.map((secondChild) => {
               if (secondChild.children) {
                 secondChild.children = secondChild.children.map((thirdChild) => {
-                  if(thirdChild.children) {
+                  if (thirdChild.children) {
                     thirdChild.children = thirdChild.children.map((fourthChild) => {
-                       return { ...fourthChild, style: { backgroundColor: styleArray[3].value}};
+                       return { ...fourthChild, style: { backgroundColor: colorArray[3].value}};
                     })
                   }
-                  return { ...thirdChild, style: { backgroundColor: styleArray[2].value}};
+                  return { ...thirdChild, style: { backgroundColor: colorArray[2].value}};
                 })
               }
-              return { ...secondChild};
+              return { ...secondChild, style: { backgroundColor: colorArray[0].value}};
             })
           }
-          return { ...child};
+          return { ...child, style: { ...elem.style, backgroundColor: colorArray[1].value}};
         })
       }
-      return { ...elem, style: { ...elem.style, backgroundColor: styleArray[0].value}};
+      return { ...elem, style: { ...elem.style, backgroundColor: colorArray[0].value}};
     })
     return this.props.changeColor(newElems);
   }
@@ -45,24 +50,15 @@ class ColorMenu extends Component {
         <select
           id="colorPalette"
           defaultValue="0"
-          onChange={() => this.switchThemeColor(this.props.colorPalette)}
+          onChange={() => this.changeColorPalette()}
         >
-          <option value="0" disabled="disabled">SELECT PALETTE</option>
-          {this.props.colorPalette.map((color, index) => {
-            return (
-              <option
-                key={ index }
-                value={ color.value }
-                >
-                  { color.label }
-              </option>
-            )
-          })}
+          <option value="0">Palette 1</option>
+          <option value="1">Palette 2</option>
         </select>
         <h3>Pick Your Color:</h3>
           <select id="colorMenu" defaultValue="0" onChange={() => this.props.changeColor(this.props.selectedElement, this.changeColor())}>
             <option value="0" disabled="disabled">SELECT COLOR</option>
-            {this.props.colorPalette.map((color, index) => {
+            {this.props.colorPalette[0].map((color, index) => {
               return (
                 <option
                   key={ index }

@@ -164,6 +164,7 @@ class Edit extends Component {
           selectedElement={this.props.selectedElement}
           elements={this.props.elementsReducer.doc.elements}
           changeColor={this.props.changeColor}
+          changeColorPalette={this.props.changeColorPalette}
           changeDivWidth={this.props.divWidth}
         />
       );
@@ -236,7 +237,7 @@ class Edit extends Component {
             Save Template
           </button>
           <div
-            className="save-popup" 
+            className="save-popup"
           >
             <div
               className="save-content"
