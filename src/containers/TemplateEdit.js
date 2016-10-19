@@ -33,26 +33,25 @@ class TemplateEdit extends Component {
     this.loadColorApi()
       .then(function (data) {
         var colorsObject = JSON.parse(data);
-        var mainPalette = [];
         var colorPalette = [];
-        var colorPalette2 = [];
+        var palette = [];
+        var palette2 = [];
         colorsObject.colors.map(function (elem, i) {
           var colorName = null;
           var colorHex = null;
           if (i < 4) {
             elem.tags.length > 0 ? colorName = elem.tags[0].name : colorName = "NO COLOR";
             elem.hex.length > 0 ? colorHex = "#" + elem.hex : colorHex = "#FFF";
-            return colorPalette.push({label: colorName, value: colorHex});
+            return palette.push({label: colorName, value: colorHex});
           }
           elem.tags.length > 0 ? colorName = elem.tags[0].name : colorName = "NO COLOR";
           elem.hex.length > 0 ? colorHex = "#" + elem.hex : colorHex = "#FFF";
-          return colorPalette2.push({label: colorName, value: colorHex});
+          return palette2.push({label: colorName, value: colorHex});
         })
-        mainPalette.push(colorPalette, colorPalette2);
-        return mainPalette;
+        colorPalette.push(palette, palette2);
+        return colorPalette;
       })
       .then((colors) => {
-        console.log(colors);
         return this.props.getColorPalette(colors)
       })
     this.loadFontApi()

@@ -50,7 +50,7 @@ class ColorMenu extends Component {
         <select
           id="colorPalette"
           defaultValue="0"
-          onChange={() => this.switchThemeColor(this.props.colorPalette)}
+          onChange={() => this.changeColorPalette()}
         >
           <option value="0">Palette 1</option>
           <option value="1">Palette 2</option>
