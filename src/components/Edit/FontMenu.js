@@ -1,25 +1,28 @@
 import React, { Component } from 'react';
 
 class FontMenu extends Component {
-  changeFont() {
-    var font = document.getElementById("fontMenu").value;
+  changeFontFamily(fontFamily) {
+    var font = {
+      fontFamily: fontFamily
+    };
     return this.switchThemeFonts(font);
   }
 
-  changeFontColor() {
-    var font = document.getElementById("fontColors").value;
-    return font;
+  changeFontColor(fontColor) {
+    console.log(fontColor);
+    var font = {
+      color: fontColor
+    }
+    return this.switchThemeFonts(font);
   }
-  changeFontSize() {
-    var font = document.getElementById("fontSizes").value;
-    return font;
-  }
-  changeFontSizeUnit() {
-    var font = document.getElementById("fontSizeUnits").value;
-    return font;
-  }
+  // changeFontSize() {
+  //   return font;
+  // }
+  // changeFontSizeUnit() {
+  //   return font;
+  // }
 
-  switchThemeFonts(newFont) {
+  switchThemeFonts(fontObj) {
     // this.props.changeSelectedFont(newFont);
     let newElems = this.props.elements;
     newElems = newElems.map((elem) => {
@@ -31,7 +34,14 @@ class FontMenu extends Component {
                 secondChild.children = secondChild.children.map((thirdChild) => {
                   if(thirdChild.children) {
                     thirdChild.children = thirdChild.children.map((fourthChild) => {
-                      return { ...fourthChild, style: { ...fourthChild.style, fontFamily: newFont}};
+                      switch (Object.keys(fontObj)[0]) {
+                        case 'fontFamily':
+                          return { ...fourthChild, style: { ...fourthChild.style, fontFamily: fontObj.fontFamily}};
+                        case 'color':
+                          return { ...fourthChild, style: { ...fourthChild.style, color: fontObj.color}};
+                        default:
+                          return { ...fourthChild};
+                      }
                     })
                   }
                   return { ...thirdChild};
@@ -52,7 +62,7 @@ class FontMenu extends Component {
     return(
       <div>
         <h3>Pick Your Font:</h3>
-          <select id="fontMenu" defaultValue="0" onChange={() => this.changeFont()}>
+          <select id="fontMenu" defaultValue="0" onChange={(event) => this.changeFontFamily(event.target.value)}>
             <option value="0" disabled="disabled">SELECT FONT</option>
             {this.props.fontList.map((font, index) => {
               return (
@@ -66,11 +76,11 @@ class FontMenu extends Component {
             })}
           </select>
           <p>Font Color</p>
-          <form onChange={(event) => {this.props.changeFontColor(this.props.selectedElement, event.target.value)}}>
+          <form onChange={(event) => this.changeFontColor(event.target.value)}>
             <input type="color" defaultValue="#ff0000" />
           </form>
           <p>Font Size</p>
-          <form onChange={(event) => this.props.changeFontSize(this.props.selectedElement, event.target.value + this.changeFontSizeUnit())}>
+          <form onChange={(event) => this.changeFont()}>
             <input type="number" min="10" max="100" id="fontSizes" placeholder="Font Size" />
             <select id="fontSizeUnits">
               <option value="px">px</option>

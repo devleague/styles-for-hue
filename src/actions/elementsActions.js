@@ -22,7 +22,6 @@ export function changeColor (elements) {
 }
 
 export function changeFont (elements) {
-  console.log('action', elements);
   return {
     type: 'CHANGE_FONT',
     data: elements
