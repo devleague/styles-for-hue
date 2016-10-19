@@ -59,76 +59,60 @@ class Edit extends Component {
     }, 3000);
   }
 
-  exportAsSCSSFile(elements) {
+  exportCSS(elements) {
+    var all = document.getElementsByTagName("*");
+    var imgTag = document.getElementsByTagName("img");
     var text = "";
-    var li = "liTags";
-    var liStyles = "";
-    var liId = "";
-    var test = "";
-    for (var key in elements) {
-      var elementType = key.toString();
-      if (elementType === "ulTags") {
-      var elementKeySubTypeLi = elements[key][0].subType;
-        for (var i = 0; i < elementKeySubTypeLi.liTags.length; i++){
-          var elementKeySubTypeLiStyle = JSON.stringify(elementKeySubTypeLi.liTags[i].style);
-          elementKeySubTypeLiStyle = elementKeySubTypeLiStyle.replace("backgroundColor", "background-color");
-          elementKeySubTypeLiStyle = elementKeySubTypeLiStyle.replace("fontFamily", "font-family");
-          elementKeySubTypeLiStyle = elementKeySubTypeLiStyle.replace("fontSize", "font-size");
-          var elementKeySubTypeLiId = elementKeySubTypeLi.liTags[i].elementId;
-          var liTag = elementKeySubTypeLiId + elementKeySubTypeLiStyle;
-          liStyles += ".listItem" + liTag;
-        }
-      }
-      if(elementType != "ulTags"){
-        for (var i = 0; i < elements[key].length; i++){
-          var elementStyle = (JSON.stringify(elements[key][i].style));
-          elementStyle = elementStyle.replace("backgroundColor", "background-color");
-          elementStyle = elementStyle.replace("fontFamily", "font-family");
-          elementStyle = elementStyle.replace("fontSize", "font-size");
-          elementStyle = elementStyle.slice(0, 1) + " \n  " + elementStyle.slice(1);
-          elementStyle = elementStyle.slice(0, -2) + elementStyle.slice(-2, -1) + ";\n" + elementStyle.slice(-1);
-          var elementId = elements[key][i].elementId;
-          if (elementType === "divTags") {
-            elementType = ".divComp";
+    var beginningCSS = document.getElementsByTagName("style");
+    console.log(beginningCSS[0].innerHTML);
+    text += beginningCSS[0].innerHTML;
+    for (var i=0, max=all.length; i < max; i++) {
+      var elem = all[i];
+      if (elem.className != "") {
+        if (elem.style.length > 0) {
+          text += "\n." + elem.className + " {\n";
+          for (var j = 0; j < elem.style.length; j++) {
+            text += "  " + elem.style[j] + ": ";
+            var prop = elem.style[j];
+            if (prop === "justify-content"){
+              text += elem.style.justifyContent + ";\n";
+            }
+            if (prop === "background-color"){
+              text += elem.style.backgroundColor + ";\n";
+            }
+            if (prop === "height"){
+              text += elem.style.height + ";\n";
+            }
+            if (prop === "width"){
+              text += elem.style.width + ";\n";
+            }
+            if (prop === "font-family"){
+              text += elem.style.fontFamily + ";\n";
+            }
           }
-          if (elementType === "pTags") {
-            elementType = ".pComp";
-          }
-          text += elementType + elementId + " " + elementStyle + "\n";
+          text += "}\n";
         }
       }
     }
-    liStyles = liStyles.replace(/\{/g, ' {\n  ');
-    liStyles = liStyles.replace(/\}/g, ';\n}\n');
-    text += liStyles;
-    text = text.replace(/['"]+/g, '');
-    text = text.replace(/,/g, ';\n  ');
-    text = text.replace(/:/g, ': ');
 
     var filename = document.getElementById("input-fileName").value;
     if (filename === "") {
       filename = new Date().toTimeString();
     }
     var blob = new Blob([text], {type: "text/plain;charset=utf-8"});
-    //console.log(text);
     fileSaver.saveAs(blob, filename+".css");
   };
 
   exportHTML(){
-    // var all = document.getElementsByTagName("*");
-    // console.log(all);
-    //$("*").each(function(i,e){console.log(i+' '+e)});
+    var output = $(".template-container").html();
+    // /style\="(.*?)\"
+
     var output = $("html").html();
-    //console.log(output);
-    var re = /<!-- react-text/gi;
-    var test = output.replace(re, "\n<!-- react-text");
-    var end = /<!-- \/react-text -->/g;
-    var test2 = test.replace(end, "<!-- /react-text -->\n");
-    var text = '<!DOCTYPE html>\n<html lang="en">\n' + test2 + '\n</html>';
-    //console.log("HI2\n" + test2);
+    var text = output;
+    text = '<!DOCTYPE html>\n<html lang="en">\n<head>\n  <meta charset="UTF-8">\n  <title>[Your Title Here]</title>\n</head>\n<body>\n  ' + text + '\n</body>\n</html>';
     var filename = document.getElementById("input-fileName").value;
     if (filename === "") {
-      filename = new Date().toTimeString();
+      filename = "index"
     }
     var blob = new Blob([text], {type: "text/plain;charset=utf-8"});
     console.log(text);
@@ -276,7 +260,7 @@ class Edit extends Component {
           <button
             className="save"
             type="submit"
-            onClick={()=> this.exportAsSCSSFile(this.props.elementsReducer.doc.elements)}>Save to file</button>
+            onClick={()=> this.exportCSS(this.props.elementsReducer.doc.elements)}>Save CSS</button>
         </form>
         <form>
           <div>
