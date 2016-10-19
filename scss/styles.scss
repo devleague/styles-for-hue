@@ -3,7 +3,7 @@
 @import 'partials/index';
 @import 'partials/nav';
 @import 'partials/cssview';
-@import 'partials/savePopup';
+@import 'partials/modal';
 
 @import 'https://fonts.googleapis.com/css?family=Lato:400,700|Yeseva+One';
 
@@ -206,6 +206,25 @@ hr{
       1px 1px;
     background-repeat: no-repeat;
     outline: none;
+  }
+}
+
+.font-toggle{
+  width: 68px;
+  h3{
+    float: right;
+  }
+}
+
+.font-choices, .div-choices{
+  margin: 3px 6px 3px 6px;
+  border-width: 1px;
+  border-bottom-style: solid;
+}
+.div-toggle{
+  width: 60px;
+  h3{
+    float: right;
   }
 }
 

@@ -5,3 +5,4 @@ export * from './savePopup';
 export * from './sideBar';
 export * from './menuShow';
 export * from './updatePopup';
+export * from './modal';
