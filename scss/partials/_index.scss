@@ -11,12 +11,14 @@ $white: #FFFFFF;
 
 .home-background{
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.70)),
+    linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)),
     url('/images/computer.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 600px;
+  position:relative;
+  height:100vh;
+  // height: 600px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
