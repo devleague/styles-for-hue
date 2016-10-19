@@ -45,6 +45,24 @@ body{
 }
 
 ///////////////////////////////////////
+/////          ABOUT PAGE         /////
+///////////////////////////////////////
+.header-image{
+  background: url(https://static.pexels.com/photos/70232/pexels-photo-70232.jpeg) no-repeat top center;
+  background-size: cover;
+  background-color: $teal;
+  padding: 150px 0 100px;
+  background-attachment: fixed;
+  h1{
+    font-size: 3rem;
+    font-weight: bold;
+    color: $white;
+    text-transform: uppercase;
+    margin-left: 50px;
+  }
+}
+
+///////////////////////////////////////
 ///// TEMPLATE & EDITOR CONTAINER /////
 ///////////////////////////////////////
 .template-edit-container{
