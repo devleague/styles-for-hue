@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { NavLink } from '../components';
+
 class Home extends Component {
   render() {
     return (
@@ -12,6 +14,11 @@ class Home extends Component {
           >
             <h5>Welcome To</h5>
             <h1>Styles For Hue</h1>
+            <div className="start-button">
+              <NavLink to="/template">
+                Start Styling
+              </NavLink>
+            </div>
           </div>
         </div>
         <footer>
