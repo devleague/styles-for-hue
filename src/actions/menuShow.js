@@ -1,6 +1,7 @@
 export default {
   showFontMenu,
-  showDivMenu
+  showDivMenu,
+  showUpdate
 };
 
 export function showFontMenu (show) {
@@ -13,6 +14,13 @@ export function showFontMenu (show) {
 export function showDivMenu (show) {
   return {
     type: "SHOW_DIVMENU",
+    show: show
+  }
+}
+
+export function showUpdate (show) {
+  return {
+    type: "SHOW_UPDATE",
     show: show
   }
 }

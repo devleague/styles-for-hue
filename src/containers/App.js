@@ -27,6 +27,14 @@ class App extends Component {
                 Template
               </NavLink>
             </li>
+            <li>
+              <NavLink
+                to="/about"
+                activeClassName="active"
+              >
+                About
+              </NavLink>
+            </li>
           </ul>
         </div>
         <div
