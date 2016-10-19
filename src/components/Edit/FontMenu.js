@@ -3,8 +3,9 @@ import React, { Component } from 'react';
 class FontMenu extends Component {
   changeFont() {
     var font = document.getElementById("fontMenu").value;
-    return font;
+    return this.switchThemeFonts(font);
   }
+
   changeFontColor() {
     var font = document.getElementById("fontColors").value;
     return font;
@@ -17,11 +18,41 @@ class FontMenu extends Component {
     var font = document.getElementById("fontSizeUnits").value;
     return font;
   }
+
+  switchThemeFonts(newFont) {
+    // this.props.changeSelectedFont(newFont);
+    let newElems = this.props.elements;
+    newElems = newElems.map((elem) => {
+      if (elem.children) {
+        elem.children = elem.children.map((child) => {
+          if (child.children) {
+            child.children = child.children.map((secondChild) => {
+              if(secondChild.children) {
+                secondChild.children = secondChild.children.map((thirdChild) => {
+                  if(thirdChild.children) {
+                    thirdChild.children = thirdChild.children.map((fourthChild) => {
+                      return { ...fourthChild, style: { ...fourthChild.style, fontFamily: newFont}};
+                    })
+                  }
+                  return { ...thirdChild};
+                })
+              }
+              return { ...secondChild};
+            })
+          }
+          return { ...child};
+        })
+      }
+      return { ...elem};
+    })
+    return this.props.changeFont(newElems);
+  }
+
   render() {
     return(
       <div>
         <h3>Pick Your Font:</h3>
-          <select id="fontMenu" defaultValue="0" onChange={() => this.props.changeFont(this.props.selectedElement, this.changeFont())}>
+          <select id="fontMenu" defaultValue="0" onChange={() => this.changeFont()}>
             <option value="0" disabled="disabled">SELECT FONT</option>
             {this.props.fontList.map((font, index) => {
               return (

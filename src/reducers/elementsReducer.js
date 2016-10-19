@@ -19,6 +19,7 @@ const reducer = (state = initialState, action) => {
     case "SELECT_ELEMENT":
       return selectElement(state, newElems, selectedElement, action.data.elementId);
     case "CHANGE_COLOR":
+      console.log(action.data);
       return { ...state, doc: { ...state.doc, elements: action.data} };
     case "CHANGE_FONT_COLOR":
       newElems = newElems.map((elem, index) => {
@@ -73,21 +74,7 @@ const reducer = (state = initialState, action) => {
       }
       return { ...state, doc: { ...state.doc, elements: newElems} };
     case "CHANGE_FONT":
-      newElems = newElems.map((elem, index) => {
-        if (elem.elementId === action.data.elementId) {
-          return { ...elem, style: { ...elem.style, fontFamily: action.data.fontFamily}};
-        }
-        if (elem.children) {
-          elem.children = elem.children.map((child, index) => {
-            if (child.elementId === action.data.elementId) {
-              return { ...child, style: { ...child.style, fontFamily: action.data.fontFamily}};
-            }
-            return { ...child};
-          })
-        }
-        return { ...elem};
-      });
-      return { ...state, doc: { ...state.doc, elements: newElems} };
+      return { ...state, doc: { ...state.doc, elements: action.data} };
     case "NEW_DOC":
       return { ...state, _id: `ObjectId(${action.data})`, doc: { ...state.doc, elements: [ ...state.doc.elements ]} };
     default:
