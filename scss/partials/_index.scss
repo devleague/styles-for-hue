@@ -41,26 +41,23 @@ $mint: #48DDB9;
     text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
   }
   .start-button{
+    display: block;
     width: 250px;
     margin: 25px auto 10px;
+    padding: 25px;
     border: 2px $white solid;
     border-radius: 5px;
-    padding: 25px;
     background-color: transparentize($dark-grey, 0.8);
     -webkit-transition: background-color 1.5s ease; /* Safari */
     transition: background-color 1.5s ease;
+    color: $white;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
     &:hover{
       background-color: $mint;
       border: 2px $mint solid;
-    }
-    a{
-      color: $white;
-      font-size: 0.9rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      &:hover{
-        text-decoration: none;
-      }
+      text-decoration: none;
     }
   }
 }
