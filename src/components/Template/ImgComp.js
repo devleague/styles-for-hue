@@ -19,7 +19,7 @@ class ImgComp extends Component {
         onClick={() => this.props.selectElement(this.props.elementId, this.props.style)}
       >
 
-        <h1>Hello</h1>
+        <h1>We Are A Company</h1>
       </div>
     )
   }
