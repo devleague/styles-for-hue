@@ -23,12 +23,12 @@ db.docs.insert(
               "_id" : ObjectId("57fc9789aa00d38a26228230"),
               "elementId" : 2,
               "tag" : "Header",
-              "className" : "header-container",
+              "className" : "t1-header-container",
               "style" : {
-                "fontFamily" : "Lato",
-                "width" : "100%",
-                "height" : "42px",
-                "backgroundColor" : "#30B3AA"
+                // "fontFamily" : "Lato",
+                // "width" : "100%",
+                // "height" : "42px",
+                // "backgroundColor" : "#30B3AA"
               }
             },
             {
@@ -36,7 +36,7 @@ db.docs.insert(
               "elementId" : 3,
               "tag" : "img",
               "src" : "http://placehold.it/800x250",
-              "className" : "hero-container",
+              "className" : "t1-hero-container",
               "style" : {
                 // "backgroundColor" : "#3C6E71",
                 // "width": "100%"
@@ -46,17 +46,17 @@ db.docs.insert(
               "_id" : ObjectId("57fc9789aa00d38a26228232"),
               "elementId" : 4,
               "tag" : "div",
-              "className" : "row-container",
+              "className" : "t1-row-container",
               "children" : [
                 {
                   "elementId" : 5,
                   "tag" : "div",
-                  "className" : "column-container",
+                  "className" : "t1-column-container",
                   "children" : [
                     {
                       "elementId" : 6,
                       "tag" : "div",
-                      "className" : "col-100",
+                      "className" : "t1-col-100",
                       "children" : [
                         {
                           "elementId" : 7,
@@ -103,17 +103,17 @@ db.docs.insert(
               "_id" : ObjectId("57fc9789aa00d38a26228233"),
               "elementId" : 10,
               "tag" : "div",
-              "className" : "row-container",
+              "className" : "t1-row-container",
               "children" : [
                 {
                   "elementId" : 11,
                   "tag" : "div",
-                  "className" : "column-container",
+                  "className" : "t1-column-container",
                   "children" : [
                     {
                       "elementId" : 12,
                       "tag" : "div",
-                      "className" : "col-third",
+                      "className" : "t1-col-third",
                       "children" : [
                         {
                           "elementId" : 13,
@@ -148,7 +148,7 @@ db.docs.insert(
                     {
                       "elementId" : 16,
                       "tag" : "div",
-                      "className" : "col-third",
+                      "className" : "t1-col-third",
                       "children" : [
                         {
                           "elementId" : 17,
@@ -183,7 +183,7 @@ db.docs.insert(
                     {
                       "elementId" : 20,
                       "tag" : "div",
-                      "className" : "col-third",
+                      "className" : "t1-col-third",
                       "children" : [
                         {
                           "elementId" : 21,
@@ -231,12 +231,12 @@ db.docs.insert(
               "_id" : ObjectId("57fc9789aa00d38a26228230"),
               "elementId" : 24,
               "tag" : "Footer",
-              "className" : "footer-container",
+              "className" : "t1-footer-container",
               "style" : {
-                "fontFamily" : "Lato",
-                "width" : "100%",
-                "height" : "42px",
-                "backgroundColor" : "#30B3AA"
+                // "fontFamily" : "Lato",
+                // "width" : "100%",
+                // "height" : "42px",
+                // "backgroundColor" : "#30B3AA"
               }
             }
           ]
