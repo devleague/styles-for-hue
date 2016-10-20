@@ -14,13 +14,6 @@ export function selectElement (elementId) {
   }
 }
 
-export function changeColorPalette (colorArray) {
-  return {
-    type: 'CHANGE_COLOR_PALETTE',
-    data: colorArray
-  }
-}
-
 export function changeColor (elements) {
   return {
     type: 'CHANGE_COLOR',
@@ -28,13 +21,10 @@ export function changeColor (elements) {
   }
 }
 
-export function changeFont (elementId, font) {
+export function changeFont (elements) {
   return {
     type: 'CHANGE_FONT',
-    data: {
-      elementId: elementId,
-      fontFamily: font
-    }
+    data: elements
   }
 }
 

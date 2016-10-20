@@ -8,3 +8,10 @@ export function getColorPalette(color) {
     data: color
   }
 }
+
+export function changeColorPalette(colorArray) {
+  return {
+    type: "CHANGE_COLOR_PALETTE",
+    data: colorArray
+  }
+}
