@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FontMenu, ColorMenu, MyModal } from '../components';
+import { FontMenu, ColorMenu, Popover } from '../components';
 
 import { connect } from 'react-redux';
 
@@ -24,14 +24,15 @@ class Edit extends Component {
       this.editSave(this.props.elementsReducer.doc.elements);
     }
     this.handleClick = this._handleClick.bind(this);
+    this.saveFilePopup = this.saveFilePopup.bind(this);
   }
 
   _handleClick(e) {
     e.preventDefault();
-    if (this.props.showModal) {
-      this.props.dispatch(hideModal());
+    if (this.props.popover.modal) {
+      this.props.hidePopover();
     } else {
-      this.props.dispatch(showModal());
+      this.props.showPopover();
     }
 
   }
@@ -126,6 +127,11 @@ class Edit extends Component {
     console.log(text);
     fileSaver.saveAs(blob, filename+".html");
   }
+
+  saveFilePopup(e) {
+    this.handleClick(e);
+    this.save();
+  };
 
   render() {
     let fontComponentOpenClass = " ";
@@ -239,29 +245,14 @@ class Edit extends Component {
           <button
             className="save"
             type="submit"
-            onClick={this.save}
+            onClick={ this.saveFilePopup }
           >
             Save Template
           </button>
-          <div>
-          <div
-            className="save-popup"
-          >
-            <div
-              className="save-content"
-              style={this.props.savePopup}
-            >
-              <span
-                className="exit"
-              >
-                x
-              </span>
-              <p>
-                Saved!
-              </p>
-            </div>
-          </div>
-        </div>
+           <Popover
+            show={ this.props.popover }
+            click={ this.handleClick }
+          />
         </div>
         <div>
           <button
@@ -274,7 +265,6 @@ class Edit extends Component {
           <div
             className="update-content"
           >
-            Updated!
           </div>
         </div>
         <form>
