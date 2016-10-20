@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FontMenu, ColorMenu, Popover } from '../components';
+import { FontMenu, ColorMenu, SavePopover } from '../components';
 
 import { connect } from 'react-redux';
 
@@ -29,12 +29,12 @@ class Edit extends Component {
 
   _handleClick(e) {
     e.preventDefault();
+    console.log(this.props.popover.modal);
     if (this.props.popover.modal) {
       this.props.hidePopover();
     } else {
       this.props.showPopover();
     }
-
   }
 
   saveStyle(){
@@ -129,8 +129,8 @@ class Edit extends Component {
   }
 
   saveFilePopup(e) {
-    this.handleClick(e);
     this.save();
+    this.handleClick(e);
   };
 
   render() {
@@ -249,7 +249,7 @@ class Edit extends Component {
           >
             Save Template
           </button>
-           <Popover
+           <SavePopover
             show={ this.props.popover }
             click={ this.handleClick }
           />
