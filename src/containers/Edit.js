@@ -250,8 +250,9 @@ class Edit extends Component {
             Save Template
           </button>
            <SavePopover
-            show={ this.props.popover }
+            show={ this.props.popover.modal }
             click={ this.handleClick }
+            animationOptions={{duration: 0.2, timing: 'ease-in'}}
           />
         </div>
         <div>
