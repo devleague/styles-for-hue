@@ -1,38 +1,35 @@
 import React, { Component } from 'react';
-import TestPopover from './TestPopover';
+import ReactDOM from 'react-dom';
 
 class Popover extends Component {
-  render() {
-    return (
-      <TestPopover
-        isActive={this.props.show}
-      >
+  componentDidMount() {
+    this.modalTarget = document.createElement('div');
+    this.modalTarget.className = 'modal';
+    document.body.appendChild(this.modalTarget);
+    this._render();
+  }
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.isActive !== this.props.isActive) {
+      this.modalTarget.className = nextProps.isActive ? 'modal is-active' : 'modal';
+    } 
+  }
+  componentWillUnmount() {
+    ReactDOM.unmountComponentAtNode(this.modalTarget);
+    document.body.removeChild(this.modalTarget);
+  }
+  _render() {
+    let element = (
+      <div>
         <div
-          className="modal-content"
-        >
-          <div
-            className="modal-header"
-          >
-            Test THIS
-          </div>
-          <div
-            className="modal-body"
-          >
-            <p>OMG ITS A MODAL</p>
-          </div>
-          <div
-            className="modal-footer"
-          >
-            <button
-              onClick={this.props.click}
-            >
-              x
-            </button>
-          </div>
-        </div>
-      </TestPopover>
-    )
+          className="modal-background"
+        />
+        {this.props.children}
+      </div>
+    );
+    ReactDOM.render(element, this.modalTarget);
+  }
+  render() {
+    return null;
   }
 }
-
 export default Popover;
