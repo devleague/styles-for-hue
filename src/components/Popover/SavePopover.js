@@ -6,6 +6,7 @@ class SavePopover extends Component {
     return (
       <Popover
         isActive={this.props.show}
+        animationOptions={{duration: 0.2, timing: 'ease-in'}}
       >
         <div
           className="modal-content"
@@ -13,21 +14,21 @@ class SavePopover extends Component {
           <div
             className="modal-header"
           >
-            Test THIS
-          </div>
-          <div
-            className="modal-body"
-          >
-            <p>OMG ITS A MODAL</p>
-          </div>
-          <div
-            className="modal-footer"
-          >
             <button
+              className="savepopover-button"
               onClick={ this.props.click }
             >
               x
             </button>
+          </div>
+          <div
+            className="modal-body"
+          >
+            <p>Template Saved!</p>
+          </div>
+          <div
+            className="modal-footer"
+          >
           </div>
         </div>
       </Popover>
