@@ -12,6 +12,38 @@ class Template extends Component {
   constructor(props) {
     super(props);
   }
+  loadTheme () {
+    return $.ajax({
+      url: '/api/docs',
+      dataType: 'json',
+    });
+  }
+  loadStyles () {
+    return $.ajax({
+      url: '/api/styles',
+      dataType: 'json',
+    });
+  }
+
+  componentDidMount() {
+    this.loadTheme()
+      .then((docArray) => {
+        return docArray[0];
+      })
+      .then((doc) => {
+        this.props.setElements(doc);
+      })
+    this.loadStyles()
+      .then((styles) => {
+        var selectedStyle = styles.style1;
+        this.props.setStyles(styles);
+        this.props.setSelectedStyle(selectedStyle);
+        return selectedStyle;
+      })
+      .then((selectedStyle) => {
+        return this.props.getColorPalette(selectedStyle.backgroundColor);
+      })
+  }
 
   render() {
     const elements = this.props.elementsReducer.doc.elements.map((elem, index) => {
