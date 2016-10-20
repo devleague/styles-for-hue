@@ -38,7 +38,9 @@ class TemplateEdit extends Component {
   componentDidMount () {
     this.loadStyles()
       .then((styles) => {
-
+        var selectedStyle = styles.style1;
+        this.props.setStyles(styles);
+        return this.props.setSelectedStyle(selectedStyle);
       })
     this.loadColorApi()
       .then(function (data) {
