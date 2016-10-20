@@ -1,6 +1,7 @@
 import { combineReducers, compose } from 'redux';
 
 import { default as elementsReducer } from './elementsReducer';
+import { default as styleReducer } from './styles';
 import { default as colorReducer } from './colors';
 import { default as fontReducer } from './fonts';
 import { default as savePopupReducer } from './savePopup';
@@ -11,6 +12,7 @@ import { default as popoverReducer } from './popover';
 
 const rootReducer = combineReducers({
   elementsReducer: elementsReducer,
+  styles: styleReducer,
   colors: colorReducer,
   fonts: fontReducer,
   savePopup: savePopupReducer,

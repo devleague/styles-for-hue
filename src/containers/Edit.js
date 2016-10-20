@@ -12,7 +12,9 @@ function mapStateToProps (state) {
 }
 
 var fileSaver = require('file-saver');
+var JSZip = require("jszip");
 
+var zip = new JSZip();
 
 class Edit extends Component {
   constructor (props) {
@@ -68,64 +70,61 @@ class Edit extends Component {
     })
   }
 
-  exportCSS(elements) {
+  zipFile(text, text2) {
+    /*Creating text for CSS*/
     var all = document.getElementsByTagName("*");
     var imgTag = document.getElementsByTagName("img");
-    var text = "";
     var beginningCSS = document.getElementsByTagName("style");
-    console.log(beginningCSS[0].innerHTML);
-    text += beginningCSS[0].innerHTML;
+    var CSSText = "";
+    CSSText += beginningCSS[0].innerHTML;
     for (var i=0, max=all.length; i < max; i++) {
       var elem = all[i];
       if (elem.className != "") {
         if (elem.style.length > 0) {
-          text += "\n." + elem.className + " {\n";
+          CSSText += "\n." + elem.className + " {\n";
           for (var j = 0; j < elem.style.length; j++) {
-            text += "  " + elem.style[j] + ": ";
+            CSSText += "  " + elem.style[j] + ": ";
             var prop = elem.style[j];
             if (prop === "justify-content"){
-              text += elem.style.justifyContent + ";\n";
+              CSSText += elem.style.justifyContent + ";\n";
             }
             if (prop === "background-color"){
-              text += elem.style.backgroundColor + ";\n";
+              CSSText += elem.style.backgroundColor + ";\n";
             }
             if (prop === "height"){
-              text += elem.style.height + ";\n";
+              CSSText += elem.style.height + ";\n";
             }
             if (prop === "width"){
-              text += elem.style.width + ";\n";
+              CSSText += elem.style.width + ";\n";
             }
             if (prop === "font-family"){
-              text += elem.style.fontFamily + ";\n";
+              CSSText += elem.style.fontFamily + ";\n";
             }
           }
-          text += "}\n";
+          CSSText += "}\n";
         }
       }
     }
 
-    var filename = document.getElementById("input-fileName").value;
-    if (filename === "") {
-      filename = new Date().toTimeString();
-    }
-    var blob = new Blob([text], {type: "text/plain;charset=utf-8"});
-    fileSaver.saveAs(blob, filename+".css");
-  };
-
-  exportHTML(){
+    /*Creating text for HTML*/
+    var HTMLText = "";
+    HTMLText += '<!DOCTYPE html>\n<html lang="en">\n<head>\n  <meta charset="UTF-8">\n  <title>[Your Title Here]</title>\n  <link rel="stylesheet" type="text/css" href="styles.css">\n</head>\n<body>\n  ' + HTMLText + '\n</body>\n</html>';
     var output = $(".template-container").html();
-    // /style\="(.*?)\"
+    output = output.replace(/style\="(.*?)\"/g, "");
+    //console.log(output);
+    HTMLText += output;
 
-    var output = $("html").html();
-    var text = output;
-    text = '<!DOCTYPE html>\n<html lang="en">\n<head>\n  <meta charset="UTF-8">\n  <title>[Your Title Here]</title>\n</head>\n<body>\n  ' + text + '\n</body>\n</html>';
-    var filename = document.getElementById("input-fileName").value;
-    if (filename === "") {
-      filename = "index"
-    }
-    var blob = new Blob([text], {type: "text/plain;charset=utf-8"});
-    console.log(text);
-    fileSaver.saveAs(blob, filename+".html");
+    /*Creating files to be saved as .zip*/
+    var HTMLBlob = new Blob([HTMLText], {type: "text/plain;charset=utf-8"});
+    var CSSBlob = new Blob([CSSText], {type: "text/plain;charset=utf-8"});
+    zip.file("index.html", HTMLBlob);
+    zip.file("styles.css", CSSBlob);
+    zip.generateAsync({type:"blob"})
+    .then(function(HTMLBlob, CSSBlob) {
+      // see FileSaver.js
+      fileSaver.saveAs(HTMLBlob, "styles-for-hue.zip");
+      fileSaver.saveAs(CSSBlob, "styles-for-hue.zip");
+    });
   }
 
   saveFilePopup(e) {
@@ -269,28 +268,10 @@ class Edit extends Component {
           </div>
         </div>
         <form>
-          <div>
-            <label>File name</label>
-            <input type="text"
-              id="input-fileName"
-              placeholder="Enter file name"></input>
-          </div>
           <button
             className="save"
             type="submit"
-            onClick={()=> this.exportCSS(this.props.elementsReducer.doc.elements)}>Save CSS</button>
-        </form>
-        <form>
-          <div>
-            <label>File name</label>
-            <input type="text"
-              id="input-fileName"
-              placeholder="Enter file name"></input>
-          </div>
-          <button
-            className="save"
-            type="submit"
-            onClick={this.exportHTML}>Save HTML</button>
+            onClick={this.zipFile}>Save Zip with HTML and CSS files</button>
         </form>
         <div className="current-styles-container">
           <h6>Current Element Styles</h6>

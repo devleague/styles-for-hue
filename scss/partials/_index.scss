@@ -3,51 +3,88 @@
 $dark-grey: #535353;
 $light-grey: #E6E8E6;
 $white: #FFFFFF;
-
-.home-container{
-  text-align: center;
-  color: $dark-grey;
-}
+$mint: #48DDB9;
 
 .home-background{
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.70)),
+    linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)),
     url('/images/computer.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 600px;
+  position:relative;
+  height:100vh;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  color: $dark-grey;
 }
 
 .home-title{
-  border: 15px $white double;
   padding: 25px;
   color: $white;
   flex: 0 0 50%;
   h1{
     font-family: 'Yeseva One', cursive;
-    font-size: 3rem;
+    font-size: 5rem;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
   }
   h5{
     font-family: 'Lato', sans-serif;
-    font-size: 1rem;
+    font-size: 2rem;
     font-weight: 700;
     padding-bottom: 10px;
     text-transform: uppercase;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+  }
+  .start-button{
+    display: block;
+    width: 250px;
+    margin: 25px auto 10px;
+    padding: 25px;
+    border: 2px $white solid;
+    border-radius: 5px;
+    background-color: transparentize($dark-grey, 0.8);
+    -webkit-transition: background-color 1.5s ease; /* Safari */
+    transition: background-color 1.5s ease;
+    color: $white;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    &:hover{
+      background-color: $mint;
+      border: 2px $mint solid;
+      text-decoration: none;
+    }
   }
 }
 
-.home-footer{
+footer{
   background-color: $dark-grey;
-  height: 50px;
-  line-height: 50px;
-  p{
-    font-family: 'Lato', sans-serif;
-    font-size: .8rem;
-    color: $light-grey;
+  padding: 50px 0;
+  .footer-content{
+    margin-left: 50px;
+    li{
+      display: inline-block;
+      &.footer-menu-divider{
+        color: $mint;
+        padding: 0 5px;
+      }
+      a{
+        font-size: 0.9rem;
+        color: $mint;
+        &:hover{
+          color: darken($mint, 25%);
+        }
+      }
+    }
+    p{
+      font-family: 'Lato', sans-serif;
+      font-size: .8rem;
+      color: $light-grey;
+      margin: 15px 0 0;
+    }
   }
 }

@@ -1,4 +1,5 @@
 export * from './elementsActions';
+export * from './styles';
 export * from './colors';
 export * from './fonts';
 export * from './savePopup';
