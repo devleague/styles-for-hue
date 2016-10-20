@@ -13,87 +13,59 @@ class TemplateEdit extends Component {
     super(props)
     this.showElementStyles = this.showElementStyles.bind(this);
   }
-  loadTheme () {
-    return $.ajax({
-      url: '/api/docs',
-      dataType: 'json',
-    });
-  }
-  loadStyles () {
-    return $.ajax({
-      url: '/api/styles',
-      dataType: 'json',
-    });
-  }
-  loadColorApi () {
-    return $.ajax({
-      url: "http://www.colr.org/json/colors/random/8"
-    });
-  }
-  loadFontApi () {
-    return $.ajax({
-      url: "https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBifqNWX2_oCeWV1TZcsOZL-Sy1Q15eIIs"
-    });
-  }
-  componentDidMount () {
-    this.loadStyles()
-      .then((styles) => {
-        var selectedStyle = styles.style1;
-        this.props.setStyles(styles);
-        this.props.setSelectedStyle(selectedStyle);
-        return selectedStyle;
-      })
-      .then((selectedStyle) => {
-        return this.props.getColorPalette(selectedStyle.backgroundColor);
-      })
-    // this.loadColorApi()
-    //   .then(function (data) {
-    //     var colorsObject = JSON.parse(data);
-    //     var colorPalette = [];
-    //     var palette = [];
-    //     var palette2 = [];
-    //     colorsObject.colors.map(function (elem, i) {
-    //       var colorName = null;
-    //       var colorHex = null;
-    //       if (i < 4) {
-    //         elem.tags.length > 0 ? colorName = elem.tags[0].name : colorName = "NO COLOR";
-    //         elem.hex.length > 0 ? colorHex = "#" + elem.hex : colorHex = "#FFF";
-    //         return palette.push({label: colorName, value: colorHex});
-    //       }
-    //       elem.tags.length > 0 ? colorName = elem.tags[0].name : colorName = "NO COLOR";
-    //       elem.hex.length > 0 ? colorHex = "#" + elem.hex : colorHex = "#FFF";
-    //       return palette2.push({label: colorName, value: colorHex});
-    //     })
-    //     colorPalette.push(palette, palette2);
-    //     return colorPalette;
-    //   })
-    //   .then((colors) => {
-    //     return this.props.getColorPalette(colors)
-    //   })
-    this.loadFontApi()
-      .then(function (data) {
-        var fontArr = data.items;
-        var fontList = [];
-        fontArr
-          .filter(function (elem, i) {
-            return elem.category === "sans-serif" && i < 10;
-          })
-          .map(function (elem, i) {
-            return fontList.push({family: elem.family});
-          })
-        return fontList;
-      })
-      .then((fonts) => {
-        return this.props.fontTypes(fonts)
-      })
-    this.loadTheme()
-      .then((docArray) => {
-        return docArray[0];
-      })
-      .then((doc) => {
-        this.props.setElements(doc);
-      })
-  }
+  // loadColorApi () {
+  //   return $.ajax({
+  //     url: "http://www.colr.org/json/colors/random/8"
+  //   });
+  // }
+  // loadFontApi () {
+  //   return $.ajax({
+  //     url: "https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBifqNWX2_oCeWV1TZcsOZL-Sy1Q15eIIs"
+  //   });
+  // }
+  // componentDidMount () {
+  //   this.loadColorApi()
+  //     .then(function (data) {
+  //       var colorsObject = JSON.parse(data);
+  //       var colorPalette = [];
+  //       var palette = [];
+  //       var palette2 = [];
+  //       colorsObject.colors.map(function (elem, i) {
+  //         var colorName = null;
+  //         var colorHex = null;
+  //         if (i < 4) {
+  //           elem.tags.length > 0 ? colorName = elem.tags[0].name : colorName = "NO COLOR";
+  //           elem.hex.length > 0 ? colorHex = "#" + elem.hex : colorHex = "#FFF";
+  //           return palette.push({label: colorName, value: colorHex});
+  //         }
+  //         elem.tags.length > 0 ? colorName = elem.tags[0].name : colorName = "NO COLOR";
+  //         elem.hex.length > 0 ? colorHex = "#" + elem.hex : colorHex = "#FFF";
+  //         return palette2.push({label: colorName, value: colorHex});
+  //       })
+  //       colorPalette.push(palette, palette2);
+  //       return colorPalette;
+  //     })
+  //     .then((colors) => {
+  //       return this.props.getColorPalette(colors)
+  //     })
+  //   this.loadFontApi()
+  //     .then(function (data) {
+  //       var fontArr = data.items;
+  //       var fontList = [];
+  //       fontArr
+  //         .filter(function (elem, i) {
+  //           return elem.category === "sans-serif" && i < 10;
+  //         })
+  //         .map(function (elem, i) {
+  //           return fontList.push({family: elem.family});
+  //         })
+  //       return fontList;
+  //     })
+  //     .then((fonts) => {
+  //       return this.props.fontTypes(fonts)
+  //     })
+
+  // }
 
   showElementStyles(styles){
     let stylesArray = [];
