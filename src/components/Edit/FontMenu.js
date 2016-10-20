@@ -31,7 +31,6 @@ class FontMenu extends Component {
 
   switchThemeFonts(elementTag, fontObj) {
     // this.props.changeSelectedFont(newFont);
-    console.log(elementTag);
     let newElems = this.props.elements;
     newElems = newElems.map((elem) => {
       if (elem.children) {
