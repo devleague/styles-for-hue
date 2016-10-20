@@ -66,14 +66,14 @@ db.docs.insert(
                         //     // "backgroundColor" : "orange"
                         //   }
                         // },
-                        // {
-                        //   "elementId" : 8,
-                        //   "tag" : "h2",
-                        //   "text" : "This Is An H2 Tag",
-                        //   "style" : {
-                        //     // "backgroundColor" : "yellow"
-                        //   }
-                        // },
+                        {
+                          "elementId" : 8,
+                          "tag" : "h2",
+                          "text" : "This Is An H2 Tag",
+                          "style" : {
+                            // "backgroundColor" : "yellow"
+                          }
+                        },
                         {
                           "elementId" : 9,
                           "tag" : "p",
