@@ -26,7 +26,7 @@ class ColorMenu extends Component {
                 secondChild.children = secondChild.children.map((thirdChild) => {
                   if (thirdChild.children) {
                     thirdChild.children = thirdChild.children.map((fourthChild) => {
-                       return { ...fourthChild, style: { ...fourthChild.style, backgroundColor: colorArray[2].value, color: colorArray[3].value}};
+                       return { ...fourthChild, style: { ...fourthChild.style, color: colorArray[3].value}};
                     })
                   }
                   return { ...thirdChild, style: { ...thirdChild.style, backgroundColor: colorArray[2].value}};
