@@ -19,6 +19,12 @@ class TemplateEdit extends Component {
       dataType: 'json',
     });
   }
+  loadStyles () {
+    return $.ajax({
+      url: '/api/styles',
+      dataType: 'json',
+    });
+  }
   loadColorApi () {
     return $.ajax({
       url: "http://www.colr.org/json/colors/random/8"
@@ -30,6 +36,12 @@ class TemplateEdit extends Component {
     });
   }
   componentDidMount () {
+    this.loadStyles()
+      .then((styles) => {
+        var selectedStyle = styles.style1;
+        this.props.setStyles(styles);
+        return this.props.setSelectedStyle(selectedStyle);
+      })
     this.loadColorApi()
       .then(function (data) {
         var colorsObject = JSON.parse(data);
