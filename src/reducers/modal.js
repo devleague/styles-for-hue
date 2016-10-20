@@ -1,19 +1,13 @@
 const initialState = {
-  isShowing: false,
-  message: ''
+  modal: false
 }
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case "SHOW_MODAL":
-      return Object.assign({}, state, {
-        isShowing: true,
-        message: action.message
-      })
+      return { ...state, modal: action.payload}
     case "HIDE_MODAL":
-      return Object.assign({}, state, {
-        isShowing: false
-      })
+      return { ...state, modal: action.payload}
     default:
       return state;
   }

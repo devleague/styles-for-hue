@@ -3,15 +3,16 @@ export default {
   hideModal
 }
 
-export function showModal(message) {
+export function showModal(payload) {
   return {
     type: "SHOW_MODAL",
-    message: message
+    payload: true
   }
 }
 
-export function hideModal() {
+export function hideModal(payload) {
   return {
-    type: "HIDE_MODAL"
+    type: "HIDE_MODAL",
+    payload: false
   }
 }

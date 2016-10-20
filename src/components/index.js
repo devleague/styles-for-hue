@@ -8,4 +8,4 @@ export { default as Header } from './Template/Header';
 export { default as Footer } from './Template/Footer';
 export { default as FontMenu } from './Edit/FontMenu';
 export { default as ColorMenu } from './Edit/ColorMenu';
-export { default as Modal } from './Edit/Modal';
+export { default as TestModal } from './Modal/Modal';

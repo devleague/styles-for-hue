@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FontMenu, ColorMenu, Modal } from '../components';
+import { FontMenu, ColorMenu, MyModal } from '../components';
 
 import { connect } from 'react-redux';
 
@@ -29,9 +29,9 @@ class Edit extends Component {
   _handleClick(e) {
     e.preventDefault();
     if (this.props.showModal) {
-      this.props.dispatch(closeModalAction());
+      this.props.dispatch(hideModal());
     } else {
-      this.props.dispatch(openModalAction());
+      this.props.dispatch(showModal());
     }
 
   }
@@ -65,9 +65,6 @@ class Edit extends Component {
       contentType: 'application/json',
       data: JSON.stringify({template: this.props.elementsReducer.doc.elements})
     })
-    .then(() => {
-      this.props.showUpdate('hidden');
-    }, 3000);
   }
 
   exportAsSCSSFile(elements) {
@@ -259,6 +256,7 @@ class Edit extends Component {
           >
             Save Template
           </button>
+          <div>
           <div
             className="save-popup" 
           >
@@ -277,6 +275,7 @@ class Edit extends Component {
             </div>
           </div>
         </div>
+        </div>
         <div>
           <button
             className="update"
@@ -287,7 +286,6 @@ class Edit extends Component {
           </button>
           <div
             className="update-content"
-            style={this.props.updatePopup.updatePopup}
           >
             Updated!
           </div>
