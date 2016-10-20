@@ -40,32 +40,36 @@ class TemplateEdit extends Component {
       .then((styles) => {
         var selectedStyle = styles.style1;
         this.props.setStyles(styles);
-        return this.props.setSelectedStyle(selectedStyle);
+        this.props.setSelectedStyle(selectedStyle);
+        return selectedStyle;
       })
-    this.loadColorApi()
-      .then(function (data) {
-        var colorsObject = JSON.parse(data);
-        var colorPalette = [];
-        var palette = [];
-        var palette2 = [];
-        colorsObject.colors.map(function (elem, i) {
-          var colorName = null;
-          var colorHex = null;
-          if (i < 4) {
-            elem.tags.length > 0 ? colorName = elem.tags[0].name : colorName = "NO COLOR";
-            elem.hex.length > 0 ? colorHex = "#" + elem.hex : colorHex = "#FFF";
-            return palette.push({label: colorName, value: colorHex});
-          }
-          elem.tags.length > 0 ? colorName = elem.tags[0].name : colorName = "NO COLOR";
-          elem.hex.length > 0 ? colorHex = "#" + elem.hex : colorHex = "#FFF";
-          return palette2.push({label: colorName, value: colorHex});
-        })
-        colorPalette.push(palette, palette2);
-        return colorPalette;
+      .then((selectedStyle) => {
+        return this.props.getColorPalette(selectedStyle.backgroundColor);
       })
-      .then((colors) => {
-        return this.props.getColorPalette(colors)
-      })
+    // this.loadColorApi()
+    //   .then(function (data) {
+    //     var colorsObject = JSON.parse(data);
+    //     var colorPalette = [];
+    //     var palette = [];
+    //     var palette2 = [];
+    //     colorsObject.colors.map(function (elem, i) {
+    //       var colorName = null;
+    //       var colorHex = null;
+    //       if (i < 4) {
+    //         elem.tags.length > 0 ? colorName = elem.tags[0].name : colorName = "NO COLOR";
+    //         elem.hex.length > 0 ? colorHex = "#" + elem.hex : colorHex = "#FFF";
+    //         return palette.push({label: colorName, value: colorHex});
+    //       }
+    //       elem.tags.length > 0 ? colorName = elem.tags[0].name : colorName = "NO COLOR";
+    //       elem.hex.length > 0 ? colorHex = "#" + elem.hex : colorHex = "#FFF";
+    //       return palette2.push({label: colorName, value: colorHex});
+    //     })
+    //     colorPalette.push(palette, palette2);
+    //     return colorPalette;
+    //   })
+    //   .then((colors) => {
+    //     return this.props.getColorPalette(colors)
+    //   })
     this.loadFontApi()
       .then(function (data) {
         var fontArr = data.items;
