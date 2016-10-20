@@ -134,6 +134,8 @@ class Edit extends Component {
         <FontMenu
           fontList={this.props.fonts.items}
           selectedElement={this.props.selectedElement}
+          elements={this.props.elementsReducer.doc.elements}
+          changeSelectedFont={this.props.changeSelectedFont}
           changeFont={this.props.changeFont}
           changeFontColor={this.props.changeFontColor}
           changeFontSize={this.props.changeFontSize}

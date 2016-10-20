@@ -8,3 +8,10 @@ export function fontTypes(fontFamily){
     data: fontFamily
   }
 };
+
+export function changeSelectedFont(fontArray){
+  return {
+    type: "CHANGE_SELECTED_FONT",
+    data: fontArray
+  }
+};
