@@ -18,12 +18,8 @@ class ImgComp extends Component {
         }
         onClick={() => this.props.selectElement(this.props.elementId, this.props.style)}
       >
-        <img
-          className={this.isActive()}
-          src={this.props.src}
-          style={ this.props.style }
-          onClick={() => this.props.selectElement(this.props.elementId, this.props.style)}
-        />
+
+        <h1>We Are A Company</h1>
       </div>
     )
   }

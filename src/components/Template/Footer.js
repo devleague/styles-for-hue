@@ -9,7 +9,7 @@ class Footer extends Component {
         onClick={() => this.props.selectElement(this.props.elementId, this.props.style)}
       >
         <h6>
-          &copy; Copyright 2016 inHue
+          Copyright © 2016 YOUR COMPANY. All Rights Reserved
         </h6>
       </div>
     )
