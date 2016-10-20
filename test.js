@@ -255,6 +255,20 @@ while (cursor.hasNext()){
 
 db.docs.find();
 
+db.createCollection("styles");
+db.styles.insert(
+  {
+    style1: {
+      backgroundColor: [
+        ['pink', '#30B3AA', 'white', 'black'],
+        ['#FFF', '#32424c', '#687f8c', '#d2e6da']
+      ],
+      fontFamily: ['Times New Roamn', 'ABeeZee'],
+      fontSize: '1em'
+    }
+  }
+);
+
 db.createCollection("templates");
 db.templates.insert({
   id: "template-1",
