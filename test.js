@@ -35,7 +35,7 @@ db.docs.insert(
               "_id" : ObjectId("57fc9789aa00d38a26228231"),
               "elementId" : 3,
               "tag" : "img",
-              "src" : "http://placehold.it/800x250",
+              // "src" : "http://placehold.it/800x250",
               "className" : "t1-hero-container",
               "style" : {
                 // "backgroundColor" : "#3C6E71",
