@@ -12,7 +12,12 @@ class Header extends Component {
           <h1>YOUR COMPANY</h1>
         </div>
         <div className="t1-header-right">
-          <p>Navigation Menu</p>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">About Us</a></li>
+          </ul>
         </div>
       </div>
     )
