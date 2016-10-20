@@ -134,8 +134,8 @@ db.docs.insert(
                         {
                           "elementId" : 15,
                           "tag" : "p",
-                          "text" : "Click the",
-                          "linkText": "a tag",
+                          // "text" : "Click the",
+                          "linkText": "Read More",
                           "style" : {
                             // "backgroundColor" : "pink"
                           }
@@ -169,8 +169,8 @@ db.docs.insert(
                         {
                           "elementId" : 19,
                           "tag" : "p",
-                          "text" : "Click the",
-                          "linkText": "a tag",
+                          // "text" : "Click the",
+                          "linkText": "Read More",
                           "style" : {
                             // "backgroundColor" : "pink"
                           }
@@ -204,8 +204,8 @@ db.docs.insert(
                         {
                           "elementId" : 23,
                           "tag" : "p",
-                          "text" : "Click the",
-                          "linkText": "a tag",
+                          // "text" : "Click the",
+                          "linkText": "Read More",
                           "style" : {
                             // "backgroundColor" : "pink"
                           }
