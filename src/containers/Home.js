@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
+import { NavLink } from '../components';
+
 class Home extends Component {
   render() {
     return (
-      <div
-        className="home-container"
-      >
+      <div>
         <div
           className="home-background"
         >
@@ -14,15 +14,29 @@ class Home extends Component {
           >
             <h5>Welcome To</h5>
             <h1>Styles For Hue</h1>
+            <NavLink to="/template" className="start-button">
+              Start Styling
+            </NavLink>
           </div>
         </div>
-        <div
-          className="home-footer"
-        >
-          <p>
-            &copy; 2016 Styles For Hue
-          </p>
-        </div>
+        <footer>
+          <div className="footer-content">
+            <ul>
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li className="footer-menu-divider">&sdot;</li>
+              <li>
+                <a href="#">Template</a>
+              </li>
+              <li className="footer-menu-divider">&sdot;</li>
+              <li>
+                <a href="#">About</a>
+              </li>
+            </ul>
+            <p>Copyright &copy; 2016 Styles For Hue. All Rights Reserved</p>
+          </div>
+        </footer>
       </div>
     )
   }
