@@ -16,11 +16,6 @@ class Header extends Component {
             }
           }
         />
-        <ul>
-          <li>
-            Home
-          </li>
-        </ul>
       </div>
     )
   }
