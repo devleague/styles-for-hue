@@ -95,25 +95,20 @@ class Edit extends Component {
       }
     }
 
-    var filename = document.getElementById("input-fileName").value;
-    if (filename === "") {
-      filename = new Date().toTimeString();
-    }
+    var filename = "styles";
     var blob = new Blob([text], {type: "text/plain;charset=utf-8"});
     fileSaver.saveAs(blob, filename+".css");
   };
 
   exportHTML(){
-    var output = $(".template-container").html();
-    // /style\="(.*?)\"
+    var text = "";
+    text += '<!DOCTYPE html>\n<html lang="en">\n<head>\n  <meta charset="UTF-8">\n  <title>[Your Title Here]</title>\n  <link rel="stylesheet" type="text/css" href="styles.css">\n</head>\n<body>\n  ' + text + '\n</body>\n</html>';
 
-    var output = $("html").html();
-    var text = output;
-    text = '<!DOCTYPE html>\n<html lang="en">\n<head>\n  <meta charset="UTF-8">\n  <title>[Your Title Here]</title>\n</head>\n<body>\n  ' + text + '\n</body>\n</html>';
-    var filename = document.getElementById("input-fileName").value;
-    if (filename === "") {
-      filename = "index"
-    }
+    var output = $(".template-container").html();
+    output = output.replace(/style\="(.*?)\"/, "");
+    text += output;
+
+    var filename = "index";
     var blob = new Blob([text], {type: "text/plain;charset=utf-8"});
     console.log(text);
     fileSaver.saveAs(blob, filename+".html");
@@ -254,10 +249,6 @@ class Edit extends Component {
         </div>
         <form>
           <div>
-            <label>File name</label>
-            <input type="text"
-              id="input-fileName"
-              placeholder="Enter file name"></input>
           </div>
           <button
             className="save"
@@ -266,10 +257,6 @@ class Edit extends Component {
         </form>
         <form>
           <div>
-            <label>File name</label>
-            <input type="text"
-              id="input-fileName"
-              placeholder="Enter file name"></input>
           </div>
           <button
             className="save"
