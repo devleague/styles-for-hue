@@ -13,6 +13,7 @@ function mapStateToProps (state) {
 
 var fileSaver = require('file-saver');
 var JSZip = require("jszip");
+var beautify_html = require('js-beautify').html;
 
 var zip = new JSZip();
 
@@ -117,6 +118,8 @@ class Edit extends Component {
     HTMLText += '<!DOCTYPE html>\n<html lang="en">\n<head>\n  <meta charset="UTF-8">\n  <title>[Your Title Here]</title>\n  <link rel="stylesheet" type="text/css" href="styles.css">\n</head>\n<body>\n  ' + output + '\n</body>\n</html>';
     HTMLText = HTMLText.replace(/style\="(.*?)\"/g, "");
 
+    HTMLText = beautify_html(HTMLText);
+
     /*Creating files to be saved as .zip*/
     var HTMLBlob = new Blob([HTMLText], {type: "text/plain;charset=utf-8"});
     var CSSBlob = new Blob([CSSText], {type: "text/plain;charset=utf-8"});
@@ -128,6 +131,7 @@ class Edit extends Component {
       fileSaver.saveAs(HTMLBlob, "styles-for-hue.zip");
       fileSaver.saveAs(CSSBlob, "styles-for-hue.zip");
     });
+
   }
 
   saveFilePopup(e) {
