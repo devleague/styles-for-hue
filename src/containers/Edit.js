@@ -100,6 +100,12 @@ class Edit extends Component {
             if (prop === "font-family"){
               CSSText += elem.style.fontFamily + ";\n";
             }
+            if (prop === "color"){
+              CSSText += elem.style.color + ";\n";
+            }
+            if (prop === "font-size"){
+              CSSText += elem.style.fontSize + ";\n";
+            }
           }
           CSSText += "}\n";
         }
