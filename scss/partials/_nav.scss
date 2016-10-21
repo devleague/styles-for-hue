@@ -3,6 +3,7 @@
 $dark-grey: #535353;
 $light-grey: #E6E8E6;
 $mint: #48DDB9;
+$white: #FFFFFF;
 
 .nav{
   position: fixed;
@@ -12,14 +13,34 @@ $mint: #48DDB9;
   width: 100%;
   height: 50px;
   background-color: $dark-grey;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  padding: 0 50px;
+  .nav-left{
+    flex: 0 0 25%;
+    h1{
+      font-family: 'SpellingNight', 'Yeseva One', cursive;
+      a{
+        color: $white;
+        &:hover{
+          color: $mint;
+        }
+      }
+    }
+  }
+  .nav-right{
+    flex: 0 0 75%;
+    text-align: right;
   ul{
     list-style-type: none;
     margin: 0;
     padding: 0;
     background-color: $dark-grey;
+    li{display:inline-block}
     a {
-      display: block;
-      float: left;
+      // display: block;
+      // float: left;
       height: 50px;
       line-height: 50px;
       text-align: center;
@@ -33,5 +54,6 @@ $mint: #48DDB9;
         color: $dark-grey;
       }
     }
+  }
   }
 }
