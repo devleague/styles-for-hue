@@ -57,7 +57,6 @@ app.get('/api/usertemplate', (req, res) => {
 });
 
 app.post('/api/usertemplate', (req, res) => {
-  console.log('req body', req.body.template);
   UserTemplate.create({
     template: req.body.template,
   })
