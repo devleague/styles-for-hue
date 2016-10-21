@@ -11,31 +11,36 @@ class App extends Component {
         <div
           className="nav"
         >
-          <ul>
-            <li>
-              <IndexLink
-                to="/"
-                activeClassName="active"
-              >
-                Home
-              </IndexLink>
-            </li>
-            <li>
-              <NavLink
-                to="/template"
-              >
-                Template
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/about"
-                activeClassName="active"
-              >
-                About
-              </NavLink>
-            </li>
-          </ul>
+          <div className="nav-left">
+            <h1><IndexLink to="/">Styles For Hue</IndexLink></h1>
+          </div>
+          <div className="nav-right">
+            <ul>
+              <li>
+                <IndexLink
+                  to="/"
+                  activeClassName="active"
+                >
+                  Home
+                </IndexLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/template"
+                >
+                  Template
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/about"
+                  activeClassName="active"
+                >
+                  About
+                </NavLink>
+              </li>
+            </ul>
+          </div>
         </div>
         <div
           className="app-container"
