@@ -62,7 +62,7 @@ class Edit extends Component {
 
   editSave(){
     return $.ajax({
-      url: '/template/' + this.props.elementsReducer._id,
+      url: '/api/template/' + this.props.elementsReducer._id,
       type: 'PUT',
       dataType: 'json',
       contentType: 'application/json',
