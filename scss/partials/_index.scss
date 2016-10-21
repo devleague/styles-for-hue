@@ -1,4 +1,5 @@
 @import 'https://fonts.googleapis.com/css?family=Lato:400,700|Yeseva+One';
+@font-face {font-family: 'SpellingNight'; src: url('/css/SpellingNight.otf');}
 
 $dark-grey: #535353;
 $light-grey: #E6E8E6;
@@ -27,17 +28,29 @@ $mint: #48DDB9;
   color: $white;
   flex: 0 0 50%;
   h1{
-    font-family: 'Yeseva One', cursive;
-    font-size: 5rem;
+    font-family: 'SpellingNight', 'Yeseva One', cursive;
+    font-size: 6rem;
     text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    margin: 0 0 35px;
   }
   h5{
     font-family: 'Lato', sans-serif;
-    font-size: 2rem;
-    font-weight: 700;
-    padding-bottom: 10px;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
     text-transform: uppercase;
     text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    display: table;
+    white-space: nowrap;
+    &:before, &:after {
+      border-top: 2px solid #FFF;
+      content: '';
+      display: table-cell;
+      position: relative;
+      top: 0.5em;
+      width: 45%;
+    }
+    &:before { right: 1.5%; }
+    &:after { left: 1.5%; }
   }
   .start-button{
     display: block;
