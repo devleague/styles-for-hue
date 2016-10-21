@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FontMenu, ColorMenu } from '../components';
+import { FontMenu, ColorMenu, SavePopover } from '../components';
 
 import { connect } from 'react-redux';
 
@@ -24,6 +24,18 @@ class Edit extends Component {
     }
     this.update = () => {
       this.editSave(this.props.elementsReducer.doc.elements);
+    }
+    this.handleClick = this._handleClick.bind(this);
+    this.saveFilePopup = this.saveFilePopup.bind(this);
+  }
+
+  _handleClick(e) {
+    e.preventDefault();
+    console.log(this.props.popover.modal);
+    if (this.props.popover.modal) {
+      this.props.hidePopover();
+    } else {
+      this.props.showPopover();
     }
   }
 
@@ -56,9 +68,6 @@ class Edit extends Component {
       contentType: 'application/json',
       data: JSON.stringify({template: this.props.elementsReducer.doc.elements})
     })
-    .then(() => {
-      this.props.showUpdate('hidden');
-    }, 3000);
   }
 
   zipFile(text, text2) {
@@ -118,6 +127,11 @@ class Edit extends Component {
     });
   }
 
+  saveFilePopup(e) {
+    this.save();
+    this.handleClick(e);
+  };
+
   render() {
     let fontComponentOpenClass = " ";
     if(this.props.menuShow.showFontMenu === true){
@@ -173,71 +187,72 @@ class Edit extends Component {
           </button>
         <div
           className="font-menu">
-          <button
-            id="button-show"
-            className="font-button"
-            onClick={ () => {
-              if (this.props.menuShow.showFontMenu === false) {
-                this.props.showFontMenu(true);
-              } else {
-                this.props.showFontMenu(false);
-              }
-            }
-          }>
-            <i id="icon" className={"fa fa-caret-right" + " " +
-            fontComponentOpenClass}></i>
-          </button>
-          <h3>Font</h3>
+          <div
+            className="font-choices"
+          >
+            <div
+              className="font-toggle"
+            >
+              <button
+                id="button-show"
+                className="font-button"
+                onClick={ () => {
+                  if (this.props.menuShow.showFontMenu === false) {
+                    this.props.showFontMenu(true);
+                  } else {
+                    this.props.showFontMenu(false);
+                  }
+                }
+              }>
+                <i id="icon" className={"fa fa-caret-right" + " " +
+                fontComponentOpenClass}></i>
+              </button>
+              <h3>Font</h3>
+            </div>
+          </div>
           { fontComponent }
         </div>
+        <br/>
         <div
           className="div-menu"
         >
-          <span>
-            <button
-              id="button-show"
-              className="div-button"
-              onClick={ () => {
-                if (this.props.menuShow.showDivMenu === false) {
-                  this.props.showDivMenu(true);
-                } else {
-                  this.props.showDivMenu(false);
-                }
-              }}
+          <div
+            className="div-choices"
+          >
+            <div
+              className="div-toggle"
             >
-              <i id="icon" className={"fa fa-caret-right" + " " + divComponentOpenClass}></i>
-            </button>
-            <h3>Div</h3>
-          </span>
-          <div>
-            { divComponent }
+              <button
+                id="button-show"
+                className="div-button"
+                onClick={ () => {
+                  if (this.props.menuShow.showDivMenu === false) {
+                    this.props.showDivMenu(true);
+                  } else {
+                    this.props.showDivMenu(false);
+                  }
+                }}
+              >
+                <i id="icon" className={"fa fa-caret-right" + " " + divComponentOpenClass}></i>
+              </button>
+              <h3>Div</h3>
+            </div>
           </div>
+          { divComponent }
         </div>
         <div>
           <button
             className="save"
             type="submit"
-            onClick={this.save}
+            onClick={ this.saveFilePopup }
           >
             Save Template
           </button>
-          <div
-            className="save-popup"
-          >
-            <div
-              className="save-content"
-              style={this.props.savePopup}
-            >
-              <span
-                className="exit"
-              >
-                x
-              </span>
-              <p>
-                Saved!
-              </p>
-            </div>
-          </div>
+           <SavePopover
+            show={ this.props.popover.modal }
+            click={ this.handleClick }
+            animationOptions={{duration: 0.2, timing: 'ease-in'}}
+          />
         </div>
         <div>
           <button
@@ -247,8 +262,9 @@ class Edit extends Component {
           >
             Update Template
           </button>
-          <div>
-            Updated!
+          <div
+            className="update-content"
+          >
           </div>
         </div>
         <form>

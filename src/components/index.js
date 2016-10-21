@@ -8,3 +8,5 @@ export { default as Header } from './Template/Header';
 export { default as Footer } from './Template/Footer';
 export { default as FontMenu } from './Edit/FontMenu';
 export { default as ColorMenu } from './Edit/ColorMenu';
+export { default as Popover } from './Popover/Popover';
+export { default as SavePopover } from './Popover/SavePopover';
