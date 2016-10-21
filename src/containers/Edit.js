@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FontMenu, ColorMenu, SavePopover } from '../components';
+import { FontMenu, ColorMenu, SavePopover, UpdatePopover } from '../components';
 
 import { connect } from 'react-redux';
 
@@ -28,15 +28,25 @@ class Edit extends Component {
     }
     this.handleClick = this._handleClick.bind(this);
     this.saveFilePopup = this.saveFilePopup.bind(this);
+    this.handleClickUpdate = this.__handleClick.bind(this);
+    this.updatePopup = this.updatePopup.bind(this);
   }
 
   _handleClick(e) {
     e.preventDefault();
-    console.log(this.props.popover.modal);
     if (this.props.popover.modal) {
       this.props.hidePopover();
     } else {
       this.props.showPopover();
+    }
+  }
+
+  __handleClick(e) {
+    e.preventDefault();
+    if (this.props.popover.updatepop) {
+      this.props.hideUpdate();
+    } else {
+      this.props.showUpdate();
     }
   }
 
@@ -138,6 +148,11 @@ class Edit extends Component {
     this.save();
     this.handleClick(e);
   };
+
+  updatePopup(e) {
+    this.update();
+    this.handleClickUpdate(e);
+  }
 
   render() {
     let fontComponentOpenClass = " ";
@@ -255,24 +270,23 @@ class Edit extends Component {
           >
             Save Template
           </button>
-           <SavePopover
+          <SavePopover
             show={ this.props.popover.modal }
             click={ this.handleClick }
-            animationOptions={{duration: 0.2, timing: 'ease-in'}}
           />
         </div>
         <div>
           <button
             className="update"
             type="submit"
-            onClick={this.update}
+            onClick={this.updatePopup}
           >
             Update Template
-          </button>
-          <div
-            className="update-content"
-          >
-          </div>
+        </button>
+        <UpdatePopover
+          reveal={this.props.popover.updatepop}
+          update={ this.handleClickUpdate }
+        />
         </div>
         <form>
           <button
