@@ -24,8 +24,23 @@ class Template extends Component {
       dataType: 'json',
     });
   }
+  loadSavedTheme () {
+    return $.ajax({
+      url: '/api/template/' + this.props.elementsReducer._id,
+      dataType: 'json',
+    });
+  }
 
   componentDidMount() {
+    this.loadSavedTheme()
+      .then((resultsObject) =>{
+      })
+      .then((docArray) => {
+        return docArray[0];
+      })
+      .then((doc) => {
+        this.props.setElements(doc);
+      })
     this.loadTheme()
       .then((docArray) => {
         return docArray[0];
