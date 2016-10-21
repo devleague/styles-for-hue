@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FontMenu, ColorMenu, SavePopover, UpdatePopover } from '../components';
+import { FontMenu, ColorMenu, SavePopover } from '../components';
 
 import { connect } from 'react-redux';
 
@@ -27,7 +27,6 @@ class Edit extends Component {
     }
     this.handleClick = this._handleClick.bind(this);
     this.saveFilePopup = this.saveFilePopup.bind(this);
-    this.updateTemplatePopup = this.updateTemplatePopup.bind(this);
   }
 
   _handleClick(e) {
@@ -135,11 +134,6 @@ class Edit extends Component {
     this.save();
     this.handleClick(e);
   };
-
-  updateTemplatePopup(e){
-    this.update();
-    this.handleClick(e);
-  }
 
   render() {
     let fontComponentOpenClass = " ";
@@ -267,14 +261,14 @@ class Edit extends Component {
           <button
             className="update"
             type="submit"
-            onClick={this.updateTemplatePopup}
+            onClick={this.update}
           >
             Update Template
           </button>
-          <UpdatePopover
-            show={this.props.popover.modal}
-            click={this.handleClick}
-          />
+          <div
+            className="update-content"
+          >
+          </div>
         </div>
         <form>
           <button
