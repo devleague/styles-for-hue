@@ -11,7 +11,9 @@ class CssView extends Component {
         <div
           className="view-css"
         >
-          <p>VIEWING THE CSS HERE...</p>
+          <pre>
+            
+          </pre>
         </div>
         <div 
           className="footer-cssView"

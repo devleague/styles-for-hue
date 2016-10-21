@@ -70,13 +70,6 @@ class ColorMenu extends Component {
               )
             })}
           </select>
-        <h3>Div Size</h3>
-          <select id="divWidth"
-            defaultValue="0" onChange={() => this.props.changeDivWidth(this.props.selectedElement, this.changeDivWidth())}
-          >
-            <option value="20px">20px</option>
-            <option value="30px">30px</option>
-          </select>
       </div>
     );
   }
