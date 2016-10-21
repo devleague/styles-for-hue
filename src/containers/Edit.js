@@ -48,7 +48,6 @@ class Edit extends Component {
       data: JSON.stringify({template: this.props.elementsReducer.doc.elements})
     })
     .then((data) => {
-      console.log('save style data', data);
       this.props.newDoc(data._id);
       this.props.showSave('visible');
       browserHistory.push('/template/' + data._id);
