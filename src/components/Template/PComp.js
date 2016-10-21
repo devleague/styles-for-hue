@@ -15,7 +15,7 @@ class PComp extends Component {
           className={this.isActive()}
           style={this.props.style}
           onClick={() => this.props.selectElement(this.props.elementId, this.props.style)}
-        >{this.props.text} <a href="#">{this.props.linkText}</a>.
+        >{this.props.text} <a href="#">{this.props.linkText}</a>
         </p>
       )
     }

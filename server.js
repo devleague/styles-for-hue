@@ -78,6 +78,13 @@ app.post('/api/docs', (req, res) => {
   .catch(err => res.send(err));
 });
 
+app.get('/api/styles', (req, res) => {
+  Style.find({})
+  .then((results) => {
+    return res.json(results[0]);
+  })
+})
+
 app.get('/template/:id', (req, res) => {
   let id = mongoose.Types.ObjectId;
   UserTemplate.findOne({_id: req.params.id})
