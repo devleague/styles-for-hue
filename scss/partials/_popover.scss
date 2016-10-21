@@ -1,5 +1,6 @@
 $dark-grey: #535353;
 $light-grey: #E6E8E6;
+$teal: #30B3AA;
 
 .modal {
   display: none;
@@ -16,7 +17,7 @@ $light-grey: #E6E8E6;
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 .modal .modal-content {
@@ -24,13 +25,13 @@ $light-grey: #E6E8E6;
   min-height: 20px;
   min-width: 100px;
   max-width: 150px;
-  top: 100px;
-  left: 80%;
-  right: 20%;
+  top: 40%;
+  left: 50%;
+  right: 50%;
   width: 80%;
   -webkit-transform: translate(-50%, 50%);
           transform: translate(-50%, 50%);
-  box-shadow: 4px 4px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 4px 4px 1px rgba(0, 0, 0, 0.3);
   z-index: 2;
 }
 .modal .modal-content .modal-header {
@@ -82,6 +83,5 @@ $light-grey: #E6E8E6;
 }
 button:hover {
   background: $dark-grey;
-  color: #42afe3;
   outline: none;
 }
