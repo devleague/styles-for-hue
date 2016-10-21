@@ -263,7 +263,7 @@ db.styles.insert(
         ['pink', '#30B3AA', 'white', 'black'],
         ['#FFF', '#32424c', '#687f8c', '#d2e6da']
       ],
-      fontFamily: ['Times New Roamn', 'ABeeZee'],
+      fontFamily: ['Times New Roman', 'ABeeZee'],
       fontSize: '1em'
     }
   }
