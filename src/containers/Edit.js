@@ -14,6 +14,7 @@ function mapStateToProps (state) {
 var fileSaver = require('file-saver');
 var JSZip = require("jszip");
 var beautify_html = require('js-beautify').html;
+var beautify_CSS = require('js-beautify').css;
 
 var zip = new JSZip();
 
@@ -83,7 +84,7 @@ class Edit extends Component {
         if (elem.style.length > 0) {
           CSSText += "\n." + elem.className + " {\n";
           for (var j = 0; j < elem.style.length; j++) {
-            CSSText += "  " + elem.style[j] + ": ";
+            CSSText += elem.style[j] + ": ";
             var prop = elem.style[j];
             if (prop === "justify-content"){
               CSSText += elem.style.justifyContent + ";\n";
@@ -111,6 +112,8 @@ class Edit extends Component {
         }
       }
     }
+
+    CSSText = beautify_CSS(CSSText);
 
     /*Creating text for HTML*/
     var HTMLText = "";
