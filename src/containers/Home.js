@@ -19,24 +19,6 @@ class Home extends Component {
             </NavLink>
           </div>
         </div>
-        <footer>
-          <div className="footer-content">
-            <ul>
-              <li>
-                <a href="#">Home</a>
-              </li>
-              <li className="footer-menu-divider">&sdot;</li>
-              <li>
-                <a href="#">Template</a>
-              </li>
-              <li className="footer-menu-divider">&sdot;</li>
-              <li>
-                <a href="#">About</a>
-              </li>
-            </ul>
-            <p>Copyright &copy; 2016 Styles For Hue. All Rights Reserved</p>
-          </div>
-        </footer>
       </div>
     )
   }
