@@ -1,7 +1,6 @@
 const initialState = {
   showFontMenu: false,
-  showDivMenu: false,
-  showUpdate: false
+  showDivMenu: false
 }
 
 const reducer = (state = initialState, action) => {
@@ -10,8 +9,6 @@ const reducer = (state = initialState, action) => {
       return {...state, showFontMenu: action.show};
     case "SHOW_DIVMENU":
       return {...state, showDivMenu: action.show};
-    case "SHOW_UPDATE":
-      return {...state, showUpdate: action.show};
     default:
       return state;
   }
