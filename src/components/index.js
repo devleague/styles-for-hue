@@ -10,4 +10,3 @@ export { default as FontMenu } from './Edit/FontMenu';
 export { default as ColorMenu } from './Edit/ColorMenu';
 export { default as Popover } from './Popover/Popover';
 export { default as SavePopover } from './Popover/SavePopover';
-export { default as UpdatePopover } from './Popover/UpdatePopover';
