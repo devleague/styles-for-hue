@@ -12,54 +12,6 @@ class Template extends Component {
   constructor(props) {
     super(props);
   }
-  loadTheme () {
-    return $.ajax({
-      url: '/api/docs',
-      dataType: 'json',
-    });
-  }
-  loadStyles () {
-    return $.ajax({
-      url: '/api/styles',
-      dataType: 'json',
-    });
-  }
-  loadSavedTheme () {
-    return $.ajax({
-      url: '/api/template/' + this.props.elementsReducer._id,
-      dataType: 'json',
-    });
-  }
-
-  componentDidMount() {
-    this.loadSavedTheme()
-      .then((resultsObject) =>{
-      })
-      .then((docArray) => {
-        return docArray[0];
-      })
-      .then((doc) => {
-        this.props.setElements(doc);
-      })
-    this.loadTheme()
-      .then((docArray) => {
-        return docArray[0];
-      })
-      .then((doc) => {
-        this.props.setElements(doc);
-      })
-    this.loadStyles()
-      .then((styles) => {
-        var selectedStyle = styles.style1;
-        this.props.setStyles(styles);
-        this.props.setSelectedStyle(selectedStyle);
-        return selectedStyle;
-      })
-      .then((selectedStyle) => {
-        this.props.fontTypes(selectedStyle.fontFamily);
-        return this.props.getColorPalette(selectedStyle.backgroundColor);
-      })
-  }
 
   render() {
     const elements = this.props.elementsReducer.doc.elements.map((elem, index) => {
