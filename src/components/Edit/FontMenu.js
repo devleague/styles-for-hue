@@ -16,6 +16,7 @@ class FontMenu extends Component {
     }
     return this.switchThemeFonts(elementTag, font);
   }
+
   changeFontSize(fontSize) {
     var elementTag = document.getElementById("elementMenu").value
     if (fontSize !== 'em' && fontSize !== 'px' && fontSize !== '') {
@@ -25,9 +26,6 @@ class FontMenu extends Component {
       return this.switchThemeFonts(elementTag, font);
     }
   }
-  // changeFontSizeUnit() {
-  //   return font;
-  // }
 
   switchThemeFonts(elementTag, fontObj) {
     // this.props.changeSelectedFont(newFont);
@@ -99,9 +97,9 @@ class FontMenu extends Component {
               return (
                 <option
                   key={index}
-                  value={font.family}
+                  value={font}
                 >
-                  { font.family }
+                  { font }
                 </option>
               )
             })}

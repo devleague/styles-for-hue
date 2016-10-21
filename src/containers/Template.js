@@ -41,6 +41,7 @@ class Template extends Component {
         return selectedStyle;
       })
       .then((selectedStyle) => {
+        this.props.fontTypes(selectedStyle.fontFamily);
         return this.props.getColorPalette(selectedStyle.backgroundColor);
       })
   }
