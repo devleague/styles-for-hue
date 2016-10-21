@@ -108,11 +108,9 @@ class Edit extends Component {
 
     /*Creating text for HTML*/
     var HTMLText = "";
-    HTMLText += '<!DOCTYPE html>\n<html lang="en">\n<head>\n  <meta charset="UTF-8">\n  <title>[Your Title Here]</title>\n  <link rel="stylesheet" type="text/css" href="styles.css">\n</head>\n<body>\n  ' + HTMLText + '\n</body>\n</html>';
     var output = $(".template-container").html();
-    output = output.replace(/style\="(.*?)\"/g, "");
-    //console.log(output);
-    HTMLText += output;
+    HTMLText += '<!DOCTYPE html>\n<html lang="en">\n<head>\n  <meta charset="UTF-8">\n  <title>[Your Title Here]</title>\n  <link rel="stylesheet" type="text/css" href="styles.css">\n</head>\n<body>\n  ' + output + '\n</body>\n</html>';
+    HTMLText = HTMLText.replace(/style\="(.*?)\"/g, "");
 
     /*Creating files to be saved as .zip*/
     var HTMLBlob = new Blob([HTMLText], {type: "text/plain;charset=utf-8"});
