@@ -1,4 +1,15 @@
 import React, { Component } from 'react';
+import { FontMenu, ColorMenu } from '../components';
+
+import { connect } from 'react-redux';
+
+import * as Actions from '../actions';
+
+import { browserHistory } from 'react-router';
+
+function mapStateToProps (state) {
+  return { ...state};
+}
 
 class CssView extends Component {
   render() {
@@ -11,7 +22,7 @@ class CssView extends Component {
         <div
           className="view-css"
         >
-          <p>VIEWING THE CSS HERE...</p>
+          { this.props.showElementStyles(this.props.elementsReducer._id) }
         </div>
         <div 
           className="footer-cssView"
@@ -23,4 +34,4 @@ class CssView extends Component {
   }
 }
 
-export default CssView;
+export default connect(mapStateToProps, Actions)(CssView);
