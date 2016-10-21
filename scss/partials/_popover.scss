@@ -1,0 +1,87 @@
+$dark-grey: #535353;
+$light-grey: #E6E8E6;
+
+.modal {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+.modal .modal-background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+.modal .modal-content {
+  position: absolute;
+  min-height: 20px;
+  min-width: 100px;
+  max-width: 150px;
+  top: 100px;
+  left: 80%;
+  right: 20%;
+  width: 80%;
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
+  box-shadow: 4px 4px 1px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+.modal .modal-content .modal-header {
+  background: $dark-grey;
+  padding: 2px;
+  font-size: 26px;
+  letter-spacing: 1px;
+  color: #fff;
+  font-weight: 600;
+  border-bottom: 1px solid #4d8012;
+}
+.modal .modal-content .modal-body {
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: 500;
+  min-height: 30px;
+  min-width: 100px;
+  max-width: 150px;
+  background: #fff;
+  color: #444;
+  text-align: center;
+}
+.modal .modal-content .modal-body p {
+  margin: 2px 0;
+}
+.modal .modal-content .modal-footer {
+  background: #eee;
+  text-align: right;
+  // padding: 10px 20px;
+  // border-top: 1px solid #ddd;
+}
+
+.modal.is-active {
+  display: block;
+}
+
+.savepopover-button {
+  border: none;
+  background: $dark-grey;
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  font-size: 10px;
+  cursor: pointer;
+  outline: none;
+}
+button:hover {
+  background: $dark-grey;
+  color: #42afe3;
+  outline: none;
+}

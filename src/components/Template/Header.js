@@ -8,19 +8,17 @@ class Header extends Component {
         style={this.props.style}
         onClick={() => this.props.selectElement(this.props.elementId, this.props.style)}
       >
-        <img
-          src="http://www.hsdtaxlaw.com/wp-content/uploads/2016/05/logo_placeholder.png"
-          style={
-            {
-              height: "50px"
-            }
-          }
-        />
-        <ul>
-          <li>
-            Home
-          </li>
-        </ul>
+        <div className="t1-header-left">
+          <h1>YOUR COMPANY</h1>
+        </div>
+        <div className="t1-header-right">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">About Us</a></li>
+          </ul>
+        </div>
       </div>
     )
   }

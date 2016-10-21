@@ -8,6 +8,7 @@ import { default as savePopupReducer } from './savePopup';
 import { default as sideBarReducer } from './sideBar';
 import { default as menuReducer } from './menuShow';
 import { default as updatePopupReducer } from './updatePopup';
+import { default as popoverReducer } from './popover';
 
 const rootReducer = combineReducers({
   elementsReducer: elementsReducer,
@@ -17,7 +18,8 @@ const rootReducer = combineReducers({
   savePopup: savePopupReducer,
   sideBar: sideBarReducer,
   menuShow: menuReducer,
-  updatePopup: updatePopupReducer
+  updatePopup: updatePopupReducer,
+  popover: popoverReducer
 })
 
 const finalCreateStore = compose(
