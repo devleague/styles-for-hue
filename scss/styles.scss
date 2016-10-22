@@ -353,21 +353,20 @@ hr{
     background-color: #3e8e41;
 }
 
+/////// RESOURCE PAGE ///////
 .resource-image{
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20)),
-    url('/images/coffee.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
+  background: url('/images/coffee_desk.jpg') no-repeat top center;
   background-size: cover;
-  position:relative;
-  height:100vh;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: $dark-grey;
+  background-color: $teal;
+  padding: 175px 0 125px;
+  background-attachment: fixed;
+  h1{
+    font-size: 3rem;
+    font-weight: bold;
+    color: $white;
+    text-transform: uppercase;
+    margin-left: 50px;
+  }
 }
 
 .fontsite-container{
