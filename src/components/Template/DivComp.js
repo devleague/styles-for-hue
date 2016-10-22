@@ -41,6 +41,7 @@ class DivComp extends Component {
                 className={this.isActive(child.elementId, child.className)}
                 style={child.style}
                 selectElement={this.props.selectElement}
+                clickHandler={this.clickHandler}
               >
               </Header>
             )
@@ -52,6 +53,7 @@ class DivComp extends Component {
                 className={this.isActive(child.elementId, child.className)}
                 style={child.style}
                 selectElement={this.props.selectElement}
+                clickHandler={this.clickHandler}
               >
               </Footer>
             )
@@ -64,6 +66,7 @@ class DivComp extends Component {
                 src={child.src}
                 style={child.style}
                 selectElement={this.props.selectElement}
+                clickHandler={this.clickHandler}
               />
             )
           case 'div':
@@ -84,6 +87,7 @@ class DivComp extends Component {
                               text={fourthChild.text}
                               style={fourthChild.style}
                               selectElement={this.props.selectElement}
+                              clickHandler={this.clickHandler}
                             >
                             </HComp>
                           )
@@ -161,7 +165,6 @@ class DivComp extends Component {
       <div
           className={this.isActive(this.props.elementId, this.props.className)}
           style={this.props.style}
-          // onClick={() => this.props.selectElement(this.props.elementId, this.props.style)}
         >
           {children}
       </div>
