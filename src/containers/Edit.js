@@ -103,7 +103,20 @@ class Edit extends Component {
   changeUser(){
     return $.ajax({
       url: '/api/usertemplate',
-      dataType: 'json'
+      dataType: 'json',
+      data: JSON.stringify({})
+    })
+    .then((data) => {
+      var options = "";
+      var id = "";
+      data.map((templates) => {
+        id += templates._id + "\n";
+      })
+      var idArray = id.split("\n");
+      for (var i = 0; i < idArray.length; i++){
+        options += '<a href="template/' + idArray[i] + '"' + '>' + idArray[i] + '</a>';
+      };
+      $('#Input').append(options);
     })
   }
 
@@ -244,12 +257,13 @@ class Edit extends Component {
           }>
             &lt;CSS&gt;
           </button>
-        <div className="dropdown">
-          <button className="dropbtn">Dropdown</button>
-          <div className="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
+          <div className="dropdown">
+          <button className="dropbtn"
+            onClick={this.changeUser}>Dropdown</button>
+          <div className="dropdown-content"
+            id="Input"
+          >
+            <a href="#"></a>
           </div>
         </div>
         <div
