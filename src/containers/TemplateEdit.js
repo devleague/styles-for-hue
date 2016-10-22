@@ -13,6 +13,55 @@ class TemplateEdit extends Component {
     super(props)
     this.showElementStyles = this.showElementStyles.bind(this);
   }
+
+  loadSavedTheme () {
+    return $.ajax({
+      url: `/api/template/${this.props.params.hash}`,
+      dataType: 'json',
+    });
+  }
+  loadTheme () {
+    return $.ajax({
+      url: '/api/docs',
+      dataType: 'json',
+    });
+  }
+  loadStyles () {
+    return $.ajax({
+      url: '/api/styles',
+      dataType: 'json',
+    });
+  }
+
+  componentDidMount() {
+    if (this.props.params.hash) {
+      this.loadSavedTheme()
+        .then((resultsObject) =>{
+          return resultsObject;
+        })
+        .then((doc) => {
+          this.props.setElements(doc);
+        })
+    } else {
+      this.loadTheme()
+        .then((docObj) => {
+          return docObj;
+        })
+        .then((doc) => {
+          this.props.setElements(doc);
+        })
+    }
+    this.loadStyles()
+      .then((styles) => {
+        var selectedStyle = styles.style1;
+        this.props.setStyles(styles);
+        this.props.setSelectedStyle(selectedStyle);
+        return selectedStyle;
+      })
+      .then((selectedStyle) => {
+        this.props.fontTypes(selectedStyle.fontFamily);
+        return this.props.getColorPalette(selectedStyle.backgroundColor);
+      })
   // loadColorApi () {
   //   return $.ajax({
   //     url: "http://www.colr.org/json/colors/random/8"
@@ -23,7 +72,6 @@ class TemplateEdit extends Component {
   //     url: "https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBifqNWX2_oCeWV1TZcsOZL-Sy1Q15eIIs"
   //   });
   // }
-  // componentDidMount () {
   //   this.loadColorApi()
   //     .then(function (data) {
   //       var colorsObject = JSON.parse(data);
@@ -64,8 +112,7 @@ class TemplateEdit extends Component {
   //     .then((fonts) => {
   //       return this.props.fontTypes(fonts)
   //     })
-
-  // }
+  }
 
   showElementStyles(styles){
     let stylesArray = [];
@@ -86,6 +133,7 @@ class TemplateEdit extends Component {
       >
         <div className="template-container">
           <Template
+            hash={this.props.params.hash}
             // elements={this.props.elementsReducer.doc.elements}
             // selectElement={this.props.selectElement}
             // selectedElementId={this.props.elementsReducer.selectedElement.selectedElementId}

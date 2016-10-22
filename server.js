@@ -30,14 +30,17 @@ const stylesSchema = new Schema({
 
 const UserTemplateSchema = new Schema({
   _id: {type: String, 'default': shortid.generate},
-  template: [{
-    children: Object,
-    className: String,
-    tag: String,
-    elementId: Number,
+  doc: {
     _id: String,
-    style: Object
-  }]
+    elements:[{
+      children: Object,
+      className: String,
+      tag: String,
+      elementId: Number,
+      _id: String,
+      style: Object
+    }]
+  }
 });
 
 // mongoose will lowercase and pluralize for mongodb //
@@ -49,7 +52,7 @@ app.set('port', (process.env.PORT || 3000))
 
 app.use('/', express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/api/usertemplate', (req, res) => {
   UserTemplate.find({})
@@ -57,15 +60,17 @@ app.get('/api/usertemplate', (req, res) => {
 });
 
 app.post('/api/usertemplate', (req, res) => {
+  console.log(req.body.template);
+
   UserTemplate.create({
-    template: req.body.template,
+    doc: req.body.template,
   })
   .then(results => res.json(results))
   .catch(err => res.send(err));
 });
 
 app.get('/api/docs', (req, res) => {
-  Doc.find({})
+  Doc.findOne({})
   .then(results => res.send(results));
 });
 
@@ -78,16 +83,17 @@ app.post('/api/docs', (req, res) => {
 });
 
 app.get('/api/styles', (req, res) => {
-  Style.find({})
+  Style.findOne({})
   .then((results) => {
-    return res.json(results[0]);
+    return res.json(results);
   })
 })
 
 app.get('/api/template/:id', (req, res) => {
   let id = mongoose.Types.ObjectId;
   UserTemplate.findOne({_id: req.params.id})
-  .then((results) => {return res.json(results);
+  .then((results) => {
+    return res.json(results);
   });
 });
 
