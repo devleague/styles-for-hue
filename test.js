@@ -77,7 +77,7 @@ db.docs.insert(
                         {
                           "elementId" : 9,
                           "tag" : "p",
-                          "text" : "This is a p tag. Oat cake dragée cheesecake chocolate cake. Jelly dessert dessert chocolate liquorice caramels sweet ice cream liquorice. Gummi bears tart topping gummies jelly bear claw. Lemon drops tootsie roll topping. Dragée gingerbread jelly beans cake dragée cake caramels. Icing sesame snaps bonbon sweet roll.",
+                          "text" : "This is a p tag. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.",
                           "style" : {
                             // "backgroundColor" : "pink"
                           }
@@ -126,7 +126,7 @@ db.docs.insert(
                         {
                           "elementId" : 14,
                           "tag" : "p",
-                          "text" : "This is a p tag. Marzipan bear claw sweet donut. Jujubes croissant candy wafer cheesecake caramels carrot cake tart.",
+                          "text" : "This is a p tag. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus.",
                           "style" : {
                             // "backgroundColor" : "yellow"
                           }
@@ -161,7 +161,7 @@ db.docs.insert(
                         {
                           "elementId" : 18,
                           "tag" : "p",
-                          "text" : "This is a p tag. Apple pie chocolate apple pie gummi bears. Candy biscuit cheesecake gummi bears powder.",
+                          "text" : "This is a p tag. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus.",
                           "style" : {
                             // "backgroundColor" : "yellow"
                           }
@@ -196,7 +196,7 @@ db.docs.insert(
                         {
                           "elementId" : 22,
                           "tag" : "p",
-                          "text" : "This is a p tag. Tootsie roll sugar plum chocolate cake jelly beans chupa chups bear claw apple pie.",
+                          "text" : "This is a p tag. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus.",
                           "style" : {
                             // "backgroundColor" : "yellow"
                           }
