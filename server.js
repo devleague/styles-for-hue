@@ -39,7 +39,8 @@ const UserTemplateSchema = new Schema({
       elementId: Number,
       _id: String,
       style: Object
-    }]
+    }],
+    date: { type: Date, default: Date.now }
   }
 });
 
