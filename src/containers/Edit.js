@@ -69,7 +69,6 @@ class Edit extends Component {
   updatePopup(e) {
     this.update();
     this.handleClickUpdate(e);
-    this.showUpdate(e);
   }
 
 
