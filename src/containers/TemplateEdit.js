@@ -40,7 +40,6 @@ class TemplateEdit extends Component {
           return resultsObject;
         })
         .then((doc) => {
-          console.log(doc);
           this.props.setElements(doc);
         })
     } else {
