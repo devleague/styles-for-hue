@@ -87,6 +87,7 @@ class DivComp extends Component {
                               text={fourthChild.text}
                               style={fourthChild.style}
                               selectElement={this.props.selectElement}
+                              selectedElementId={this.props.selectedElementId}
                               clickHandler={this.clickHandler}
                             >
                             </HComp>
