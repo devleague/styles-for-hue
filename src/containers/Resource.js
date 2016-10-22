@@ -22,8 +22,10 @@ class Resource extends Component {
               className="fontsite-container"
             >
               <h1>Fonts</h1>
+              <br />
               <p>For the everyday developer that needs help picking out fancy fonts. Google Fonts have popular pairings with each fonts.</p>
               <p>
+              <br />
                 <a href="https://fonts.google.com/" target="_blank">Google Fonts</a>
               </p>
             </div>
@@ -39,7 +41,9 @@ class Resource extends Component {
               className="colorpalette-container"
             >
               <h1>Color Palettes</h1>
+              <br />
               <p>A few sites that we recommend to the everyday developer that needs help with color palettes. There are more color palette sites that are out there. These sites are here to help the everyday developer start off from here.</p>
+              <br />
               <p>
                 <a href="http://colorpalettes.net/" target="_blank">Color Palettes</a>
               </p>
