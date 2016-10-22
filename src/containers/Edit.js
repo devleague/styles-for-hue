@@ -32,7 +32,6 @@ class Edit extends Component {
 
   _handleClick(e) {
     e.preventDefault();
-    console.log(this.props.popover.modal);
     if (this.props.popover.modal) {
       this.props.hidePopover();
     } else {
