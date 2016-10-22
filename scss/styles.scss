@@ -307,3 +307,34 @@ hr{
   -webkit-transition: transform 0.3s linear;
   transition: transform 0.3s linear;
 }
+
+.resource-image{
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20)),
+    url('/images/coffee.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position:relative;
+  height:100vh;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: $dark-grey;
+}
+
+.fontsite-container{
+  h1{
+    font-size: 25px;
+    font-weight: 700;
+  }
+}
+
+.colorpalette-container{
+  h1{
+    font-size: 25px;
+    font-weight: 700;
+  }
+}
