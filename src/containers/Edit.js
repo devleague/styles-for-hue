@@ -187,7 +187,7 @@ class Edit extends Component {
       fontComponent = (
         <FontMenu
           fontList={this.props.fonts.items}
-          selectedElement={this.props.selectedElement}
+          selectedElement={this.props.elementsReducer.selectedElement}
           elements={this.props.elementsReducer.doc.elements}
           changeSelectedFont={this.props.changeSelectedFont}
           changeFont={this.props.changeFont}
@@ -201,7 +201,7 @@ class Edit extends Component {
       divComponent = (
         <ColorMenu
           colorPalette={this.props.colors.colorPalette}
-          selectedElement={this.props.selectedElement}
+          selectedElement={this.props.elementsReducer.selectedElement}
           elements={this.props.elementsReducer.doc.elements}
           changeColor={this.props.changeColor}
           changeColorPalette={this.props.changeColorPalette}

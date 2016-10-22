@@ -4,6 +4,7 @@ class ColorMenu extends Component {
   constructor(props) {
     super(props);
     this.switchThemeColor = this.switchThemeColor.bind(this);
+    this.foundElement = false;
   }
   changeColor() {
     var color = document.getElementById("colorMenu").value;
@@ -13,6 +14,69 @@ class ColorMenu extends Component {
     console.log(this.props.colorPalette);
     var colorArrayIndex = document.getElementById("colorPalette").value;
     return this.switchThemeColor(this.props.colorPalette[colorArrayIndex]);
+  }
+
+  switchElementColor(color, selectedElementId, elements) {
+    let newElems = elements;
+    newElems = newElems.map((elem) => {
+      if (elem.elementId === selectedElementId) {
+        return { ...elem, style: { ...elem.style, backgroundColor: color}};
+      }
+      if (elem.children) {
+        elem.children = elem.children.map((child) => {
+          if (child.elementId === selectedElementId) {
+          return { ...child, style: { ...child.style, backgroundColor: color}};
+        }
+          if (child.children) {
+
+            child.children = child.children.map((secondChild) => {
+              if (secondChild.elementId === selectedElementId) {
+          return { ...secondChild, style: { ...secondChild.style, backgroundColor: color}};
+        }
+              if (secondChild.children) {
+                secondChild.children = secondChild.children.map((thirdChild) => {
+                  if (thirdChild.elementId === selectedElementId) {
+          return { ...thirdChild, style: { ...thirdChild.style, backgroundColor: color}};
+        }
+                  if (thirdChild.children) {
+                    thirdChild.children = thirdChild.children.map((fourthChild) => {
+                      if (fourthChild.elementId === selectedElementId) {
+          return { ...fourthChild, style: { ...fourthChild.style, backgroundColor: color}};
+        }
+                       return { ...fourthChild};
+                    })
+                  }
+                  return { ...thirdChild};
+                })
+              }
+              return { ...secondChild};
+            })
+          }
+          return { ...child};
+        })
+      }
+      return { ...elem};
+    })
+    return this.props.changeColor(newElems);
+    // let newElems = [];
+    // let children = [];
+    // newElems = elements.map((elem) => {
+    //   if (elem.elementId === selectedElementId) {
+    //     console.log('YAY!');
+    //     console.log({ ...elem, style: { ...elem.style, backgroundColor: color}});
+    //     return { ...elem, style: { ...elem.style, backgroundColor: color}};
+    //   }
+    //   if (elem.children) {
+    //     this.switchElementColor(color, selectedElementId, elem.children);
+    //     elem.children = elem.children.map((child) => {
+    //       return { ...child};
+    //     })
+    //     return { ...elem};
+    //   }
+    //   return { ...elem};
+    // })
+    // console.log(newElems);
+    // return newElems;
   }
 
   switchThemeColor(colorArray) {
@@ -57,7 +121,7 @@ class ColorMenu extends Component {
           <option value="1">Palette 2</option>
         </select>
         <h3>Pick Your Color:</h3>
-          <select id="colorMenu" defaultValue="0" onChange={() => this.props.changeColor(this.props.selectedElement, this.changeColor())}>
+          <select id="colorMenu" defaultValue="0" onChange={() => this.switchElementColor(this.changeColor(), this.props.selectedElement.selectedElementId, this.props.elements)}>
             <option value="0" disabled="disabled">SELECT COLOR</option>
             {this.props.colorPalette[0].map((color, index) => {
               return (
