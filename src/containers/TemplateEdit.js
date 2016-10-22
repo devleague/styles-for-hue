@@ -34,17 +34,19 @@ class TemplateEdit extends Component {
   }
 
   componentDidMount() {
-    this.loadSavedTheme()
-      .then((resultsObject) =>{
-        console.log(resultsObject);
-      })
-      .then((doc) => {
-        // console.log(doc);
-        // this.props.setElements(doc);
-      })
+    if (this.props.params.hash) {
+      this.loadSavedTheme()
+        .then((resultsObject) =>{
+          return resultsObject;
+        })
+        .then((doc) => {
+          console.log(doc);
+          this.props.setElements(doc);
+        })
+    }
     this.loadTheme()
-      .then((docArray) => {
-        return docArray[0];
+      .then((docObj) => {
+        return docObj;
       })
       .then((doc) => {
         this.props.setElements(doc);
