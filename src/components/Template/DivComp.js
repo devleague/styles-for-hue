@@ -14,12 +14,18 @@ class DivComp extends Component {
   }
 
   clickHandler(event) {
-    let templateArray = $('.template-1').children();
-    templateArray = templateArray.map((index, elem) => {
-      if ($('.selected')) {
-        console.log('yes!');
-      }
-    })
+    let element = event.target;
+    let elementId = parseInt(element.id);
+    let templateArray = Array.from($(element).parents());
+    let parentNotSelected = templateArray.every((elem, index, array) => {
+      return elem.className.indexOf('selected') === -1;
+    });
+    if (element.className.indexOf('selected') === -1
+      && parentNotSelected) {
+      console.log(elementId);
+      this.props.selectElement(elementId, this.props.style);
+      return event.stopPropagation();
+    }
   }
 
   render() {
@@ -104,6 +110,7 @@ class DivComp extends Component {
                     return (
                       <div
                         key={thirdChild.elementId}
+                        id={thirdChild.elementId}
                         className={this.isActive(thirdChild.elementId, thirdChild.className)}
                         style={thirdChild.style}
                         onClick={(event) => this.clickHandler(event)}
