@@ -82,7 +82,9 @@ class FontMenu extends Component {
 
   render() {
     return(
-      <div>
+      <div
+        className="font-dropdown"
+      >
         <h3>Pick Your Element:</h3>
           <select id="elementMenu" defaultValue="0">
             <option value="0" disabled="disabled">SELECT ELEMENT</option>

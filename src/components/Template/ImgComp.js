@@ -21,6 +21,8 @@ class ImgComp extends Component {
       >
 
         <h1>We Are A Company</h1>
+        <p>We make music and you can make music too! It's easy!</p>
+        <p><a href="#">Get Started</a></p>
       </div>
     )
   }

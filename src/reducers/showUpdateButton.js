@@ -1,11 +1,11 @@
 const initialState = {
-  visibility: 'hidden'
+  updateButton: false
 }
 
 const reducer = ( state = initialState, action) => {
   switch (action.type) {
-    case "UPDATE_TEMPLATE":
-      return {...state, visibility: action.data};
+    case "SHOW_UPDATEBUTTON":
+      return {...state, updateButton: action.show};
     default:
       return state;
   }

@@ -41,6 +41,14 @@ class App extends Component {
                   About
                 </NavLink>
               </li>
+              <li>
+                <NavLink
+                  to="/resources"
+                  activeClassName="resources"
+                >
+                  Resources
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>
