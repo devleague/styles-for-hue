@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { FontMenu, ColorMenu, SavePopover, UpdatePopover } from '../components';
-
 import { connect } from 'react-redux';
 
 import * as Actions from '../actions';
