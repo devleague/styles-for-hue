@@ -114,7 +114,7 @@ class Edit extends Component {
       })
       var idArray = id.split("\n");
       for (var i = 0; i < idArray.length; i++){
-        options += '<a href="template/' + idArray[i] + '"' + '>' + idArray[i] + '</a>';
+        options += '<a href="' + idArray[i] + '"' + '>' + idArray[i] + '</a>';
       };
       $('#Input').append(options);
     })
