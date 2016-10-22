@@ -5,3 +5,4 @@ export { default as Edit } from './Edit';
 export { default as TemplateEdit } from './TemplateEdit';
 export { default as CssView } from './CssView';
 export { default as About } from './About';
+export { default as Footer } from './Footer';

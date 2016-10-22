@@ -3,6 +3,8 @@ import { IndexLink } from 'react-router';
 
 import { NavLink } from '../components';
 
+import { Footer } from './';
+
 class App extends Component {
   render() {
     return (
@@ -47,6 +49,7 @@ class App extends Component {
         >
           { this.props.children }
         </div>
+        <Footer/>
       </div>
     )
   }

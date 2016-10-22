@@ -13,6 +13,8 @@ function mapStateToProps (state) {
 
 var fileSaver = require('file-saver');
 var JSZip = require("jszip");
+var beautify_html = require('js-beautify').html;
+var beautify_CSS = require('js-beautify').css;
 
 var zip = new JSZip();
 
@@ -27,7 +29,8 @@ class Edit extends Component {
     }
     this.handleClick = this._handleClick.bind(this);
     this.saveFilePopup = this.saveFilePopup.bind(this);
-    this.updateTemplatePopup = this.updateTemplatePopup.bind(this);
+    this.handleClickUpdate = this.__handleClick.bind(this);
+    this.updatePopup = this.updatePopup.bind(this);
   }
 
   _handleClick(e) {
@@ -36,6 +39,15 @@ class Edit extends Component {
       this.props.hidePopover();
     } else {
       this.props.showPopover();
+    }
+  }
+
+  __handleClick(e) {
+    e.preventDefault();
+    if (this.props.popover.updatepop) {
+      this.props.hideUpdate();
+    } else {
+      this.props.showUpdate();
     }
   }
 
@@ -82,7 +94,7 @@ class Edit extends Component {
         if (elem.style.length > 0) {
           CSSText += "\n." + elem.className + " {\n";
           for (var j = 0; j < elem.style.length; j++) {
-            CSSText += "  " + elem.style[j] + ": ";
+            CSSText += elem.style[j] + ": ";
             var prop = elem.style[j];
             if (prop === "justify-content"){
               CSSText += elem.style.justifyContent + ";\n";
@@ -111,11 +123,15 @@ class Edit extends Component {
       }
     }
 
+    CSSText = beautify_CSS(CSSText);
+
     /*Creating text for HTML*/
     var HTMLText = "";
     var output = $(".template-container").html();
     HTMLText += '<!DOCTYPE html>\n<html lang="en">\n<head>\n  <meta charset="UTF-8">\n  <title>[Your Title Here]</title>\n  <link rel="stylesheet" type="text/css" href="styles.css">\n</head>\n<body>\n  ' + output + '\n</body>\n</html>';
     HTMLText = HTMLText.replace(/style\="(.*?)\"/g, "");
+
+    HTMLText = beautify_html(HTMLText);
 
     /*Creating files to be saved as .zip*/
     var HTMLBlob = new Blob([HTMLText], {type: "text/plain;charset=utf-8"});
@@ -128,6 +144,7 @@ class Edit extends Component {
       fileSaver.saveAs(HTMLBlob, "styles-for-hue.zip");
       fileSaver.saveAs(CSSBlob, "styles-for-hue.zip");
     });
+
   }
 
   saveFilePopup(e) {
@@ -135,9 +152,9 @@ class Edit extends Component {
     this.handleClick(e);
   };
 
-  updateTemplatePopup(e){
+  updatePopup(e) {
     this.update();
-    this.handleClick(e);
+    this.handleClickUpdate(e);
   }
 
   render() {
@@ -256,24 +273,23 @@ class Edit extends Component {
           >
             Save Template
           </button>
-           <SavePopover
+          <SavePopover
             show={ this.props.popover.modal }
             click={ this.handleClick }
-            animationOptions={{duration: 0.2, timing: 'ease-in'}}
           />
         </div>
         <div>
           <button
             className="update"
             type="submit"
-            onClick={this.updateTemplatePopup}
+            onClick={this.updatePopup}
           >
             Update Template
-          </button>
-          <UpdatePopover
-            show={this.props.popover.modal}
-            click={this.handleClick}
-          />
+        </button>
+        <UpdatePopover
+          reveal={this.props.popover.updatepop}
+          update={ this.handleClickUpdate }
+        />
         </div>
         <form>
           <button

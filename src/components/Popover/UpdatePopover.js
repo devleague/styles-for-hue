@@ -5,7 +5,7 @@ class UpdatePopover extends Component {
   render() {
     return (
       <Popover
-        isActive={this.props.show}
+        isActive={this.props.reveal}
       >
         <div
           className="modal-content"
@@ -15,7 +15,7 @@ class UpdatePopover extends Component {
           >
             <button
               className="savepopover-button"
-              onClick={this.props.click}
+              onClick={this.props.update}
             >
             x
             </button>
