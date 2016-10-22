@@ -8,6 +8,16 @@ class PComp extends Component {
     return `pComp${this.props.elementId}`;
   }
 
+  clickHandler(event) {
+    let templateArray = $('.template-1').children();
+    templateArray = templateArray.map((index, elem) => {
+      if ($('.selected')) {
+        console.log('yes!');
+        event.stopPropagation();
+      }
+    })
+  }
+
   render() {
     if (this.props.linkText) {
       return (
@@ -21,9 +31,10 @@ class PComp extends Component {
     }
     return (
       <p
-        className={this.isActive()}
+        id={this.props.elementId}
+        className='selected'
         style={this.props.style}
-        onClick={() => this.props.selectElement(this.props.elementId, this.props.style)}
+        onClick={(event) => this.clickHandler(event)}
       >{this.props.text}
       </p>
     )
