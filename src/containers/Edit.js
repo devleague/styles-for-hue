@@ -29,7 +29,7 @@ class Edit extends Component {
     }
     this.handleClick = this._handleClick.bind(this);
     this.saveFilePopup = this.saveFilePopup.bind(this);
-    this.handleClickUpdate = this.showUpdate.bind(this);
+    this.handleClickUpdate = this.__handleClick.bind(this);
     this.updatePopup = this.updatePopup.bind(this);
   }
 
@@ -51,6 +51,15 @@ class Edit extends Component {
     }
   }
 
+  showUpdate(e) {
+    e.preventDefault();
+    if (this.props.showUpdateButton.updateButton) {
+      this.props.updateButtonShow();
+    } else {
+      this.props.updateButtonShow();
+    }
+  }
+
   saveFilePopup(e) {
     this.save();
     this.handleClick(e);
@@ -60,17 +69,9 @@ class Edit extends Component {
   updatePopup(e) {
     this.update();
     this.handleClickUpdate(e);
+    this.showUpdate(e);
   }
 
-  showUpdate(e) {
-    e.preventDefault();
-    console.log(this.props.updateButton);
-    if (this.props.showUpdateButton.updateButton) {
-      this.props.hideUpdateButton();
-    } else {
-      this.props.updateButtonShow();
-    }
-  }
 
   saveStyle(){
     return $.ajax({
@@ -211,13 +212,13 @@ class Edit extends Component {
           <button
             className="update"
             type="submit"
-            onClick={ this.handleClickUpdate }
+            onClick={ this.updatePopup }
           >
             Update Template
         </button>
         <UpdatePopover
           reveal={this.props.popover.updatepop}
-          update={ this.updatePopup }
+          update={ this.handleClickUpdate }
         />
         </div>
       )
