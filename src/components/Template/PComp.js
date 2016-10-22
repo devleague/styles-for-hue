@@ -11,9 +11,9 @@ class PComp extends Component {
   clickHandler(event) {
     let templateArray = $('.template-1').children();
     templateArray = templateArray.map((index, elem) => {
-      if ($('.selected')) {
-        console.log('yes!');
-        event.stopPropagation();
+      if ($(elem).not("[class='.selected']")) {
+        this.props.selectElement(this.props.elementId, this.props.style);
+        return event.stopPropagation();
       }
     })
   }
@@ -32,7 +32,7 @@ class PComp extends Component {
     return (
       <p
         id={this.props.elementId}
-        className='selected'
+        className={this.isActive()}
         style={this.props.style}
         onClick={(event) => this.clickHandler(event)}
       >{this.props.text}
