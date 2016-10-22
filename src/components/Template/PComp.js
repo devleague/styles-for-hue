@@ -10,13 +10,18 @@ class PComp extends Component {
 
   clickHandler(event, elementId) {
     let element = document.getElementById(elementId);
-    let templateArray = $(element).parents();
-    templateArray = templateArray.map((index, elem) => {
-      if (element.className.indexOf('selected') === -1) {
-        this.props.selectElement(this.props.elementId, this.props.style);
-        return event.stopPropagation();
-      }
-    })
+    let templateArray = Array.from($(element).parents());
+    console.log(templateArray.every((elem, index, array) => {
+      return elem.className.indexOf('selected') === -1;
+    }));
+    // templateArray = templateArray.map((index, elem) => {
+    //   console.log(elem.className.indexOf('selected'));
+    //   if (element.className.indexOf('selected') === -1
+    //     && elem.className.indexOf('selected') === -1) {
+    //     this.props.selectElement(this.props.elementId, this.props.style);
+    //     return event.stopPropagation();
+    //   }
+    // })
   }
 
   render() {
