@@ -43,14 +43,15 @@ class TemplateEdit extends Component {
           console.log(doc);
           this.props.setElements(doc);
         })
+    } else {
+      this.loadTheme()
+        .then((docObj) => {
+          return docObj;
+        })
+        .then((doc) => {
+          this.props.setElements(doc);
+        })
     }
-    this.loadTheme()
-      .then((docObj) => {
-        return docObj;
-      })
-      .then((doc) => {
-        this.props.setElements(doc);
-      })
     this.loadStyles()
       .then((styles) => {
         var selectedStyle = styles.style1;
