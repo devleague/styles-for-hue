@@ -51,6 +51,27 @@ class Edit extends Component {
     }
   }
 
+  showUpdate(e) {
+    e.preventDefault();
+    if (this.props.showUpdateButton.updateButton) {
+      this.props.updateButtonShow();
+    } else {
+      this.props.updateButtonShow();
+    }
+  }
+
+  saveFilePopup(e) {
+    this.save();
+    this.handleClick(e);
+    this.showUpdate(e);
+  };
+
+  updatePopup(e) {
+    this.update();
+    this.handleClickUpdate(e);
+  }
+
+
   saveStyle(){
     return $.ajax({
       url: '/api/usertemplate',
@@ -147,16 +168,6 @@ class Edit extends Component {
 
   }
 
-  saveFilePopup(e) {
-    this.save();
-    this.handleClick(e);
-  };
-
-  updatePopup(e) {
-    this.update();
-    this.handleClickUpdate(e);
-  }
-
   render() {
     let fontComponentOpenClass = " ";
     if(this.props.menuShow.showFontMenu === true){
@@ -193,6 +204,24 @@ class Edit extends Component {
         />
       );
     };
+    let updateComponent = null;
+    if (this.props.showUpdateButton.updateButton === true) {
+      updateComponent = (
+        <div>
+          <button
+            className="update"
+            type="submit"
+            onClick={ this.updatePopup }
+          >
+            Update Template
+        </button>
+        <UpdatePopover
+          reveal={this.props.popover.updatepop}
+          update={ this.handleClickUpdate }
+        />
+        </div>
+      )
+    }
     return (
       <div
         className="editColumn"
@@ -278,19 +307,7 @@ class Edit extends Component {
             click={ this.handleClick }
           />
         </div>
-        <div>
-          <button
-            className="update"
-            type="submit"
-            onClick={this.updatePopup}
-          >
-            Update Template
-        </button>
-        <UpdatePopover
-          reveal={this.props.popover.updatepop}
-          update={ this.handleClickUpdate }
-        />
-        </div>
+          { updateComponent }
         <form>
           <button
             className="save"
