@@ -1,11 +1,19 @@
 export default {
-  showUpdateButton
+  updateButtonShow,
+  hideButtonShow
 }
 
 
-export function showUpdateButton (show) {
+export function updateButtonShow (show) {
   return {
     type: "SHOW_UPDATEBUTTON",
-    show: show
+    show: true
+  }
+}
+
+export function hideButtonShow (show) {
+  return {
+    type: "HIDE_UPDATEBUTTON",
+    show: false
   }
 }
