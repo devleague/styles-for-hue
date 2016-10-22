@@ -31,6 +31,7 @@ const stylesSchema = new Schema({
 const UserTemplateSchema = new Schema({
   _id: {type: String, 'default': shortid.generate},
   doc: {
+    _id: String,
     elements:[{
       children: Object,
       className: String,
