@@ -29,7 +29,7 @@ class Edit extends Component {
     }
     this.handleClick = this._handleClick.bind(this);
     this.saveFilePopup = this.saveFilePopup.bind(this);
-    this.handleClickUpdate = this.__handleClick.bind(this);
+    this.handleClickUpdate = this.showUpdate.bind(this);
     this.updatePopup = this.updatePopup.bind(this);
   }
 
@@ -51,12 +51,24 @@ class Edit extends Component {
     }
   }
 
+  saveFilePopup(e) {
+    this.save();
+    this.handleClick(e);
+    this.showUpdate(e);
+  };
+
+  updatePopup(e) {
+    this.update();
+    this.handleClickUpdate(e);
+  }
+
   showUpdate(e) {
     e.preventDefault();
-    if (this.props.showUpdateButton.updateTemp) {
+    console.log(this.props.updateButton);
+    if (this.props.showUpdateButton.updateButton) {
       this.props.hideUpdateButton();
     } else {
-      this.props.showUpdateButton();
+      this.props.updateButtonShow();
     }
   }
 
@@ -156,17 +168,6 @@ class Edit extends Component {
 
   }
 
-  saveFilePopup(e) {
-    this.save();
-    this.handleClick(e);
-    showUpdate(e);
-  };
-
-  updatePopup(e) {
-    this.update();
-    this.handleClickUpdate(e);
-  }
-
   render() {
     let fontComponentOpenClass = " ";
     if(this.props.menuShow.showFontMenu === true){
@@ -203,20 +204,20 @@ class Edit extends Component {
         />
       );
     };
-    let updateButtonComponent = null;
-    if (this.props.showUpdateButton.updateTemp === true) {
-      updateButtonComponent = (
+    let updateComponent = null;
+    if (this.props.showUpdateButton.updateButton === true) {
+      updateComponent = (
         <div>
           <button
             className="update"
             type="submit"
-            onClick={this.updatePopup}
+            onClick={ this.handleClickUpdate }
           >
             Update Template
         </button>
         <UpdatePopover
           reveal={this.props.popover.updatepop}
-          update={ this.handleClickUpdate }
+          update={ this.updatePopup }
         />
         </div>
       )
@@ -306,7 +307,7 @@ class Edit extends Component {
             click={ this.handleClick }
           />
         </div>
-          { updateButtonComponent }
+          { updateComponent }
         <form>
           <button
             className="save"
