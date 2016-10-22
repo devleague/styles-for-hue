@@ -12,9 +12,10 @@ class PComp extends Component {
     if (this.props.linkText) {
       return (
         <p
+          id={this.props.elementId}
           className={this.isActive()}
           style={this.props.style}
-          onClick={() => this.props.selectElement(this.props.elementId, this.props.style)}
+          onClick={(event) => this.props.clickHandler(event, this.props.selectElement, this.props.style)}
         >{this.props.text} <a href="#">{this.props.linkText}</a>
         </p>
       )
