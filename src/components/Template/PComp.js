@@ -8,28 +8,6 @@ class PComp extends Component {
     return `pComp${this.props.elementId}`;
   }
 
-  clickHandler(event, elementId) {
-    let element = document.getElementById(elementId);
-    let templateArray = Array.from($(element).parents());
-    let parentNotSelected = templateArray.every((elem, index, array) => {
-      return elem.className.indexOf('selected') === -1;
-    });
-    if (element.className.indexOf('selected') === -1
-      && parentNotSelected) {
-      console.log('hi!');
-      this.props.selectElement(this.props.elementId, this.props.style);
-      return event.stopPropagation();
-    }
-    // templateArray = templateArray.map((index, elem) => {
-    //   console.log(elem.className.indexOf('selected'));
-    //   if (element.className.indexOf('selected') === -1
-    //     && elem.className.indexOf('selected') === -1) {
-    //     this.props.selectElement(this.props.elementId, this.props.style);
-    //     return event.stopPropagation();
-    //   }
-    // })
-  }
-
   render() {
     if (this.props.linkText) {
       return (
@@ -46,7 +24,7 @@ class PComp extends Component {
         id={this.props.elementId}
         className={this.isActive()}
         style={this.props.style}
-        onClick={(event) => this.clickHandler(event, this.props.elementId)}
+        onClick={(event) => this.props.clickHandler(event, this.props.selectElement, this.props.style)}
       >{this.props.text}
       </p>
     )

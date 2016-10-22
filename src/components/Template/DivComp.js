@@ -13,7 +13,7 @@ class DivComp extends Component {
     return className;
   }
 
-  clickHandler(event) {
+  clickHandler(event, selectElement, style) {
     let element = event.target;
     let elementId = parseInt(element.id);
     let templateArray = Array.from($(element).parents());
@@ -22,7 +22,7 @@ class DivComp extends Component {
     });
     if (element.className.indexOf('selected') === -1
       || parentNotSelected) {
-      this.props.selectElement(elementId, this.props.style);
+      selectElement(elementId, style);
       return event.stopPropagation();
     }
   }
@@ -97,6 +97,7 @@ class DivComp extends Component {
                               style={fourthChild.style}
                               selectElement={this.props.selectElement}
                               selectedElementId={this.props.selectedElementId}
+                              clickHandler={this.clickHandler}
                             >
                             </PComp>
                           )
@@ -112,7 +113,7 @@ class DivComp extends Component {
                         id={thirdChild.elementId}
                         className={this.isActive(thirdChild.elementId, thirdChild.className)}
                         style={thirdChild.style}
-                        onClick={(event) => this.clickHandler(event)}
+                        onClick={(event) => this.clickHandler(event, this.props.selectElement, thirdChild.style)}
                       >
                         {children4}
                       </div>
