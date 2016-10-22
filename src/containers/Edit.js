@@ -101,6 +101,13 @@ class Edit extends Component {
     })
   }
 
+  changeUser(){
+    return $.ajax({
+      url: '/api/usertemplate',
+      dataType: 'json'
+    })
+  }
+
   zipFile(text, text2) {
     /*Creating text for CSS*/
     var all = document.getElementsByTagName("*");
