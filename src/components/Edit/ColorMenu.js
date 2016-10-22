@@ -27,19 +27,19 @@ class ColorMenu extends Component {
                 secondChild.children = secondChild.children.map((thirdChild) => {
                   if (thirdChild.children) {
                     thirdChild.children = thirdChild.children.map((fourthChild) => {
-                       return { ...fourthChild, style: { ...fourthChild.style, color: colorArray[3]}};
+                       return { ...fourthChild, style: { ...fourthChild.style, color: colorArray[3].value}};
                     })
                   }
-                  return { ...thirdChild, style: { ...thirdChild.style, backgroundColor: colorArray[2]}};
+                  return { ...thirdChild, style: { ...thirdChild.style, backgroundColor: colorArray[2].value}};
                 })
               }
-              return { ...secondChild, style: { ...secondChild.style, backgroundColor: colorArray[0]}};
+              return { ...secondChild, style: { ...secondChild.style, backgroundColor: colorArray[0].value}};
             })
           }
-          return { ...child, style: { ...child.style, backgroundColor: colorArray[1]}};
+          return { ...child, style: { ...child.style, backgroundColor: colorArray[1].value}};
         })
       }
-      return { ...elem, style: { ...elem.style, backgroundColor: colorArray[0]}};
+      return { ...elem, style: { ...elem.style, backgroundColor: colorArray[0].value}};
     })
     return this.props.changeColor(newElems);
   }
