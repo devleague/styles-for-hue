@@ -123,8 +123,10 @@ class DivComp extends Component {
                 return (
                   <div
                     key={secondChild.elementId}
+                    id={secondChild.elementId}
                     className={this.isActive(secondChild.elementId, secondChild.className)}
                     style={secondChild.style}
+                    onClick={(event) => this.clickHandler(event, this.props.selectElement, secondChild.style)}
                   >
                     {children3}
                   </div>
@@ -133,8 +135,10 @@ class DivComp extends Component {
               return (
                 <div
                   key={child.elementId}
+                  id={child.elementId}
                   className={this.isActive(child.elementId, child.className)}
                   style={child.style}
+                  onClick={(event) => this.clickHandler(event, this.props.selectElement, child.style)}
                 >
                   {children2}
                 </div>
