@@ -21,8 +21,7 @@ class DivComp extends Component {
       return elem.className.indexOf('selected') === -1;
     });
     if (element.className.indexOf('selected') === -1
-      && parentNotSelected) {
-      console.log(elementId);
+      || parentNotSelected) {
       this.props.selectElement(elementId, this.props.style);
       return event.stopPropagation();
     }
