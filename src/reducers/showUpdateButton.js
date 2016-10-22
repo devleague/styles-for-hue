@@ -1,11 +1,13 @@
 const initialState = {
-  updateTemp: false
+  updateButton: false
 }
 
 const reducer = ( state = initialState, action) => {
   switch (action.type) {
     case "SHOW_UPDATEBUTTON":
-      return {...state, updateTemp: action.show};
+      return {...state, updateButton: action.show};
+    case "HIDE_UPDATEBUTTON":
+      return {...state, updateButton: action.show}
     default:
       return state;
   }
