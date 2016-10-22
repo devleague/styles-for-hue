@@ -45,7 +45,7 @@ class Edit extends Component {
       type: 'POST',
       dataType: 'json',
       contentType: 'application/json',
-      data: JSON.stringify({template: this.props.elementsReducer.doc.elements})
+      data: JSON.stringify({template: this.props.elementsReducer.doc})
     })
     .then((data) => {
       this.props.newDoc(data._id);
