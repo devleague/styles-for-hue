@@ -115,17 +115,13 @@ class Edit extends Component {
       for (var i = 0; i < idArray.length; i++){
         var options = "";
         var windowURL = window.location.href;
-        console.log(windowURL);
-        console.log(document.URL);
         var userDivLength = $('#Input').find('a').length;
         var idArrayLength = idArray.length;
         if (userDivLength < idArrayLength) {
           if (windowURL.includes("/template/") === true) {
-            console.log("true");
             $('#Input').append('<a href="' + idArray[i] + '"' + '>' + idArray[i] + '</a>');
           }
           if (windowURL.includes("/template/") === false) {
-            console.log("false");
             $('#Input').append('<a href="template/' + idArray[i] + '"' + '>' + idArray[i] + '</a>');
           }
         };
