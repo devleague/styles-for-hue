@@ -13,9 +13,10 @@ class HComp extends Component {
       case 'h1':
         return (
           <h1
+            id={this.props.elementId}
             className={this.isActive()}
             style={this.props.style}
-            onClick={() => this.props.selectElement(this.props.elementId, this.props.style)}
+            onClick={(event) => this.props.clickHandler(event, this.props.selectElement, this.props.style)}
           >
             {this.props.text}
           </h1>
@@ -23,9 +24,10 @@ class HComp extends Component {
       case 'h2':
         return (
           <h2
+            id={this.props.elementId}
             className={this.isActive()}
             style={this.props.style}
-            onClick={() => this.props.selectElement(this.props.elementId, this.props.style)}
+            onClick={(event) => this.props.clickHandler(event, this.props.selectElement, this.props.style)}
           >
             {this.props.text}
           </h2>
@@ -33,9 +35,10 @@ class HComp extends Component {
       case 'h3':
         return (
           <h3
+            id={this.props.elementId}
             className={this.isActive()}
             style={this.props.style}
-            onClick={() => this.props.selectElement(this.props.elementId, this.props.style)}
+            onClick={(event) => this.props.clickHandler(event, this.props.selectElement, this.props.style)}
           >
             {this.props.text}
           </h3>

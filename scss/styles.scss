@@ -376,19 +376,30 @@ hr{
     margin-left: 50px;
   }
 }
-
+////// FOR THE FONT RESOURCE ///////
 .fontsite-container{
   width: 900px;
+  line-height: 1.2;
   h1{
-    font-size: 25px;
+    font-size: 2rem;
     font-weight: 700;
   }
 }
-
+/////// FOR THE COLOR PALETTE RESOURCE //////
 .colorpalette-container{
   width: 900px;
+  line-height: 1.2;
   h1{
-    font-size: 25px;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+}
+////// FOR THE RESPONSIVE GRID RESOURCE //////
+.grid-container{
+  width: 900px;
+  line-height: 1.2;
+  h1{
+    font-size: 2rem;
     font-weight: 700;
   }
 }
