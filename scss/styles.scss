@@ -65,23 +65,8 @@ a{
 }
 
 ///////////////////////////////////////
-/////          ABOUT PAGE         /////
+/////      REUSABLE ELEMENTS      /////
 ///////////////////////////////////////
-.header-image{
-  background: url(https://static.pexels.com/photos/70232/pexels-photo-70232.jpeg) no-repeat top center;
-  background-size: cover;
-  background-color: $teal;
-  padding: 175px 0 125px;
-  background-attachment: fixed;
-  h1{
-    font-size: 3rem;
-    font-weight: bold;
-    color: $white;
-    text-transform: uppercase;
-    margin-left: 50px;
-  }
-}
-
 .row{
   padding: 75px 0;
   .flex-nowrap-container{
@@ -103,110 +88,129 @@ a{
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    .flex-photos{
-      flex: 0 0 200px;
-      text-align: center;
-      padding: 10px 10px;
-      img{
-        width: 180px;
-        border-radius: 50%;
-      }
-      h2{
-        font-size: 0.9rem;
-        font-weight: bold;
-        text-transform: uppercase;
-        padding: 10px 0 5px;
-      }
-      p{
-        font-size: 0.8rem;
-        color: $dark-grey;
-      }
-    }
-    .pos-1{
-      @include small-1{
-        order: 1;
-      }
-      @include small-2{
-        order: 1;
-      }
-      @include medium-1{
-        order: 1;
-      }
-      @include medium-2{
-        order: 1;
-      }
-      @include large{
-        order: 1;
-      }
-    }
-    .pos-2{
-      @include small-1{
-        order: 2;
-      }
-      @include small-2{
-        order: 2;
-      }
-      @include medium-1{
-        order: 3;
-      }
-      @include medium-2{
-        order: 2;
-      }
-      @include large{
-        order: 2;
-      }
-    }
-    .pos-3{
-      @include small-1{
-        order: 3;
-      }
-      @include small-2{
-        order: 5;
-      }
-      @include medium-1{
-        order: 2;
-      }
-      @include medium-2{
-        order: 5;
-      }
-      @include large{
-        order: 3;
-      }
-    }
-    .pos-4{
-      @include small-1{
-        order: 4;
-      }
-      @include small-2{
-        order: 3;
-      }
-      @include medium-1{
-        order: 4;
-      }
-      @include medium-2{
-        order: 3;
-      }
-      @include large{
-        order: 4;
-      }
-    }
-    .pos-5{
-      @include small-1{
-        order: 5;
-      }
-      @include small-2{
-        order: 4;
-      }
-      @include medium-1{
-        order: 5;
-      }
-      @include medium-2{
-        order: 4;
-      }
-      @include large{
-        order: 5;
-      }
-    }
+  }
+}
+
+///////////////////////////////////////
+/////          ABOUT PAGE         /////
+///////////////////////////////////////
+.header-image{
+  background: url(https://static.pexels.com/photos/70232/pexels-photo-70232.jpeg) no-repeat top center;
+  background-size: cover;
+  background-color: $teal;
+  padding: 175px 0 125px;
+  background-attachment: fixed;
+  h1{
+    font-size: 3rem;
+    font-weight: bold;
+    color: $white;
+    text-transform: uppercase;
+    margin-left: 50px;
+  }
+}
+
+.flex-photos{
+  flex: 0 0 200px;
+  text-align: center;
+  padding: 10px 10px;
+  img{
+    width: 180px;
+    border-radius: 50%;
+  }
+  h2{
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 0 5px;
+  }
+  p{
+    font-size: 0.8rem;
+    color: $dark-grey;
+  }
+}
+.pos-1{
+  @include small-1{
+    order: 1;
+  }
+  @include small-2{
+    order: 1;
+  }
+  @include medium-1{
+    order: 1;
+  }
+  @include medium-2{
+    order: 1;
+  }
+  @include large{
+    order: 1;
+  }
+}
+.pos-2{
+  @include small-1{
+    order: 2;
+  }
+  @include small-2{
+    order: 2;
+  }
+  @include medium-1{
+    order: 3;
+  }
+  @include medium-2{
+    order: 2;
+  }
+  @include large{
+    order: 2;
+  }
+}
+.pos-3{
+  @include small-1{
+    order: 3;
+  }
+  @include small-2{
+    order: 5;
+  }
+  @include medium-1{
+    order: 2;
+  }
+  @include medium-2{
+    order: 5;
+  }
+  @include large{
+    order: 3;
+  }
+}
+.pos-4{
+  @include small-1{
+    order: 4;
+  }
+  @include small-2{
+    order: 3;
+  }
+  @include medium-1{
+    order: 4;
+  }
+  @include medium-2{
+    order: 3;
+  }
+  @include large{
+    order: 4;
+  }
+}
+.pos-5{
+  @include small-1{
+    order: 5;
+  }
+  @include small-2{
+    order: 4;
+  }
+  @include medium-1{
+    order: 5;
+  }
+  @include medium-2{
+    order: 4;
+  }
+  @include large{
+    order: 5;
   }
 }
 
@@ -219,7 +223,6 @@ a{
 ///////////////////////////////////////
 .template-edit-container{
   margin-top: 75px;
-  // border-bottom: 2px $teal solid;
   display: flex;
   flex-flow: row nowrap;
   align-items: stretch;
@@ -229,7 +232,6 @@ a{
 // ** Template (Left Side) ** //
 /* CONTAINER TO HOLD TEMPLATE */
 .template-container{
-  // width: 900px;
   margin: 50px 25px 50px 50px;
   -webkit-box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.25);
   -moz-box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.25);
@@ -241,11 +243,15 @@ a{
   padding: 25px;
 }
 
-hr{
-  margin-top: 15px;
-  border-top: 1px solid #8c8b8b;
+// hr{
+//   margin-top: 15px;
+//   border-top: 1px solid #8c8b8b;
+// }
+.selected {
+  outline: 5px solid blue;
 }
 
+// ** Editor (Right Side) ** //
 .current-styles-container{
   margin-top: 15px;
   padding: 10px;
@@ -266,11 +272,6 @@ hr{
   background-color: $white;
 }
 
-.selected {
-  outline: 5px solid blue;
-}
-
-// ** Editor (Right Side) ** //
 .edit-views-container{
   position: relative;
 }
