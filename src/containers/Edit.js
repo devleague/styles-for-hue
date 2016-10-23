@@ -308,6 +308,21 @@ class Edit extends Component {
           </div>
           { divComponent }
         </div>
+        <div
+          className="template-menu"
+        >
+          <div
+            className="template-choices"
+          >
+            <div
+              className="template-toggle"
+            >
+              <button>
+              </button>
+              <h3>Template</h3>
+            </div>
+          </div>
+        </div>
         <div>
           <button
             className="save"
