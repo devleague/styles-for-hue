@@ -30,6 +30,7 @@ class Edit extends Component {
     this.saveFilePopup = this.saveFilePopup.bind(this);
     this.handleClickUpdate = this.__handleClick.bind(this);
     this.updatePopup = this.updatePopup.bind(this);
+    this.previewFile = this.previewFile.bind(this);
   }
 
   _handleClick(e) {
@@ -83,11 +84,11 @@ class Edit extends Component {
 
   editSave(){
     return $.ajax({
-      url: '/api/template/' + this.props.elementsReducer._id,
+      url: `/api/template/${this.props.hash}`,
       type: 'PUT',
       dataType: 'json',
       contentType: 'application/json',
-      data: JSON.stringify({template: this.props.elementsReducer.doc.elements})
+      data: JSON.stringify({template: this.props.elementsReducer.doc})
     })
   }
 
@@ -99,23 +100,22 @@ class Edit extends Component {
     })
     .then((data) => {
       var id = "";
-      data.map((templates) => {
-        id += templates._id + "\n";
+      var idArray = data.map((templates) => {
+        return templates._id;
       })
-      var idArray = id.split("\n");
       for (var i = 0; i < idArray.length; i++){
         var options = "";
         var windowURL = window.location.href;
         var userDivLength = $('#Input').find('a').length;
         var idArrayLength = idArray.length;
-        if (userDivLength < idArrayLength) {
+        if (userDivLength <= i + 1) {
           if (windowURL.includes("/template/") === true) {
             $('#Input').append('<a href="' + idArray[i] + '"' + '>' + idArray[i] + '</a>');
           }
           if (windowURL.includes("/template/") === false) {
             $('#Input').append('<a href="template/' + idArray[i] + '"' + '>' + idArray[i] + '</a>');
           }
-        };
+        }
       };
     })
   }
@@ -197,9 +197,8 @@ class Edit extends Component {
         preview.src = reader.result;
       }, false);
 
-      reader.onloadend = function(){
-        var targetElementChange = $('.t1-hero-container')[0];
-        $(targetElementChange).css("background-image", "url(" + reader.result + ")");
+      reader.onloadend = () => {
+        this.props.changeImage(reader.result);
       }
 
       if (file) {
@@ -252,15 +251,12 @@ class Edit extends Component {
     if (this.props.menuShow.showTemplateMenu === true) {
       templateComponent = (
         <div className="dropdown">
-          <button 
-            className="dropbtn"
-            onMouseOver={this.changeUser}
-          >
-            Dropdown
-          </button>
+          <button className="dropbtn"
+            onMouseOver={this.changeUser}>Dropdown</button>
           <div className="dropdown-content"
             id="Input"
           >
+          <a href="/template">Create New Template</a>
           </div>
         </div>
       )
@@ -285,7 +281,7 @@ class Edit extends Component {
     }
     return (
       <div
-        className="editColumn"
+        className="edit-container"
       >
         <h1> Edit </h1>
         <div

@@ -55,6 +55,13 @@ export function newDoc (docId) {
   }
 }
 
+export function editDoc (docId) {
+  return {
+    type: 'EDIT_DOC',
+    data: docId
+  }
+}
+
 export function divWidth (elementId, width) {
   return {
     type: 'CHANGE_WIDTH',
@@ -73,5 +80,12 @@ export function divHeight (elementId, height) {
       elementId: elementId,
       height: height
     }
+  }
+}
+
+export function changeImage (link) {
+  return {
+    type: 'CHANGE_IMAGE',
+    data: link
   }
 }
