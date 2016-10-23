@@ -50,19 +50,10 @@ class Edit extends Component {
     }
   }
 
-  showUpdate(e) {
-    e.preventDefault();
-    if (this.props.showUpdateButton.updateButton) {
-      this.props.updateButtonShow();
-    } else {
-      this.props.updateButtonShow();
-    }
-  }
-
   saveFilePopup(e) {
     this.save();
     this.handleClick(e);
-    this.showUpdate(e);
+    this.props.updateButtonShow();
   };
 
   updatePopup(e) {
@@ -107,16 +98,25 @@ class Edit extends Component {
       data: JSON.stringify({})
     })
     .then((data) => {
-      var options = "";
       var id = "";
       data.map((templates) => {
         id += templates._id + "\n";
       })
       var idArray = id.split("\n");
       for (var i = 0; i < idArray.length; i++){
-        options += '<a href="' + idArray[i] + '"' + '>' + idArray[i] + '</a>';
+        var options = "";
+        var windowURL = window.location.href;
+        var userDivLength = $('#Input').find('a').length;
+        var idArrayLength = idArray.length;
+        if (userDivLength < idArrayLength) {
+          if (windowURL.includes("/template/") === true) {
+            $('#Input').append('<a href="' + idArray[i] + '"' + '>' + idArray[i] + '</a>');
+          }
+          if (windowURL.includes("/template/") === false) {
+            $('#Input').append('<a href="template/' + idArray[i] + '"' + '>' + idArray[i] + '</a>');
+          }
+        };
       };
-      $('#Input').append(options);
     })
   }
 
@@ -223,7 +223,7 @@ class Edit extends Component {
       );
     };
     let updateComponent = null;
-    if (this.props.showUpdateButton.updateButton === true) {
+    if (this.props.hash) {
       updateComponent = (
         <div>
           <button
@@ -245,25 +245,12 @@ class Edit extends Component {
         className="editColumn"
       >
         <h1> Edit </h1>
-          <button
-            className="view-css"
-            onClick={ ()=> {
-              if (this.props.sideBar.showCss === false) {
-                this.props.showCss(true);
-              } else {
-                this.props.showCss(false);
-              }
-            }
-          }>
-            &lt;CSS&gt;
-          </button>
           <div className="dropdown">
           <button className="dropbtn"
-            onClick={this.changeUser}>Dropdown</button>
+            onMouseOver={this.changeUser}>Dropdown</button>
           <div className="dropdown-content"
             id="Input"
           >
-            <a href="#"></a>
           </div>
         </div>
         <div
