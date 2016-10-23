@@ -45,6 +45,9 @@ body{
 }
 a{
   text-decoration: none;
+  &:visited{
+    color: #000000;
+  }
 }
 
 ///////////////////////////////////////
@@ -307,7 +310,6 @@ hr{
   -webkit-transition: transform 0.3s linear;
   transition: transform 0.3s linear;
 }
-
 /* Dropdown Button */
 .dropbtn {
     background-color: #4CAF50;
@@ -352,4 +354,47 @@ hr{
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
+}
+
+/////// RESOURCE PAGE ///////
+.resource-image{
+  background: url('/images/working_design.jpg') no-repeat top center;
+  background-size: cover;
+  background-color: $teal;
+  padding: 175px 0 125px;
+  background-attachment: fixed;
+  h1{
+    font-size: 3rem;
+    font-weight: bold;
+    color: $white;
+    text-transform: uppercase;
+    margin-left: 50px;
+  }
+}
+////// FOR THE FONT RESOURCE ///////
+.fontsite-container{
+  width: 900px;
+  line-height: 1.2;
+  h1{
+    font-size: 2rem;
+    font-weight: 700;
+  }
+}
+/////// FOR THE COLOR PALETTE RESOURCE //////
+.colorpalette-container{
+  width: 900px;
+  line-height: 1.2;
+  h1{
+    font-size: 2rem;
+    font-weight: 700;
+  }
+}
+////// FOR THE RESPONSIVE GRID RESOURCE //////
+.grid-container{
+  width: 900px;
+  line-height: 1.2;
+  h1{
+    font-size: 2rem;
+    font-weight: 700;
+  }
 }

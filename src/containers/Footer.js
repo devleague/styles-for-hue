@@ -18,6 +18,10 @@ class Footer extends Component {
               <li>
                 <Link to="/about">About</Link>
               </li>
+              <li className="footer-menu-divider">&sdot;</li>
+              <li>
+                <Link to="/resources">Resources</Link>
+              </li>
             </ul>
             <p>Copyright &copy; 2016 Styles For Hue. All Rights Reserved</p>
           </div>

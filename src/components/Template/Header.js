@@ -4,9 +4,10 @@ class Header extends Component {
   render () {
     return (
       <div
+        id={this.props.elementId}
         className={this.props.className}
         style={this.props.style}
-        onClick={() => this.props.selectElement(this.props.elementId, this.props.style)}
+        onClick={(event) => this.props.clickHandler(event, this.props.selectElement, this.props.style)}
       >
         <div className="t1-header-left">
           <h1>YOUR COMPANY</h1>

@@ -260,8 +260,18 @@ db.styles.insert(
   {
     style1: {
       backgroundColor: [
-        ['pink', '#30B3AA', 'white', 'black'],
-        ['#FFF', '#32424c', '#687f8c', '#d2e6da']
+        [
+          {'label': 'pink', 'value': 'pink'},
+          {'label':'something', 'value':'#30B3AA'},
+          {'label': 'white', 'value': 'white'},
+          {'label': 'black', 'value': 'black'}
+        ],
+        [
+          {'label': 'white', 'value': '#FFF'},
+          {'label': 'some color', 'value': '#32424c'},
+          {'label': 'another color', 'value': '#687f8c'},
+          {'label': 'last color', 'value': '#d2e6da'}
+        ]
       ],
       fontFamily: ['Times New Roman', 'ABeeZee'],
       fontSize: '1em'
