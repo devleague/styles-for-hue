@@ -133,9 +133,9 @@ class FontMenu extends Component {
   render() {
     return(
       <div
-        className="font-dropdown"
+        className="menu-show-details"
       >
-        <h3>Pick Your Element:</h3>
+        <h4>Pick Your Element:</h4>
           <select id="elementMenu" defaultValue="0">
             <option value="0" disabled="disabled">SELECT ELEMENT</option>
             <option value='all'>all tags</option>
@@ -145,7 +145,7 @@ class FontMenu extends Component {
             <option value='h2'>h2 tag</option>
             <option value='h3'>h3 tags</option>
           </select>
-        <h3>Pick Your Font:</h3>
+        <h4>Pick Your Font:</h4>
           <select id="fontMenu" defaultValue="0" onChange={(event) => this.changeFontFamily(event.target.value)}>
             <option value="0" disabled="disabled">SELECT FONT</option>
             {this.props.fontList.map((font, index) => {
