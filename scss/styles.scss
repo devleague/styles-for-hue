@@ -310,7 +310,7 @@ hr{
   .save, .update, .download{
     margin: 8px 15px 8px 11px;
   }
-  .font-button, .div-button{
+  .font-button, .div-button, .template-button{
       background-color: #fff;
       width: 13px;
       height: 30px;
@@ -389,6 +389,11 @@ hr{
   border-width: 1px;
   border-bottom-style: solid;
 }
+
+.template-menu{
+  padding-top: 10px;
+}
+
 .font-toggle{
   width: 68px;
   h3{
@@ -404,7 +409,7 @@ hr{
 }
 
 .template-toggle{
-  width: 80px;
+  width: 100px;
   h3{
     float: right;
   }
