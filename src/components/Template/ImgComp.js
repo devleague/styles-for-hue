@@ -47,7 +47,6 @@ class ImgComp extends Component {
           )
       }
     })
-    console.log(this.props.style);
     return (
       <div
         id={this.props.elementId}
