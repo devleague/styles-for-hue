@@ -5,7 +5,7 @@
 @import 'partials/cssview';
 @import 'partials/popover';
 
-@import 'https://fonts.googleapis.com/css?family=Lato:400,700|Yeseva+One';
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
 
 $small-1: "(min-width: 100px) and (max-width: 499px)";
 $small-2: "(min-width: 500px) and (max-width: 699px)";
@@ -289,7 +289,7 @@ hr{
   // right: 0;
   h1{
     padding: 10px;
-    font-family: 'Yeseva One', cursive;
+    // font-family: 'Yeseva One', cursive;
     font-size: 1.75rem;
     text-align: center;
     background-color: $teal;
