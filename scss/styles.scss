@@ -267,8 +267,23 @@ a{
   background-color: $white;
 }
 
-.edit-views-container{
-  position: relative;
+// .edit-views-container{
+//   position: relative;
+// }
+//////////////////
+// DROP DOWN MENU
+.menu-option-title{
+  background-color: red;
+  // background-color: $white;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  h3, button {
+    flex: 0 0 auto;
+    background-color: transparent;
+  }
 }
 
 .edit-container{
@@ -299,9 +314,9 @@ a{
     margin: 8px 15px 8px 11px;
   }
   .font-button, .div-button, .template-button{
-      background-color: #fff;
+      // background-color: #fff;
       width: 13px;
-      height: 30px;
+      // height: 30px;
       color: $dark-grey;
       outline: none;
       box-shadow: none;
