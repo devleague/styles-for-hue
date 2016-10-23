@@ -1,5 +1,4 @@
-import { combineReducers, compose } from 'redux';
-
+import { combineReducers, compose, createStore } from 'redux';
 import { default as elementsReducer } from './elementsReducer';
 import { default as styleReducer } from './styles';
 import { default as colorReducer } from './colors';
@@ -24,12 +23,12 @@ const rootReducer = combineReducers({
 
 const finalCreateStore = compose(
   (window.devToolsExtension)
-  ? window.devToolsExtension
+  ? window.devToolsExtension()
   : (x) => x
-);
+)(createStore);
 
 const store = finalCreateStore(
-  rootReducer, {}
+  rootReducer
 )
 
 export default store;
