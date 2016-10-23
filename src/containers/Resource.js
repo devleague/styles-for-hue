@@ -24,8 +24,8 @@ class Resource extends Component {
               <h1>Fonts</h1>
               <br />
               <p>For the everyday developer that needs help picking out fancy fonts. Google Fonts have popular pairings with each fonts.</p>
-              <p>
               <br />
+              <p>
                 <a href="https://fonts.google.com/" target="_blank">Google Fonts</a>
               </p>
             </div>
