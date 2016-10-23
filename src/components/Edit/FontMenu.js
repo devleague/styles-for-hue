@@ -64,7 +64,7 @@ class FontMenu extends Component {
                             return { ...fourthChild};
                         }
                       }
-                      if (elementTag === fourthChild.tag[0]) {
+                      if (elementTag === fourthChild.tag) {
                         switch (Object.keys(fontObj)[0]) {
                           case 'fontFamily':
                             return { ...fourthChild, style: { ...fourthChild.style, fontFamily: fontObj.fontFamily}};
@@ -104,7 +104,9 @@ class FontMenu extends Component {
             <option value='all'>all tags</option>
             <option value='selected'>selected only</option>
             <option value='p'>p tags</option>
-            <option value='h'>h tags</option>
+            <option value='h1'>h1 tag</option>
+            <option value='h2'>h2 tag</option>
+            <option value='h3'>h3 tags</option>
           </select>
         <h3>Pick Your Font:</h3>
           <select id="fontMenu" defaultValue="0" onChange={(event) => this.changeFontFamily(event.target.value)}>
