@@ -59,6 +59,7 @@ class Resource extends Component {
               </p>
               <p>
                 <a href="http://www.pictaculous.com/" target="_blank">Pictaculous</a>
+                <br/>
                 If you want to create a site that compliments the colors of a photo.
               </p>
             </div>
