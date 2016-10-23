@@ -13,6 +13,20 @@ class DivComp extends Component {
     return className;
   }
 
+  clickHandler(event, selectElement, style) {
+    let element = event.target;
+    let elementId = parseInt(element.id);
+    let templateArray = Array.from($(element).parents());
+    let parentNotSelected = templateArray.every((elem, index, array) => {
+      return elem.className.indexOf('selected') === -1;
+    });
+    if (element.className.indexOf('selected') === -1
+      || parentNotSelected) {
+      selectElement(elementId, style);
+      return event.stopPropagation();
+    }
+  }
+
   render() {
     let children = [];
     if(this.props.children) {
@@ -27,6 +41,7 @@ class DivComp extends Component {
                 className={this.isActive(child.elementId, child.className)}
                 style={child.style}
                 selectElement={this.props.selectElement}
+                clickHandler={this.clickHandler}
               >
               </Header>
             )
@@ -38,6 +53,7 @@ class DivComp extends Component {
                 className={this.isActive(child.elementId, child.className)}
                 style={child.style}
                 selectElement={this.props.selectElement}
+                clickHandler={this.clickHandler}
               >
               </Footer>
             )
@@ -50,6 +66,7 @@ class DivComp extends Component {
                 src={child.src}
                 style={child.style}
                 selectElement={this.props.selectElement}
+                clickHandler={this.clickHandler}
               />
             )
           case 'div':
@@ -70,6 +87,8 @@ class DivComp extends Component {
                               text={fourthChild.text}
                               style={fourthChild.style}
                               selectElement={this.props.selectElement}
+                              selectedElementId={this.props.selectedElementId}
+                              clickHandler={this.clickHandler}
                             >
                             </HComp>
                           )
@@ -82,6 +101,8 @@ class DivComp extends Component {
                               linkText={fourthChild.linkText}
                               style={fourthChild.style}
                               selectElement={this.props.selectElement}
+                              selectedElementId={this.props.selectedElementId}
+                              clickHandler={this.clickHandler}
                             >
                             </PComp>
                           )
@@ -94,9 +115,10 @@ class DivComp extends Component {
                     return (
                       <div
                         key={thirdChild.elementId}
+                        id={thirdChild.elementId}
                         className={this.isActive(thirdChild.elementId, thirdChild.className)}
                         style={thirdChild.style}
-                        onClick={() => this.props.selectElement(thirdChild.elementId, child.style)}
+                        onClick={(event) => this.clickHandler(event, this.props.selectElement, thirdChild.style)}
                       >
                         {children4}
                       </div>
@@ -106,8 +128,10 @@ class DivComp extends Component {
                 return (
                   <div
                     key={secondChild.elementId}
+                    id={secondChild.elementId}
                     className={this.isActive(secondChild.elementId, secondChild.className)}
                     style={secondChild.style}
+                    onClick={(event) => this.clickHandler(event, this.props.selectElement, secondChild.style)}
                   >
                     {children3}
                   </div>
@@ -116,8 +140,10 @@ class DivComp extends Component {
               return (
                 <div
                   key={child.elementId}
+                  id={child.elementId}
                   className={this.isActive(child.elementId, child.className)}
                   style={child.style}
+                  onClick={(event) => this.clickHandler(event, this.props.selectElement, child.style)}
                 >
                   {children2}
                 </div>
@@ -140,7 +166,6 @@ class DivComp extends Component {
       <div
           className={this.isActive(this.props.elementId, this.props.className)}
           style={this.props.style}
-          // onClick={() => this.props.selectElement(this.props.elementId, this.props.style)}
         >
           {children}
       </div>
