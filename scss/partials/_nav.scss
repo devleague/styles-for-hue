@@ -39,16 +39,10 @@ $white: #FFFFFF;
       list-style-type: none;
       margin: 0;
       padding: 0;
-      // background-color: $dark-grey;
       li{
         display:inline-block;
       }
       a {
-        // display: block;
-        // float: left;
-        // height: 50px;
-        // line-height: 50px;
-        // border-bottom: 2px solid white;
         text-align: center;
         margin: 0 15px;
         padding: 5px 0;
@@ -70,10 +64,8 @@ $white: #FFFFFF;
           width: 100%;
         }
         &.active {
-          // background-color: $mint;
           color: $mint;
           font-weight: bold;
-          // border-bottom: 2px solid $mint;
         }
       }
     }
