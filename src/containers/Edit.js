@@ -156,6 +156,9 @@ class Edit extends Component {
             if (prop === "font-size"){
               CSSText += elem.style.fontSize + ";\n";
             }
+            if (prop === "background-image"){
+              CSSText += elem.style.backgroundImage + ";\n";
+            }
           }
           CSSText += "}\n";
         }
@@ -196,7 +199,7 @@ class Edit extends Component {
 
       reader.onloadend = function(){
         var targetElementChange = $('.t1-hero-container')[0];
-        var targetElementURL = $(targetElementChange).css("background-image", "url(" + reader.result + ")");
+        $(targetElementChange).css("background-image", "url(" + reader.result + ")");
       }
 
       if (file) {
