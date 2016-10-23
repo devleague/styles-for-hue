@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Template , Edit, CssView } from './';
+import { Template , Edit, CssView, NotFound } from './';
 import { connect } from 'react-redux';
 
 import * as Actions from '../actions';
+import { browserHistory } from 'react-router';
 
 function mapStateToProps (state) {
   return { ...state};
@@ -18,6 +19,16 @@ class TemplateEdit extends Component {
     return $.ajax({
       url: `/api/template/${this.props.params.hash}`,
       dataType: 'json',
+      success: function (result) {
+        if(result === null)  {
+          browserHistory.push('NotFound');
+        }
+      },
+      error: function (result) {
+        if(result === null) {
+          browserHistory.push('NotFound');
+        }
+      }
     });
   }
   loadTheme () {
