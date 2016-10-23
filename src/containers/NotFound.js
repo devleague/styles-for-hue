@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
 
+import { NavLink } from '../components';
+
 class NotFound extends Component {
   render() {
     return (
       <div
         className="content-container"
       >
+        <div
+          className="notfound-container"
+        >
+          <h1>Whoops!</h1>
+        </div>
         <div
           className="row"
         >
@@ -14,7 +21,10 @@ class NotFound extends Component {
           >
             <h1>404 PAGE NOT FOUND</h1>
             <br/>
-            <p>Sorry, the page that your looking for cannot be found.</p>
+            <p>Don't have a template yet?</p>
+            <NavLink to="/template" className="start-button">
+              Start Styling
+            </NavLink>
           </div>
         </div>
       </div>
