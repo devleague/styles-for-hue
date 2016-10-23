@@ -216,6 +216,10 @@ class Edit extends Component {
     if(this.props.menuShow.showDivMenu === true){
       divComponentOpenClass = "open";
     };
+    let templateComponentOpenClass = " ";
+    if(this.props.menuShow.showTemplateMenu === true){
+      templateComponentOpenClass = "open";
+    };
     let fontComponent = null;
     if (this.props.menuShow.showFontMenu === true) {
       fontComponent = (
@@ -243,6 +247,20 @@ class Edit extends Component {
         />
       );
     };
+    let templateComponent = null;
+    if (this.props.menuShow.showTemplateMenu === true) {
+      templateComponent = (
+        <div className="dropdown">
+          <button className="dropbtn"
+            onMouseOver={this.changeUser}>Dropdown</button>
+          <div className="dropdown-content"
+            id="Input"
+          >
+          <a href="/template">Create New Template</a>
+          </div>
+        </div>
+      )
+    }
     let updateComponent = null;
     if (this.props.hash) {
       updateComponent = (
@@ -266,15 +284,6 @@ class Edit extends Component {
         className="edit-container"
       >
         <h1> Edit </h1>
-          <div className="dropdown">
-          <button className="dropbtn"
-            onMouseOver={this.changeUser}>Dropdown</button>
-          <div className="dropdown-content"
-            id="Input"
-          >
-          <a href="/template">Create New Template</a>
-          </div>
-        </div>
         <div
           className="font-menu">
           <div
@@ -329,6 +338,33 @@ class Edit extends Component {
             </div>
           </div>
           { divComponent }
+        </div>
+        <div
+          className="template-menu"
+        >
+          <div
+            className="template-choices"
+          >
+            <div
+              className="template-toggle"
+            >
+              <button
+                id="button-show"
+                className="template-button"
+                onClick={ () => {
+                  if (this.props.menuShow.showTemplateMenu === false) {
+                    this.props.showTemplateMenu(true);
+                  } else {
+                    this.props.showTemplateMenu(false);
+                  }
+                }}
+              >
+                <i id="icon" className={"fa fa-caret-right" + " " + templateComponentOpenClass}></i>
+              </button>
+              <h3>Template</h3>
+            </div>
+          </div>
+          { templateComponent }
         </div>
         <div>
           <button
