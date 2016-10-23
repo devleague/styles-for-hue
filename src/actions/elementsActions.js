@@ -55,6 +55,13 @@ export function newDoc (docId) {
   }
 }
 
+export function editDoc (docId) {
+  return {
+    type: 'EDIT_DOC',
+    data: docId
+  }
+}
+
 export function divWidth (elementId, width) {
   return {
     type: 'CHANGE_WIDTH',
