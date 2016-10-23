@@ -4,7 +4,7 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
 
 import store from './reducers';
-import { App, Home, TemplateEdit, About, Resource } from './containers';
+import { App, Home, TemplateEdit, About, Resource, NotFound } from './containers';
 
 ReactDOM.render(
   <Provider store={store}>
@@ -29,6 +29,9 @@ ReactDOM.render(
           path="/resources" component={ Resource }
         >
         </Route>
+        <Route
+          path="*" component={NotFound}
+        />
       </Route>
     </Router>
   </Provider>,
