@@ -230,7 +230,6 @@ a{
 }
 
 // ** Template (Left Side) ** //
-/* CONTAINER TO HOLD TEMPLATE */
 .template-container{
   margin: 50px 25px 50px 50px;
   -webkit-box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.25);
@@ -243,10 +242,6 @@ a{
   padding: 25px;
 }
 
-// hr{
-//   margin-top: 15px;
-//   border-top: 1px solid #8c8b8b;
-// }
 .selected {
   outline: 5px solid blue;
 }
