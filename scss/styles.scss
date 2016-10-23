@@ -7,9 +7,11 @@
 
 @import 'https://fonts.googleapis.com/css?family=Lato:400,700|Yeseva+One';
 
-$small: "(min-width: 100px) and (max-width: 600px)";
-$medium: "(min-width: 601px) and (max-width: 900px)";
-$large: "(min-width: 900px)";
+$small-1: "(min-width: 100px) and (max-width: 499px)";
+$small-2: "(min-width: 500px) and (max-width: 699px)";
+$medium-1: "(min-width: 700px) and (max-width: 899px)";
+$medium-2: "(min-width: 900px) and (max-width: 1099px)";
+$large: "(min-width: 1100px)";
 
 $black: #000000;
 $white: #FFFFFF;
@@ -20,14 +22,26 @@ $dark-grey: #535353;
 $light-grey: #E6E8E6;
 $mint: #48DDB9;
 
-@mixin small{
-  @media #{$small} {
+@mixin small-1{
+  @media #{$small-1} {
     @content;
   }
 }
 
-@mixin medium{
-  @media #{$medium} {
+@mixin small-2{
+  @media #{$small-2} {
+    @content;
+  }
+}
+
+@mixin medium-1{
+  @media #{$medium-1} {
+    @content;
+  }
+}
+
+@mixin medium-2{
+  @media #{$medium-2} {
     @content;
   }
 }
@@ -106,6 +120,91 @@ a{
       p{
         font-size: 0.8rem;
         color: $dark-grey;
+      }
+    }
+    .pos-1{
+      @include small-1{
+        order: 1;
+      }
+      @include small-2{
+        order: 1;
+      }
+      @include medium-1{
+        order: 1;
+      }
+      @include medium-2{
+        order: 1;
+      }
+      @include large{
+        order: 1;
+      }
+    }
+    .pos-2{
+      @include small-1{
+        order: 2;
+      }
+      @include small-2{
+        order: 2;
+      }
+      @include medium-1{
+        order: 3;
+      }
+      @include medium-2{
+        order: 2;
+      }
+      @include large{
+        order: 2;
+      }
+    }
+    .pos-3{
+      @include small-1{
+        order: 3;
+      }
+      @include small-2{
+        order: 5;
+      }
+      @include medium-1{
+        order: 2;
+      }
+      @include medium-2{
+        order: 5;
+      }
+      @include large{
+        order: 3;
+      }
+    }
+    .pos-4{
+      @include small-1{
+        order: 4;
+      }
+      @include small-2{
+        order: 3;
+      }
+      @include medium-1{
+        order: 4;
+      }
+      @include medium-2{
+        order: 3;
+      }
+      @include large{
+        order: 4;
+      }
+    }
+    .pos-5{
+      @include small-1{
+        order: 5;
+      }
+      @include small-2{
+        order: 4;
+      }
+      @include medium-1{
+        order: 5;
+      }
+      @include medium-2{
+        order: 4;
+      }
+      @include large{
+        order: 5;
       }
     }
   }
@@ -376,30 +475,19 @@ hr{
     margin-left: 50px;
   }
 }
-////// FOR THE FONT RESOURCE ///////
+
 .fontsite-container{
   width: 900px;
-  line-height: 1.2;
   h1{
-    font-size: 2rem;
+    font-size: 25px;
     font-weight: 700;
   }
 }
-/////// FOR THE COLOR PALETTE RESOURCE //////
+
 .colorpalette-container{
   width: 900px;
-  line-height: 1.2;
   h1{
-    font-size: 2rem;
-    font-weight: 700;
-  }
-}
-////// FOR THE RESPONSIVE GRID RESOURCE //////
-.grid-container{
-  width: 900px;
-  line-height: 1.2;
-  h1{
-    font-size: 2rem;
+    font-size: 25px;
     font-weight: 700;
   }
 }
