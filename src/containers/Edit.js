@@ -156,6 +156,9 @@ class Edit extends Component {
             if (prop === "font-size"){
               CSSText += elem.style.fontSize + ";\n";
             }
+            if (prop === "background-image"){
+              CSSText += elem.style.backgroundImage + ";\n";
+            }
           }
           CSSText += "}\n";
         }
@@ -183,8 +186,27 @@ class Edit extends Component {
       fileSaver.saveAs(HTMLBlob, "styles-for-hue.zip");
       fileSaver.saveAs(CSSBlob, "styles-for-hue.zip");
     });
-
   }
+
+  previewFile() {
+      var preview = document.querySelector('img');
+      var file    = document.querySelector('input[type=file]').files[0];
+      var reader  = new FileReader();
+
+      reader.addEventListener("load", function () {
+        preview.src = reader.result;
+      }, false);
+
+      reader.onloadend = function(){
+        var targetElementChange = $('.t1-hero-container')[0];
+        $(targetElementChange).css("background-image", "url(" + reader.result + ")");
+      }
+
+      if (file) {
+        reader.readAsDataURL(file);
+      }
+    }
+
 
   render() {
     let fontComponentOpenClass = " ";
@@ -375,6 +397,8 @@ class Edit extends Component {
             {this.props.showElementStyles(this.props.elementsReducer.selectedElement.selectedStyle)}
           </div>
         </div>
+          <input type="file" onChange={this.previewFile}></input>
+          <img src="" height="200" alt="Image preview..."></img>
       </div>
     )
   }
