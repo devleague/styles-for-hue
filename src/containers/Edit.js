@@ -285,14 +285,14 @@ class Edit extends Component {
       >
         <h1> Edit </h1>
         <div
-          className="font-menu">
+          className="menu-option">
           <div
             className="menu-option-title"
           >
             <h3>Font</h3>
             <button
               id="button-show"
-              className="font-button"
+              className="menu-button"
               onClick={ () => {
                 if (this.props.menuShow.showFontMenu === false) {
                   this.props.showFontMenu(true);
