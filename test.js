@@ -37,6 +37,26 @@ db.docs.insert(
               "tag" : "img",
               // "src" : "http://placehold.it/800x250",
               "className" : "t1-hero-container",
+              "children" : [
+                {
+                  "elementId" : 25,
+                  "tag" : "h1",
+                  "text" : "We Are A Company",
+                  "style" : {}
+                },
+                {
+                  "elementId" : 26,
+                  "tag" : "p",
+                  "text" : "We make music and you can make music too! It's easy!",
+                  "style" : {}
+                },
+                {
+                  "elementId" : 27,
+                  "tag" : "p",
+                  "linkText": "Get Started",
+                  "style" : {}
+                }
+              ],
               "style" : {
                 // "backgroundColor" : "#3C6E71",
                 // "width": "100%"
