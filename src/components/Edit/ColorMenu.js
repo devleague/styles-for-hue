@@ -97,7 +97,10 @@ class ColorMenu extends Component {
                   return { ...thirdChild, style: { ...thirdChild.style, backgroundColor: colorArray[2].value}};
                 })
               }
-              return { ...secondChild, style: { ...secondChild.style, backgroundColor: colorArray[0].value}};
+              if (secondChild.tag === 'div') {
+                return { ...secondChild, style: { ...secondChild.style, backgroundColor: colorArray[0].value}};
+              }
+              return { ...secondChild};
             })
           }
           return { ...child, style: { ...child.style, backgroundColor: colorArray[1].value}};
