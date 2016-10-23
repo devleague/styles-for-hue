@@ -272,14 +272,16 @@ a{
 // }
 //////////////////
 // DROP DOWN MENU
+.menu-option{
+  border-bottom: 1px solid lighten($black, 75%);
+}
 .menu-option-title{
-  background-color: red;
-  // background-color: $white;
+  background-color: $white;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  padding: 5px;
+  padding: 5px 10px 5px 5px;
   h3, button {
     flex: 0 0 auto;
     background-color: transparent;
@@ -321,10 +323,10 @@ a{
       outline: none;
       box-shadow: none;
       &:hover{
-        background-color: #fff;
+        // background-color: #fff;
       }
       &:active{
-        background-color: #fff;
+        // background-color: #fff;
       }
   }
   .view-css{
@@ -337,7 +339,7 @@ a{
     right: 0;
   }
   button{
-    background-color: $teal;
+    // background-color: $teal;
     border: none;
     color: #fff;
     font-size: 0.9rem;
@@ -347,17 +349,17 @@ a{
     display: inline-block;
     width: 90%;
     letter-spacing: .1rem;
-    box-shadow: 0 3px #999;
-    &:hover{
-      outline: none;
-      transition: all 0.5s ease;
-      background-color: $dark-teal;
-    }
-    &:active{
-      outline: none;
-      background-color: $dark-teal;
-      transform: translateY(4px);
-    }
+    // box-shadow: 0 3px #999;
+    // &:hover{
+    //   outline: none;
+    //   transition: all 0.5s ease;
+    //   background-color: $dark-teal;
+    // }
+    // &:active{
+    //   outline: none;
+    //   background-color: $dark-teal;
+    //   transform: translateY(4px);
+    // }
   }
   select{
     width: 90%;
