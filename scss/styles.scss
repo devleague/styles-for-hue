@@ -7,9 +7,11 @@
 
 @import 'https://fonts.googleapis.com/css?family=Lato:400,700|Yeseva+One';
 
-$small: "(min-width: 100px) and (max-width: 600px)";
-$medium: "(min-width: 601px) and (max-width: 900px)";
-$large: "(min-width: 900px)";
+$small-1: "(min-width: 100px) and (max-width: 499px)";
+$small-2: "(min-width: 500px) and (max-width: 699px)";
+$medium-1: "(min-width: 700px) and (max-width: 899px)";
+$medium-2: "(min-width: 900px) and (max-width: 1099px)";
+$large: "(min-width: 1100px)";
 
 $black: #000000;
 $white: #FFFFFF;
@@ -20,14 +22,26 @@ $dark-grey: #535353;
 $light-grey: #E6E8E6;
 $mint: #48DDB9;
 
-@mixin small{
-  @media #{$small} {
+@mixin small-1{
+  @media #{$small-1} {
     @content;
   }
 }
 
-@mixin medium{
-  @media #{$medium} {
+@mixin small-2{
+  @media #{$small-2} {
+    @content;
+  }
+}
+
+@mixin medium-1{
+  @media #{$medium-1} {
+    @content;
+  }
+}
+
+@mixin medium-2{
+  @media #{$medium-2} {
     @content;
   }
 }
@@ -108,6 +122,91 @@ a{
         color: $dark-grey;
       }
     }
+    .pos-1{
+      @include small-1{
+        order: 1;
+      }
+      @include small-2{
+        order: 1;
+      }
+      @include medium-1{
+        order: 1;
+      }
+      @include medium-2{
+        order: 1;
+      }
+      @include large{
+        order: 1;
+      }
+    }
+    .pos-2{
+      @include small-1{
+        order: 2;
+      }
+      @include small-2{
+        order: 2;
+      }
+      @include medium-1{
+        order: 3;
+      }
+      @include medium-2{
+        order: 2;
+      }
+      @include large{
+        order: 2;
+      }
+    }
+    .pos-3{
+      @include small-1{
+        order: 3;
+      }
+      @include small-2{
+        order: 5;
+      }
+      @include medium-1{
+        order: 2;
+      }
+      @include medium-2{
+        order: 5;
+      }
+      @include large{
+        order: 3;
+      }
+    }
+    .pos-4{
+      @include small-1{
+        order: 4;
+      }
+      @include small-2{
+        order: 3;
+      }
+      @include medium-1{
+        order: 4;
+      }
+      @include medium-2{
+        order: 3;
+      }
+      @include large{
+        order: 4;
+      }
+    }
+    .pos-5{
+      @include small-1{
+        order: 5;
+      }
+      @include small-2{
+        order: 4;
+      }
+      @include medium-1{
+        order: 5;
+      }
+      @include medium-2{
+        order: 4;
+      }
+      @include large{
+        order: 5;
+      }
+    }
   }
 }
 
@@ -124,15 +223,19 @@ a{
   display: flex;
   flex-flow: row nowrap;
   align-items: stretch;
+  background-color:#eaeaea;
 }
 
 // ** Template (Left Side) ** //
 /* CONTAINER TO HOLD TEMPLATE */
 .template-container{
-  width: 900px;
-  margin: 10px auto;
+  // width: 900px;
+  margin: 50px;
   // padding: 25px;
-  border: 1px solid #000;
+  // border: 1px solid #000;
+  -webkit-box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.25);
+  -moz-box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.25);
+  box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.25);
 }
 
 .template-one{
@@ -178,6 +281,7 @@ hr{
   width: 300px;
   height: 100%;
   border-left: 2px $teal solid;
+  background-color: $white;
   // color: $grey-blue;
   // box-shadow: -10px 0px 10px 1px rgba(192, 192, 192, .2);
   // background-color: #f0f0f0;
@@ -371,30 +475,19 @@ hr{
     margin-left: 50px;
   }
 }
-////// FOR THE FONT RESOURCE ///////
+
 .fontsite-container{
   width: 900px;
-  line-height: 1.2;
   h1{
-    font-size: 2rem;
+    font-size: 25px;
     font-weight: 700;
   }
 }
-/////// FOR THE COLOR PALETTE RESOURCE //////
+
 .colorpalette-container{
   width: 900px;
-  line-height: 1.2;
   h1{
-    font-size: 2rem;
-    font-weight: 700;
-  }
-}
-////// FOR THE RESPONSIVE GRID RESOURCE //////
-.grid-container{
-  width: 900px;
-  line-height: 1.2;
-  h1{
-    font-size: 2rem;
+    font-size: 25px;
     font-weight: 700;
   }
 }
