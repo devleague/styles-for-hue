@@ -10,13 +10,14 @@ class ImgComp extends Component {
   render () {
     return (
       <div
+        id={this.props.elementId}
         className={this.props.className}
         style={
           {
             justifyContent: "center"
           }
         }
-        onClick={() => this.props.selectElement(this.props.elementId, this.props.style)}
+        onClick={(event) => this.props.clickHandler(event, this.props.selectElement, this.props.style)}
       >
 
         <h1>We Are A Company</h1>
