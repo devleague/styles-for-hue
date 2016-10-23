@@ -30,7 +30,7 @@ ReactDOM.render(
         >
         </Route>
         <Route
-          path="*" component={NotFound}
+          path="*" component={ NotFound }
         />
       </Route>
     </Router>
