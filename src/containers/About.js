@@ -25,29 +25,29 @@ class About extends Component {
         </div>
         <div className="row photos">
           <div className="flex-wrap-container">
-            <div className="flex-photos">
+            <div className="flex-photos pos-1">
               <img src="http://www.sheffield.com/wp-content/uploads/2013/06/placeholder.png" />
-              <h2>Name Goes Here</h2>
+              <h2>Nikki Kobayashi</h2>
               <p>Stuff I Did</p>
             </div>
-            <div className="flex-photos">
+            <div className="flex-photos pos-2">
               <img src="http://www.sheffield.com/wp-content/uploads/2013/06/placeholder.png" />
-              <h2>Name Goes Here</h2>
+              <h2>Lisa Zhou</h2>
               <p>Stuff I Did</p>
             </div>
-            <div className="flex-photos">
+            <div className="flex-photos pos-3">
               <img src="http://www.sheffield.com/wp-content/uploads/2013/06/placeholder.png" />
-              <h2>Name Goes Here</h2>
+              <h2>Bryce Saito</h2>
               <p>Stuff I Did</p>
             </div>
-            <div className="flex-photos">
+            <div className="flex-photos pos-4">
               <img src="http://www.sheffield.com/wp-content/uploads/2013/06/placeholder.png" />
-              <h2>Name Goes Here</h2>
+              <h2>Christie Reindle</h2>
               <p>Stuff I Did</p>
             </div>
-            <div className="flex-photos">
+            <div className="flex-photos pos-5">
               <img src="http://www.sheffield.com/wp-content/uploads/2013/06/placeholder.png" />
-              <h2>Name Goes Here</h2>
+              <h2>Sheena Galutira</h2>
               <p>Stuff I Did</p>
             </div>
           </div>
