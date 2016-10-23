@@ -245,18 +245,6 @@ class Edit extends Component {
         className="editColumn"
       >
         <h1> Edit </h1>
-          <button
-            className="view-css"
-            onClick={ ()=> {
-              if (this.props.sideBar.showCss === false) {
-                this.props.showCss(true);
-              } else {
-                this.props.showCss(false);
-              }
-            }
-          }>
-            &lt;CSS&gt;
-          </button>
           <div className="dropdown">
           <button className="dropbtn"
             onClick={this.changeUser}>Dropdown</button>
