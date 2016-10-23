@@ -50,19 +50,10 @@ class Edit extends Component {
     }
   }
 
-  showUpdate(e) {
-    e.preventDefault();
-    if (this.props.showUpdateButton.updateButton) {
-      this.props.updateButtonShow();
-    } else {
-      this.props.updateButtonShow();
-    }
-  }
-
   saveFilePopup(e) {
     this.save();
     this.handleClick(e);
-    this.showUpdate(e);
+    this.props.updateButtonShow();
   };
 
   updatePopup(e) {
@@ -232,7 +223,7 @@ class Edit extends Component {
       );
     };
     let updateComponent = null;
-    if (this.props.showUpdateButton.updateButton === true) {
+    if (this.props.hash) {
       updateComponent = (
         <div>
           <button
