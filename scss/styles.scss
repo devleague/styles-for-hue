@@ -128,89 +128,171 @@ a{
     color: $dark-grey;
   }
 }
+
+.profile{
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+}
+
 .pos-1{
   @include small-1{
     order: 1;
+    .profile{
+      background: url(http://cdn.niketalk.com/f/f5/900x900px-LL-f570fdfc_pacific-division.png) -720px 0;
+    }
   }
   @include small-2{
     order: 1;
+    .profile{
+      background: url(http://cdn.niketalk.com/f/f5/900x900px-LL-f570fdfc_pacific-division.png) -540px 0;
+    }
   }
   @include medium-1{
     order: 1;
+    .profile{
+      background: url(http://cdn.niketalk.com/f/f5/900x900px-LL-f570fdfc_pacific-division.png) -360px 0;
+    }
   }
   @include medium-2{
     order: 1;
+    .profile{
+      background: url(http://cdn.niketalk.com/f/f5/900x900px-LL-f570fdfc_pacific-division.png) -180px 0;
+    }
   }
   @include large{
     order: 1;
+    .profile{
+      background: url(http://cdn.niketalk.com/f/f5/900x900px-LL-f570fdfc_pacific-division.png) 0 0;
+    }
   }
 }
 .pos-2{
   @include small-1{
     order: 2;
+    .profile{
+      background: url(http://cdn.niketalk.com/f/f5/900x900px-LL-f570fdfc_pacific-division.png) -720px 0;
+    }
   }
   @include small-2{
     order: 2;
+    .profile{
+      background: url(http://cdn.niketalk.com/f/f5/900x900px-LL-f570fdfc_pacific-division.png) -540px 0;
+    }
   }
   @include medium-1{
     order: 3;
+    .profile{
+      background: url(http://cdn.niketalk.com/f/f5/900x900px-LL-f570fdfc_pacific-division.png) -360px 0;
+    }
   }
   @include medium-2{
     order: 2;
+    .profile{
+      background: url(http://cdn.niketalk.com/f/f5/900x900px-LL-f570fdfc_pacific-division.png) -180px 0;
+    }
   }
   @include large{
     order: 2;
+    .profile{
+      background: url(http://cdn.niketalk.com/f/f5/900x900px-LL-f570fdfc_pacific-division.png) 0 0;
+    }
   }
 }
 .pos-3{
   @include small-1{
     order: 3;
+    .profile{
+      background: url(http://cdn.niketalk.com/f/f5/900x900px-LL-f570fdfc_pacific-division.png) -720px 0;
+    }
   }
   @include small-2{
     order: 5;
+    .profile{
+      background: url(http://cdn.niketalk.com/f/f5/900x900px-LL-f570fdfc_pacific-division.png) -540px 0;
+    }
   }
   @include medium-1{
     order: 2;
+    .profile{
+      background: url(http://cdn.niketalk.com/f/f5/900x900px-LL-f570fdfc_pacific-division.png) -360px 0;
+    }
   }
   @include medium-2{
     order: 5;
+    .profile{
+      background: url(http://cdn.niketalk.com/f/f5/900x900px-LL-f570fdfc_pacific-division.png) -180px 0;
+    }
   }
   @include large{
     order: 3;
+    .profile{
+      background: url(http://cdn.niketalk.com/f/f5/900x900px-LL-f570fdfc_pacific-division.png) -00px 0;
+    }
   }
 }
 .pos-4{
   @include small-1{
     order: 4;
+    .profile{
+      background: url(http://cdn.niketalk.com/f/f5/900x900px-LL-f570fdfc_pacific-division.png) -720px 0;
+    }
   }
   @include small-2{
     order: 3;
+    .profile{
+      background: url(http://cdn.niketalk.com/f/f5/900x900px-LL-f570fdfc_pacific-division.png) -540px 0;
+    }
   }
   @include medium-1{
     order: 4;
+    .profile{
+      background: url(http://cdn.niketalk.com/f/f5/900x900px-LL-f570fdfc_pacific-division.png) -360px 0;
+    }
   }
   @include medium-2{
     order: 3;
+    .profile{
+      background: url(http://cdn.niketalk.com/f/f5/900x900px-LL-f570fdfc_pacific-division.png) -180px 0;
+    }
   }
   @include large{
     order: 4;
+    .profile{
+      background: url(http://cdn.niketalk.com/f/f5/900x900px-LL-f570fdfc_pacific-division.png) -0 0;
+    }
   }
 }
 .pos-5{
   @include small-1{
     order: 5;
+    .profile{
+      background: url(http://cdn.niketalk.com/f/f5/900x900px-LL-f570fdfc_pacific-division.png) -720px 0;
+    }
   }
   @include small-2{
     order: 4;
+    .profile{
+      background: url(http://cdn.niketalk.com/f/f5/900x900px-LL-f570fdfc_pacific-division.png) -540px 0;
+    }
   }
   @include medium-1{
     order: 5;
+    .profile{
+      background: url(http://cdn.niketalk.com/f/f5/900x900px-LL-f570fdfc_pacific-division.png) -360px 0;
+    }
   }
   @include medium-2{
     order: 4;
+    .profile{
+      background: url(http://cdn.niketalk.com/f/f5/900x900px-LL-f570fdfc_pacific-division.png) -180px 0;
+    }
   }
   @include large{
     order: 5;
+    .profile{
+      background: url(http://cdn.niketalk.com/f/f5/900x900px-LL-f570fdfc_pacific-division.png) 0 0;
+    }
   }
 }
 
