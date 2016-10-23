@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { HComp, PComp } from '../../components';
+
 class ImgComp extends Component {
   isActive () {
     if (this.props.elementId === this.props.selectedElementId) {
@@ -8,6 +10,43 @@ class ImgComp extends Component {
     return `imgComp${this.props.elementId}`;
   }
   render () {
+    let children = [];
+    children = this.props.children.map((child) => {
+      switch (child.tag[0]) {
+        case 'h':
+          return (
+            <HComp
+              key={child.elementId}
+              elementId={child.elementId}
+              tag={child.tag}
+              text={child.text}
+              style={child.style}
+              selectElement={this.props.selectElement}
+              selectedElementId={this.props.selectedElementId}
+              clickHandler={this.props.clickHandler}
+            >
+            </HComp>
+          )
+        case 'p':
+          return (
+            <PComp
+              key={child.elementId}
+              elementId={child.elementId}
+              text={child.text}
+              linkText={child.linkText}
+              style={child.style}
+              selectElement={this.props.selectElement}
+              selectedElementId={this.props.selectedElementId}
+              clickHandler={this.props.clickHandler}
+            >
+            </PComp>
+          )
+        default:
+          return (
+            <div> Cannot find child element. </div>
+          )
+      }
+    })
     return (
       <div
         id={this.props.elementId}
@@ -19,10 +58,7 @@ class ImgComp extends Component {
         }
         onClick={(event) => this.props.clickHandler(event, this.props.selectElement, this.props.style)}
       >
-
-        <h1>We Are A Company</h1>
-        <p>We make music and you can make music too! It's easy!</p>
-        <p><a href="#">Get Started</a></p>
+        {children}
       </div>
     )
   }

@@ -1,5 +1,6 @@
 export { default as DivComp } from './Template/DivComp';
 export { default as PComp } from './Template/PComp';
+export { default as HComp } from './Template/HComp';
 export { default as ImgComp } from './Template/ImgComp';
 export { default as ListComp } from './Template/ListComp';
 export { default as ListItem } from './Template/ListItem';
