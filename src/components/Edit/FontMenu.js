@@ -159,11 +159,11 @@ class FontMenu extends Component {
               )
             })}
           </select>
-          <p>Font Color</p>
+          <h4>Font Color</h4>
           <form onChange={(event) => this.changeFontColor(event.target.value)}>
             <input type="color" defaultValue="#ff0000" />
           </form>
-          <p>Font Size</p>
+          <h4>Font Size</h4>
           <form onChange={(event) => this.changeFontSize(event.target.value)}>
             <input type="number" min="10" max="100" id="fontSizes" placeholder="Font Size" />
             <select id="fontSizeUnits">

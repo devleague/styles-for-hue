@@ -308,56 +308,48 @@ class Edit extends Component {
           { fontComponent }
         </div>
         <div
-          className="div-menu"
+          className="menu-option"
         >
           <div
-            className="div-choices"
+            className="menu-option-title"
           >
-            <div
-              className="div-toggle"
+            <h3>Div</h3>
+            <button
+              id="button-show"
+              className="menu-button"
+              onClick={ () => {
+                if (this.props.menuShow.showDivMenu === false) {
+                  this.props.showDivMenu(true);
+                } else {
+                  this.props.showDivMenu(false);
+                }
+              }}
             >
-              <button
-                id="button-show"
-                className="div-button"
-                onClick={ () => {
-                  if (this.props.menuShow.showDivMenu === false) {
-                    this.props.showDivMenu(true);
-                  } else {
-                    this.props.showDivMenu(false);
-                  }
-                }}
-              >
-                <i id="icon" className={"fa fa-caret-right" + " " + divComponentOpenClass}></i>
-              </button>
-              <h3>Div</h3>
-            </div>
+              <i id="icon" className={"fa fa-caret-right" + " " + divComponentOpenClass}></i>
+            </button>
           </div>
           { divComponent }
         </div>
         <div
-          className="template-menu"
+          className="menu-option"
         >
           <div
-            className="template-choices"
+            className="menu-option-title"
           >
-            <div
-              className="template-toggle"
+            <h3>Template</h3>
+            <button
+              id="button-show"
+              className="menu-button"
+              onClick={ () => {
+                if (this.props.menuShow.showTemplateMenu === false) {
+                  this.props.showTemplateMenu(true);
+                } else {
+                  this.props.showTemplateMenu(false);
+                }
+              }}
             >
-              <button
-                id="button-show"
-                className="template-button"
-                onClick={ () => {
-                  if (this.props.menuShow.showTemplateMenu === false) {
-                    this.props.showTemplateMenu(true);
-                  } else {
-                    this.props.showTemplateMenu(false);
-                  }
-                }}
-              >
-                <i id="icon" className={"fa fa-caret-right" + " " + templateComponentOpenClass}></i>
-              </button>
-              <h3>Template</h3>
-            </div>
+              <i id="icon" className={"fa fa-caret-right" + " " + templateComponentOpenClass}></i>
+            </button>
           </div>
           { templateComponent }
         </div>
