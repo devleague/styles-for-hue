@@ -102,23 +102,22 @@ class Edit extends Component {
     })
     .then((data) => {
       var id = "";
-      data.map((templates) => {
-        id += templates._id + "\n";
+      var idArray = data.map((templates) => {
+        return templates._id;
       })
-      var idArray = id.split("\n");
       for (var i = 0; i < idArray.length; i++){
         var options = "";
         var windowURL = window.location.href;
         var userDivLength = $('#Input').find('a').length;
         var idArrayLength = idArray.length;
-        if (userDivLength < idArrayLength) {
+        if (userDivLength <= i + 1) {
           if (windowURL.includes("/template/") === true) {
             $('#Input').append('<a href="' + idArray[i] + '"' + '>' + idArray[i] + '</a>');
           }
           if (windowURL.includes("/template/") === false) {
             $('#Input').append('<a href="template/' + idArray[i] + '"' + '>' + idArray[i] + '</a>');
           }
-        };
+        }
       };
     })
   }
@@ -159,6 +158,9 @@ class Edit extends Component {
             if (prop === "font-size"){
               CSSText += elem.style.fontSize + ";\n";
             }
+            if (prop === "background-image"){
+              CSSText += elem.style.backgroundImage + ";\n";
+            }
           }
           CSSText += "}\n";
         }
@@ -186,8 +188,29 @@ class Edit extends Component {
       fileSaver.saveAs(HTMLBlob, "styles-for-hue.zip");
       fileSaver.saveAs(CSSBlob, "styles-for-hue.zip");
     });
-
   }
+
+  previewFile() {
+      var preview = document.querySelector('img');
+      var file    = document.querySelector('input[type=file]').files[0];
+      var reader  = new FileReader();
+
+      reader.addEventListener("load", function () {
+        preview.src = reader.result;
+      }, false);
+
+      reader.onloadend = function(){
+        var targetElementChange = $('.t1-hero-container')[0];
+        $(targetElementChange).css("background-image", "url(" + reader.result + ")");
+        $(targetElementChange).css("max-width", "100%");
+        $(targetElementChange).css("max-height", "100%");
+      }
+
+      if (file) {
+        reader.readAsDataURL(file);
+      }
+    }
+
 
   render() {
     let fontComponentOpenClass = " ";
@@ -245,7 +268,7 @@ class Edit extends Component {
     }
     return (
       <div
-        className="editColumn"
+        className="edit-container"
       >
         <h1> Edit </h1>
           <div className="dropdown">
@@ -254,6 +277,7 @@ class Edit extends Component {
           <div className="dropdown-content"
             id="Input"
           >
+          <a href="/template">Create New Template</a>
           </div>
         </div>
         <div
@@ -338,6 +362,8 @@ class Edit extends Component {
             {this.props.showElementStyles(this.props.elementsReducer.selectedElement.selectedStyle)}
           </div>
         </div>
+          <input type="file" onChange={this.previewFile}></input>
+          <img src="" height="200" alt="Image preview..."></img>
       </div>
     )
   }

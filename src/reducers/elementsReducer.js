@@ -42,6 +42,17 @@ const reducer = (state = initialState, action) => {
       return { ...state, doc: { ...state.doc, elements: newElems} };
     case "CHANGE_FONT":
       return { ...state, doc: { ...state.doc, elements: action.data} };
+    case "CHANGE_IMAGE":
+      newElems = newElems.map((elem) => {
+        elem.children = elem.children.map((child) => {
+          if (child.tag === 'img') {
+            return { ...child, style: { ...child.style, backgroundImage: `url(${action.data})`}};
+          }
+          return { ...child};
+        })
+        return { ...elem};
+      })
+      return { ...state, doc: { ...state.doc, elements: newElems}};
     case "NEW_DOC":
       return { ...state, _id: `ObjectId(${action.data})`, doc: { ...state.doc, elements: [ ...state.doc.elements ]} };
     case "EDIT_DOC":

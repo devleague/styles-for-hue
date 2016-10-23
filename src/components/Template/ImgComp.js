@@ -51,11 +51,7 @@ class ImgComp extends Component {
       <div
         id={this.props.elementId}
         className={this.props.className}
-        style={
-          {
-            justifyContent: "center"
-          }
-        }
+        style={this.props.style}
         onClick={(event) => this.props.clickHandler(event, this.props.selectElement, this.props.style)}
       >
         {children}
