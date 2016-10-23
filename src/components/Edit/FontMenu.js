@@ -51,6 +51,19 @@ class FontMenu extends Component {
                             return { ...fourthChild};
                         }
                       }
+                      if (elementTag === 'selected'
+                        && this.props.selectedElement.selectedElementId === fourthChild.elementId) {
+                        switch (Object.keys(fontObj)[0]) {
+                          case 'fontFamily':
+                            return { ...fourthChild, style: { ...fourthChild.style, fontFamily: fontObj.fontFamily}};
+                          case 'color':
+                            return { ...fourthChild, style: { ...fourthChild.style, color: fontObj.color}};
+                          case 'fontSize':
+                            return { ...fourthChild, style: { ...fourthChild.style, fontSize: fontObj.fontSize}};
+                          default:
+                            return { ...fourthChild};
+                        }
+                      }
                       if (elementTag === fourthChild.tag[0]) {
                         switch (Object.keys(fontObj)[0]) {
                           case 'fontFamily':
@@ -89,6 +102,7 @@ class FontMenu extends Component {
           <select id="elementMenu" defaultValue="0">
             <option value="0" disabled="disabled">SELECT ELEMENT</option>
             <option value='all'>all tags</option>
+            <option value='selected'>selected only</option>
             <option value='p'>p tags</option>
             <option value='h'>h tags</option>
           </select>
