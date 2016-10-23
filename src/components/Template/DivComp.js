@@ -63,9 +63,11 @@ class DivComp extends Component {
                 key={child.elementId}
                 elementId={child.elementId}
                 className={this.isActive(child.elementId, child.className)}
+                children={child.children}
                 src={child.src}
                 style={child.style}
                 selectElement={this.props.selectElement}
+                selectedElementId={this.props.selectedElementId}
                 clickHandler={this.clickHandler}
               />
             )
@@ -76,42 +78,44 @@ class DivComp extends Component {
                 if (secondChild.children) {
                   children3 = secondChild.children.map((thirdChild, index) => {
                     let children4 = [];
-                    children4 = thirdChild.children.map((fourthChild, index) => {
-                      switch (fourthChild.tag[0]) {
-                        case 'h':
-                          return (
-                            <HComp
-                              key={fourthChild.elementId}
-                              elementId={fourthChild.elementId}
-                              tag={fourthChild.tag}
-                              text={fourthChild.text}
-                              style={fourthChild.style}
-                              selectElement={this.props.selectElement}
-                              selectedElementId={this.props.selectedElementId}
-                              clickHandler={this.clickHandler}
-                            >
-                            </HComp>
-                          )
-                        case 'p':
-                          return (
-                            <PComp
-                              key={fourthChild.elementId}
-                              elementId={fourthChild.elementId}
-                              text={fourthChild.text}
-                              linkText={fourthChild.linkText}
-                              style={fourthChild.style}
-                              selectElement={this.props.selectElement}
-                              selectedElementId={this.props.selectedElementId}
-                              clickHandler={this.clickHandler}
-                            >
-                            </PComp>
-                          )
-                        default:
-                          return (
-                            <div> Cannot find child element. </div>
-                          )
-                      }
-                    })
+                    if (thirdChild.children) {
+                      children4 = thirdChild.children.map((fourthChild, index) => {
+                        switch (fourthChild.tag[0]) {
+                          case 'h':
+                            return (
+                              <HComp
+                                key={fourthChild.elementId}
+                                elementId={fourthChild.elementId}
+                                tag={fourthChild.tag}
+                                text={fourthChild.text}
+                                style={fourthChild.style}
+                                selectElement={this.props.selectElement}
+                                selectedElementId={this.props.selectedElementId}
+                                clickHandler={this.clickHandler}
+                              >
+                              </HComp>
+                            )
+                          case 'p':
+                            return (
+                              <PComp
+                                key={fourthChild.elementId}
+                                elementId={fourthChild.elementId}
+                                text={fourthChild.text}
+                                linkText={fourthChild.linkText}
+                                style={fourthChild.style}
+                                selectElement={this.props.selectElement}
+                                selectedElementId={this.props.selectedElementId}
+                                clickHandler={this.clickHandler}
+                              >
+                              </PComp>
+                            )
+                          default:
+                            return (
+                              <div> Cannot find child element. </div>
+                            )
+                        }
+                      })
+                    }
                     return (
                       <div
                         key={thirdChild.elementId}

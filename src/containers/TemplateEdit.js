@@ -145,6 +145,7 @@ class TemplateEdit extends Component {
         >
           <Edit
             showElementStyles={this.showElementStyles}
+            hash={this.props.params.hash}
           />
           { cssComponent }
         </div>
