@@ -287,27 +287,23 @@ class Edit extends Component {
         <div
           className="font-menu">
           <div
-            className="font-choices"
+            className="menu-option-title"
           >
-            <div
-              className="font-toggle"
-            >
-              <button
-                id="button-show"
-                className="font-button"
-                onClick={ () => {
-                  if (this.props.menuShow.showFontMenu === false) {
-                    this.props.showFontMenu(true);
-                  } else {
-                    this.props.showFontMenu(false);
-                  }
+            <h3>Font</h3>
+            <button
+              id="button-show"
+              className="font-button"
+              onClick={ () => {
+                if (this.props.menuShow.showFontMenu === false) {
+                  this.props.showFontMenu(true);
+                } else {
+                  this.props.showFontMenu(false);
                 }
-              }>
-                <i id="icon" className={"fa fa-caret-right" + " " +
-                fontComponentOpenClass}></i>
-              </button>
-              <h3>Font</h3>
-            </div>
+              }
+            }>
+              <i id="icon" className={"fa fa-caret-right" + " " +
+              fontComponentOpenClass}></i>
+            </button>
           </div>
           { fontComponent }
         </div>
