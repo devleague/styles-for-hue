@@ -129,10 +129,10 @@ a{
 // ** Template (Left Side) ** //
 /* CONTAINER TO HOLD TEMPLATE */
 .template-container{
-  width: 900px;
-  margin: 10px auto;
+  // width: 900px;
+  margin: 50px;
   // padding: 25px;
-  border: 1px solid #000;
+  // border: 1px solid #000;
 }
 
 .template-one{
@@ -178,6 +178,7 @@ hr{
   width: 300px;
   height: 100%;
   border-left: 2px $teal solid;
+  background-color: $white;
   // color: $grey-blue;
   // box-shadow: -10px 0px 10px 1px rgba(192, 192, 192, .2);
   // background-color: #f0f0f0;
