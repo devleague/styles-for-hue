@@ -36,7 +36,7 @@ class Template extends Component {
       }
     })
     return (
-      <div>
+      <div className="template-container">
         {elements}
       </div>
     )

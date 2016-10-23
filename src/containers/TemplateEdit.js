@@ -131,17 +131,15 @@ class TemplateEdit extends Component {
       <div
         className="template-edit-container"
       >
-        <div className="template-container">
-          <Template
-            hash={this.props.params.hash}
-            // elements={this.props.elementsReducer.doc.elements}
-            // selectElement={this.props.selectElement}
-            // selectedElementId={this.props.elementsReducer.selectedElement.selectedElementId}
-            // selectedElementStyle={this.props.elementsReducer.selectedElement.selectedStyle}
-          />
-        </div>
+        <Template
+          hash={this.props.params.hash}
+          // elements={this.props.elementsReducer.doc.elements}
+          // selectElement={this.props.selectElement}
+          // selectedElementId={this.props.elementsReducer.selectedElement.selectedElementId}
+          // selectedElementStyle={this.props.elementsReducer.selectedElement.selectedStyle}
+        />
         <div
-          className="views"
+          className="edit-views-container"
         >
           <Edit
             showElementStyles={this.showElementStyles}

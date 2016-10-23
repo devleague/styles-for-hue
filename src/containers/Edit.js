@@ -265,7 +265,7 @@ class Edit extends Component {
     }
     return (
       <div
-        className="editColumn"
+        className="edit-container"
       >
         <h1> Edit </h1>
           <div className="dropdown">
