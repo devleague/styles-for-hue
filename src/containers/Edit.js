@@ -30,6 +30,7 @@ class Edit extends Component {
     this.saveFilePopup = this.saveFilePopup.bind(this);
     this.handleClickUpdate = this.__handleClick.bind(this);
     this.updatePopup = this.updatePopup.bind(this);
+    this.previewFile = this.previewFile.bind(this);
   }
 
   _handleClick(e) {
@@ -196,11 +197,8 @@ class Edit extends Component {
         preview.src = reader.result;
       }, false);
 
-      reader.onloadend = function(){
-        var targetElementChange = $('.t1-hero-container')[0];
-        $(targetElementChange).css("background-image", "url(" + reader.result + ")");
-        $(targetElementChange).css("max-width", "100%");
-        $(targetElementChange).css("max-height", "100%");
+      reader.onloadend = () => {
+        this.props.changeImage(reader.result);
       }
 
       if (file) {
