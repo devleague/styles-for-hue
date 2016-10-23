@@ -307,7 +307,6 @@ class Edit extends Component {
           </div>
           { fontComponent }
         </div>
-        <br/>
         <div
           className="div-menu"
         >
