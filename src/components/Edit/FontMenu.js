@@ -35,6 +35,43 @@ class FontMenu extends Component {
         elem.children = elem.children.map((child) => {
           if (child.children) {
             child.children = child.children.map((secondChild) => {
+              if (elementTag === 'all') {
+                switch (Object.keys(fontObj)[0]) {
+                  case 'fontFamily':
+                    return { ...secondChild, style: { ...secondChild.style, fontFamily: fontObj.fontFamily}};
+                  case 'color':
+                    return { ...secondChild, style: { ...secondChild.style, color: fontObj.color}};
+                  case 'fontSize':
+                    return { ...secondChild, style: { ...secondChild.style, fontSize: fontObj.fontSize}};
+                  default:
+                    return { ...secondChild};
+                    }
+                  }
+              if (elementTag === 'selected'
+                && this.props.selectedElement.selectedElementId === secondChild.elementId) {
+                switch (Object.keys(fontObj)[0]) {
+                  case 'fontFamily':
+                    return { ...secondChild, style: { ...secondChild.style, fontFamily: fontObj.fontFamily}};
+                  case 'color':
+                    return { ...secondChild, style: { ...secondChild.style, color: fontObj.color}};
+                  case 'fontSize':
+                    return { ...secondChild, style: { ...secondChild.style, fontSize: fontObj.fontSize}};
+                  default:
+                    return { ...secondChild};
+                }
+              }
+              if (elementTag === secondChild.tag) {
+                switch (Object.keys(fontObj)[0]) {
+                  case 'fontFamily':
+                    return { ...secondChild, style: { ...secondChild.style, fontFamily: fontObj.fontFamily}};
+                  case 'color':
+                    return { ...secondChild, style: { ...secondChild.style, color: fontObj.color}};
+                  case 'fontSize':
+                    return { ...secondChild, style: { ...secondChild.style, fontSize: fontObj.fontSize}};
+                  default:
+                    return { ...secondChild};
+                }
+              }
               if(secondChild.children) {
                 secondChild.children = secondChild.children.map((thirdChild) => {
                   if(thirdChild.children) {
