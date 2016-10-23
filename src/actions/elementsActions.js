@@ -75,3 +75,10 @@ export function divHeight (elementId, height) {
     }
   }
 }
+
+export function changeImage (link) {
+  return {
+    type: 'CHANGE_IMAGE',
+    data: link
+  }
+}
