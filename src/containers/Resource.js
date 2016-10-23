@@ -77,7 +77,7 @@ class Resource extends Component {
             <p>Creating a responsive layout that is visually appealing to the users. </p>
             <br />
             <p>
-              <a href="http://www.responsivegridsystem.com/">Responsive Grid System</a>
+              <a href="http://www.responsivegridsystem.com/" target="_blank">Responsive Grid System</a>
             </p>
             </div>
           </div>
