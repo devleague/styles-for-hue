@@ -270,12 +270,13 @@ a{
 // .edit-views-container{
 //   position: relative;
 // }
-//////////////////
-// DROP DOWN MENU
+////////////////////
+// ACCORDION MENU //
+////////////////////
 .menu-option{
   border-bottom: 1px solid lighten($black, 75%);
   .menu-option-title{
-    background-color: $white;
+    background-color: lighten($black, 85%);
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -285,10 +286,22 @@ a{
       flex: 0 0 auto;
       background-color: transparent;
     }
+    h3{
+      font-size: 0.95rem;
+      font-weight: bold;
+    }
     .menu-button{
       width: 18px;
       color: lighten($black, 50%);
       outline: none;
+    }
+  }
+  .menu-show-details{
+    padding: 5px 10px 15px 10px;
+    h4{
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      padding: 10px 0 5px;
     }
   }
 }
@@ -304,9 +317,9 @@ a{
     background-color: $teal;
     color: $white;
   }
-  h3{
-    // padding: 8px;
-  }
+  // h3{
+  //   padding: 8px;
+  // }
   select{
     margin: 0 10px 0 10px;
     width: 95%;
