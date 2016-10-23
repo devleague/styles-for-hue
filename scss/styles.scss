@@ -500,3 +500,19 @@ a{
     font-weight: 700;
   }
 }
+
+//////// 404: NOT FOUND /////////
+.notfound-image{
+  background: url('/images/mountains.jpeg') no-repeat top center;
+  background-size: cover;
+  background-color: $teal;
+  padding: 175px 0 125px;
+  background-attachment: fixed;
+  h1{
+    font-size: 3rem;
+    font-weight: bold;
+    color: $white;
+    text-transform: uppercase;
+    margin-left: 50px;
+  }
+}
