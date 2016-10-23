@@ -44,6 +44,8 @@ const reducer = (state = initialState, action) => {
       return { ...state, doc: { ...state.doc, elements: action.data} };
     case "NEW_DOC":
       return { ...state, _id: `ObjectId(${action.data})`, doc: { ...state.doc, elements: [ ...state.doc.elements ]} };
+    case "EDIT_DOC":
+      return { ...state, _id: `ObjectId(${action.data})`, doc: { ...state.doc, elements: [ ...state.doc.elements ]} };
     default:
       return { ...state};
   }
