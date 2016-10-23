@@ -35,7 +35,7 @@ db.docs.insert(
               "_id" : ObjectId("57fc9789aa00d38a26228231"),
               "elementId" : 3,
               "tag" : "img",
-              // "src" : "http://placehold.it/800x250",
+              // "src" : "https://static.pexels.com/photos/130991/pexels-photo-130991.jpeg",
               "className" : "t1-hero-container",
               "children" : [
                 {
@@ -58,8 +58,8 @@ db.docs.insert(
                 }
               ],
               "style" : {
-                // "backgroundColor" : "#3C6E71",
-                // "width": "100%"
+                "backgroundImage" : "url(https://static.pexels.com/photos/130991/pexels-photo-130991.jpeg)",
+                "justifyContent" : "center"
               }
             },
             {
