@@ -107,16 +107,29 @@ class Edit extends Component {
       data: JSON.stringify({})
     })
     .then((data) => {
-      var options = "";
       var id = "";
       data.map((templates) => {
         id += templates._id + "\n";
       })
       var idArray = id.split("\n");
       for (var i = 0; i < idArray.length; i++){
-        options += '<a href="' + idArray[i] + '"' + '>' + idArray[i] + '</a>';
+        var options = "";
+        var windowURL = window.location.href;
+        console.log(windowURL);
+        console.log(document.URL);
+        var userDivLength = $('#Input').find('a').length;
+        var idArrayLength = idArray.length;
+        if (userDivLength < idArrayLength) {
+          if (windowURL.includes("/template/") === true) {
+            console.log("true");
+            $('#Input').append('<a href="' + idArray[i] + '"' + '>' + idArray[i] + '</a>');
+          }
+          if (windowURL.includes("/template/") === false) {
+            console.log("false");
+            $('#Input').append('<a href="template/' + idArray[i] + '"' + '>' + idArray[i] + '</a>');
+          }
+        };
       };
-      $('#Input').append(options);
     })
   }
 
@@ -259,11 +272,10 @@ class Edit extends Component {
           </button>
           <div className="dropdown">
           <button className="dropbtn"
-            onClick={this.changeUser}>Dropdown</button>
+            onMouseOver={this.changeUser}>Dropdown</button>
           <div className="dropdown-content"
             id="Input"
           >
-            <a href="#"></a>
           </div>
         </div>
         <div
