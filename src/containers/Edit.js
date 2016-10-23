@@ -89,9 +89,6 @@ class Edit extends Component {
       contentType: 'application/json',
       data: JSON.stringify({template: this.props.elementsReducer.doc})
     })
-    .then((data) => {
-      console.log('hihihi');
-    })
   }
 
   changeUser(){
