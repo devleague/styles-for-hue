@@ -186,7 +186,6 @@ class Edit extends Component {
   }
 
   previewFile() {
-    console.log("hi");
       var preview = document.querySelector('img');
       var file    = document.querySelector('input[type=file]').files[0];
       var reader  = new FileReader();
