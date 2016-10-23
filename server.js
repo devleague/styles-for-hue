@@ -98,7 +98,6 @@ app.get('/api/template/:id', (req, res) => {
 
 app.put('/api/template/:id', (req, res) => {
   let id = req.params.id;
-  console.log(req.body.template);
   UserTemplate.findOneAndUpdate(id, {doc: req.body.template})
   .then((results) => {
     return res.json(results);
