@@ -14,10 +14,10 @@ class NotFound extends Component {
           <h1>Whoops!</h1>
         </div>
         <div
-          className="row"
+          className="row-notfound"
         >
           <div
-            className="flex-nowrap-container"
+            className="flex-nowrap-notfound-container"
           >
             <div
               className="notfound-container"
