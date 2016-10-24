@@ -319,6 +319,11 @@ a{
       outline: none;
       background-color: lighten($black, 90%);
     }
+    input[type=color]{
+      width: 100px;
+      height: 35px;
+      cursor: pointer;
+    }
     .font-size-form{
       border: 1px solid lighten($black, 75%);
       border-radius: 5px;
