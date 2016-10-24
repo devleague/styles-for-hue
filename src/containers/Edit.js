@@ -265,6 +265,15 @@ class Edit extends Component {
         </div>
       )
     }
+    let uploadComponent = null;
+    if (this.props.menuShow.showUploadMenu === true) {
+      uploadComponent = (
+        <div className="menu-show-details">
+          <input type="file" onChange={this.previewFile}></input>
+          <img src="" height="200" alt="Image preview..."></img>
+        </div>
+      )
+    }
     let updateComponent = null;
     if (this.props.hash) {
       updateComponent = (
@@ -404,10 +413,7 @@ class Edit extends Component {
               <i id="icon" className={"fa fa-caret-right" + " " + uploadComponentOpenClass}></i>
             </button>
           </div>
-          <div>
-            <input type="file" onChange={this.previewFile}></input>
-            <img src="" height="200" alt="Image preview..."></img>
-          </div>
+          { uploadComponent }
         </div>
 
       </div>
