@@ -19,12 +19,16 @@ class NotFound extends Component {
           <div
             className="flex-nowrap-container"
           >
-            <h1>404 PAGE NOT FOUND</h1>
-            <br/>
-            <p>Don't have a template yet?</p>
-            <NavLink to="/template" className="start-button">
-              Start Styling
-            </NavLink>
+            <div
+              className="notfound-container"
+            >
+              <h1>404 PAGE NOT FOUND</h1>
+              <br/>
+              <p>Don't have a template yet?</p>
+              <NavLink to="/template" className="notfound-button">
+                Start Styling
+              </NavLink>
+            </div>
           </div>
         </div>
       </div>
