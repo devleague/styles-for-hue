@@ -228,52 +228,48 @@ a{
   align-items: stretch;
   background-color:#eaeaea;
 }
-
-// ** Template (Left Side) ** //
+// ** Template Container ** //
 .template-container{
   margin: 50px 25px 50px 50px;
   -webkit-box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.25);
   -moz-box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.25);
   box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.25);
 }
-
 .template-one{
   margin: 0 auto;
   padding: 25px;
 }
-
 .selected {
   outline: 5px solid blue;
 }
-
-// ** Editor (Right Side) ** //
-.current-styles-container{
-  margin-top: 15px;
-  padding: 10px;
-  height: 90px;
-  background-color: $teal;
-  h6{
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    font-weight: bold;
+// ** Style Editor ** //
+.edit-container{
+  width: 300px;
+  margin: 50px 50px 50px 25px;
+  background-color: $white;
+  h1{
+    padding: 10px;
+    font-size: 1.75rem;
+    text-align: center;
+    background-color: $teal;
     color: $white;
   }
+  .view-css{
+    width: 80px;
+    height: 40px;
+    border: none;
+    box-shadow: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  button{
+    border: none;
+    outline: none;
+    text-decoration: none;
+  }
 }
-
-.current-elem-styles{
-  margin-top: 10px;
-  padding: 5px;
-  height: 50px;
-  background-color: $white;
-}
-
-// .edit-views-container{
-//   position: relative;
-// }
-
-////////////////////
-// ACCORDION MENU //
-////////////////////
+// ** Accordion Menu ** //
 .menu-option{
   border-bottom: 1px solid lighten($black, 75%);
   .menu-option-title{
@@ -325,6 +321,7 @@ a{
     }
   }
 }
+// ** Menu Buttons ** //
 .functional-button-container{
   .functional-button{
     display: block;
@@ -340,32 +337,6 @@ a{
   }
 }
 
-.edit-container{
-  width: 300px;
-  margin: 50px 50px 50px 25px;
-  background-color: $white;
-  h1{
-    padding: 10px;
-    font-size: 1.75rem;
-    text-align: center;
-    background-color: $teal;
-    color: $white;
-  }
-  .view-css{
-    width: 80px;
-    height: 40px;
-    border: none;
-    box-shadow: none;
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-  button{
-    border: none;
-    outline: none;
-    text-decoration: none;
-  }
-}
 
 /* Dropdown Button */
 .dropbtn {
@@ -376,13 +347,11 @@ a{
     border: none;
     cursor: pointer;
 }
-
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
     position: relative;
     display: inline-block;
 }
-
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
     display: none;
@@ -391,9 +360,7 @@ a{
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-
 }
-
 /* Links inside the dropdown */
 .dropdown-content a {
     color: black;
@@ -401,19 +368,40 @@ a{
     text-decoration: none;
     display: block;
 }
-
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {background-color: #f1f1f1}
-
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
     display: block;
 }
-
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
 }
+
+// ** Current Styles Container ** //
+.current-styles-container{
+  margin-top: 15px;
+  padding: 10px;
+  height: 90px;
+  background-color: $teal;
+  h6{
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $white;
+  }
+  .current-elem-styles{
+    margin-top: 10px;
+    padding: 5px;
+    height: 50px;
+    background-color: $white;
+  }
+}
+
+// .edit-views-container{
+//   position: relative;
+// }
 
 /////// RESOURCE PAGE ///////
 .resource-image{
