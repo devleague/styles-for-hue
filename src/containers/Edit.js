@@ -312,7 +312,7 @@ class Edit extends Component {
               }
             }}
           >
-            <h3>Font</h3>
+            <h3><i className="fa fa-font menu-icon"></i>Font</h3>
             <button
               id="button-show"
               className="menu-button"
@@ -336,7 +336,7 @@ class Edit extends Component {
               }
             }}
           >
-            <h3>Colors</h3>
+            <h3><i className="fa fa-paint-brush menu-icon"></i>Colors</h3>
             <button
               id="button-show"
               className="menu-button"
@@ -357,7 +357,7 @@ class Edit extends Component {
               }
             }}
           >
-            <h3>Images</h3>
+            <h3><i className="fa fa-file-photo-o menu-icon"></i>Images</h3>
             <button
               id="button-show"
               className="menu-button"
@@ -380,7 +380,7 @@ class Edit extends Component {
               }
             }}
           >
-            <h3>Saved Templates</h3>
+            <h3><i className="fa fa-files-o menu-icon"></i>Saved Templates</h3>
             <button
               id="button-show"
               className="menu-button"
