@@ -283,24 +283,24 @@ class Edit extends Component {
       <div
         className="edit-container"
       >
-        <h1> Edit </h1>
+        <h1>Edit</h1>
         <div
           className="menu-option">
           <div
             className="menu-option-title"
+            onClick={ () => {
+              if (this.props.menuShow.showFontMenu === false) {
+                this.props.showFontMenu(true);
+              } else {
+                this.props.showFontMenu(false);
+              }
+            }}
           >
             <h3>Font</h3>
             <button
               id="button-show"
               className="menu-button"
-              onClick={ () => {
-                if (this.props.menuShow.showFontMenu === false) {
-                  this.props.showFontMenu(true);
-                } else {
-                  this.props.showFontMenu(false);
-                }
-              }
-            }>
+            >
               <i id="icon" className={"fa fa-caret-right" + " " +
               fontComponentOpenClass}></i>
             </button>
@@ -312,18 +312,18 @@ class Edit extends Component {
         >
           <div
             className="menu-option-title"
+            onClick={ () => {
+              if (this.props.menuShow.showDivMenu === false) {
+                this.props.showDivMenu(true);
+              } else {
+                this.props.showDivMenu(false);
+              }
+            }}
           >
             <h3>Div</h3>
             <button
               id="button-show"
               className="menu-button"
-              onClick={ () => {
-                if (this.props.menuShow.showDivMenu === false) {
-                  this.props.showDivMenu(true);
-                } else {
-                  this.props.showDivMenu(false);
-                }
-              }}
             >
               <i id="icon" className={"fa fa-caret-right" + " " + divComponentOpenClass}></i>
             </button>
@@ -335,18 +335,18 @@ class Edit extends Component {
         >
           <div
             className="menu-option-title"
+            onClick={ () => {
+              if (this.props.menuShow.showTemplateMenu === false) {
+                this.props.showTemplateMenu(true);
+              } else {
+                this.props.showTemplateMenu(false);
+              }
+            }}
           >
             <h3>Template</h3>
             <button
               id="button-show"
               className="menu-button"
-              onClick={ () => {
-                if (this.props.menuShow.showTemplateMenu === false) {
-                  this.props.showTemplateMenu(true);
-                } else {
-                  this.props.showTemplateMenu(false);
-                }
-              }}
             >
               <i id="icon" className={"fa fa-caret-right" + " " + templateComponentOpenClass}></i>
             </button>
