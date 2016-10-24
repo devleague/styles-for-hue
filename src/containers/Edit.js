@@ -257,7 +257,7 @@ class Edit extends Component {
         <div className="menu-show-details">
           <h4>Upload New Hero Image</h4>
           <input type="file" onChange={this.previewFile}></input>
-          <img src="" height="200" alt="Image preview..."></img>
+          <img src="" className="preview-upload" alt="Image preview..."></img>
         </div>
       )
     }
