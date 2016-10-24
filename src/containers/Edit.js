@@ -220,6 +220,10 @@ class Edit extends Component {
     if(this.props.menuShow.showTemplateMenu === true){
       templateComponentOpenClass = "open";
     };
+    let uploadComponentOpenClass = " ";
+    if(this.props.menuShow.showUploadMenu === true){
+      uploadComponentOpenClass = "open";
+    };
     let fontComponent = null;
     if (this.props.menuShow.showFontMenu === true) {
       fontComponent = (
@@ -380,15 +384,32 @@ class Edit extends Component {
             {this.props.showElementStyles(this.props.elementsReducer.selectedElement.selectedStyle)}
           </div>
         </div>
+
         <div className="menu-option">
-          <div className="menu-option-title">
+          <div
+            className="menu-option-title"
+            onClick={ () => {
+              if (this.props.menuShow.showUploadMenu === false) {
+                this.props.showUploadMenu(true);
+              } else {
+                this.props.showUploadMenu(false);
+              }
+            }}
+          >
             <h3>Change Photo</h3>
+            <button
+              id="button-show"
+              className="menu-button"
+            >
+              <i id="icon" className={"fa fa-caret-right" + " " + uploadComponentOpenClass}></i>
+            </button>
           </div>
           <div>
             <input type="file" onChange={this.previewFile}></input>
             <img src="" height="200" alt="Image preview..."></img>
           </div>
         </div>
+
       </div>
     )
   }
