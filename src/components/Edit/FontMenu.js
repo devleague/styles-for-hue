@@ -168,7 +168,7 @@ class FontMenu extends Component {
             onChange={(event) => this.changeFontSize(event.target.value)}
             className="font-size-form"
           >
-            <input type="number" id="fontSizes" className="font-size-input" placeholder="Font Size" />
+            <input type="number" min="1" id="fontSizes" className="font-size-input" placeholder="Font Size" />
             <select id="fontSizeUnits" className="font-unit-input">
               <option value="px">px</option>
               <option value="em">em</option>

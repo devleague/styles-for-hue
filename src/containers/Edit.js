@@ -216,6 +216,10 @@ class Edit extends Component {
     if(this.props.menuShow.showDivMenu === true){
       divComponentOpenClass = "open";
     };
+    let uploadComponentOpenClass = " ";
+    if(this.props.menuShow.showUploadMenu === true){
+      uploadComponentOpenClass = "open";
+    };
     let templateComponentOpenClass = " ";
     if(this.props.menuShow.showTemplateMenu === true){
       templateComponentOpenClass = "open";
@@ -247,16 +251,28 @@ class Edit extends Component {
         />
       );
     };
+    let uploadComponent = null;
+    if (this.props.menuShow.showUploadMenu === true) {
+      uploadComponent = (
+        <div className="menu-show-details">
+          <h4>Upload New Hero Image</h4>
+          <input type="file" onChange={this.previewFile}></input>
+          <img src="" className="preview-upload" alt="Image preview..."></img>
+        </div>
+      )
+    }
     let templateComponent = null;
     if (this.props.menuShow.showTemplateMenu === true) {
       templateComponent = (
-        <div className="dropdown">
-          <button className="dropbtn"
-            onMouseOver={this.changeUser}>Dropdown</button>
-          <div className="dropdown-content"
-            id="Input"
-          >
-          <a href="/template">Create New Template</a>
+        <div className="menu-show-details">
+          <div className="dropdown">
+            <button className="dropbtn"
+              onMouseOver={this.changeUser}>Dropdown</button>
+            <div className="dropdown-content"
+              id="Input"
+            >
+            <a href="/template">Create New Template</a>
+            </div>
           </div>
         </div>
       )
@@ -296,7 +312,7 @@ class Edit extends Component {
               }
             }}
           >
-            <h3>Font</h3>
+            <h3><i className="fa fa-font menu-icon"></i>Font</h3>
             <button
               id="button-show"
               className="menu-button"
@@ -320,7 +336,7 @@ class Edit extends Component {
               }
             }}
           >
-            <h3>Colors</h3>
+            <h3><i className="fa fa-paint-brush menu-icon"></i>Colors</h3>
             <button
               id="button-show"
               className="menu-button"
@@ -329,6 +345,27 @@ class Edit extends Component {
             </button>
           </div>
           { divComponent }
+        </div>
+        <div className="menu-option">
+          <div
+            className="menu-option-title"
+            onClick={ () => {
+              if (this.props.menuShow.showUploadMenu === false) {
+                this.props.showUploadMenu(true);
+              } else {
+                this.props.showUploadMenu(false);
+              }
+            }}
+          >
+            <h3><i className="fa fa-file-photo-o menu-icon"></i>Images</h3>
+            <button
+              id="button-show"
+              className="menu-button"
+            >
+              <i id="icon" className={"fa fa-caret-right" + " " + uploadComponentOpenClass}></i>
+            </button>
+          </div>
+          { uploadComponent }
         </div>
         <div
           className="menu-option"
@@ -343,7 +380,7 @@ class Edit extends Component {
               }
             }}
           >
-            <h3>Saved Templates</h3>
+            <h3><i className="fa fa-files-o menu-icon"></i>Saved Templates</h3>
             <button
               id="button-show"
               className="menu-button"
@@ -380,8 +417,8 @@ class Edit extends Component {
             {this.props.showElementStyles(this.props.elementsReducer.selectedElement.selectedStyle)}
           </div>
         </div>
-          <input type="file" onChange={this.previewFile}></input>
-          <img src="" height="200" alt="Image preview..."></img>
+
+
       </div>
     )
   }

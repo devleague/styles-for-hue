@@ -307,7 +307,7 @@ a{
   margin-top: 75px;
   display: flex;
   flex-flow: row nowrap;
-  align-items: stretch;
+  align-items: flex-start;
   background-color:#eaeaea;
 }
 // ** Template Container ** //
@@ -328,6 +328,7 @@ a{
 .edit-container{
   width: 300px;
   margin: 50px 50px 50px 25px;
+  padding-bottom: 5px;
   background-color: $white;
   h1{
     padding: 10px;
@@ -369,6 +370,10 @@ a{
     }
     h3{
       font-size: 0.95rem;
+      .menu-icon{
+        color: lighten($black, 25%);
+        padding-right: 10px;
+      }
     }
     .menu-button{
       width: 18px;
@@ -425,6 +430,13 @@ a{
         border: 0;
       }
     }
+    .preview-upload{
+      width: 280px;
+      height: 200px;
+      margin-top: 10px;
+      font-size: 0.85rem;
+      object-fit: cover;
+    }
   }
 }
 // ** Menu Buttons ** //
@@ -448,7 +460,6 @@ a{
     }
   }
 }
-
 
 /* Dropdown Button */
 .dropbtn {
@@ -493,14 +504,16 @@ a{
 
 // ** Current Styles Container ** //
 .current-styles-container{
-  margin-top: 15px;
+  width: 275px;
+  margin: 10px auto;
   padding: 10px;
   height: 90px;
-  background-color: $teal;
+  background-color: $dark-grey;
   h6{
     font-size: 0.8rem;
     text-transform: uppercase;
     font-weight: bold;
+    text-align: center;
     color: $white;
   }
   .current-elem-styles{
