@@ -216,13 +216,13 @@ class Edit extends Component {
     if(this.props.menuShow.showDivMenu === true){
       divComponentOpenClass = "open";
     };
-    let templateComponentOpenClass = " ";
-    if(this.props.menuShow.showTemplateMenu === true){
-      templateComponentOpenClass = "open";
-    };
     let uploadComponentOpenClass = " ";
     if(this.props.menuShow.showUploadMenu === true){
       uploadComponentOpenClass = "open";
+    };
+    let templateComponentOpenClass = " ";
+    if(this.props.menuShow.showTemplateMenu === true){
+      templateComponentOpenClass = "open";
     };
     let fontComponent = null;
     if (this.props.menuShow.showFontMenu === true) {
@@ -251,6 +251,15 @@ class Edit extends Component {
         />
       );
     };
+    let uploadComponent = null;
+    if (this.props.menuShow.showUploadMenu === true) {
+      uploadComponent = (
+        <div className="menu-show-details">
+          <input type="file" onChange={this.previewFile}></input>
+          <img src="" height="200" alt="Image preview..."></img>
+        </div>
+      )
+    }
     let templateComponent = null;
     if (this.props.menuShow.showTemplateMenu === true) {
       templateComponent = (
@@ -262,15 +271,6 @@ class Edit extends Component {
           >
           <a href="/template">Create New Template</a>
           </div>
-        </div>
-      )
-    }
-    let uploadComponent = null;
-    if (this.props.menuShow.showUploadMenu === true) {
-      uploadComponent = (
-        <div className="menu-show-details">
-          <input type="file" onChange={this.previewFile}></input>
-          <img src="" height="200" alt="Image preview..."></img>
         </div>
       )
     }
@@ -343,6 +343,27 @@ class Edit extends Component {
           </div>
           { divComponent }
         </div>
+        <div className="menu-option">
+          <div
+            className="menu-option-title"
+            onClick={ () => {
+              if (this.props.menuShow.showUploadMenu === false) {
+                this.props.showUploadMenu(true);
+              } else {
+                this.props.showUploadMenu(false);
+              }
+            }}
+          >
+            <h3>Images</h3>
+            <button
+              id="button-show"
+              className="menu-button"
+            >
+              <i id="icon" className={"fa fa-caret-right" + " " + uploadComponentOpenClass}></i>
+            </button>
+          </div>
+          { uploadComponent }
+        </div>
         <div
           className="menu-option"
         >
@@ -394,27 +415,6 @@ class Edit extends Component {
           </div>
         </div>
 
-        <div className="menu-option">
-          <div
-            className="menu-option-title"
-            onClick={ () => {
-              if (this.props.menuShow.showUploadMenu === false) {
-                this.props.showUploadMenu(true);
-              } else {
-                this.props.showUploadMenu(false);
-              }
-            }}
-          >
-            <h3>Change Photo</h3>
-            <button
-              id="button-show"
-              className="menu-button"
-            >
-              <i id="icon" className={"fa fa-caret-right" + " " + uploadComponentOpenClass}></i>
-            </button>
-          </div>
-          { uploadComponent }
-        </div>
 
       </div>
     )
