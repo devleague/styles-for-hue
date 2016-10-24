@@ -380,8 +380,15 @@ class Edit extends Component {
             {this.props.showElementStyles(this.props.elementsReducer.selectedElement.selectedStyle)}
           </div>
         </div>
-          <input type="file" onChange={this.previewFile}></input>
-          <img src="" height="200" alt="Image preview..."></img>
+        <div className="menu-option">
+          <div className="menu-option-title">
+            <h3>Change Photo</h3>
+          </div>
+          <div>
+            <input type="file" onChange={this.previewFile}></input>
+            <img src="" height="200" alt="Image preview..."></img>
+          </div>
+        </div>
       </div>
     )
   }
