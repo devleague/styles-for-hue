@@ -501,7 +501,7 @@ a{
   }
 }
 
-//////// 404: NOT FOUND /////////
+///////// 404: NOT FOUND /////////
 .notfound-image{
   background: url('/images/mountains.jpeg') no-repeat top center;
   background-size: cover;
@@ -516,3 +516,26 @@ a{
     margin-left: 50px;
   }
 }
+
+.notfound-button{
+  display: block;
+  width: 250px;
+  margin: 25px auto 10px;
+  padding: 25px;
+  border: 2px $white solid;
+  border-radius: 5px;
+  background-color: transparentize(#ffffff, 0.8);
+  -webkit-transition: background-color 1.5s ease;
+  transition: background-color 1.5s ease;
+  color: $white;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  &:hover{
+    background-color: $mint;
+    border: 2px $mint solid;
+    text-decoration: none;
+  }
+}
+
