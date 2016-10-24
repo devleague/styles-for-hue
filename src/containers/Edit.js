@@ -371,7 +371,7 @@ class Edit extends Component {
           <button
             className="functional-button"
             type="submit"
-            onClick={this.zipFile}>Save Zip with HTML and CSS files</button>
+            onClick={this.zipFile}>Export HTML and CSS Files</button>
         </form>
         <div className="current-styles-container">
           <h6>Current Element Styles</h6>
