@@ -351,36 +351,6 @@ a{
     background-color: $teal;
     color: $white;
   }
-  // h3{
-  //   padding: 8px;
-  // }
-  // select{
-  //   margin: 0 10px 0 10px;
-  //   width: 95%;
-  // }
-  // option{
-  //   height: 40px;
-  // }
-  // .export-css{
-  //   margin: 8px 15px 8px 11px;
-  // }
-  // .save, .update, .download{
-  //   margin: 8px 15px 8px 11px;
-  // }
-  // .font-button, .div-button, .template-button{
-  //     // background-color: #fff;
-  //     width: 13px;
-  //     // height: 30px;
-  //     color: $dark-grey;
-  //     outline: none;
-  //     box-shadow: none;
-  //     &:hover{
-  //       // background-color: #fff;
-  //     }
-  //     &:active{
-  //       // background-color: #fff;
-  //     }
-  // }
   .view-css{
     width: 80px;
     height: 40px;
@@ -394,84 +364,8 @@ a{
     border: none;
     outline: none;
     text-decoration: none;
-    // background-color: $teal;
-    // color: #fff;
-    // font-size: 0.9rem;
-    // padding: 9px 9px;
-    // text-align: center;
-    // display: inline-block;
-    // width: 90%;
-
-    // box-shadow: 0 3px #999;
-    // &:hover{
-    //   outline: none;
-    //   transition: all 0.5s ease;
-    //   background-color: $dark-teal;
-    // }
-    // &:active{
-    //   outline: none;
-    //   background-color: $dark-teal;
-    //   transform: translateY(4px);
-    // }
   }
-  // select{
-    // width: 90%;
-    // background: transparent;
-    // padding: 4px;
-    // font-size: 0.9rem;
-    // border: 0;
-    // border-radius: 3px;
-    // height: 30px;
-    // -webkit-appearance: none;
-    // border: 1px solid #ccc;
-    // color: #c0c0c0;
-    // background-image:
-    //   linear-gradient(45deg, transparent 50%, gray 50%),
-    //   linear-gradient(135deg, gray 50%, transparent 50%),
-    //   linear-gradient(to right, #ccc, #ccc);
-    // background-position:
-    //   calc(100% - 20px) calc(1em + 2px),
-    //   calc(100% - 15px) calc(1em + 2px),
-    //   calc(100% - 2.5em) 0.5em;
-    // background-size:
-    //   5px 5px,
-    //   5px 5px,
-    //   1px 1px;
-    // background-repeat: no-repeat;
-    // outline: none;
-  // }
 }
-
-// .font-choices, .div-choices, .template-choices{
-//   margin: 3px 6px 3px 6px;
-//   border-width: 1px;
-//   border-bottom-style: solid;
-// }
-
-// .template-menu{
-//   padding-top: 10px;
-// }
-
-// .font-toggle{
-//   width: 68px;
-//   h3{
-//     float: right;
-//   }
-// }
-
-// .div-toggle{
-//   width: 60px;
-//   h3{
-//     float: right;
-//   }
-// }
-
-// .template-toggle{
-//   width: 100px;
-//   h3{
-//     float: right;
-//   }
-// }
 
 /* Dropdown Button */
 .dropbtn {
