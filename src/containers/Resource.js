@@ -60,12 +60,12 @@ class Resource extends Component {
             <div
               className="grid-container"
             >
-            <h1><u>Responsive Grid Layout</u></h1>
-            <p>Creating a responsive layout that is visually appealing to the users. </p>
-            <br />
-            <h3>
-              <a href="http://www.responsivegridsystem.com/" target="_blank">Responsive Grid System</a>
-            </h3>
+              <h1><u>Responsive Grid Layout</u></h1>
+              <p>Creating a responsive layout that is visually appealing to the users. </p>
+              <br />
+              <h3>
+                <a href="http://www.responsivegridsystem.com/" target="_blank">Responsive Grid System</a>
+              </h3>
             </div>
           </div>
         </div>
