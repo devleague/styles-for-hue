@@ -249,7 +249,8 @@ a{
   background-color: $white;
   h1{
     padding: 10px;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
+    font-weight: bold;
     text-align: center;
     background-color: $teal;
     color: $white;
@@ -286,11 +287,10 @@ a{
     }
     h3{
       font-size: 0.95rem;
-      font-weight: bold;
     }
     .menu-button{
       width: 18px;
-      color: lighten($black, 50%);
+      color: lighten($black, 25%);
       cursor: pointer;
       .fa-caret-right{
         transform: rotate(0deg);
@@ -332,8 +332,14 @@ a{
     font-family: 'Lato', sans-serif;
     font-size: 0.95rem;
     text-align: center;
-    letter-spacing: .1rem;
-    &:hover{}
+    letter-spacing: .05rem;
+    background-color: $teal;
+    &:hover{
+      background-color: darken($teal, 15%);
+    }
+    &:active{
+      background-color: darken($teal, 25%);
+    }
   }
 }
 
