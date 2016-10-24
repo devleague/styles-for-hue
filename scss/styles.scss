@@ -314,10 +314,28 @@ a{
     select{
       background: transparent;
       width: 100%;
-      height: 34px;
+      height: 35px;
       border: 1px solid lighten($black, 75%);
       outline: none;
       background-color: lighten($black, 90%);
+    }
+    .font-size-form{
+      border: 1px solid lighten($black, 75%);
+      border-radius: 5px;
+      .font-size-input{
+        width: 150px;
+        height: 35px;
+        padding: 0 10px;
+        background-color:transparent;
+        font-family: 'Lato', sans-serif;
+        outline: none;
+        border: 0;
+      }
+      .font-unit-input{
+        width: 128px;
+        background-color:transparent;
+        border: 0;
+      }
     }
   }
 }
