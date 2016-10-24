@@ -283,6 +283,7 @@ a{
     justify-content: space-between;
     align-items: center;
     padding: 15px 10px;
+    cursor: pointer;
     h3, button {
       flex: 0 0 auto;
       background-color: transparent;
@@ -294,6 +295,7 @@ a{
     .menu-button{
       width: 18px;
       color: lighten($black, 50%);
+      cursor: pointer;
     }
   }
   .menu-show-details{
