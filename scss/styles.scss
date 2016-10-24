@@ -4,6 +4,7 @@
 @import 'partials/nav';
 @import 'partials/cssview';
 @import 'partials/popover';
+@import 'partials/content-page';
 
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
 
@@ -65,48 +66,10 @@ a{
 }
 
 ///////////////////////////////////////
-/////      REUSABLE ELEMENTS      /////
-///////////////////////////////////////
-.row{
-  padding: 75px 0;
-  .flex-nowrap-container{
-    margin: 0 50px;
-    display: flex;
-    flex-flow: row nowrap;
-    .flex-50{
-      flex: 0 0 50%;
-    }
-    .left{
-      padding-right: 25px;
-    }
-    .right{
-      padding-left: 25px;
-    }
-  }
-  .flex-wrap-container{
-    margin: 0 50px;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-  }
-}
-
-///////////////////////////////////////
 /////          ABOUT PAGE         /////
 ///////////////////////////////////////
-.header-image{
-  background: url(https://static.pexels.com/photos/70232/pexels-photo-70232.jpeg) no-repeat top center;
-  background-size: cover;
-  background-color: $teal;
-  padding: 175px 0 125px;
-  background-attachment: fixed;
-  h1{
-    font-size: 3rem;
-    font-weight: bold;
-    color: $white;
-    text-transform: uppercase;
-    margin-left: 50px;
-  }
+.about-image{
+  background-image: url(https://static.pexels.com/photos/70232/pexels-photo-70232.jpeg);
 }
 
 .flex-photos{
@@ -530,18 +493,7 @@ a{
 
 /////// RESOURCE PAGE ///////
 .resource-image{
-  background: url('/images/working_design.jpg') no-repeat top center;
-  background-size: cover;
-  background-color: $teal;
-  padding: 175px 0 125px;
-  background-attachment: fixed;
-  h1{
-    font-size: 3rem;
-    font-weight: bold;
-    color: $white;
-    text-transform: uppercase;
-    margin-left: 50px;
-  }
+  background-image: url('/images/working_design.jpg');
 }
 
 .fontsite-container, .colorpalette-container, .grid-container{
@@ -583,18 +535,7 @@ a{
 
 ///////// 404: NOT FOUND /////////
 .notfound-image{
-  background: url('/images/mountain_sky.jpg') no-repeat top center;
-  background-size: cover;
-  background-color: $teal;
-  padding: 175px 0 125px;
-  background-attachment: fixed;
-  h1{
-    font-size: 3rem;
-    font-weight: bold;
-    color: $white;
-    text-transform: uppercase;
-    margin-left: 50px;
-  }
+  background-image: url('/images/mountain_sky.jpg');
 }
 .row-notfound{
   padding: 75px 0;
