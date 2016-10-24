@@ -411,14 +411,16 @@ a{
 
 // ** Current Styles Container ** //
 .current-styles-container{
-  margin-top: 15px;
+  width: 275px;
+  margin: 10px auto;
   padding: 10px;
   height: 90px;
-  background-color: $teal;
+  background-color: $dark-grey;
   h6{
     font-size: 0.8rem;
     text-transform: uppercase;
     font-weight: bold;
+    text-align: center;
     color: $white;
   }
   .current-elem-styles{
