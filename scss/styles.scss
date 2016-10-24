@@ -479,6 +479,7 @@ a{
 
 .fontsite-container{
   width: 900px;
+  line-height: 1.2;
   h1{
     font-size: 25px;
     font-weight: 700;
@@ -487,6 +488,7 @@ a{
 
 .colorpalette-container{
   width: 900px;
+  line-height: 1.2;
   h1{
     font-size: 25px;
     font-weight: 700;
@@ -495,6 +497,7 @@ a{
 
 .grid-container{
   width: 900px;
+  line-height: 1.2;
   h1{
     font-size: 25px;
     font-weight: 700;
@@ -503,7 +506,7 @@ a{
 
 ///////// 404: NOT FOUND /////////
 .notfound-image{
-  background: url('/images/mountains.jpeg') no-repeat top center;
+  background: url('/images/mountain_sky.jpg') no-repeat top center;
   background-size: cover;
   background-color: $teal;
   padding: 175px 0 125px;
@@ -528,8 +531,11 @@ a{
 }
 .notfound-container{
   text-align: center;
+  h1{
+    font-size: 2rem;
+    font-weight: 700;
+  }
 }
-
 .notfound-button{
   display: block;
   width: 250px;
@@ -541,7 +547,7 @@ a{
   -webkit-transition: background-color 1.5s ease;
   transition: background-color 1.5s ease;
   color: $white;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: bold;
   text-transform: uppercase;
   text-align: center;
