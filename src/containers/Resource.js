@@ -28,14 +28,6 @@ class Resource extends Component {
                 <a href="https://fonts.google.com/" target="_blank">Google Fonts</a>
               </p>
             </div>
-          </div>
-        </div>
-        <div
-          className="row"
-        >
-          <div
-            className="flex-nowrap-container"
-          >
             <div
               className="colorpalette-container"
             >
@@ -63,14 +55,6 @@ class Resource extends Component {
                 If you want to create a site that compliments the colors of a photo.
               </p>
             </div>
-          </div>
-        </div>
-        <div
-          className="row"
-        >
-          <div
-            className="flex-nowrap-container"
-          >
             <div
               className="grid-container"
             >
