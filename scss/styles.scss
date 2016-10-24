@@ -270,6 +270,7 @@ a{
 // .edit-views-container{
 //   position: relative;
 // }
+
 ////////////////////
 // ACCORDION MENU //
 ////////////////////
@@ -281,7 +282,7 @@ a{
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 10px;
+    padding: 15px 10px;
     h3, button {
       flex: 0 0 auto;
       background-color: transparent;
@@ -306,6 +307,16 @@ a{
   }
 }
 
+.functional-button-container{
+  .functional-button{
+    display: block;
+    width: 275px;
+    background-color: red;
+    margin: 8px auto;
+    padding: 10px;
+  }
+}
+
 .edit-container{
   width: 300px;
   margin: 50px 50px 50px 25px;
@@ -320,33 +331,33 @@ a{
   // h3{
   //   padding: 8px;
   // }
-  select{
-    margin: 0 10px 0 10px;
-    width: 95%;
-  }
-  option{
-    height: 40px;
-  }
-  .export-css{
-    margin: 8px 15px 8px 11px;
-  }
-  .save, .update, .download{
-    margin: 8px 15px 8px 11px;
-  }
-  .font-button, .div-button, .template-button{
-      // background-color: #fff;
-      width: 13px;
-      // height: 30px;
-      color: $dark-grey;
-      outline: none;
-      box-shadow: none;
-      &:hover{
-        // background-color: #fff;
-      }
-      &:active{
-        // background-color: #fff;
-      }
-  }
+  // select{
+  //   margin: 0 10px 0 10px;
+  //   width: 95%;
+  // }
+  // option{
+  //   height: 40px;
+  // }
+  // .export-css{
+  //   margin: 8px 15px 8px 11px;
+  // }
+  // .save, .update, .download{
+  //   margin: 8px 15px 8px 11px;
+  // }
+  // .font-button, .div-button, .template-button{
+  //     // background-color: #fff;
+  //     width: 13px;
+  //     // height: 30px;
+  //     color: $dark-grey;
+  //     outline: none;
+  //     box-shadow: none;
+  //     &:hover{
+  //       // background-color: #fff;
+  //     }
+  //     &:active{
+  //       // background-color: #fff;
+  //     }
+  // }
   .view-css{
     width: 80px;
     height: 40px;
@@ -361,11 +372,11 @@ a{
     border: none;
     color: #fff;
     font-size: 0.9rem;
-    padding: 9px 9px;
+    // padding: 9px 9px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    width: 90%;
+    // display: inline-block;
+    // width: 90%;
     letter-spacing: .1rem;
     // box-shadow: 0 3px #999;
     // &:hover{
