@@ -516,6 +516,19 @@ a{
     margin-left: 50px;
   }
 }
+.row-notfound{
+  padding: 75px 0;
+  .flex-nowrap-notfound-container{
+    margin: 0 50px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.notfound-container{
+  text-align: center;
+}
 
 .notfound-button{
   display: block;
