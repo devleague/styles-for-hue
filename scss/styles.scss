@@ -425,6 +425,13 @@ a{
         border: 0;
       }
     }
+    .preview-upload{
+      width: 280px;
+      height: 200px;
+      margin-top: 10px;
+      font-size: 0.85rem;
+      object-fit: cover;
+    }
   }
 }
 // ** Menu Buttons ** //
