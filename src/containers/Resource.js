@@ -16,7 +16,7 @@ class Resource extends Component {
           className="row"
         >
           <div
-            className="flex-nowrap-container"
+            className="flex-wrap-container"
           >
             <div
               className="fontsite-container"
