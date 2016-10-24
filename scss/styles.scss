@@ -307,7 +307,7 @@ a{
   margin-top: 75px;
   display: flex;
   flex-flow: row nowrap;
-  align-items: stretch;
+  align-items: flex-start;
   background-color:#eaeaea;
 }
 // ** Template Container ** //
@@ -328,6 +328,7 @@ a{
 .edit-container{
   width: 300px;
   margin: 50px 50px 50px 25px;
+  padding-bottom: 5px;
   background-color: $white;
   h1{
     padding: 10px;
@@ -455,7 +456,6 @@ a{
     }
   }
 }
-
 
 /* Dropdown Button */
 .dropbtn {
