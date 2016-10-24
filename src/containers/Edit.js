@@ -264,9 +264,9 @@ class Edit extends Component {
     let updateComponent = null;
     if (this.props.hash) {
       updateComponent = (
-        <div>
+        <div className="functional-button-container">
           <button
-            className="update"
+            className="functional-button"
             type="submit"
             onClick={ this.updatePopup }
           >
@@ -353,9 +353,9 @@ class Edit extends Component {
           </div>
           { templateComponent }
         </div>
-        <div>
+        <div className="functional-button-container">
           <button
-            className="save"
+            className="functional-button"
             type="submit"
             onClick={ this.saveFilePopup }
           >
@@ -367,9 +367,9 @@ class Edit extends Component {
           />
         </div>
           { updateComponent }
-        <form>
+        <form className="functional-button-container">
           <button
-            className="save"
+            className="functional-button"
             type="submit"
             onClick={this.zipFile}>Save Zip with HTML and CSS files</button>
         </form>
