@@ -283,7 +283,7 @@ class Edit extends Component {
       <div
         className="edit-container"
       >
-        <h1>Edit</h1>
+        <h1>Style Editor</h1>
         <div
           className="menu-option">
           <div
@@ -320,7 +320,7 @@ class Edit extends Component {
               }
             }}
           >
-            <h3>Div</h3>
+            <h3>Colors</h3>
             <button
               id="button-show"
               className="menu-button"
@@ -343,7 +343,7 @@ class Edit extends Component {
               }
             }}
           >
-            <h3>Template</h3>
+            <h3>Saved Templates</h3>
             <button
               id="button-show"
               className="menu-button"
