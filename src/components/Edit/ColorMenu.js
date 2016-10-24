@@ -113,8 +113,8 @@ class ColorMenu extends Component {
 
   render() {
     return (
-      <div>
-      <h3>Pick Your Palette:</h3>
+      <div className="menu-show-details">
+      <h4>Pick Your Palette:</h4>
         <select
           id="colorPalette"
           defaultValue="0"
@@ -123,7 +123,7 @@ class ColorMenu extends Component {
           <option value="0">Palette 1</option>
           <option value="1">Palette 2</option>
         </select>
-        <h3>Pick Your Color:</h3>
+        <h4>Pick Your Color:</h4>
           <select id="colorMenu" defaultValue="0" onChange={() => this.switchElementColor(this.changeColor(), this.props.selectedElement.selectedElementId, this.props.elements)}>
             <option value="0" disabled="disabled">SELECT COLOR</option>
             {this.props.colorPalette[0].map((color, index) => {

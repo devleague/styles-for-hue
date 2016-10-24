@@ -133,9 +133,9 @@ class FontMenu extends Component {
   render() {
     return(
       <div
-        className="font-dropdown"
+        className="menu-show-details"
       >
-        <h3>Pick Your Element:</h3>
+        <h4>Pick Your Element:</h4>
           <select id="elementMenu" defaultValue="0">
             <option value="0" disabled="disabled">SELECT ELEMENT</option>
             <option value='all'>all tags</option>
@@ -145,7 +145,7 @@ class FontMenu extends Component {
             <option value='h2'>h2 tag</option>
             <option value='h3'>h3 tags</option>
           </select>
-        <h3>Pick Your Font:</h3>
+        <h4>Pick Your Font:</h4>
           <select id="fontMenu" defaultValue="0" onChange={(event) => this.changeFontFamily(event.target.value)}>
             <option value="0" disabled="disabled">SELECT FONT</option>
             {this.props.fontList.map((font, index) => {
@@ -159,14 +159,17 @@ class FontMenu extends Component {
               )
             })}
           </select>
-          <p>Font Color</p>
+          <h4>Font Color</h4>
           <form onChange={(event) => this.changeFontColor(event.target.value)}>
             <input type="color" defaultValue="#ff0000" />
           </form>
-          <p>Font Size</p>
-          <form onChange={(event) => this.changeFontSize(event.target.value)}>
-            <input type="number" min="10" max="100" id="fontSizes" placeholder="Font Size" />
-            <select id="fontSizeUnits">
+          <h4>Font Size</h4>
+          <form
+            onChange={(event) => this.changeFontSize(event.target.value)}
+            className="font-size-form"
+          >
+            <input type="number" min="1" id="fontSizes" className="font-size-input" placeholder="Font Size" />
+            <select id="fontSizeUnits" className="font-unit-input">
               <option value="px">px</option>
               <option value="em">em</option>
             </select>

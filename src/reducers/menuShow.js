@@ -1,7 +1,8 @@
 const initialState = {
   showFontMenu: false,
   showDivMenu: false,
-  showTemplateMenu: false
+  showTemplateMenu: false,
+  showUploadMenu: false
 }
 
 const reducer = (state = initialState, action) => {
@@ -12,6 +13,8 @@ const reducer = (state = initialState, action) => {
       return {...state, showDivMenu: action.show};
     case "SHOW_TEMPLATEMENU":
       return {...state, showTemplateMenu: action.show};
+    case "SHOW_UPLOADMENU":
+      return {...state, showUploadMenu: action.show};
     default:
       return state;
   }

@@ -1,7 +1,8 @@
 export default {
   showFontMenu,
   showDivMenu,
-  showTemplateMenu
+  showTemplateMenu,
+  showUploadMenu
 };
 
 export function showFontMenu (show) {
@@ -21,6 +22,13 @@ export function showDivMenu (show) {
 export function showTemplateMenu (show) {
   return {
     type: "SHOW_TEMPLATEMENU",
+    show: show
+  }
+}
+
+export function showUploadMenu (show) {
+  return {
+    type: "SHOW_UPLOADMENU",
     show: show
   }
 }

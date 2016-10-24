@@ -216,6 +216,10 @@ class Edit extends Component {
     if(this.props.menuShow.showDivMenu === true){
       divComponentOpenClass = "open";
     };
+    let uploadComponentOpenClass = " ";
+    if(this.props.menuShow.showUploadMenu === true){
+      uploadComponentOpenClass = "open";
+    };
     let templateComponentOpenClass = " ";
     if(this.props.menuShow.showTemplateMenu === true){
       templateComponentOpenClass = "open";
@@ -247,16 +251,28 @@ class Edit extends Component {
         />
       );
     };
+    let uploadComponent = null;
+    if (this.props.menuShow.showUploadMenu === true) {
+      uploadComponent = (
+        <div className="menu-show-details">
+          <h4>Upload New Hero Image</h4>
+          <input type="file" onChange={this.previewFile}></input>
+          <img src="" className="preview-upload" alt="Image preview..."></img>
+        </div>
+      )
+    }
     let templateComponent = null;
     if (this.props.menuShow.showTemplateMenu === true) {
       templateComponent = (
-        <div className="dropdown">
-          <button className="dropbtn"
-            onMouseOver={this.changeUser}>Dropdown</button>
-          <div className="dropdown-content"
-            id="Input"
-          >
-          <a href="/template">Create New Template</a>
+        <div className="menu-show-details">
+          <div className="dropdown">
+            <button className="dropbtn"
+              onMouseOver={this.changeUser}>Dropdown</button>
+            <div className="dropdown-content"
+              id="Input"
+            >
+            <a href="/template">Create New Template</a>
+            </div>
           </div>
         </div>
       )
@@ -264,9 +280,9 @@ class Edit extends Component {
     let updateComponent = null;
     if (this.props.hash) {
       updateComponent = (
-        <div>
+        <div className="functional-button-container">
           <button
-            className="update"
+            className="functional-button"
             type="submit"
             onClick={ this.updatePopup }
           >
@@ -283,92 +299,100 @@ class Edit extends Component {
       <div
         className="edit-container"
       >
-        <h1> Edit </h1>
+        <h1>Style Editor</h1>
         <div
-          className="font-menu">
+          className="menu-option">
           <div
-            className="font-choices"
+            className="menu-option-title"
+            onClick={ () => {
+              if (this.props.menuShow.showFontMenu === false) {
+                this.props.showFontMenu(true);
+              } else {
+                this.props.showFontMenu(false);
+              }
+            }}
           >
-            <div
-              className="font-toggle"
+            <h3><i className="fa fa-font menu-icon"></i>Font</h3>
+            <button
+              id="button-show"
+              className="menu-button"
             >
-              <button
-                id="button-show"
-                className="font-button"
-                onClick={ () => {
-                  if (this.props.menuShow.showFontMenu === false) {
-                    this.props.showFontMenu(true);
-                  } else {
-                    this.props.showFontMenu(false);
-                  }
-                }
-              }>
-                <i id="icon" className={"fa fa-caret-right" + " " +
-                fontComponentOpenClass}></i>
-              </button>
-              <h3>Font</h3>
-            </div>
+              <i id="icon" className={"fa fa-caret-right" + " " +
+              fontComponentOpenClass}></i>
+            </button>
           </div>
           { fontComponent }
         </div>
-        <br/>
         <div
-          className="div-menu"
+          className="menu-option"
         >
           <div
-            className="div-choices"
+            className="menu-option-title"
+            onClick={ () => {
+              if (this.props.menuShow.showDivMenu === false) {
+                this.props.showDivMenu(true);
+              } else {
+                this.props.showDivMenu(false);
+              }
+            }}
           >
-            <div
-              className="div-toggle"
+            <h3><i className="fa fa-paint-brush menu-icon"></i>Colors</h3>
+            <button
+              id="button-show"
+              className="menu-button"
             >
-              <button
-                id="button-show"
-                className="div-button"
-                onClick={ () => {
-                  if (this.props.menuShow.showDivMenu === false) {
-                    this.props.showDivMenu(true);
-                  } else {
-                    this.props.showDivMenu(false);
-                  }
-                }}
-              >
-                <i id="icon" className={"fa fa-caret-right" + " " + divComponentOpenClass}></i>
-              </button>
-              <h3>Div</h3>
-            </div>
+              <i id="icon" className={"fa fa-caret-right" + " " + divComponentOpenClass}></i>
+            </button>
           </div>
           { divComponent }
         </div>
+        <div className="menu-option">
+          <div
+            className="menu-option-title"
+            onClick={ () => {
+              if (this.props.menuShow.showUploadMenu === false) {
+                this.props.showUploadMenu(true);
+              } else {
+                this.props.showUploadMenu(false);
+              }
+            }}
+          >
+            <h3><i className="fa fa-file-photo-o menu-icon"></i>Images</h3>
+            <button
+              id="button-show"
+              className="menu-button"
+            >
+              <i id="icon" className={"fa fa-caret-right" + " " + uploadComponentOpenClass}></i>
+            </button>
+          </div>
+          { uploadComponent }
+        </div>
         <div
-          className="template-menu"
+          className="menu-option"
         >
           <div
-            className="template-choices"
+            className="menu-option-title"
+            onClick={ () => {
+              if (this.props.menuShow.showTemplateMenu === false) {
+                this.props.showTemplateMenu(true);
+              } else {
+                this.props.showTemplateMenu(false);
+              }
+            }}
           >
-            <div
-              className="template-toggle"
+            <h3><i className="fa fa-files-o menu-icon"></i>Saved Templates</h3>
+            <button
+              id="button-show"
+              className="menu-button"
             >
-              <button
-                id="button-show"
-                className="template-button"
-                onClick={ () => {
-                  if (this.props.menuShow.showTemplateMenu === false) {
-                    this.props.showTemplateMenu(true);
-                  } else {
-                    this.props.showTemplateMenu(false);
-                  }
-                }}
-              >
-                <i id="icon" className={"fa fa-caret-right" + " " + templateComponentOpenClass}></i>
-              </button>
-              <h3>Template</h3>
-            </div>
+              <i id="icon" className={"fa fa-caret-right" + " " + templateComponentOpenClass}></i>
+            </button>
           </div>
           { templateComponent }
         </div>
-        <div>
+        <div className="functional-button-container">
           <button
-            className="save"
+            className="functional-button"
             type="submit"
             onClick={ this.saveFilePopup }
           >
@@ -380,11 +404,11 @@ class Edit extends Component {
           />
         </div>
           { updateComponent }
-        <form>
+        <form className="functional-button-container">
           <button
-            className="save"
+            className="functional-button"
             type="submit"
-            onClick={this.zipFile}>Save Zip with HTML and CSS files</button>
+            onClick={this.zipFile}>Export HTML and CSS Files</button>
         </form>
         <div className="current-styles-container">
           <h6>Current Element Styles</h6>
@@ -393,8 +417,8 @@ class Edit extends Component {
             {this.props.showElementStyles(this.props.elementsReducer.selectedElement.selectedStyle)}
           </div>
         </div>
-          <input type="file" onChange={this.previewFile}></input>
-          <img src="" height="200" alt="Image preview..."></img>
+
+
       </div>
     )
   }
