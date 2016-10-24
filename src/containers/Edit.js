@@ -264,13 +264,15 @@ class Edit extends Component {
     let templateComponent = null;
     if (this.props.menuShow.showTemplateMenu === true) {
       templateComponent = (
-        <div className="dropdown">
-          <button className="dropbtn"
-            onMouseOver={this.changeUser}>Dropdown</button>
-          <div className="dropdown-content"
-            id="Input"
-          >
-          <a href="/template">Create New Template</a>
+        <div className="menu-show-details">
+          <div className="dropdown">
+            <button className="dropbtn"
+              onMouseOver={this.changeUser}>Dropdown</button>
+            <div className="dropdown-content"
+              id="Input"
+            >
+            <a href="/template">Create New Template</a>
+            </div>
           </div>
         </div>
       )
