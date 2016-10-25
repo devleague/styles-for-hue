@@ -21,12 +21,17 @@ class TemplateEdit extends Component {
       dataType: 'json',
       success: function (result) {
         if(result === null)  {
-          browserHistory.push('NotFound');
+          browserHistory.push('NotFound')
+          .then(() => {
+            setTimeout(() => {
+              this.loadSavedTheme();
+            }, 3000);
+          })
         }
       },
       error: function (result) {
         if(result === null) {
-          browserHistory.push('NotFound');
+          browserHistory.push('NotFound')
         }
       }
     });
