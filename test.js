@@ -291,11 +291,23 @@ db.styles.insert(
     style2: {
       name: 'Dusty',
       backgroundColor: [
-        {'label':'Chino', 'value':'#b5ae8f'},
+        {'label': 'Chino', 'value':'#b5ae8f'},
         {'label': 'Whisper', 'value': '#ececec'},
         {'label': 'White', 'value': '#ffffff'},
         {'label': 'Dark Cyan', 'value': '#517a8b'},
-        {'label': 'black', 'value': 'black'}
+        {'label': 'Dark Green', 'value': '#0c1915'},
+        {'label': 'Black', 'value': 'black'},
+      ],
+    },
+    style3: {
+      name: 'Swamp',
+      backgroundColor: [
+        {'label': 'Silver Leaf', 'value':'#b8d2b6'},
+        {'label': 'White Smoke', 'value': '#f5f5f5'},
+        {'label': 'White', 'value': '#ffffff'},
+        {'label': 'Liver', 'value': '#4e3b45'},
+        {'label': 'Del-Grey', 'value': '#918a8f'},
+        {'label': 'Black', 'value': 'black'}
       ],
     },
     fontFamily: ['Times New Roman', 'ABeeZee'],
