@@ -471,12 +471,11 @@ class Edit extends Component {
           />
         </div>
           { updateComponent }
-        <form className="functional-button-container">
+        <div className="functional-button-container">
           <button
             className="functional-button"
-            type="submit"
             onClick={this.zipFile}>Export HTML and CSS Files</button>
-        </form>
+        </div>
         { /* <div className="current-styles-container">
           <h6>Current Element Styles</h6>
           <div className="current-elem-styles"
