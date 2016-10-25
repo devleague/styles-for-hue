@@ -100,7 +100,10 @@ class Edit extends Component {
     })
     .then((data) => {
       var id = "";
+      var str = "";
       var idArray = data.map((templates) => {
+        var date = new Date();
+        str = (date.getMonth() + 1) + "-" + date.getDate() + "-" + date.getFullYear() + " " +  date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
         return templates._id;
       })
       for (var i = 0; i < idArray.length; i++){
@@ -110,10 +113,10 @@ class Edit extends Component {
         var idArrayLength = idArray.length;
         if (userDivLength <= i + 1) {
           if (windowURL.includes("/template/") === true) {
-            $('#Input').append('<a href="' + idArray[i] + '"' + '>' + idArray[i] + '</a>');
+            $('#Input').append('<a href="' + idArray[i] + '"' + '>' + 'style' + (i + 1) + ':' + ' ' + str + '</a>');
           }
           if (windowURL.includes("/template/") === false) {
-            $('#Input').append('<a href="template/' + idArray[i] + '"' + '>' + idArray[i] + '</a>');
+            $('#Input').append('<a href="template/' + idArray[i] + '"' + '>' + 'style' + (i + 1) + ':' + ' ' + str + '</a>');
           }
         }
       };
@@ -263,6 +266,15 @@ class Edit extends Component {
           <h4>Upload New Hero Image</h4>
           <input type="file" onChange={this.previewFile}></input>
           <img src="" className="preview-upload" alt="Image preview..."></img>
+          <h4>OR Add Hero Image URL</h4>
+          <form onSubmit={(event)=> {
+              event.preventDefault();
+              return this.props.changeImage(document.getElementById('url').value);
+            }
+          }>
+            <input type="text" id="url"/>
+            <input type="submit" value="Submit"/>
+          </form>
         </div>
       )
     }
@@ -272,7 +284,7 @@ class Edit extends Component {
         <div className="menu-show-details">
           <div className="dropdown">
             <button className="dropbtn"
-              onMouseOver={this.changeUser}>Dropdown</button>
+              onMouseOver={this.changeUser}></button>
             <div className="dropdown-content"
               id="Input"
             >
@@ -293,7 +305,7 @@ class Edit extends Component {
             type="submit"
             onClick={ this.updatePopup }
           >
-            Update Template
+            Update Styles
         </button>
         <UpdatePopover
           reveal={this.props.popover.updatepop}
@@ -403,7 +415,7 @@ class Edit extends Component {
             type="submit"
             onClick={ this.saveFilePopup }
           >
-            Save Template
+            Save Styles
           </button>
           <SavePopover
             show={ this.props.popover.modal }
