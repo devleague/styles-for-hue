@@ -34,7 +34,12 @@ class TemplateEdit extends Component {
       if(result === null){
         setTimeout(() => {
           browserHistory.push('/template');
-        }, 3000)
+        }, 5000)
+      } else {
+        return $.ajax({
+          url: `/api/template/${this.props.params.hash}`,
+          dataType: 'json'
+        })
       }
     });
   }
