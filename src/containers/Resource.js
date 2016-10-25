@@ -13,10 +13,10 @@ class Resource extends Component {
           <h1>Resources</h1>
         </div>
         <div
-          className="row"
+          className="row-resource"
         >
           <div
-            className="flex-wrap-container"
+            className="flex-resource-wrap-container"
           >
             <div
               className="fontsite-container"
