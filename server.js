@@ -99,7 +99,7 @@ app.get('/api/template/:id', (req, res) => {
 app.put('/api/template/:id', (req, res) => {
   let id = req.params.id;
   console.log(req.params.id);
-  UserTemplate.findOneAndUpdate({_id: id}, {doc: req.body.template})
+  UserTemplate.findOneAndUpdate({_id: id}, {doc: req.body})
   .then((results) => {
     return res.json(results);
   })
