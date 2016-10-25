@@ -248,6 +248,7 @@ class Edit extends Component {
       divComponent = (
         <ColorMenu
           colorPalette={this.props.colors.colorPalette}
+          selectedColorPalette={this.props.colors.selectedColorPalette}
           selectedElement={this.props.elementsReducer.selectedElement}
           elements={this.props.elementsReducer.doc.elements}
           changeColor={this.props.changeColor}
