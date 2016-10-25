@@ -110,7 +110,7 @@ class Edit extends Component {
         var idArrayLength = idArray.length;
         if (userDivLength <= i + 1) {
           if (windowURL.includes("/template/") === true) {
-            $('#Input').append('<a href="' + idArray[i] + '"' + '>' + idArray[i] + '</a>');
+            $('#Input').append('<a href="' + idArray[i] + '"' + '><option>' + idArray[i] + '</option></a>');
           }
           if (windowURL.includes("/template/") === false) {
             $('#Input').append('<a href="template/' + idArray[i] + '"' + '>' + idArray[i] + '</a>');
@@ -272,7 +272,7 @@ class Edit extends Component {
         <div className="menu-show-details">
           <div className="dropdown">
             <button className="dropbtn"
-              onMouseOver={this.changeUser}>Dropdown</button>
+              onMouseOver={this.changeUser}></button>
             <div className="dropdown-content"
               id="Input"
             >
