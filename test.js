@@ -284,16 +284,18 @@ db.styles.insert(
         {'label': 'pink', 'value': 'pink'},
         {'label':'something', 'value':'#30B3AA'},
         {'label': 'white', 'value': 'white'},
+        {'label': 'Whisper', 'value': '#ececec'},
         {'label': 'black', 'value': 'black'}
       ],
     },
     style2: {
       name: 'Dusty',
       backgroundColor: [
-        {'label': 'Dark Cyan', 'value': '#517a8b'},
         {'label':'Chino', 'value':'#b5ae8f'},
         {'label': 'Whisper', 'value': '#ececec'},
-        {'label': 'White', 'value': '#ffffff'}
+        {'label': 'White', 'value': '#ffffff'},
+        {'label': 'Dark Cyan', 'value': '#517a8b'},
+        {'label': 'black', 'value': 'black'}
       ],
     },
     fontFamily: ['Times New Roman', 'ABeeZee'],
