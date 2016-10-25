@@ -429,13 +429,13 @@ class Edit extends Component {
             type="submit"
             onClick={this.zipFile}>Export HTML and CSS Files</button>
         </form>
-        <div className="current-styles-container">
+        { /* <div className="current-styles-container">
           <h6>Current Element Styles</h6>
           <div className="current-elem-styles"
           >
             {this.props.showElementStyles(this.props.elementsReducer.selectedElement.selectedStyle)}
           </div>
-        </div>
+        </div> */}
 
 
       </div>
