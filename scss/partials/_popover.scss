@@ -27,69 +27,69 @@ $teal: #30B3AA;
     position: fixed;
     top: 50%;
     left: 50%;
-    // width: 350px;
-    // height: 250px;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     border-radius: 5px;
     border: 3px solid $teal;
     background-color: $teal;
-    // box-shadow: 4px 4px 1px rgba(0, 0, 0, 0.3);
     z-index: 2;
-    .modal-top{
-      background: $teal;
-      padding: 25px;
-      text-align: center;
-      color: #fff;
-      // font-size: 26px;
-      // padding: 2px;
-      // letter-spacing: 1px;
-      // font-weight: 600;
-      // border-bottom: 1px solid #4d8012;
-      .modal-check{
-        font-size: 6rem;
-      }
-      h1{
-        font-size: 2.5rem;
-        font-weight: bold;
-        margin: 5px 0;
-      }
-      p{
-        font-size: 1.25rem;
-        margin: 5px 0;
-      }
-    }
-    .modal-bottom{
-      padding: 20px 0;
-      background: $white;
-      text-align: center;
-      // font-size: 14px;
-      // font-weight: 500;
-      // min-height: 30px;
-      // min-width: 100px;
-      // max-width: 150px;
-      // color: #444;
-      .savepopover-button{
-        background: $dark-grey;
-        color: $white;
-        padding: 10px 20px;
-        border-radius: 3px;
-        text-transform: uppercase;
-        font-weight: bold;
-        font-size: 0.75rem;
-        cursor: pointer;
-        border: none;
-        outline: none;
-        // letter-spacing: 2px;
-        &:hover{
-          background-color: darken($dark-grey, 10%)
-        }
-      }
-    }
   }
 }
 
-// button:hover {
-//   background: $dark-grey;
-//   outline: none;
-// }
+.modal-content > button{
+  background-color: $teal;
+  border: 2px solid $white;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  outline: none;
+  position: absolute;
+  top: -18px;
+  right: -18px;
+  .modal-close{
+    font-size: 22px;
+    line-height: 22px;
+    color: $white;
+    text-align: center;
+  }
+}
+
+.modal-top{
+  background: $teal;
+  padding: 25px;
+  text-align: center;
+  color: #fff;
+  .modal-check{
+    font-size: 6rem;
+  }
+  h1{
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 5px 0;
+  }
+  p{
+    font-size: 1.25rem;
+    margin: 5px 0;
+  }
+}
+.modal-bottom{
+  padding: 20px 0;
+  background: $white;
+  text-align: center;
+  .savepopover-button{
+    background: $dark-grey;
+    color: $white;
+    padding: 10px 20px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.75rem;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    &:hover{
+      background-color: darken($dark-grey, 10%)
+    }
+  }
+}
