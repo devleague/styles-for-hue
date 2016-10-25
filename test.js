@@ -282,7 +282,7 @@ db.styles.insert(
       name: 'Default',
       backgroundColor: [
         {'label': 'pink', 'value': 'pink'},
-        {'label':'something', 'value':'#30B3AA'},
+        {'label': 'Cy-man', 'value':'#30B3AA'},
         {'label': 'white', 'value': 'white'},
         {'label': 'Whisper', 'value': '#ececec'},
         {'label': 'black', 'value': 'black'}
@@ -330,6 +330,16 @@ db.styles.insert(
         {'label': '460,294 Shades of Black', 'value': '#070606'},
         {'label': 'Grayter Than Thou', 'value': '#959273'},
         {'label': 'Black', 'value': 'black'}
+      ],
+    },
+    style6: {
+      name: 'Ice Cream Parlor',
+      backgroundColor: [
+        {'label': 'pink', 'value': 'pink'},
+        {'label': 'Cy-man', 'value':'#30B3AA'},
+        {'label': 'white', 'value': 'white'},
+        {'label': 'Whisper', 'value': '#ececec'},
+        {'label': 'black', 'value': 'black'}
       ],
     },
     fontFamily: ['Times New Roman', 'ABeeZee'],
