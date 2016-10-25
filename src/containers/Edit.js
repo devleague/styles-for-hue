@@ -21,7 +21,8 @@ class Edit extends Component {
   constructor (props) {
     super(props);
     this.save = () => {
-      this.saveStyle('OmgLazergunsPEWPEWPEW');
+      let styleName = document.getElementById('template-name').value;
+      this.saveStyle(styleName);
     }
     this.update = () => {
       this.editSave(this.props.elementsReducer.doc.elements);
@@ -33,8 +34,8 @@ class Edit extends Component {
     this.previewFile = this.previewFile.bind(this);
   }
 
-  _handleClick(e) {
-    e.preventDefault();
+  _handleClick() {
+    // e.preventDefault();
     if (this.props.popover.modal) {
       this.props.hidePopover();
     } else {
@@ -51,9 +52,9 @@ class Edit extends Component {
     }
   }
 
-  saveFilePopup(e) {
-    this.save();
-    this.handleClick(e);
+  saveFilePopup(styleName) {
+    this.save(styleName);
+    this.handleClick();
     this.props.updateButtonShow();
   };
 
@@ -410,13 +411,19 @@ class Edit extends Component {
           { templateComponent }
         </div>
         <div className="functional-button-container">
-          <button
-            className="functional-button"
-            type="submit"
-            onClick={ this.saveFilePopup }
-          >
-            Save Styles
-          </button>
+          <form onSubmit={(event)=> {
+              event.preventDefault();
+              return this.saveFilePopup();
+            }
+          }>
+            <input type="text" id="template-name"/>
+            <input
+              className="functional-button"
+              type="submit"
+              value="Save Styles"
+            >
+            </input>
+          </form>
           <SavePopover
             show={ this.props.popover.modal }
             click={ this.handleClick }
