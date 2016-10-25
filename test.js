@@ -310,6 +310,17 @@ db.styles.insert(
         {'label': 'Black', 'value': 'black'}
       ],
     },
+    style4: {
+      name: 'Peonies Pastels',
+      backgroundColor: [
+        {'label': 'Taupe Grey', 'value':'#8c8a8c'},
+        {'label': 'Whiter Than Pink', 'value': '#f8ebf0'},
+        {'label': 'White', 'value': '#ffffff'},
+        {'label': 'Bloo Hoo', 'value': '#518a8d'},
+        {'label': 'Pink Lace', 'value': '#edc3d1'},
+        {'label': 'Black', 'value': 'black'}
+      ],
+    },
     fontFamily: ['Times New Roman', 'ABeeZee'],
     fontSize: '1em'
   }
