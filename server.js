@@ -30,9 +30,9 @@ const stylesSchema = new Schema({
 
 const UserTemplateSchema = new Schema({
   _id: {type: String, 'default': shortid.generate},
-  name: String,
   doc: {
     _id: String,
+    name: String,
     elements:[{
       children: Object,
       className: String,
@@ -65,7 +65,6 @@ app.post('/api/usertemplate', (req, res) => {
   console.log(req.body);
   UserTemplate.create({
     doc: req.body.doc,
-    name: req.body.name
   })
   .then(results => res.json(results))
   .catch(err => res.send(err));
