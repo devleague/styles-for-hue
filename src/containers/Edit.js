@@ -21,7 +21,7 @@ class Edit extends Component {
   constructor (props) {
     super(props);
     this.save = () => {
-      this.saveStyle(this.props.elementsReducer.doc.elements);
+      this.saveStyle('OmgLazergunsPEWPEWPEW');
     }
     this.update = () => {
       this.editSave(this.props.elementsReducer.doc.elements);
@@ -62,13 +62,13 @@ class Edit extends Component {
     this.handleClickUpdate(e);
   }
 
-  saveStyle(){
+  saveStyle(styleName){
     return $.ajax({
       url: '/api/usertemplate',
       type: 'POST',
       dataType: 'json',
       contentType: 'application/json',
-      data: JSON.stringify({ ...this.props.elementsReducer, name: 'HUEHUEHUE'})
+      data: JSON.stringify({ ...this.props.elementsReducer, name: styleName})
     })
     .then((data) => {
       this.props.newDoc(data._id);

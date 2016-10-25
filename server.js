@@ -62,8 +62,10 @@ app.get('/api/usertemplate', (req, res) => {
 });
 
 app.post('/api/usertemplate', (req, res) => {
+  console.log(req.body);
   UserTemplate.create({
     doc: req.body.doc,
+    name: req.body.name
   })
   .then(results => res.json(results))
   .catch(err => res.send(err));
