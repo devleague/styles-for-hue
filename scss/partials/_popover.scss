@@ -2,10 +2,10 @@ $dark-grey: #535353;
 $light-grey: #E6E8E6;
 $teal: #30B3AA;
 
-.modal.is-active {
+.modal.is-active{
   display: block;
 }
-.modal {
+.modal{
   display: none;
   position: absolute;
   top: 0;
@@ -13,7 +13,7 @@ $teal: #30B3AA;
   bottom: 0;
   left: 0;
   z-index: 1;
-  .modal-background {
+  .modal-background{
     position: fixed;
     top: 0;
     right: 0;
@@ -22,47 +22,52 @@ $teal: #30B3AA;
     background: rgba(0, 0, 0, 0.2);
     z-index: 1;
   }
-  .modal-content {
+  .modal-content{
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 300px;
+    // width: 350px;
+    // height: 250px;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    height: 250px;
     border-radius: 5px;
-    border: 2px solid $teal;
-    background-color: white;
+    border: 3px solid $teal;
+    background-color: $teal;
     // box-shadow: 4px 4px 1px rgba(0, 0, 0, 0.3);
     z-index: 2;
-    .modal-header {
-      background: $dark-grey;
-      padding: 2px;
-      font-size: 26px;
-      letter-spacing: 1px;
+    .modal-top{
+      background: $teal;
+      padding: 25px;
+      text-align: center;
       color: #fff;
-      font-weight: 600;
-      border-bottom: 1px solid #4d8012;
+      // font-size: 26px;
+      // padding: 2px;
+      // letter-spacing: 1px;
+      // font-weight: 600;
+      // border-bottom: 1px solid #4d8012;
+      .modal-check{
+        font-size: 6rem;
+      }
+      h1{
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin: 5px 0;
+      }
+      p{
+        font-size: 1.25rem;
+        margin: 5px 0;
+      }
     }
-    .modal-body {
+    .modal-bottom{
       padding: 5px 10px;
       font-size: 14px;
-      font-weight: 500;
-      min-height: 30px;
-      min-width: 100px;
-      max-width: 150px;
+      // font-weight: 500;
+      // min-height: 30px;
+      // min-width: 100px;
+      // max-width: 150px;
       background: #fff;
       color: #444;
       text-align: center;
-      p {
-        margin: 2px 0;
-      }
-    }
-    .modal-footer {
-      background: #eee;
-      text-align: right;
-      // padding: 10px 20px;
-      // border-top: 1px solid #ddd;
     }
   }
 }
