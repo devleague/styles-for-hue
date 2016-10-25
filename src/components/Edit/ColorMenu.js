@@ -10,9 +10,9 @@ class ColorMenu extends Component {
     var color = document.getElementById("colorMenu").value;
     return color;
   }
-  changeColorPalette() {
+  changeColorPalette(colorPalette) {
     var colorArrayIndex = document.getElementById("colorPalette").value;
-    return this.switchThemeColor(this.props.colorPalette[colorArrayIndex]);
+    return this.switchThemeColor(colorPalette[colorArrayIndex].backgroundColor);
   }
 
   switchElementColor(color, selectedElementId, elements) {
@@ -116,7 +116,7 @@ class ColorMenu extends Component {
       return (
         <option
           key={index}
-          value={palette}
+          value={index}
         >
           {palette.name}
         </option>
@@ -128,7 +128,7 @@ class ColorMenu extends Component {
         <select
           id="colorPalette"
           defaultValue="0"
-          onChange={() => this.changeColorPalette()}
+          onChange={() => this.changeColorPalette(this.props.colorPalette)}
         >
           {palettes}
         </select>
