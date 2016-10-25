@@ -21,11 +21,11 @@ class ColorMenu extends Component {
       if (elem.elementId === selectedElementId) {
         return { ...elem, style: { ...elem.style, backgroundColor: color}};
       }
-        if (elem.children) {
-          elem.children = elem.children.map((child) => {
-            if (child.elementId === selectedElementId) {
-              return { ...child, style: { ...child.style, backgroundColor: color}};
-            }
+      if (elem.children) {
+        elem.children = elem.children.map((child) => {
+          if (child.elementId === selectedElementId) {
+            return { ...child, style: { ...child.style, backgroundColor: color}};
+          }
           if (child.children) {
             child.children = child.children.map((secondChild) => {
               if (secondChild.elementId === selectedElementId) {
@@ -33,9 +33,6 @@ class ColorMenu extends Component {
               }
               if (secondChild.children) {
                 secondChild.children = secondChild.children.map((thirdChild) => {
-                  if (thirdChild.elementId === selectedElementId) {
-                    return { ...thirdChild, style: { ...thirdChild.style, backgroundColor: color}};
-                  }
                   if (thirdChild.children) {
                     thirdChild.children = thirdChild.children.map((fourthChild) => {
                       if (fourthChild.elementId === selectedElementId) {
@@ -43,6 +40,9 @@ class ColorMenu extends Component {
                       }
                       return { ...fourthChild};
                     })
+                  }
+                  if (thirdChild.elementId === selectedElementId) {
+                    return { ...thirdChild, style: { ...thirdChild.style, backgroundColor: color}};
                   }
                   return { ...thirdChild};
                 })
