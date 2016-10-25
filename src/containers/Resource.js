@@ -8,7 +8,7 @@ class Resource extends Component {
         className="content-container"
       >
         <div
-          className="resource-image"
+          className="header-image resource-image"
         >
           <h1>Resources</h1>
         </div>

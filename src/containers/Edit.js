@@ -271,8 +271,10 @@ class Edit extends Component {
             <div className="dropdown-content"
               id="Input"
             >
-            <a href="/template">Create New Template</a>
             </div>
+          </div>
+          <div className="functional-button-container">
+            <a href="/template" className="functional-button">Create New Template</a>
           </div>
         </div>
       )
