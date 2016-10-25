@@ -62,7 +62,7 @@ app.get('/api/usertemplate', (req, res) => {
 
 app.post('/api/usertemplate', (req, res) => {
   UserTemplate.create({
-    doc: req.body.template,
+    doc: req.body,
   })
   .then(results => res.json(results))
   .catch(err => res.send(err));
