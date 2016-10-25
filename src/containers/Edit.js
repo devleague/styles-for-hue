@@ -34,6 +34,13 @@ class Edit extends Component {
     this.previewFile = this.previewFile.bind(this);
   }
 
+  componentDidMount() {
+    this.templateNames()
+      .then((templates) => {
+        console.log(templates);
+      })
+  }
+
   _handleClick() {
     // e.preventDefault();
     if (this.props.popover.modal) {
@@ -58,6 +65,7 @@ class Edit extends Component {
     this.props.updateButtonShow();
   };
 
+
   updatePopup(e) {
     this.update();
     this.handleClickUpdate(e);
@@ -67,9 +75,6 @@ class Edit extends Component {
     return $.ajax({
       url: '/api/usertemplate',
       dataType: 'json'
-    })
-    .then((data) => {
-      console.log(data);
     })
   }
 
@@ -227,8 +232,6 @@ class Edit extends Component {
 
 
   render() {
-    // console.log(this.templateNames());
-    this.templateNames();
     let fontComponentOpenClass = " ";
     if(this.props.menuShow.showFontMenu === true){
       fontComponentOpenClass = "open";
