@@ -497,6 +497,19 @@ a{
   background-image: url('/images/working_design.jpg');
 }
 
+.row-resource{
+  padding: 75px 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  .flex-resource-wrap-container{
+    margin: 0 50px;
+    display: flex;
+    flex-flow: row wrap;
+    width: 900px;
+  }
+}
+
 .fontsite-container, .colorpalette-container, .grid-container{
   width: 900px;
   line-height: 1.25;
@@ -524,13 +537,16 @@ a{
     visibility: hidden;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
-    -webkit-transition: all 0.3s ease-in-out 0s;
-    transition: all 0.3s ease-in-out 0s;
+    -webkit-transition: all 0.6s ease-in-out 0s;
+    transition: all 0.6s ease-in-out 0s;
   }
   h3 > a:hover:before{
     visibility: visible;
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
+  }
+  p{
+    font-style: italic;
   }
 }
 
