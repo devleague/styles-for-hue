@@ -41,6 +41,10 @@ class Edit extends Component {
       })
   }
 
+  switchTemplates() {
+
+  }
+
   _handleClick() {
     // e.preventDefault();
     if (this.props.popover.modal) {
@@ -296,18 +300,28 @@ class Edit extends Component {
         </div>
       )
     }
-    let templateComponent = null;
+    let templates = this.props.elementsReducer.templates.map((template) => {
+      console.log(template);
+      return (
+        <option
+          key={template._id}
+          value={template._id}
+        >
+          {template.name}
+        </option>
+      )
+    })
+    let templateDropdown = [];
     if (this.props.menuShow.showTemplateMenu === true) {
-      templateComponent = (
+      templateDropdown = (
         <div className="menu-show-details">
-          <div className="dropdown">
-            <button className="dropbtn"
-              onMouseOver={this.changeUser}></button>
-            <div className="dropdown-content"
-              id="Input"
+          <h4>Choose Your Template</h4>
+            <select
+              id="userTemplate"
+              onChange={() => this.switchTemplates}
             >
-            </div>
-          </div>
+              {templates}
+            </select>
           <div className="functional-button-container">
             <a href="/template" className="functional-button">Create New Template</a>
           </div>
@@ -425,7 +439,7 @@ class Edit extends Component {
               <i id="icon" className={"fa fa-caret-right" + " " + templateComponentOpenClass}></i>
             </button>
           </div>
-          { templateComponent }
+          {templateDropdown}
         </div>
         <div className="functional-button-container">
           <form onSubmit={(event)=> {
