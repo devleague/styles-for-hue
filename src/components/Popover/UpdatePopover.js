@@ -10,24 +10,28 @@ class UpdatePopover extends Component {
         <div
           className="modal-content"
         >
+          <button
+              className="close-button"
+              onClick={this.props.update}
+            >
+            <i className="fa fa-times modal-close" aria-hidden="true"></i>
+           </button>
           <div
-            className="modal-header"
+            className="modal-top"
+          >
+            <i className="fa fa-check-circle modal-check" aria-hidden="true"></i>
+            <h1>Updated!</h1>
+            <p>Your Styles Have Been Updated</p>
+          </div>
+          <div
+            className="modal-bottom"
           >
             <button
               className="savepopover-button"
               onClick={this.props.update}
             >
-            x
+            Continue Styling
             </button>
-            <div
-              className="modal-body"
-            >
-              <p>Template Updated!</p>
-            </div>
-            <div
-              className="modal-footer"
-            >
-            </div>
           </div>
         </div>
       </Popover>
