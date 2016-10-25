@@ -25,7 +25,7 @@ class SavePopover extends Component {
               className="savepopover-button"
               onClick={ this.props.click }
             >
-              x
+              Continue Styling
             </button>
           </div>
         </div>
