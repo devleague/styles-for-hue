@@ -3,7 +3,7 @@ import { Template , Edit, CssView, NotFound } from './';
 import { connect } from 'react-redux';
 
 import * as Actions from '../actions';
-import { browserHistory } from 'react-router';
+import { Router, Route, browserHistory } from 'react-router';
 
 function mapStateToProps (state) {
   return { ...state};
@@ -21,13 +21,25 @@ class TemplateEdit extends Component {
       dataType: 'json',
       success: function (result) {
         if(result === null)  {
-          browserHistory.push('NotFound');
+          browserHistory.push('NotFound')
         }
       },
       error: function (result) {
         if(result === null) {
-          browserHistory.push('NotFound');
+          browserHistory.push('NotFound')
         }
+      }
+    })
+    .then((result) => {
+      if(result === null){
+        setTimeout(() => {
+          browserHistory.push('/template');
+        }, 5000)
+      } else {
+        return $.ajax({
+          url: `/api/template/${this.props.params.hash}`,
+          dataType: 'json'
+        })
       }
     });
   }
@@ -64,14 +76,21 @@ class TemplateEdit extends Component {
     }
     this.loadStyles()
       .then((styles) => {
-        var selectedStyle = styles.style1;
-        this.props.setStyles(styles);
+        let selectedStyle = styles.style1;
         this.props.setSelectedStyle(selectedStyle);
+        this.props.fontTypes(styles.fontFamily);
+        let colorPalette = [];
+        for (let style in styles) {
+          if (style.indexOf('style') !== -1) {
+            colorPalette.push(styles[style]);
+          }
+        }
+        this.props.setStyles(styles);
+        this.props.getColorPalette(colorPalette);
         return selectedStyle;
       })
       .then((selectedStyle) => {
-        this.props.fontTypes(selectedStyle.fontFamily);
-        return this.props.getColorPalette(selectedStyle.backgroundColor);
+        return this.props.changeColorPalette(selectedStyle.backgroundColor);
       })
   // loadColorApi () {
   //   return $.ajax({

@@ -123,7 +123,7 @@ db.docs.insert(
               "_id" : ObjectId("57fc9789aa00d38a26228233"),
               "elementId" : 10,
               "tag" : "div",
-              "className" : "t1-row-container",
+              "className" : "t1-row-container-second",
               "children" : [
                 {
                   "elementId" : 11,
@@ -279,23 +279,71 @@ db.createCollection("styles");
 db.styles.insert(
   {
     style1: {
+      name: 'Default',
       backgroundColor: [
-        [
-          {'label': 'pink', 'value': 'pink'},
-          {'label':'something', 'value':'#30B3AA'},
-          {'label': 'white', 'value': 'white'},
-          {'label': 'black', 'value': 'black'}
-        ],
-        [
-          {'label': 'white', 'value': '#FFF'},
-          {'label': 'some color', 'value': '#32424c'},
-          {'label': 'another color', 'value': '#687f8c'},
-          {'label': 'last color', 'value': '#d2e6da'}
-        ]
+        {'label': 'Hello Yellow', 'value': '#fcca03'},
+        {'label': 'Whisper', 'value':'#ececec'},
+        {'label': 'White', 'value': 'white'},
+        {'label': 'Gray20', 'value': '#333333'},
+        {'label': 'Black', 'value': 'black'}
       ],
-      fontFamily: ['Times New Roman', 'ABeeZee'],
-      fontSize: '1em'
-    }
+    },
+    style2: {
+      name: 'Dusty',
+      backgroundColor: [
+        {'label': 'Chino', 'value':'#b5ae8f'},
+        {'label': 'Whisper', 'value': '#ececec'},
+        {'label': 'White', 'value': '#ffffff'},
+        {'label': 'Dark Cyan', 'value': '#517a8b'},
+        {'label': 'Dark Green', 'value': '#0c1915'},
+        {'label': 'Black', 'value': 'black'},
+      ],
+    },
+    style3: {
+      name: 'Swamp',
+      backgroundColor: [
+        {'label': 'Silver Leaf', 'value':'#b8d2b6'},
+        {'label': 'White Smoke', 'value': '#f5f5f5'},
+        {'label': 'White', 'value': '#ffffff'},
+        {'label': 'Liver', 'value': '#4e3b45'},
+        {'label': 'Del-Gray', 'value': '#918a8f'},
+        {'label': 'Black', 'value': 'black'}
+      ],
+    },
+    style4: {
+      name: 'Peonies Pastels',
+      backgroundColor: [
+        {'label': 'Taupe Gray', 'value':'#8c8a8c'},
+        {'label': 'Whiter Than Pink', 'value': '#f8ebf0'},
+        {'label': 'White', 'value': '#ffffff'},
+        {'label': 'Bloo Hoo', 'value': '#518a8d'},
+        {'label': 'Pink Lace', 'value': '#edc3d1'},
+        {'label': 'Black', 'value': 'black'}
+      ],
+    },
+    style5: {
+      name: 'Overcast',
+      backgroundColor: [
+        {'label': 'Graydient Green', 'value':'#ccd8b2'},
+        {'label': 'Poison Ivory', 'value': '#f2f1d7'},
+        {'label': 'White', 'value': '#ffffff'},
+        {'label': '460,294 Shades of Black', 'value': '#070606'},
+        {'label': 'Grayter Than Thou', 'value': '#959273'},
+        {'label': 'Black', 'value': 'black'}
+      ],
+    },
+    style6: {
+      name: 'Ice Cream Parlor',
+      backgroundColor: [
+        {'label': 'pink', 'value': 'pink'},
+        {'label': 'Cy-man', 'value':'#30B3AA'},
+        {'label': 'white', 'value': 'white'},
+        {'label': 'Whisper', 'value': '#ececec'},
+        {'label': 'black', 'value': 'black'}
+      ],
+    },
+    fontFamily: ['Times New Roman', 'ABeeZee'],
+    fontSize: '1em'
   }
 );
 
