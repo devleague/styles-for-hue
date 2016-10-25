@@ -42,7 +42,12 @@ class Edit extends Component {
   }
 
   switchTemplates() {
-
+    let id = document.getElementById('userTemplate').value;
+    browserHistory.push(`/template/${id}`);
+    return this.props.loadSavedTheme(id)
+      .then((doc) => {
+        this.props.setElements(doc);
+      })
   }
 
   _handleClick() {
@@ -301,7 +306,6 @@ class Edit extends Component {
       )
     }
     let templates = this.props.elementsReducer.templates.map((template) => {
-      console.log(template);
       return (
         <option
           key={template._id}
@@ -318,7 +322,7 @@ class Edit extends Component {
           <h4>Choose Your Template</h4>
             <select
               id="userTemplate"
-              onChange={() => this.switchTemplates}
+              onChange={() => this.switchTemplates()}
             >
               {templates}
             </select>

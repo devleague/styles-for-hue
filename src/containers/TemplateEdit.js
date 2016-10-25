@@ -37,7 +37,7 @@ class TemplateEdit extends Component {
         }, 5000)
       } else {
         return $.ajax({
-          url: `/api/template/${this.props.params.hash}`,
+          url: `/api/template/${hash}`,
           dataType: 'json'
         })
       }
@@ -174,7 +174,7 @@ class TemplateEdit extends Component {
           <Edit
             showElementStyles={this.showElementStyles}
             hash={this.props.params.hash}
-            loadSavedTheme={this.props.loadSavedTheme}
+            loadSavedTheme={this.loadSavedTheme}
           />
           { cssComponent }
         </div>
