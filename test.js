@@ -306,18 +306,29 @@ db.styles.insert(
         {'label': 'White Smoke', 'value': '#f5f5f5'},
         {'label': 'White', 'value': '#ffffff'},
         {'label': 'Liver', 'value': '#4e3b45'},
-        {'label': 'Del-Grey', 'value': '#918a8f'},
+        {'label': 'Del-Gray', 'value': '#918a8f'},
         {'label': 'Black', 'value': 'black'}
       ],
     },
     style4: {
       name: 'Peonies Pastels',
       backgroundColor: [
-        {'label': 'Taupe Grey', 'value':'#8c8a8c'},
+        {'label': 'Taupe Gray', 'value':'#8c8a8c'},
         {'label': 'Whiter Than Pink', 'value': '#f8ebf0'},
         {'label': 'White', 'value': '#ffffff'},
         {'label': 'Bloo Hoo', 'value': '#518a8d'},
         {'label': 'Pink Lace', 'value': '#edc3d1'},
+        {'label': 'Black', 'value': 'black'}
+      ],
+    },
+    style5: {
+      name: 'Overcast',
+      backgroundColor: [
+        {'label': 'Graydient Green', 'value':'#ccd8b2'},
+        {'label': 'Poison Ivory', 'value': '#f2f1d7'},
+        {'label': 'White', 'value': '#ffffff'},
+        {'label': '460,294 Shades of Black', 'value': '#070606'},
+        {'label': 'Grayter Than Thou', 'value': '#959273'},
         {'label': 'Black', 'value': 'black'}
       ],
     },
