@@ -111,6 +111,17 @@ class ColorMenu extends Component {
   }
 
   render() {
+    let palettes = [];
+    palettes = this.props.colorPalette.map((palette, index) => {
+      return (
+        <option
+          key={index}
+          value={palette}
+        >
+          {palette.name}
+        </option>
+      )
+    })
     return (
       <div className="menu-show-details">
       <h4>Pick Your Palette:</h4>
@@ -119,8 +130,7 @@ class ColorMenu extends Component {
           defaultValue="0"
           onChange={() => this.changeColorPalette()}
         >
-          <option value="0">Palette 1</option>
-          <option value="1">Palette 2</option>
+          {palettes}
         </select>
         <h4>Pick Your Color:</h4>
           <select id="colorMenu" defaultValue="0" onChange={() => this.switchElementColor(this.changeColor(), this.props.selectedElement.selectedElementId, this.props.elements)}>
