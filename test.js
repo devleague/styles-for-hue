@@ -293,7 +293,7 @@ db.styles.insert(
       backgroundColor: [
         {'label': 'Orange Hue', 'value':'#CC553E'},
         {'label': 'Grey Skies', 'value': '#E8E8E8'},
-        {'label': 'White', 'value': '#ffffff'},
+        {'label': 'White', 'value': '#FFFFFF'},
         {'label': 'Dirt Red', 'value': '#7F2219'},
         {'label': 'Dark Green', 'value': '#0c1915'},
         {'label': 'Black', 'value': 'black'},
@@ -302,21 +302,21 @@ db.styles.insert(
     style3: {
       name: 'Shady',
       backgroundColor: [
-        {'label': 'Shady Grey', 'value':'#5C5BA'},
-        {'label': 'Smoky Tan', 'value': '#FFE6C4'},
-        {'label': 'White', 'value': '#ffffff'},
-        {'label': 'Shady Grey', 'value': '#5C5BA'},
+        {'label': 'Blue Grey', 'value':'#C5D8DB'},
+        {'label': 'Light Grey', 'value': '#ECECEC'},
+        {'label': 'White', 'value': '#FFFFFF'},
+        {'label': 'Blue Steel', 'value': '#5D696B'},
         {'label': 'Del-Gray', 'value': '#918a8f'},
         {'label': 'Black', 'value': 'black'}
       ],
     },
     style4: {
-      name: 'Peonies Pastels',
+      name: 'Mintee',
       backgroundColor: [
-        {'label': 'Taupe Gray', 'value':'#8c8a8c'},
-        {'label': 'Whiter Than Pink', 'value': '#f8ebf0'},
+        {'label': 'Minty', 'value':'#4BC2A7'},
+        {'label': 'Gretty Mint', 'value': '#D3E5E1'},
         {'label': 'White', 'value': '#ffffff'},
-        {'label': 'Bloo Hoo', 'value': '#518a8d'},
+        {'label': 'Dark Grey', 'value': '#565857'},
         {'label': 'Pink Lace', 'value': '#edc3d1'},
         {'label': 'Black', 'value': 'black'}
       ],
