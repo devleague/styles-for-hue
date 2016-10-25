@@ -8,7 +8,7 @@ class About extends Component {
         className="content-container"
       >
         <div
-          className="header-image"
+          className="header-image about-image"
         >
           <h1>About Us</h1>
         </div>
