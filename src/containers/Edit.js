@@ -69,7 +69,7 @@ class Edit extends Component {
       type: 'POST',
       dataType: 'json',
       contentType: 'application/json',
-      data: JSON.stringify({...this.props.elementsReducer, doc: {...this.props.elementsReducer.doc, name: styleName}})
+      data: JSON.stringify({...this.props.elementsReducer, name: styleName})
     })
     .then((data) => {
       this.props.newDoc(data._id);
@@ -217,6 +217,7 @@ class Edit extends Component {
 
 
   render() {
+    console.log(this.templateNames());
     let fontComponentOpenClass = " ";
     if(this.props.menuShow.showFontMenu === true){
       fontComponentOpenClass = "open";
