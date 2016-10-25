@@ -64,20 +64,21 @@ class TemplateEdit extends Component {
     }
     this.loadStyles()
       .then((styles) => {
-        var selectedStyle = styles.style1;
-        this.props.setStyles(styles);
+        let selectedStyle = styles.style1;
         this.props.setSelectedStyle(selectedStyle);
         this.props.fontTypes(styles.fontFamily);
+        let colorPalette = [];
         for (let style in styles) {
           if (style.indexOf('style') !== -1) {
-            console.log(style);
-            console.log(styles[style].name);
+            colorPalette.push(styles[style]);
           }
         }
+        this.props.setStyles(styles);
+        this.props.getColorPalette(colorPalette);
         return selectedStyle;
       })
       .then((selectedStyle) => {
-        return this.props.getColorPalette(selectedStyle.backgroundColor);
+        return this.props.changeColorPalette(selectedStyle.backgroundColor);
       })
   // loadColorApi () {
   //   return $.ajax({
