@@ -275,7 +275,7 @@ class Edit extends Component {
         <div className="menu-show-details">
           <div className="dropdown">
             <button className="dropbtn"
-              onMouseOver={this.changeUser}>Dropdown</button>
+              onMouseOver={this.changeUser}></button>
             <div className="dropdown-content"
               id="Input"
             >
