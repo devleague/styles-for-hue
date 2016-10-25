@@ -178,16 +178,22 @@ class Edit extends Component {
 
     HTMLText = beautify_html(HTMLText);
 
+    /*Creating text for README.md*/
+    var READMEText = 'Styles For Hue\n================\n\nCreate a user friendly app..\n\n<p align="center">\n\t<img src="https://github.com/devleague/styles-for-hue/blob/master/public/images/Home.png" />\n</p>\n\n[Wiki Tutorial](https://github.com/devleague/styles-for-hue/wiki)\n\n###Created By:\n[Lisa Zhou](https://github.com/herrolisa), \n[Christie Reindle](https://github.com/creindle), \n[Sheena Galutira](https://github.com/sogalutira), \n[Nikki Kobayashi](https://github.com/ynikki), \n[Bryce Saito](https://github.com/tokumori)';
+
     /*Creating files to be saved as .zip*/
     var HTMLBlob = new Blob([HTMLText], {type: "text/plain;charset=utf-8"});
     var CSSBlob = new Blob([CSSText], {type: "text/plain;charset=utf-8"});
+    var READMEBlob = new Blob([READMEText], {type: "text/plain;charset=utf-8"});
     zip.file("index.html", HTMLBlob);
     zip.file("styles.css", CSSBlob);
+    zip.file("README.md", READMEBlob);
     zip.generateAsync({type:"blob"})
-    .then(function(HTMLBlob, CSSBlob) {
+    .then(function(READMEBlob, HTMLBlob, CSSBlob) {
       // see FileSaver.js
-      fileSaver.saveAs(HTMLBlob, "styles-for-hue.zip");
-      fileSaver.saveAs(CSSBlob, "styles-for-hue.zip");
+      fileSaver.saveAs(READMEBlob, "thank-hue.zip");
+      fileSaver.saveAs(HTMLBlob, "thank-hue.zip");
+      fileSaver.saveAs(CSSBlob, "thank-hue.zip");
     });
   }
 
@@ -196,7 +202,7 @@ class Edit extends Component {
       var file    = document.querySelector('input[type=file]').files[0];
       var reader  = new FileReader();
 
-      if (file.size > 1600000) {
+      if (file.size > 16 * Math.pow(1024, 2)) {
         alert("Your file size is: " + file.size + "\nPlease select a smaller file size.");
         return;
       }
