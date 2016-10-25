@@ -4,7 +4,7 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
 
 import store from './reducers';
-import { App, Home, TemplateEdit, About, Resource, NotFound } from './containers';
+import { App, Home, TemplateEdit, About, Resource, NotFound, Tutorial } from './containers';
 
 ReactDOM.render(
   <Provider store={store}>
@@ -23,6 +23,10 @@ ReactDOM.render(
         </Route>
         <Route
           path="/about" component={ About }
+        >
+        </Route>
+        <Route
+          path="/tutorial" Component={ Tutorial }
         >
         </Route>
         <Route
