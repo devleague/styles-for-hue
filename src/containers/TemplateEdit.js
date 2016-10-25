@@ -29,6 +29,11 @@ class TemplateEdit extends Component {
           browserHistory.push('NotFound')
         }
       }
+    })
+    .then(() => {
+      setTimeout(() => {
+        browserHistory.push('/template');
+      }, 3000)
     });
   }
   loadTheme () {
