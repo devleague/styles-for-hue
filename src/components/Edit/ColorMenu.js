@@ -104,6 +104,9 @@ class ColorMenu extends Component {
           if (child.className.indexOf('first') !== -1) {
             return { ...child, style: { ...child.style, backgroundColor: colorArray[2].value}};
           }
+          if (child.className.indexOf('second') !== -1) {
+            return { ...child, style: { ...child.style, backgroundColor: colorArray[3].value}};
+          }
           return { ...child};
         })
       }
