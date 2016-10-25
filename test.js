@@ -291,8 +291,8 @@ db.styles.insert(
     style2: {
       name: 'Hueville',
       backgroundColor: [
-        {'label': 'Orange Hue', 'value':'#CC1400'},
-        {'label': 'Whisper', 'value': '#ececec'},
+        {'label': 'Orange Hue', 'value':'#CC553E'},
+        {'label': 'Grey Skies', 'value': '#E8E8E8'},
         {'label': 'White', 'value': '#ffffff'},
         {'label': 'Dirt Red', 'value': '#7F2219'},
         {'label': 'Dark Green', 'value': '#0c1915'},
@@ -300,12 +300,12 @@ db.styles.insert(
       ],
     },
     style3: {
-      name: 'Swamp',
+      name: 'Shady',
       backgroundColor: [
-        {'label': 'Silver Leaf', 'value':'#b8d2b6'},
-        {'label': 'White Smoke', 'value': '#f5f5f5'},
+        {'label': 'Shady Grey', 'value':'#5C5BA'},
+        {'label': 'Smoky Tan', 'value': '#FFE6C4'},
         {'label': 'White', 'value': '#ffffff'},
-        {'label': 'Liver', 'value': '#4e3b45'},
+        {'label': 'Shady Grey', 'value': '#5C5BA'},
         {'label': 'Del-Gray', 'value': '#918a8f'},
         {'label': 'Black', 'value': 'black'}
       ],
