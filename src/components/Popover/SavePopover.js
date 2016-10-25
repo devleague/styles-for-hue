@@ -26,10 +26,6 @@ class SavePopover extends Component {
           >
             <p>Template Saved!</p>
           </div>
-          <div
-            className="modal-footer"
-          >
-          </div>
         </div>
       </Popover>
     )

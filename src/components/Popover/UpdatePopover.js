@@ -24,10 +24,6 @@ class UpdatePopover extends Component {
             >
               <p>Template Updated!</p>
             </div>
-            <div
-              className="modal-footer"
-            >
-            </div>
           </div>
         </div>
       </Popover>
