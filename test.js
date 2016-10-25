@@ -289,12 +289,12 @@ db.styles.insert(
       ],
     },
     style2: {
-      name: 'Dusty',
+      name: 'Hueville',
       backgroundColor: [
-        {'label': 'Chino', 'value':'#b5ae8f'},
+        {'label': 'Orange Hue', 'value':'#CC1400'},
         {'label': 'Whisper', 'value': '#ececec'},
         {'label': 'White', 'value': '#ffffff'},
-        {'label': 'Dark Cyan', 'value': '#517a8b'},
+        {'label': 'Dirt Red', 'value': '#7F2219'},
         {'label': 'Dark Green', 'value': '#0c1915'},
         {'label': 'Black', 'value': 'black'},
       ],
