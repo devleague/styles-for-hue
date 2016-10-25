@@ -67,10 +67,16 @@ class TemplateEdit extends Component {
         var selectedStyle = styles.style1;
         this.props.setStyles(styles);
         this.props.setSelectedStyle(selectedStyle);
+        this.props.fontTypes(styles.fontFamily);
+        for (let style in styles) {
+          if (style.indexOf('style') !== -1) {
+            console.log(style);
+            console.log(styles[style].name);
+          }
+        }
         return selectedStyle;
       })
       .then((selectedStyle) => {
-        this.props.fontTypes(selectedStyle.fontFamily);
         return this.props.getColorPalette(selectedStyle.backgroundColor);
       })
   // loadColorApi () {

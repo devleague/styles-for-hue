@@ -279,23 +279,25 @@ db.createCollection("styles");
 db.styles.insert(
   {
     style1: {
+      name: 'Default',
       backgroundColor: [
-        [
-          {'label': 'pink', 'value': 'pink'},
-          {'label':'something', 'value':'#30B3AA'},
-          {'label': 'white', 'value': 'white'},
-          {'label': 'black', 'value': 'black'}
-        ],
-        [
-          {'label': 'white', 'value': '#FFF'},
-          {'label': 'some color', 'value': '#32424c'},
-          {'label': 'another color', 'value': '#687f8c'},
-          {'label': 'last color', 'value': '#d2e6da'}
-        ]
+        {'label': 'pink', 'value': 'pink'},
+        {'label':'something', 'value':'#30B3AA'},
+        {'label': 'white', 'value': 'white'},
+        {'label': 'black', 'value': 'black'}
       ],
-      fontFamily: ['Times New Roman', 'ABeeZee'],
-      fontSize: '1em'
-    }
+    },
+    style2: {
+      name: 'Dusty',
+      backgroundColor: [
+        {'label': 'Dark Cyan', 'value': '#517a8b'},
+        {'label':'Chino', 'value':'#b5ae8f'},
+        {'label': 'Whisper', 'value': '#ececec'},
+        {'label': 'White', 'value': '#ffffff'}
+      ],
+    },
+    fontFamily: ['Times New Roman', 'ABeeZee'],
+    fontSize: '1em'
   }
 );
 

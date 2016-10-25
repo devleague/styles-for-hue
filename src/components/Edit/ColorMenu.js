@@ -11,7 +11,6 @@ class ColorMenu extends Component {
     return color;
   }
   changeColorPalette() {
-    console.log(this.props.colorPalette);
     var colorArrayIndex = document.getElementById("colorPalette").value;
     return this.switchThemeColor(this.props.colorPalette[colorArrayIndex]);
   }
@@ -126,7 +125,7 @@ class ColorMenu extends Component {
         <h4>Pick Your Color:</h4>
           <select id="colorMenu" defaultValue="0" onChange={() => this.switchElementColor(this.changeColor(), this.props.selectedElement.selectedElementId, this.props.elements)}>
             <option value="0" disabled="disabled">SELECT COLOR</option>
-            {this.props.colorPalette[0].map((color, index) => {
+            {this.props.colorPalette.map((color, index) => {
               return (
                 <option
                   key={ index }
