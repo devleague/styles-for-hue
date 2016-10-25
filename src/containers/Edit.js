@@ -37,7 +37,7 @@ class Edit extends Component {
   componentDidMount() {
     this.templateNames()
       .then((templates) => {
-        console.log(templates);
+        this.props.getTemplates(templates);
       })
   }
 
