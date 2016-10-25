@@ -293,7 +293,7 @@ class Edit extends Component {
             </div>
           </div>
           <div className="functional-button-container">
-            <a href="/template" className="functional-button">Create New Template</a>
+            <a href="/template" className="functional-button">Reset Template &<br/> Create New Style</a>
           </div>
         </div>
       )
@@ -401,7 +401,7 @@ class Edit extends Component {
               }
             }}
           >
-            <h3><i className="fa fa-files-o menu-icon"></i>Saved Templates</h3>
+            <h3><i className="fa fa-files-o menu-icon"></i>Saved Styles</h3>
             <button
               id="button-show"
               className="menu-button"
@@ -431,13 +431,13 @@ class Edit extends Component {
             type="submit"
             onClick={this.zipFile}>Export HTML and CSS Files</button>
         </form>
-        <div className="current-styles-container">
+        { /* <div className="current-styles-container">
           <h6>Current Element Styles</h6>
           <div className="current-elem-styles"
           >
             {this.props.showElementStyles(this.props.elementsReducer.selectedElement.selectedStyle)}
           </div>
-        </div>
+        </div> */}
 
 
       </div>
