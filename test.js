@@ -281,11 +281,11 @@ db.styles.insert(
     style1: {
       name: 'Default',
       backgroundColor: [
-        {'label': 'pink', 'value': 'pink'},
-        {'label': 'Cy-man', 'value':'#30B3AA'},
-        {'label': 'white', 'value': 'white'},
-        {'label': 'Whisper', 'value': '#ececec'},
-        {'label': 'black', 'value': 'black'}
+        {'label': 'Hello Yellow', 'value': '#fcca03'},
+        {'label': 'Whisper', 'value':'#ececec'},
+        {'label': 'White', 'value': 'white'},
+        {'label': 'Gray20', 'value': '#333333'},
+        {'label': 'Black', 'value': 'black'}
       ],
     },
     style2: {
