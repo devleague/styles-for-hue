@@ -12,7 +12,14 @@ class SavePopover extends Component {
           className="modal-content"
         >
           <div
-            className="modal-header"
+            className="modal-top"
+          >
+            <i className="fa fa-check-circle modal-check" aria-hidden="true"></i>
+            <h1>Saved!</h1>
+            <p>Your Styles Have Been Saved</p>
+          </div>
+          <div
+            className="modal-bottom"
           >
             <button
               className="savepopover-button"
@@ -20,11 +27,6 @@ class SavePopover extends Component {
             >
               x
             </button>
-          </div>
-          <div
-            className="modal-body"
-          >
-            <p>Template Saved!</p>
           </div>
         </div>
       </Popover>

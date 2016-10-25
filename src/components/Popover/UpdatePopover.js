@@ -11,7 +11,14 @@ class UpdatePopover extends Component {
           className="modal-content"
         >
           <div
-            className="modal-header"
+            className="modal-top"
+          >
+            <i className="fa fa-check-circle modal-check" aria-hidden="true"></i>
+            <h1>Updated!</h1>
+            <p>Your Styles Have Been Updated</p>
+          </div>
+          <div
+            className="modal-bottom"
           >
             <button
               className="savepopover-button"
@@ -19,11 +26,6 @@ class UpdatePopover extends Component {
             >
             x
             </button>
-            <div
-              className="modal-body"
-            >
-              <p>Template Updated!</p>
-            </div>
           </div>
         </div>
       </Popover>
