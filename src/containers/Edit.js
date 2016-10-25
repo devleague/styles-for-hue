@@ -193,6 +193,11 @@ class Edit extends Component {
       var file    = document.querySelector('input[type=file]').files[0];
       var reader  = new FileReader();
 
+      if (file.size > 1600000) {
+        alert("Your file size is: " + file.size + "\nPlease select a smaller file size.");
+        return;
+      }
+
       reader.addEventListener("load", function () {
         preview.src = reader.result;
       }, false);
