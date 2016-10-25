@@ -30,10 +30,12 @@ class TemplateEdit extends Component {
         }
       }
     })
-    .then(() => {
-      setTimeout(() => {
-        browserHistory.push('/template');
-      }, 3000)
+    .then((result) => {
+      if(result === null){
+        setTimeout(() => {
+          browserHistory.push('/template');
+        }, 3000)
+      }
     });
   }
   loadTheme () {
