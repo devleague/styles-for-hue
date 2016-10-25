@@ -10,10 +10,9 @@ class ColorMenu extends Component {
     var color = document.getElementById("colorMenu").value;
     return color;
   }
-  changeColorPalette() {
-    console.log(this.props.colorPalette);
+  changeColorPalette(colorPalette) {
     var colorArrayIndex = document.getElementById("colorPalette").value;
-    return this.switchThemeColor(this.props.colorPalette[colorArrayIndex]);
+    return this.switchThemeColor(colorPalette[colorArrayIndex].backgroundColor);
   }
 
   switchElementColor(color, selectedElementId, elements) {
@@ -25,26 +24,25 @@ class ColorMenu extends Component {
       if (elem.children) {
         elem.children = elem.children.map((child) => {
           if (child.elementId === selectedElementId) {
-          return { ...child, style: { ...child.style, backgroundColor: color}};
-        }
+            return { ...child, style: { ...child.style, backgroundColor: color}};
+          }
           if (child.children) {
-
             child.children = child.children.map((secondChild) => {
               if (secondChild.elementId === selectedElementId) {
-          return { ...secondChild, style: { ...secondChild.style, backgroundColor: color}};
-        }
+                return { ...secondChild, style: { ...secondChild.style, backgroundColor: color}};
+              }
               if (secondChild.children) {
                 secondChild.children = secondChild.children.map((thirdChild) => {
-                  if (thirdChild.elementId === selectedElementId) {
-          return { ...thirdChild, style: { ...thirdChild.style, backgroundColor: color}};
-        }
                   if (thirdChild.children) {
                     thirdChild.children = thirdChild.children.map((fourthChild) => {
                       if (fourthChild.elementId === selectedElementId) {
-          return { ...fourthChild, style: { ...fourthChild.style, backgroundColor: color}};
-        }
-                       return { ...fourthChild};
+                        return { ...fourthChild, style: { ...fourthChild.style, backgroundColor: color}};
+                      }
+                      return { ...fourthChild};
                     })
+                  }
+                  if (thirdChild.elementId === selectedElementId) {
+                    return { ...thirdChild, style: { ...thirdChild.style, backgroundColor: color}};
                   }
                   return { ...thirdChild};
                 })
@@ -91,19 +89,28 @@ class ColorMenu extends Component {
                 secondChild.children = secondChild.children.map((thirdChild) => {
                   if (thirdChild.children) {
                     thirdChild.children = thirdChild.children.map((fourthChild) => {
-                       return { ...fourthChild, style: { ...fourthChild.style, color: colorArray[3].value}};
+                      return { ...fourthChild, style: { ...fourthChild.style, color: colorArray[colorArray.length - 1].value}};
                     })
                   }
-                  return { ...thirdChild, style: { ...thirdChild.style, backgroundColor: colorArray[2].value}};
+                  return { ...thirdChild};
                 })
-              }
-              if (secondChild.tag === 'div') {
-                return { ...secondChild, style: { ...secondChild.style, backgroundColor: colorArray[0].value}};
               }
               return { ...secondChild};
             })
           }
-          return { ...child, style: { ...child.style, backgroundColor: colorArray[1].value}};
+          if (child.className.indexOf('header') !== -1) {
+            return { ...child, style: { ...child.style, backgroundColor: colorArray[0].value}};
+          }
+          if (child.className.indexOf('first') !== -1) {
+            return { ...child, style: { ...child.style, backgroundColor: colorArray[1].value}};
+          }
+          if (child.className.indexOf('second') !== -1) {
+            return { ...child, style: { ...child.style, backgroundColor: colorArray[2].value}};
+          }
+          if (child.className.indexOf('footer') !== -1) {
+            return { ...child, style: { ...child.style, backgroundColor: colorArray[3].value}};
+          }
+          return { ...child};
         })
       }
       return { ...elem, style: { ...elem.style, backgroundColor: colorArray[0].value}};
@@ -112,21 +119,31 @@ class ColorMenu extends Component {
   }
 
   render() {
+    let palettes = [];
+    palettes = this.props.colorPalette.map((palette, index) => {
+      return (
+        <option
+          key={index}
+          value={index}
+        >
+          {palette.name}
+        </option>
+      )
+    })
     return (
       <div className="menu-show-details">
       <h4>Pick Your Palette:</h4>
         <select
           id="colorPalette"
           defaultValue="0"
-          onChange={() => this.changeColorPalette()}
+          onChange={() => this.changeColorPalette(this.props.colorPalette)}
         >
-          <option value="0">Palette 1</option>
-          <option value="1">Palette 2</option>
+          {palettes}
         </select>
         <h4>Pick Your Color:</h4>
           <select id="colorMenu" defaultValue="0" onChange={() => this.switchElementColor(this.changeColor(), this.props.selectedElement.selectedElementId, this.props.elements)}>
             <option value="0" disabled="disabled">SELECT COLOR</option>
-            {this.props.colorPalette[0].map((color, index) => {
+            {this.props.selectedColorPalette.map((color, index) => {
               return (
                 <option
                   key={ index }
