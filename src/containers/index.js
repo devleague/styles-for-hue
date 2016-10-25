@@ -8,3 +8,4 @@ export { default as About } from './About';
 export { default as Footer } from './Footer';
 export { default as Resource } from './Resource';
 export { default as NotFound } from './NotFound';
+export { default as Tutorial } from './Tutorial';
