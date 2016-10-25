@@ -89,3 +89,10 @@ export function changeImage (link) {
     data: link
   }
 }
+
+export function getTemplates (templates) {
+  return {
+    type: 'GET_TEMPLATES',
+    data: templates
+  }
+}

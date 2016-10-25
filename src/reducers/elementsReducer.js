@@ -7,7 +7,8 @@ const initialState = {
   selectedElement: {
     selectedElementId: 0,
     selectedStyle: {}
-  }
+  },
+  templates: []
 };
 
 const reducer = (state = initialState, action) => {
@@ -57,6 +58,8 @@ const reducer = (state = initialState, action) => {
       return { ...state, _id: `ObjectId(${action.data})`, doc: { ...state.doc, elements: [ ...state.doc.elements ]} };
     case "EDIT_DOC":
       return { ...state, _id: `ObjectId(${action.data})`, doc: { ...state.doc, elements: [ ...state.doc.elements ]} };
+    case "GET_TEMPLATES":
+      return { ...state, templates: action.data};
     default:
       return { ...state};
   }
