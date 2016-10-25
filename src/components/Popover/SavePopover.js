@@ -11,6 +11,12 @@ class SavePopover extends Component {
         <div
           className="modal-content"
         >
+          <button
+            className="close-button"
+            onClick={this.props.click}
+          >
+            <i className="fa fa-times modal-close" aria-hidden="true"></i>
+          </button>
           <div
             className="modal-top"
           >
