@@ -63,6 +63,16 @@ class Edit extends Component {
     this.handleClickUpdate(e);
   }
 
+  templateNames() {
+    return $.ajax({
+      url: '/api/usertemplate',
+      dataType: 'json'
+    })
+    .then((data) => {
+      console.log(data);
+    })
+  }
+
   saveStyle(styleName){
     return $.ajax({
       url: '/api/usertemplate',
@@ -217,7 +227,8 @@ class Edit extends Component {
 
 
   render() {
-    console.log(this.templateNames());
+    // console.log(this.templateNames());
+    this.templateNames();
     let fontComponentOpenClass = " ";
     if(this.props.menuShow.showFontMenu === true){
       fontComponentOpenClass = "open";
@@ -253,11 +264,13 @@ class Edit extends Component {
       divComponent = (
         <ColorMenu
           colorPalette={this.props.colors.colorPalette}
+          selectedColorPalette={this.props.colors.selectedColorPalette}
           selectedElement={this.props.elementsReducer.selectedElement}
           elements={this.props.elementsReducer.doc.elements}
           changeColor={this.props.changeColor}
           changeColorPalette={this.props.changeColorPalette}
           changeDivWidth={this.props.divWidth}
+          styles={this.props.styles.styles}
         />
       );
     };
