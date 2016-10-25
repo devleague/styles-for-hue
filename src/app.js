@@ -26,7 +26,7 @@ ReactDOM.render(
         >
         </Route>
         <Route
-          path="/tutorial" Component={ Tutorial }
+          path="/tutorial" component={ Tutorial }
         >
         </Route>
         <Route
