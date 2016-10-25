@@ -544,6 +544,18 @@ a{
   }
 }
 
+.row-resource{
+  padding: 75px 0;
+  justify-content: center;
+  align-items: center;
+  .flex-resource-wrap-container{
+    margin: 0 50px;
+    display: flex;
+    flex-flow: row wrap;
+    width: 900px;
+  }
+}
+
 .fontsite-container, .colorpalette-container, .grid-container{
   width: 900px;
   line-height: 1.25;
@@ -578,6 +590,9 @@ a{
     visibility: visible;
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
+  }
+  p{
+    font-style: italic;
   }
 }
 
