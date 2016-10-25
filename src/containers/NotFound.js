@@ -9,7 +9,7 @@ class NotFound extends Component {
         className="content-container"
       >
         <div
-          className="notfound-image"
+          className="header-image notfound-image"
         >
           <h1>Whoops!</h1>
         </div>

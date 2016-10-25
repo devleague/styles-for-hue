@@ -1,0 +1,39 @@
+.row{
+  padding: 75px 0;
+  .flex-nowrap-container{
+    margin: 0 50px;
+    display: flex;
+    flex-flow: row nowrap;
+    .flex-50{
+      flex: 0 0 50%;
+    }
+    .left{
+      padding-right: 25px;
+    }
+    .right{
+      padding-left: 25px;
+    }
+  }
+  .flex-wrap-container{
+    margin: 0 50px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
+}
+
+.header-image{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  background-color: $teal;
+  padding: 175px 0 125px;
+  background-attachment: fixed;
+  h1{
+    font-size: 3rem;
+    font-weight: bold;
+    color: $white;
+    text-transform: uppercase;
+    margin-left: 50px;
+  }
+}
