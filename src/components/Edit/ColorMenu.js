@@ -99,14 +99,12 @@ class ColorMenu extends Component {
             })
           }
           if (child.className.indexOf('header') !== -1) {
-            console.log(child);
-            console.log({ ...child, style: { ...child.style, backgroundColor: colorArray[1].value}});
             return { ...child, style: { ...child.style, backgroundColor: colorArray[1].value}};
           }
+          if (child.className.indexOf('first') !== -1) {
+            return { ...child, style: { ...child.style, backgroundColor: colorArray[2].value}};
+          }
           return { ...child};
-          // if (child.className.indexOf('first') !== -1) {
-          //   return { ...child, style: { ...child.style, backgroundColor: colorArray[2].value}};
-          // }
         })
       }
       return { ...elem, style: { ...elem.style, backgroundColor: colorArray[0].value}};
