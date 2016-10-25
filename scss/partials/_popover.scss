@@ -1,3 +1,4 @@
+$white: #FFFFFF;
 $dark-grey: #535353;
 $light-grey: #E6E8E6;
 $teal: #30B3AA;
@@ -59,34 +60,36 @@ $teal: #30B3AA;
       }
     }
     .modal-bottom{
-      padding: 5px 10px;
-      font-size: 14px;
+      padding: 20px 0;
+      background: $white;
+      text-align: center;
+      // font-size: 14px;
       // font-weight: 500;
       // min-height: 30px;
       // min-width: 100px;
       // max-width: 150px;
-      background: #fff;
-      color: #444;
-      text-align: center;
+      // color: #444;
+      .savepopover-button{
+        background: $dark-grey;
+        color: $white;
+        padding: 10px 20px;
+        border-radius: 3px;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 0.75rem;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        // letter-spacing: 2px;
+        &:hover{
+          background-color: darken($dark-grey, 10%)
+        }
+      }
     }
   }
 }
 
-
-.savepopover-button {
-  border: none;
-  background: $dark-grey;
-  color: #fff;
-  padding: 10px 22px;
-  border-radius: 3px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 600;
-  font-size: 10px;
-  cursor: pointer;
-  outline: none;
-}
-button:hover {
-  background: $dark-grey;
-  outline: none;
-}
+// button:hover {
+//   background: $dark-grey;
+//   outline: none;
+// }
