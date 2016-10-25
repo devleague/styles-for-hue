@@ -89,7 +89,7 @@ class Edit extends Component {
       type: 'PUT',
       dataType: 'json',
       contentType: 'application/json',
-      data: JSON.stringify({ ...this.props.elementsReducer, name: 'HUEHUEHUE'})
+      data: JSON.stringify({...this.props.elementsReducer, doc: {...this.props.elementsReducer.doc, name: styleName}})
     })
   }
 
