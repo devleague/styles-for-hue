@@ -21,7 +21,8 @@ class Edit extends Component {
   constructor (props) {
     super(props);
     this.save = () => {
-      this.saveStyle(this.props.elementsReducer.doc.elements);
+      let styleName = document.getElementById('template-name').value;
+      this.saveStyle(styleName);
     }
     this.update = () => {
       this.editSave(this.props.elementsReducer.doc.elements);
@@ -33,8 +34,24 @@ class Edit extends Component {
     this.previewFile = this.previewFile.bind(this);
   }
 
-  _handleClick(e) {
-    e.preventDefault();
+  componentDidMount() {
+    this.templateNames()
+      .then((templates) => {
+        this.props.getTemplates(templates);
+      })
+  }
+
+  switchTemplates() {
+    let id = document.getElementById('userTemplate').value;
+    browserHistory.push(`/template/${id}`);
+    return this.props.loadSavedTheme(id)
+      .then((doc) => {
+        this.props.setElements(doc);
+      })
+  }
+
+  _handleClick() {
+    // e.preventDefault();
     if (this.props.popover.modal) {
       this.props.hidePopover();
     } else {
@@ -51,24 +68,32 @@ class Edit extends Component {
     }
   }
 
-  saveFilePopup(e) {
-    this.save();
-    this.handleClick(e);
+  saveFilePopup(styleName) {
+    this.save(styleName);
+    this.handleClick();
     this.props.updateButtonShow();
   };
+
 
   updatePopup(e) {
     this.update();
     this.handleClickUpdate(e);
   }
 
-  saveStyle(){
+  templateNames() {
+    return $.ajax({
+      url: '/api/usertemplate',
+      dataType: 'json'
+    })
+  }
+
+  saveStyle(styleName){
     return $.ajax({
       url: '/api/usertemplate',
       type: 'POST',
       dataType: 'json',
       contentType: 'application/json',
-      data: JSON.stringify({template: this.props.elementsReducer.doc})
+      data: JSON.stringify({...this.props.elementsReducer, name: styleName})
     })
     .then((data) => {
       this.props.newDoc(data._id);
@@ -88,7 +113,7 @@ class Edit extends Component {
       type: 'PUT',
       dataType: 'json',
       contentType: 'application/json',
-      data: JSON.stringify({template: this.props.elementsReducer.doc})
+      data: JSON.stringify({...this.props.elementsReducer, doc: {...this.props.elementsReducer.doc, name: styleName}})
     })
   }
 
@@ -286,18 +311,27 @@ class Edit extends Component {
         </div>
       )
     }
-    let templateComponent = null;
+    let templates = this.props.elementsReducer.templates.map((template) => {
+      return (
+        <option
+          key={template._id}
+          value={template._id}
+        >
+          {template.name}
+        </option>
+      )
+    })
+    let templateDropdown = [];
     if (this.props.menuShow.showTemplateMenu === true) {
-      templateComponent = (
+      templateDropdown = (
         <div className="menu-show-details">
-          <div className="dropdown">
-            <button className="dropbtn"
-              onMouseOver={this.changeUser}></button>
-            <div className="dropdown-content"
-              id="Input"
+          <h4>Choose Your Template</h4>
+            <select
+              id="userTemplate"
+              onChange={() => this.switchTemplates()}
             >
-            </div>
-          </div>
+              {templates}
+            </select>
           <div className="functional-button-container">
             <a href="/template" className="functional-button">Reset Template &<br/> Create New Style</a>
           </div>
@@ -415,28 +449,33 @@ class Edit extends Component {
               <i id="icon" className={"fa fa-caret-right" + " " + templateComponentOpenClass}></i>
             </button>
           </div>
-          { templateComponent }
+          {templateDropdown}
         </div>
         <div className="functional-button-container">
-          <button
-            className="functional-button"
-            type="submit"
-            onClick={ this.saveFilePopup }
-          >
-            Save Styles
-          </button>
+          <form onSubmit={(event)=> {
+              event.preventDefault();
+              return this.saveFilePopup();
+            }
+          }>
+            <input type="text" id="template-name"/>
+            <input
+              className="functional-button"
+              type="submit"
+              value="Save Styles"
+            >
+            </input>
+          </form>
           <SavePopover
             show={ this.props.popover.modal }
             click={ this.handleClick }
           />
         </div>
           { updateComponent }
-        <form className="functional-button-container">
+        <div className="functional-button-container">
           <button
             className="functional-button"
-            type="submit"
             onClick={this.zipFile}>Export HTML and CSS Files</button>
-        </form>
+        </div>
         { /* <div className="current-styles-container">
           <h6>Current Element Styles</h6>
           <div className="current-elem-styles"
