@@ -20,6 +20,10 @@ class Footer extends Component {
               </li>
               <li className="footer-menu-divider">&sdot;</li>
               <li>
+                <Link to="/tutorial">Tutorial</Link>
+              </li>
+              <li className="footer-menu-divider">&sdot;</li>
+              <li>
                 <Link to="/resources">Resources</Link>
               </li>
             </ul>

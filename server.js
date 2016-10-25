@@ -52,8 +52,8 @@ let UserTemplate = mongoose.model('UserTemplate', UserTemplateSchema, 'usertempl
 app.set('port', (process.env.PORT || 3000))
 
 app.use('/', express.static(path.join(__dirname, 'public')));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json({limit: "16mb"}));
+app.use(bodyParser.urlencoded({ limit: "16mb", extended: true}));
 
 app.get('/api/usertemplate', (req, res) => {
   UserTemplate.find({})
