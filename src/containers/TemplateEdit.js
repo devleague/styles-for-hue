@@ -15,9 +15,9 @@ class TemplateEdit extends Component {
     this.showElementStyles = this.showElementStyles.bind(this);
   }
 
-  loadSavedTheme () {
+  loadSavedTheme (hash) {
     return $.ajax({
-      url: `/api/template/${this.props.params.hash}`,
+      url: `/api/template/${hash}`,
       dataType: 'json',
       success: function (result) {
         if(result === null)  {
@@ -58,7 +58,7 @@ class TemplateEdit extends Component {
 
   componentDidMount() {
     if (this.props.params.hash) {
-      this.loadSavedTheme()
+      this.loadSavedTheme(this.props.params.hash)
         .then((resultsObject) =>{
           return resultsObject;
         })
