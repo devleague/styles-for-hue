@@ -21,28 +21,27 @@ class ColorMenu extends Component {
       if (elem.elementId === selectedElementId) {
         return { ...elem, style: { ...elem.style, backgroundColor: color}};
       }
-      if (elem.children) {
-        elem.children = elem.children.map((child) => {
-          if (child.elementId === selectedElementId) {
-          return { ...child, style: { ...child.style, backgroundColor: color}};
-        }
+        if (elem.children) {
+          elem.children = elem.children.map((child) => {
+            if (child.elementId === selectedElementId) {
+              return { ...child, style: { ...child.style, backgroundColor: color}};
+            }
           if (child.children) {
-
             child.children = child.children.map((secondChild) => {
               if (secondChild.elementId === selectedElementId) {
-          return { ...secondChild, style: { ...secondChild.style, backgroundColor: color}};
-        }
+                return { ...secondChild, style: { ...secondChild.style, backgroundColor: color}};
+              }
               if (secondChild.children) {
                 secondChild.children = secondChild.children.map((thirdChild) => {
                   if (thirdChild.elementId === selectedElementId) {
-          return { ...thirdChild, style: { ...thirdChild.style, backgroundColor: color}};
-        }
+                    return { ...thirdChild, style: { ...thirdChild.style, backgroundColor: color}};
+                  }
                   if (thirdChild.children) {
                     thirdChild.children = thirdChild.children.map((fourthChild) => {
                       if (fourthChild.elementId === selectedElementId) {
-          return { ...fourthChild, style: { ...fourthChild.style, backgroundColor: color}};
-        }
-                       return { ...fourthChild};
+                        return { ...fourthChild, style: { ...fourthChild.style, backgroundColor: color}};
+                      }
+                      return { ...fourthChild};
                     })
                   }
                   return { ...thirdChild};
@@ -90,13 +89,13 @@ class ColorMenu extends Component {
                 secondChild.children = secondChild.children.map((thirdChild) => {
                   if (thirdChild.children) {
                     thirdChild.children = thirdChild.children.map((fourthChild) => {
-                       return { ...fourthChild, style: { ...fourthChild.style, color: colorArray[3].value}};
+                       return { ...fourthChild};
                     })
                   }
-                  return { ...thirdChild, style: { ...thirdChild.style, backgroundColor: colorArray[2].value}};
+                  return { ...thirdChild};
                 })
               }
-              if (secondChild.tag === 'div') {
+              if (secondChild.className.indexOf('header') !== -1) {
                 return { ...secondChild, style: { ...secondChild.style, backgroundColor: colorArray[0].value}};
               }
               return { ...secondChild};
