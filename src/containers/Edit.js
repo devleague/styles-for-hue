@@ -263,6 +263,15 @@ class Edit extends Component {
           <h4>Upload New Hero Image</h4>
           <input type="file" onChange={this.previewFile}></input>
           <img src="" className="preview-upload" alt="Image preview..."></img>
+          <h4>OR Add Hero Image URL</h4>
+          <form onSubmit={(event)=> {
+              event.preventDefault();
+              return this.props.changeImage(document.getElementById('url').value);
+            }
+          }>
+            <input type="text" id="url"/>
+            <input type="submit" value="Submit"/>
+          </form>
         </div>
       )
     }
