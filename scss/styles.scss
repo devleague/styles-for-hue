@@ -98,160 +98,160 @@ a{
 }
 
 
-.pos-1{
-  @include small-1{
+@include small-1{
+  .pos-1{
     order: 1;
     .profile{
       background: url(/images/nikki.jpg) -720px 0;
     }
   }
-  @include small-2{
-    order: 1;
-    .profile{
-      background: url(/images/nikki.jpg) -540px 0;
-    }
-  }
-  @include medium-1{
-    order: 1;
-    .profile{
-      background: url(/images/nikki.jpg) -360px 0;
-    }
-  }
-  @include medium-2{
-    order: 1;
-    .profile{
-      background: url(/images/nikki.jpg) -180px 0;
-    }
-  }
-  @include large{
-    order: 1;
-    .profile{
-      background: url(/images/nikki.jpg) 0 0;
-    }
-  }
-}
-.pos-2{
-  @include small-1{
+  .pos-2{
     order: 2;
     .profile{
       background: url(/images/lisa.jpg) -720px 0;
     }
   }
-  @include small-2{
-    order: 2;
-    .profile{
-      background: url(/images/lisa.jpg) -540px 0;
-    }
-  }
-  @include medium-1{
-    order: 3;
-    .profile{
-      background: url(/images/lisa.jpg) -360px 0;
-    }
-  }
-  @include medium-2{
-    order: 2;
-    .profile{
-      background: url(/images/lisa.jpg) -180px 0;
-    }
-  }
-  @include large{
-    order: 2;
-    .profile{
-      background: url(/images/lisa.jpg) 0 0;
-    }
-  }
-}
-.pos-3{
-  @include small-1{
+  .pos-3{
     order: 3;
     .profile{
       background: url(/images/bryce.jpg) -720px 0;
     }
   }
-  @include small-2{
-    order: 5;
-    .profile{
-      background: url(/images/bryce.jpg) -540px 0;
-    }
-  }
-  @include medium-1{
-    order: 2;
-    .profile{
-      background: url(/images/bryce.jpg) -360px 0;
-    }
-  }
-  @include medium-2{
-    order: 5;
-    .profile{
-      background: url(/images/bryce.jpg) -180px 0;
-    }
-  }
-  @include large{
-    order: 3;
-    .profile{
-      background: url(/images/bryce.jpg) -00px 0;
-    }
-  }
-}
-.pos-4{
-  @include small-1{
+  .pos-4{
     order: 4;
     .profile{
       background: url(/images/christie.jpg) -720px 0;
     }
   }
-  @include small-2{
-    order: 3;
-    .profile{
-      background: url(/images/christie.jpg) -540px 0;
-    }
-  }
-  @include medium-1{
-    order: 4;
-    .profile{
-      background: url(/images/christie.jpg) -360px 0;
-    }
-  }
-  @include medium-2{
-    order: 3;
-    .profile{
-      background: url(/images/christie.jpg) -180px 0;
-    }
-  }
-  @include large{
-    order: 4;
-    .profile{
-      background: url(/images/christie.jpg) -0 0;
-    }
-  }
-}
-.pos-5{
-  @include small-1{
+  .pos-5{
     order: 5;
     .profile{
       background: url(/images/sheena.jpg) -720px 0;
     }
   }
-  @include small-2{
+}
+@include small-2{
+  .pos-1{
+    order: 1;
+    .profile{
+      background: url(/images/nikki.jpg) -540px 0;
+    }
+  }
+  .pos-2{
+    order: 2;
+    .profile{
+      background: url(/images/lisa.jpg) -540px 0;
+    }
+  }
+  .pos-3{
+    order: 5;
+    .profile{
+      background: url(/images/bryce.jpg) -540px 0;
+    }
+  }
+  .pos-4{
+    order: 3;
+    .profile{
+      background: url(/images/christie.jpg) -540px 0;
+    }
+  }
+  .pos-5{
     order: 4;
     .profile{
       background: url(/images/sheena.jpg) -540px 0;
     }
   }
-  @include medium-1{
+}
+@include medium-1{
+  .pos-1{
+    order: 1;
+    .profile{
+      background: url(/images/nikki.jpg) -360px 0;
+    }
+  }
+  .pos-2{
+    order: 3;
+    .profile{
+      background: url(/images/lisa.jpg) -360px 0;
+    }
+  }
+  .pos-3{
+    order: 2;
+    .profile{
+      background: url(/images/bryce.jpg) -360px 0;
+    }
+  }
+  .pos-4{
+    order: 4;
+    .profile{
+      background: url(/images/christie.jpg) -360px 0;
+    }
+  }
+  .pos-5{
     order: 5;
     .profile{
       background: url(/images/sheena.jpg) -360px 0;
     }
   }
-  @include medium-2{
+}
+@include medium-2{
+  .pos-1{
+    order: 1;
+    .profile{
+      background: url(/images/nikki.jpg) -180px 0;
+    }
+  }
+  .pos-2{
+    order: 2;
+    .profile{
+      background: url(/images/lisa.jpg) -180px 0;
+    }
+  }
+  .pos-3{
+    order: 5;
+    .profile{
+      background: url(/images/bryce.jpg) -180px 0;
+    }
+  }
+  .pos-4{
+    order: 3;
+    .profile{
+      background: url(/images/christie.jpg) -180px 0;
+    }
+  }
+  .pos-5{
     order: 4;
     .profile{
       background: url(/images/sheena.jpg) -180px 0;
     }
   }
-  @include large{
+}
+@include large{
+  .pos-1{
+    order: 1;
+    .profile{
+      background: url(/images/nikki.jpg) 0 0;
+    }
+  }
+  .pos-2{
+    order: 2;
+    .profile{
+      background: url(/images/lisa.jpg) 0 0;
+    }
+  }
+  .pos-3{
+    order: 3;
+    .profile{
+      background: url(/images/bryce.jpg) -00px 0;
+    }
+  }
+  .pos-4{
+    order: 4;
+    .profile{
+      background: url(/images/christie.jpg) -0 0;
+    }
+  }
+  .pos-5{
     order: 5;
     .profile{
       background: url(/images/sheena.jpg) 0 0;
