@@ -39,6 +39,7 @@ class ImgComp extends Component {
               selectedElementId={this.props.selectedElementId}
               clickHandler={this.props.clickHandler}
               mouseOverColor={this.props.mouseOverColor}
+              buttonColor={this.props.buttonColor}
             >
             </PComp>
           )
