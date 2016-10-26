@@ -12,16 +12,16 @@ class About extends Component {
         >
           <h1>About Us</h1>
         </div>
-        <div className="row">
+        <div className="row about-us">
           <div className="flex-wrap-container">
             <div className="flex-100">
               <h2>Who We Are</h2>
             </div>
             <div className="flex-50">
-              <p>Oat cake dragée cheesecake chocolate cake. Jelly dessert dessert chocolate liquorice caramels sweet ice cream liquorice. Gummi bears tart topping gummies jelly bear claw. Lemon drops tootsie roll topping. Dragée gingerbread jelly beans cake dragée cake caramels. Icing sesame snaps bonbon sweet roll.</p>
+              <p>We're <a href="http://www.devleague.com/" target="_blank">DevLeague</a> students from Cohort 11! Before entering DevLeague, our coding skills ranged from minimal to non-existent. But now we have this wonderful app!</p>
             </div>
             <div className="flex-50">
-              <p>Marzipan bear claw sweet donut. Jujubes croissant candy wafer cheesecake caramels carrot cake tart. Apple pie chocolate apple pie gummi bears. Candy biscuit cheesecake gummi bears powder. Tootsie roll sugar plum chocolate cake jelly beans chupa chups bear claw apple pie.</p>
+              <p>Styles for Hue is a application for web developers who need help styling a website.</p>
             </div>
           </div>
         </div>
