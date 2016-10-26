@@ -43,7 +43,7 @@ class About extends Component {
                   Lisa Zhou
                 </a>
               </h3>
-              <p>Makes it pretty!</p>
+              <p>Gulped the sprites</p>
             </div>
             <div className="flex-photos pos-3">
               <div className="profile"/>
