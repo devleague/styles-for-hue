@@ -30,7 +30,7 @@ class About extends Component {
             <div className="flex-photos pos-1">
               <div className="profile"/>
               <h3>
-                <a className="link-to-github" href="https://github.com/ynikki">
+                <a className="link-to-github" href="https://github.com/ynikki" target="_blank">
                   Nikki Kobayashi
                 </a>
               </h3>
@@ -39,7 +39,7 @@ class About extends Component {
             <div className="flex-photos pos-2">
               <div className="profile"/>
               <h3>
-                <a className="link-to-github" href="https://github.com/herrolisa">
+                <a className="link-to-github" href="https://github.com/herrolisa" target="_blank">
                   Lisa Zhou
                 </a>
               </h3>
@@ -48,7 +48,7 @@ class About extends Component {
             <div className="flex-photos pos-3">
               <div className="profile"/>
               <h3>
-                <a className="link-to-github" href="https://github.com/tokumori">
+                <a className="link-to-github" href="https://github.com/tokumori" target="_blank">
                   Bryce Saito
                 </a>
               </h3>
@@ -57,7 +57,7 @@ class About extends Component {
             <div className="flex-photos pos-4">
               <div className="profile"/>
               <h3>
-                <a className="link-to-github" href="https://github.com/creindle">
+                <a className="link-to-github" href="https://github.com/creindle" target="_blank">
                   Christie Reindle
                 </a>
               </h3>
@@ -66,7 +66,7 @@ class About extends Component {
             <div className="flex-photos pos-5">
               <div className="profile"/>
               <h3>
-                <a className="link-to-github" href="https://github.com/sogalutira">
+                <a className="link-to-github" href="https://github.com/sogalutira" target="_blank">
                   Sheena Galutira
                 </a>
               </h3>

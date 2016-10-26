@@ -78,8 +78,11 @@ a{
   }
 }
 
+.link-to-github{
+  color: black;
+}
+
 .link-to-github:hover{
-  font-family: cursive;
   color: $teal;
 }
 
