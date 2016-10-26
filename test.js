@@ -365,7 +365,7 @@ db.styles.insert(
       ],
     },
     style9: {
-      name: 'Swimming in Green',
+      name: 'Aqua Mint',
       backgroundColor: [
         {'label': 'Persian Green', 'value':'#00A79D'},
         {'label': 'Eggshell', 'value': '#F3E6D8'},
