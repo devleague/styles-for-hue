@@ -34,6 +34,7 @@ const UserTemplateSchema = new Schema({
   date: { type: Date, default: Date.now },
   doc: {
     _id: String,
+    buttonColor: Object,
     elements:[{
       children: Object,
       className: String,

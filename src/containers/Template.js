@@ -29,7 +29,7 @@ class Template extends Component {
               selectElement={this.props.selectElement}
               selectedElementId={this.props.elementsReducer.selectedElement.selectedElementId}
               mouseOverColor={mouseOverColor}
-              buttonColor={this.props.elementsReducer.doc.buttonColors}
+              buttonColor={this.props.elementsReducer.doc.buttonColor}
               setButtonColors={this.props.setButtonColors}
             >
             </DivComp>

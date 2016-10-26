@@ -3,7 +3,7 @@ const initialState = {
   doc: {
     _id: null,
     elements: [],
-    buttonColors: {}
+    buttonColor: {}
   },
   selectedElement: {
     selectedElementId: 0,
@@ -62,7 +62,7 @@ const reducer = (state = initialState, action) => {
     case "GET_TEMPLATES":
       return { ...state, templates: action.data};
     case "SET_BUTTON_COLORS":
-      return { ...state, doc: { ...state.doc, buttonColors: action.data}};
+      return { ...state, doc: { ...state.doc, buttonColor: action.data}};
     default:
       return { ...state};
   }
