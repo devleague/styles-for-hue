@@ -30,27 +30,27 @@ class About extends Component {
             <div className="flex-photos pos-1">
               <div className="profile"/>
               <h3>Nikki Kobayashi</h3>
-              <p>Stuff I Did</p>
+              <p>Leveled up on Toggles/Modals</p>
             </div>
             <div className="flex-photos pos-2">
               <div className="profile"/>
               <h3>Lisa Zhou</h3>
-              <p>Stuff I Did</p>
+              <p>Makes it pretty!</p>
             </div>
             <div className="flex-photos pos-3">
               <div className="profile"/>
               <h3>Bryce Saito</h3>
-              <p>Stuff I Did</p>
+              <p>Dispatch Action to Set State to Stressed Out</p>
             </div>
             <div className="flex-photos pos-4">
               <div className="profile"/>
               <h3>Christie Reindle</h3>
-              <p>Stuff I Did</p>
+              <p>Packaged the program for hue to use!</p>
             </div>
             <div className="flex-photos pos-5">
               <div className="profile"/>
               <h3>Sheena Galutira</h3>
-              <p>Stuff I Did</p>
+              <p>db.HACKED.findOneAndDelete(&#123;&#125;)</p>
             </div>
           </div>
         </div>
