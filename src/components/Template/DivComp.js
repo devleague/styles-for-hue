@@ -69,6 +69,7 @@ class DivComp extends Component {
                 selectElement={this.props.selectElement}
                 selectedElementId={this.props.selectedElementId}
                 clickHandler={this.clickHandler}
+                mouseOverColor={this.props.mouseOverColor}
               />
             )
           case 'div':
@@ -107,6 +108,8 @@ class DivComp extends Component {
                                 selectedElementId={this.props.selectedElementId}
                                 clickHandler={this.clickHandler}
                                 mouseOverColor={this.props.mouseOverColor}
+                                hover={this.props.hover}
+                                isHovered={this.props.isHovered}
                               >
                               </PComp>
                             )

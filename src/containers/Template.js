@@ -28,6 +28,8 @@ class Template extends Component {
               selectElement={this.props.selectElement}
               selectedElementId={this.props.elementsReducer.selectedElement.selectedElementId}
               mouseOverColor={mouseOverColor}
+              hover={this.props.hover}
+              isHovered={this.props.elementsReducer.hovered}
             >
             </DivComp>
           )
