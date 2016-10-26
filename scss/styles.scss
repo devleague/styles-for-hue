@@ -78,6 +78,11 @@ a{
   }
 }
 
+.link-to-github:hover{
+  font-family: cursive;
+  color: $teal;
+}
+
 .flex-photos{
   flex: 0 0 200px;
   text-align: center;
