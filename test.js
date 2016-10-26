@@ -333,7 +333,7 @@ db.styles.insert(
       ],
     },
     style6: {
-      name: 'Autumn',
+      name: 'Pumpkin Spice',
       backgroundColor: [
         {'label': 'Pumpkin Spice', 'value': '#FCC160'},
         {'label': 'Muted Pumpkin', 'value':'#E5DAC3'},
