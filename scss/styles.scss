@@ -72,6 +72,12 @@ a{
   background-image: url(https://static.pexels.com/photos/70232/pexels-photo-70232.jpeg);
 }
 
+.about-us{
+  p{
+    line-height: 1.25;
+  }
+}
+
 .flex-photos{
   flex: 0 0 200px;
   text-align: center;
@@ -85,7 +91,7 @@ a{
     height: 180px;
     border-radius: 5px;
   }
-  h2{
+  h3{
     font-size: 0.9rem;
     font-weight: bold;
     text-transform: uppercase;
@@ -96,7 +102,6 @@ a{
     color: $dark-grey;
   }
 }
-
 
 @include small-1{
   .pos-1{
