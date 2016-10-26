@@ -18,7 +18,7 @@ class About extends Component {
               <h2>Who We Are</h2>
             </div>
             <div className="flex-50">
-              <p>We're <a href="http://www.devleague.com/" target="_blank">DevLeague</a> students from Cohort 11! Before entering DevLeague, our coding skills ranged from minimal to non-existent. But now we have this wonderful app!</p>
+              <p>We are <a href="http://www.devleague.com/" target="_blank">DevLeague</a> students from Cohort 11! Before entering DevLeague, our coding skills ranged from minimal to non-existent. Using Javascript, HTML, CSS and various frameworks, we created this wonderful app for hue!</p>
             </div>
             <div className="flex-50">
               <p>Styles for Hue is a application for web developers who need help styling a website.</p>
