@@ -24,12 +24,17 @@ class Edit extends Component {
       let styleName = document.getElementById('template-name').value;
       this.saveStyle(styleName);
       return this.templateNames()
-      .then((templates) => {
-        this.props.getTemplates(templates);
-      })
+        .then((templates) => {
+          this.props.getTemplates(templates);
+        })
     }
     this.update = () => {
-      this.editSave(this.props.elementsReducer.doc.elements);
+      let styleName = document.getElementById('template-name').value;
+      this.editSave(styleName)
+      return this.templateNames()
+        .then((templates) => {
+          this.props.getTemplates(templates);
+        })
     }
     this.handleClick = this._handleClick.bind(this);
     this.saveFilePopup = this.saveFilePopup.bind(this);
@@ -111,13 +116,16 @@ class Edit extends Component {
     })
   }
 
-  editSave(){
+  editSave(styleName){
     return $.ajax({
       url: `/api/template/${this.props.hash}`,
       type: 'PUT',
       dataType: 'json',
       contentType: 'application/json',
-      data: JSON.stringify({...this.props.elementsReducer, doc: {...this.props.elementsReducer.doc, name: styleName}})
+      data: JSON.stringify({...this.props.elementsReducer, name: styleName})
+    })
+    .then((data) => {
+      this.props.editDoc(data._id);
     })
   }
 
@@ -208,7 +216,7 @@ class Edit extends Component {
     HTMLText = beautify_html(HTMLText);
 
     /*Creating text for README.md*/
-    var READMEText = 'Styles For Hue\n================\n\nCreate a user friendly app..\n\n###Created By:\nLisa Zhou (https://github.com/herrolisa), \nChristie Reindle (https://github.com/creindle), \nSheena Galutira (https://github.com/sogalutira), \nNikki Kobayashi (https://github.com/ynikki), \nBryce Saito (https://github.com/tokumori)\n\nTUTORIAL\n================================\n\nOn the Home page click on Start Styling or Template on the navigation bar.\n\nUse the Style Editor Sidebar and click on the icons next to the Font, Div, Images and Saved Templates to show the menu to change styles.\n\nFont\nPick Your Element: Change your fonts based on the type of element (p, h1, selected, or all).\nPick Your Font: Choose a font family.\nFont Color: Change colors using the color wheel.\nFont Size: Type in desired font size number.\n\nDiv\nPick Your Palette: Use preset palettes to change div colors.\nPick Your Color: Select a div and change the color of the individual div.\n\nSaving:\nClick on Save Styles to create a unique link to your template for later editing.\nUse Update Styles to update your current saved template.\nClick on Export HTML and CSS Files to download a .zip file of the HTML and CSS onto your computer.\n\nHover over Dropdown on the Style Editor Sidebar to view and access saved templates. Click on the hash (e.g. rJ_YxiKkg) in the Dropdown menu to go to saved template.';
+    var READMEText = 'Styles For Hue\n================\n\nCreate a user friendly app..\n\n###Created By:\nLisa Zhou (https://github.com/herrolisa), \nChristie Reindle (https://github.com/creindle), \nSheena Galutira (https://github.com/sogalutira), \nNikki Kobayashi (https://github.com/ynikki), \nBryce Saito (https://github.com/tokumori)\n\nTUTORIAL\n================================\n\nOn the Home page click on Start Styling or Template on the navigation bar.\n\nUse the Style Editor Sidebar and click on the icons next to the Font, Div, Images and Saved Templates to show the menu to change styles.\n\nFont\nPick Your Element: Change your fonts based on the type of element (p, h1, selected, or all).\nPick Your Font: Choose a font family.\nFont Color: Change colors using the color wheel.\nFont Size: Type in desired font size number.\n\nDiv\nPick Your Palette: Use preset palettes to change div colors.\nPick Your Color: Select a div and change the color of the individual div.\n\nSaving:\nName your template/style using the Name Your Style input field. You may choose to use the default name of Hue with a timestamp.\nClick on Save Styles to create a unique link to your template for later editing.\nUse Update Styles to update your current saved template.\nClick on Export HTML and CSS Files to download a .zip file of the HTML and CSS onto your computer.\n\nLoading Saved Styles/Templates:\nClick on Saved Styles in the Style Editor Sidebar\nUsing the Choose Your Template dropdown menu, select a template to load.';
 
     /*Creating files to be saved as .zip*/
     var HTMLBlob = new Blob([HTMLText], {type: "text/plain;charset=utf-8"});
