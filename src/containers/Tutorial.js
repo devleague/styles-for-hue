@@ -41,7 +41,7 @@ class Tutorial extends Component {
               <h3>Saving:</h3>
               <p>Click on Save Template to create a unique link to your template for later editing.</p>
               <p>Use Update Template to update your current saved template.</p>
-              <p>Click on Export HTML and CSS to download a .zip file of the HTML and CSS onto your computer</p>
+              <p>Click on Export HTML and CSS to download a .zip file of the HTML and CSS onto your computer.</p>
               <br />
               <p>Hover over Dropdown on the Edit Sidebar to view and access saved templates. Click on the hash (e.g. template_name) in the Dropdown menu to go to the saved template.</p>
             </div>
