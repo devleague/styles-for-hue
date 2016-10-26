@@ -311,7 +311,7 @@ db.styles.insert(
       ],
     },
     style4: {
-      name: 'Mimosa',
+      name: 'Neutrals',
       backgroundColor: [
         {'label': 'Neutral Grey', 'value':'#CAC4BF'},
         {'label': 'Mixed Juice', 'value': '#FDF1DC'},
