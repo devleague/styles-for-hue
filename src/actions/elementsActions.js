@@ -96,3 +96,10 @@ export function getTemplates (templates) {
     data: templates
   }
 }
+
+export function setButtonColors (colorObj) {
+  return {
+    type: 'SET_BUTTON_COLORS',
+    data: colorObj
+  }
+}

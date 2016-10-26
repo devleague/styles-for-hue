@@ -314,6 +314,7 @@ class Edit extends Component {
           changeColorPalette={this.props.changeColorPalette}
           changeDivWidth={this.props.divWidth}
           styles={this.props.styles.styles}
+          setButtonColors={this.props.setButtonColors}
         />
       );
     };
