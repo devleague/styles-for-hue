@@ -558,7 +558,6 @@ a{
 }
 .row-notfound{
   padding: 75px 0;
-  flex:flex-end;
   .flex-nowrap-notfound-container{
     margin: 0 50px;
     display: flex;
@@ -569,9 +568,15 @@ a{
 }
 .notfound-container{
   text-align: center;
+  height: 40vh;
+  position: relative;
+  padding-top: 100px;
   h1{
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 700;
+  }
+  p{
+    font-size: 1.3rem;
   }
 }
 .notfound-button{
@@ -593,6 +598,7 @@ a{
     background-color: $mint;
     border: 2px $mint solid;
     text-decoration: none;
+    color: #ffffff;
   }
 }
 
@@ -603,16 +609,19 @@ a{
 
 .tutorial-container{
   h1{
-    font-size: 30px;
+    font-size: 2.1rem;
     font-weight: 700;
   }
   h3{
-    font-size: 20px;
+    font-size: 1.6rem;
     font-weight: 700;
     line-height: 1.2;
   }
-  p > a{
+  p{
+    font-size: 1.1rem;
     line-height: 1.3;
+  }
+  p > a{
     position: relative;
     text-decoration: none;
     color: #000000;
