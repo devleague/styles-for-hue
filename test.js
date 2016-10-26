@@ -342,10 +342,10 @@ db.styles.insert(
         {'label': 'black', 'value': 'black'}
       ],
     },
-    style5: {
+    style7: {
       name: 'Cherry Blossoms',
       backgroundColor: [
-        {'label': 'Young Bloom', 'value':'#C76982'},
+        {'label': 'Young Bloom', 'value':'#D19C9D'},
         {'label': 'Poison Ivory', 'value': '#F4F59'},
         {'label': 'White', 'value': '#ffffff'},
         {'label': 'Branches', 'value': '#2F1412'},
