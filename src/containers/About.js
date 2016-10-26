@@ -29,27 +29,47 @@ class About extends Component {
           <div className="flex-wrap-container">
             <div className="flex-photos pos-1">
               <div className="profile"/>
-              <h3>Nikki Kobayashi</h3>
+              <h3>
+                <a href="https://github.com/ynikki">
+                  Nikki Kobayashi
+                </a>
+              </h3>
               <p>Leveled up on Toggles/Modals</p>
             </div>
             <div className="flex-photos pos-2">
               <div className="profile"/>
-              <h3>Lisa Zhou</h3>
+              <h3>
+                <a href="https://github.com/herrolisa">
+                  Lisa Zhou
+                </a>
+              </h3>
               <p>Makes it pretty!</p>
             </div>
             <div className="flex-photos pos-3">
               <div className="profile"/>
-              <h3>Bryce Saito</h3>
+              <h3>
+                <a href="https://github.com/tokumori">
+                  Bryce Saito
+                </a>
+              </h3>
               <p>Dispatch Action to Set State to Stressed Out</p>
             </div>
             <div className="flex-photos pos-4">
               <div className="profile"/>
-              <h3>Christie Reindle</h3>
+              <h3>
+                <a href="https://github.com/creindle">
+                  Christie Reindle
+                </a>
+              </h3>
               <p>Packaged the program for hue to use!</p>
             </div>
             <div className="flex-photos pos-5">
               <div className="profile"/>
-              <h3>Sheena Galutira</h3>
+              <h3>
+                <a href="https://github.com/sogalutira">
+                  Sheena Galutira
+                </a>
+              </h3>
               <p>db.HACKED.findOneAndDelete(&#123;&#125;)</p>
             </div>
           </div>
