@@ -324,7 +324,7 @@ db.styles.insert(
     style5: {
       name: 'Overcast',
       backgroundColor: [
-        {'label': 'Graydient Green', 'value':'#ccd8b2'},
+        {'label': 'Another Grey', 'value':'#D4D5D3'},
         {'label': 'Poison Ivory', 'value': '#f2f1d7'},
         {'label': 'White', 'value': '#ffffff'},
         {'label': '460,294 Shades of Black', 'value': '#070606'},
