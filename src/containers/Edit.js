@@ -24,12 +24,17 @@ class Edit extends Component {
       let styleName = document.getElementById('template-name').value;
       this.saveStyle(styleName);
       return this.templateNames()
-      .then((templates) => {
-        this.props.getTemplates(templates);
-      })
+        .then((templates) => {
+          this.props.getTemplates(templates);
+        })
     }
     this.update = () => {
-      this.editSave(this.props.elementsReducer.doc.elements);
+      let styleName = document.getElementById('template-name').value;
+      this.editSave(styleName)
+      return this.templateNames()
+        .then((templates) => {
+          this.props.getTemplates(templates);
+        })
     }
     this.handleClick = this._handleClick.bind(this);
     this.saveFilePopup = this.saveFilePopup.bind(this);
@@ -111,13 +116,16 @@ class Edit extends Component {
     })
   }
 
-  editSave(){
+  editSave(styleName){
     return $.ajax({
       url: `/api/template/${this.props.hash}`,
       type: 'PUT',
       dataType: 'json',
       contentType: 'application/json',
-      data: JSON.stringify({...this.props.elementsReducer})
+      data: JSON.stringify({...this.props.elementsReducer, name: styleName})
+    })
+    .then((data) => {
+      this.props.editDoc(data._id);
     })
   }
 
