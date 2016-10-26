@@ -106,6 +106,7 @@ class DivComp extends Component {
                                 selectElement={this.props.selectElement}
                                 selectedElementId={this.props.selectedElementId}
                                 clickHandler={this.clickHandler}
+                                mouseOverColor={this.props.mouseOverColor}
                               >
                               </PComp>
                             )
