@@ -77,6 +77,8 @@ $teal: #30B3AA;
   padding: 20px 0;
   background: $white;
   text-align: center;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   .savepopover-button{
     background: $dark-grey;
     color: $white;

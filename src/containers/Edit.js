@@ -216,7 +216,7 @@ class Edit extends Component {
     HTMLText = beautify_html(HTMLText);
 
     /*Creating text for README.md*/
-    var READMEText = 'Styles For Hue\n================\n\nCreate a user friendly app..\n\n###Created By:\nLisa Zhou (https://github.com/herrolisa), \nChristie Reindle (https://github.com/creindle), \nSheena Galutira (https://github.com/sogalutira), \nNikki Kobayashi (https://github.com/ynikki), \nBryce Saito (https://github.com/tokumori)\n\nTUTORIAL\n================================\n\nOn the Home page click on Start Styling or Template on the navigation bar.\n\nUse the Style Editor Sidebar and click on the icons next to the Font, Div, Images and Saved Templates to show the menu to change styles.\n\nFont\nPick Your Element: Change your fonts based on the type of element (p, h1, selected, or all).\nPick Your Font: Choose a font family.\nFont Color: Change colors using the color wheel.\nFont Size: Type in desired font size number.\n\nDiv\nPick Your Palette: Use preset palettes to change div colors.\nPick Your Color: Select a div and change the color of the individual div.\n\nSaving:\nName your template/style using the Name Your Style input field. You may choose to use the default name of Hue with a timestamp.\nClick on Save Styles to create a unique link to your template for later editing.\nUse Update Styles to update your current saved template.\nClick on Export HTML and CSS Files to download a .zip file of the HTML and CSS onto your computer.\n\nLoading Saved Styles/Templates:\nClick on Saved Styles in the Style Editor Sidebar\nUsing the Choose Your Template dropdown menu, select a template to load.';
+    var READMEText = 'Styles For Hue\n================\n\nCreate a user friendly app..\n\n###Created By:\nLisa Zhou (https://github.com/herrolisa), \nChristie Reindle (https://github.com/creindle), \nSheena Galutira (https://github.com/sogalutira), \nNikki Kobayashi (https://github.com/ynikki), \nBryce Saito (https://github.com/tokumori)\n\nTUTORIAL\n================================\n\nVideo tutorial at: https://www.youtube.com/embed/RW58JIfK6zc?version=3&vq=hd1080\n\nOn the Home page click on Start Styling or Template on the navigation bar.\n\nUse the Style Editor Sidebar and click on the icons next to the Font, Div, Images and Saved Templates to show the menu to change styles.\n\nFont\nPick Your Element: Change your fonts based on the type of element (p, h1, selected, or all).\nPick Your Font: Choose a font family.\nFont Color: Change colors using the color wheel.\nFont Size: Type in desired font size number.\n\nDiv\nPick Your Palette: Use preset palettes to change div colors.\nPick Your Color: Select a div and change the color of the individual div.\n\nSaving:\nName your template/style using the Name Your Style input field. You may choose to use the default name of Hue with a timestamp.\nClick on Save Styles to create a unique link to your template for later editing.\nUse Update Styles to update your current saved template.\nClick on Export HTML and CSS Files to download a .zip file of the HTML and CSS onto your computer.\n\nLoading Saved Styles/Templates:\nClick on Saved Styles in the Style Editor Sidebar\nUsing the Choose Your Template dropdown menu, select a template to load.';
 
     /*Creating files to be saved as .zip*/
     var HTMLBlob = new Blob([HTMLText], {type: "text/plain;charset=utf-8"});
@@ -326,13 +326,15 @@ class Edit extends Component {
           <input type="file" onChange={this.previewFile}></input>
           <img src="" className="preview-upload" alt="Image preview..."></img>
           <h4>OR Add Hero Image URL</h4>
-          <form onSubmit={(event)=> {
+          <form
+            className="image-url-form"
+            onSubmit={(event)=> {
               event.preventDefault();
               return this.props.changeImage(document.getElementById('url').value);
             }
           }>
-            <input type="text" id="url"/>
-            <input type="submit" value="Submit"/>
+            <input className="image-url-text" type="text" id="url"/>
+            <input className="image-url-submit" type="submit" value="Submit"/>
           </form>
         </div>
       )
@@ -351,13 +353,13 @@ class Edit extends Component {
     if (this.props.menuShow.showTemplateMenu === true) {
       templateDropdown = (
         <div className="menu-show-details">
-          <h4>Choose Your Template</h4>
+          <h4>Choose Your Style</h4>
             <select
               id="userTemplate"
               defaultValue="0"
               onChange={() => this.switchTemplates()}
             >
-              <option value="0" disabled="disabled">SELECT TEMPLATE</option>
+              <option value="0" disabled="disabled">SELECT STYLE</option>
               {templates}
             </select>
           <div className="functional-button-container">
@@ -479,25 +481,27 @@ class Edit extends Component {
           </div>
           {templateDropdown}
         </div>
-        <div className="functional-button-container">
-          <form onSubmit={(event)=> {
-              event.preventDefault();
-              return this.saveFilePopup();
-            }
-          }>
-          <div>
-          Name Your Style:
-            <input type="text" id="template-name" required="true" placeholder="Enter Styles Name"
-              defaultValue={"Hue " + this.timeAMPM(new Date)
-            }/>
+        <div className="save-styles-container">
+          <div className="save-styles-details">
+            <h4>Name Your Style</h4>
+            <form onSubmit={(event)=> {
+                event.preventDefault();
+                return this.saveFilePopup();
+              }
+            }>
+              <input type="text" id="template-name" className="user-style-name" required="true" placeholder="Enter Styles Name"
+                defaultValue={"Hue " + this.timeAMPM(new Date)
+              }/>
+              <div className="functional-button-container">
+                <input
+                  className="functional-button save-styles"
+                  type="submit"
+                  value="Save Styles"
+                >
+                </input>
+              </div>
+            </form>
           </div>
-            <input
-              className="functional-button"
-              type="submit"
-              value="Save Styles"
-            >
-            </input>
-          </form>
           <SavePopover
             show={ this.props.popover.modal }
             click={ this.handleClick }
