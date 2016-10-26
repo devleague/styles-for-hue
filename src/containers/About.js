@@ -52,7 +52,7 @@ class About extends Component {
                   Bryce Saito
                 </a>
               </h3>
-              <p>Dispatch Action to Set State to Stressed Out</p>
+              <p>Dispatched Actions to Set State to Stressed Out</p>
             </div>
             <div className="flex-photos pos-4">
               <div className="profile"/>
