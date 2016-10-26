@@ -274,6 +274,7 @@ db.styles.insert(
         {'label': 'Pumpkin Spice', 'value': '#FCC160'},
         {'label': 'Muted Pumpkin', 'value':'#E5DAC3'},
         {'label': 'White', 'value': 'white'},
+        {'label': 'Outer Space', 'value': '#494949'},
         {'label': 'Marigold', 'value': '#EDAB31'},
         {'label': 'black', 'value': 'black'}
       ],
@@ -307,7 +308,7 @@ db.styles.insert(
         {'label': 'Eggshell', 'value': '#F3E6D8'},
         {'label': 'White', 'value': '#ffffff'},
         {'label': 'Onyx', 'value': '#383A39'},
-        {'label': 'Middle Blue Green', 'value': '#94CECC'},
+        {'label': 'Dark Cyan', 'value': '#088E85'},
         {'label': 'Black', 'value': 'black'}
       ],
     },
