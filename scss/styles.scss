@@ -609,16 +609,19 @@ a{
 
 .tutorial-container{
   h1{
-    font-size: 30px;
+    font-size: 2.1rem;
     font-weight: 700;
   }
   h3{
-    font-size: 20px;
+    font-size: 1.6rem;
     font-weight: 700;
     line-height: 1.2;
   }
-  p > a{
+  p{
+    font-size: 1.1rem;
     line-height: 1.3;
+  }
+  p > a{
     position: relative;
     text-decoration: none;
     color: #000000;
