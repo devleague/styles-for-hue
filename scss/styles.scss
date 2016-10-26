@@ -398,6 +398,18 @@ a{
         border: 0;
       }
     }
+    .image-url-form{
+      input{
+        outline: none;
+      }
+      .image-url-text{
+        width: 200px;
+        font-family: 'Lato', sans-serif;
+      }
+      .image-url-submit{
+        width: 80px;
+      }
+    }
     .preview-upload{
       width: 280px;
       height: 200px;
@@ -405,6 +417,24 @@ a{
       font-size: 0.85rem;
       object-fit: cover;
     }
+  }
+}
+
+.save-styles-container{
+  padding: 5px 10px 0 10px;
+  h4{
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    padding: 10px 0 5px;
+  }
+  .user-style-name{
+    width: 100%;
+    outline: none;
+    font-family: 'Lato', sans-serif;
+    padding: 5px 2px;
+  }
+  .save-styles{
+    border: none;
   }
 }
 // ** Menu Buttons ** //

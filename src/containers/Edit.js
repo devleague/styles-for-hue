@@ -325,13 +325,15 @@ class Edit extends Component {
           <input type="file" onChange={this.previewFile}></input>
           <img src="" className="preview-upload" alt="Image preview..."></img>
           <h4>OR Add Hero Image URL</h4>
-          <form onSubmit={(event)=> {
+          <form
+            className="image-url-form"
+            onSubmit={(event)=> {
               event.preventDefault();
               return this.props.changeImage(document.getElementById('url').value);
             }
           }>
-            <input type="text" id="url"/>
-            <input type="submit" value="Submit"/>
+            <input className="image-url-text" type="text" id="url"/>
+            <input className="image-url-submit" type="submit" value="Submit"/>
           </form>
         </div>
       )
@@ -350,13 +352,13 @@ class Edit extends Component {
     if (this.props.menuShow.showTemplateMenu === true) {
       templateDropdown = (
         <div className="menu-show-details">
-          <h4>Choose Your Template</h4>
+          <h4>Choose Your Style</h4>
             <select
               id="userTemplate"
               defaultValue="0"
               onChange={() => this.switchTemplates()}
             >
-              <option value="0" disabled="disabled">SELECT TEMPLATE</option>
+              <option value="0" disabled="disabled">SELECT STYLE</option>
               {templates}
             </select>
           <div className="functional-button-container">
@@ -478,25 +480,27 @@ class Edit extends Component {
           </div>
           {templateDropdown}
         </div>
-        <div className="functional-button-container">
-          <form onSubmit={(event)=> {
-              event.preventDefault();
-              return this.saveFilePopup();
-            }
-          }>
-          <div>
-          Name Your Style:
-            <input type="text" id="template-name" required="true" placeholder="Enter Styles Name"
-              defaultValue={"Hue " + this.timeAMPM(new Date)
-            }/>
+        <div className="save-styles-container">
+          <div className="save-styles-details">
+            <h4>Name Your Style</h4>
+            <form onSubmit={(event)=> {
+                event.preventDefault();
+                return this.saveFilePopup();
+              }
+            }>
+              <input type="text" id="template-name" className="user-style-name" required="true" placeholder="Enter Styles Name"
+                defaultValue={"Hue " + this.timeAMPM(new Date)
+              }/>
+              <div className="functional-button-container">
+                <input
+                  className="functional-button save-styles"
+                  type="submit"
+                  value="Save Styles"
+                >
+                </input>
+              </div>
+            </form>
           </div>
-            <input
-              className="functional-button"
-              type="submit"
-              value="Save Styles"
-            >
-            </input>
-          </form>
           <SavePopover
             show={ this.props.popover.modal }
             click={ this.handleClick }
