@@ -283,7 +283,7 @@ db.styles.insert(
       backgroundColor: [
         {'label': 'Hello Yellow', 'value': '#fcca03'},
         {'label': 'Whisper', 'value':'#ececec'},
-        {'label': 'White', 'value': 'white'},
+        {'label': 'White', 'value': '#FFFFFF'},
         {'label': 'Gray20', 'value': '#333333'},
         {'label': 'Black', 'value': 'black'}
       ],
@@ -302,19 +302,19 @@ db.styles.insert(
     style3: {
       name: 'Shady',
       backgroundColor: [
-        {'label': 'Blue Grey', 'value':'#C5D8DB'},
-        {'label': 'Light Grey', 'value': '#ECECEC'},
+        {'label': 'Dirty Orange', 'value':'#B57351'},
+        {'label': 'Muted Yellow', 'value': '#DED7D1'},
         {'label': 'White', 'value': '#FFFFFF'},
-        {'label': 'Blue Steel', 'value': '#5D696B'},
+        {'label': 'Between Grey', 'value': '#4B4844'},
         {'label': 'Del-Gray', 'value': '#918a8f'},
         {'label': 'Black', 'value': 'black'}
       ],
     },
     style4: {
-      name: 'Mintee',
+      name: 'Mimosa',
       backgroundColor: [
-        {'label': 'Minty', 'value':'#4BC2A7'},
-        {'label': 'Gretty Mint', 'value': '#D3E5E1'},
+        {'label': 'Neutral Grey', 'value':'#CAC4BF'},
+        {'label': 'Mixed Juice', 'value': '#FDF1DC'},
         {'label': 'White', 'value': '#ffffff'},
         {'label': 'Dark Grey', 'value': '#565857'},
         {'label': 'Pink Lace', 'value': '#edc3d1'},
@@ -322,23 +322,23 @@ db.styles.insert(
       ],
     },
     style5: {
-      name: 'Overcast',
+      name: 'Whipped',
       backgroundColor: [
-        {'label': 'Another Grey', 'value':'#D4D5D3'},
+        {'label': 'Yellow Mellow', 'value':'#FED3A2'},
         {'label': 'Poison Ivory', 'value': '#f2f1d7'},
         {'label': 'White', 'value': '#ffffff'},
-        {'label': '460,294 Shades of Black', 'value': '#070606'},
+        {'label': 'Shades of Black', 'value': '#252525'},
         {'label': 'Grayter Than Thou', 'value': '#959273'},
         {'label': 'Black', 'value': 'black'}
       ],
     },
     style6: {
-      name: 'Ice Cream Parlor',
+      name: 'Autumn',
       backgroundColor: [
-        {'label': 'pink', 'value': 'pink'},
-        {'label': 'Cy-man', 'value':'#30B3AA'},
-        {'label': 'white', 'value': 'white'},
-        {'label': 'Whisper', 'value': '#ececec'},
+        {'label': 'Pumpkin Spice', 'value': '#FCC160'},
+        {'label': 'Muted Pumpkin', 'value':'#E5DAC3'},
+        {'label': 'White', 'value': 'white'},
+        {'label': 'Another Grey', 'value': '#383838'},
         {'label': 'black', 'value': 'black'}
       ],
     },
