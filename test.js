@@ -311,7 +311,7 @@ db.styles.insert(
       ],
     },
     style4: {
-      name: 'Mimosa',
+      name: 'Neutrals',
       backgroundColor: [
         {'label': 'Neutral Grey', 'value':'#CAC4BF'},
         {'label': 'Mixed Juice', 'value': '#FDF1DC'},
@@ -333,7 +333,7 @@ db.styles.insert(
       ],
     },
     style6: {
-      name: 'Autumn',
+      name: 'Pumpkin Spice',
       backgroundColor: [
         {'label': 'Pumpkin Spice', 'value': '#FCC160'},
         {'label': 'Muted Pumpkin', 'value':'#E5DAC3'},
@@ -342,18 +342,40 @@ db.styles.insert(
         {'label': 'black', 'value': 'black'}
       ],
     },
-    style5: {
+    style7: {
       name: 'Cherry Blossoms',
       backgroundColor: [
-        {'label': 'Young Bloom', 'value':'#C76982'},
-        {'label': 'Poison Ivory', 'value': '#F4F59'},
+        {'label': 'Young Bloom', 'value':'#E3A9AA'},
+        {'label': 'Snow', 'value': '#FFF7F7'},
         {'label': 'White', 'value': '#ffffff'},
         {'label': 'Branches', 'value': '#2F1412'},
         {'label': 'Grayter Than Thou', 'value': '#959273'},
         {'label': 'Black', 'value': 'black'}
       ],
     },
-    fontFamily: ['Times New Roman', 'ABeeZee'],
+    style8: {
+      name: 'Smokey Blue',
+      backgroundColor: [
+        {'label': 'Welding Blue', 'value':'#7499B2'},
+        {'label': 'Alabaster', 'value': '#F2E6E6'},
+        {'label': 'White', 'value': '#ffffff'},
+        {'label': 'Black Olive', 'value': '#3A3A3A'},
+        {'label': 'Grayter Than Thou', 'value': '#959273'},
+        {'label': 'Black', 'value': 'black'}
+      ],
+    },
+    style9: {
+      name: 'Aqua Mint',
+      backgroundColor: [
+        {'label': 'Persian Green', 'value':'#00A79D'},
+        {'label': 'Eggshell', 'value': '#F3E6D8'},
+        {'label': 'White', 'value': '#ffffff'},
+        {'label': 'Onyx', 'value': '#383A39'},
+        {'label': 'Grayter Than Thou', 'value': '#959273'},
+        {'label': 'Black', 'value': 'black'}
+      ],
+    },
+    fontFamily: ['Times New Roman', 'ABeeZee', 'Abel', 'Acme', 'Actor', 'Advent Pro'],
     fontSize: '1em'
   }
 );
