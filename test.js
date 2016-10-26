@@ -113,31 +113,22 @@ db.docs.insert(
                           "elementId" : 13,
                           "tag" : "h3",
                           "text" : "This Is An H3 Tag",
-                          "style" : {
-                            // "backgroundColor" : "orange"
-                          }
+                          "style" : {}
                         },
                         {
                           "elementId" : 14,
                           "tag" : "p",
                           "text" : "This is a p tag. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus.",
-                          "style" : {
-                            // "backgroundColor" : "yellow"
-                          }
+                          "style" : {}
                         },
                         {
                           "elementId" : 15,
                           "tag" : "p",
-                          // "text" : "Click the",
                           "linkText": "Read More",
-                          "style" : {
-                            // "backgroundColor" : "pink"
-                          }
+                          "style" : {}
                         }
                       ],
-                      "style" : {
-                        // "backgroundColor" : "blue"
-                      }
+                      "style" : {}
                     },
                     {
                       "elementId" : 16,
@@ -148,31 +139,22 @@ db.docs.insert(
                           "elementId" : 17,
                           "tag" : "h3",
                           "text" : "This Is An H3 Tag",
-                          "style" : {
-                            // "backgroundColor" : "orange"
-                          }
+                          "style" : {}
                         },
                         {
                           "elementId" : 18,
                           "tag" : "p",
                           "text" : "This is a p tag. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus.",
-                          "style" : {
-                            // "backgroundColor" : "yellow"
-                          }
+                          "style" : {}
                         },
                         {
                           "elementId" : 19,
                           "tag" : "p",
-                          // "text" : "Click the",
                           "linkText": "Read More",
-                          "style" : {
-                            // "backgroundColor" : "pink"
-                          }
+                          "style" : {}
                         }
                       ],
-                      "style" : {
-                        // "backgroundColor" : "blue"
-                      }
+                      "style" : {}
                     },
                     {
                       "elementId" : 20,
@@ -183,55 +165,35 @@ db.docs.insert(
                           "elementId" : 21,
                           "tag" : "h3",
                           "text" : "This Is An H3 Tag",
-                          "style" : {
-                            // "backgroundColor" : "orange"
-                          }
+                          "style" : {}
                         },
                         {
                           "elementId" : 22,
                           "tag" : "p",
                           "text" : "This is a p tag. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus.",
-                          "style" : {
-                            // "backgroundColor" : "yellow"
-                          }
+                          "style" : {}
                         },
                         {
                           "elementId" : 23,
                           "tag" : "p",
-                          // "text" : "Click the",
                           "linkText": "Read More",
-                          "style" : {
-                            // "backgroundColor" : "pink"
-                          }
+                          "style" : {}
                         }
                       ],
-                      "style" : {
-                        // "backgroundColor" : "blue"
-                      }
+                      "style" : {}
                     }
                   ],
-                  "style": {
-                    // "backgroundColor" : "red"
-                  }
+                  "style": {}
                 }
               ],
-              "style" :
-              {
-                // "backgroundColor" : "green",
-                // "fontFamily" : "arial"
-              }
+              "style" : {}
             },
             {
               "_id" : ObjectId("57fc9789aa00d38a26228230"),
               "elementId" : 24,
               "tag" : "Footer",
               "className" : "t1-footer-container",
-              "style" : {
-                // "fontFamily" : "Lato",
-                // "width" : "100%",
-                // "height" : "42px",
-                // "backgroundColor" : "#30B3AA"
-              }
+              "style" : {}
             }
           ]
         }
