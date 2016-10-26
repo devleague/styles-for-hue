@@ -470,9 +470,12 @@ class Edit extends Component {
               return this.saveFilePopup();
             }
           }>
+          <div>
+          Name Your Style:
             <input type="text" id="template-name" placeholder="Enter Styles Name"
               defaultValue={"Hue " + this.timeAMPM(new Date)
             }/>
+          </div>
             <input
               className="functional-button"
               type="submit"
