@@ -2,14 +2,14 @@ const initialState = {
   _id: null,
   doc: {
     _id: null,
-    elements: []
+    elements: [],
+    buttonColors: {}
   },
   selectedElement: {
     selectedElementId: 0,
     selectedStyle: {}
   },
-  templates: [],
-  hovered: false
+  templates: []
 };
 
 const reducer = (state = initialState, action) => {
@@ -61,6 +61,8 @@ const reducer = (state = initialState, action) => {
       return { ...state, _id: `ObjectId(${action.data})`, doc: { ...state.doc, elements: [ ...state.doc.elements ]} };
     case "GET_TEMPLATES":
       return { ...state, templates: action.data};
+    case "SET_BUTTON_COLORS":
+      return { ...state, doc: { ...state.doc, buttonColors: action.data}};
     default:
       return { ...state};
   }

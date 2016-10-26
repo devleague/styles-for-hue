@@ -79,6 +79,7 @@ class ColorMenu extends Component {
 
   switchThemeColor(colorArray) {
     this.props.changeColorPalette(colorArray);
+    this.props.setButtonColors(colorArray[0]);
     let newElems = this.props.elements;
     newElems = newElems.map((elem) => {
       if (elem.children) {

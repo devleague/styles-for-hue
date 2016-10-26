@@ -90,6 +90,7 @@ class TemplateEdit extends Component {
         return selectedStyle;
       })
       .then((selectedStyle) => {
+        this.props.setButtonColors(selectedStyle.backgroundColor[0]);
         return this.props.changeColorPalette(selectedStyle.backgroundColor);
       })
   // loadColorApi () {
