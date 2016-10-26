@@ -568,9 +568,15 @@ a{
 }
 .notfound-container{
   text-align: center;
+  height: 40vh;
+  position: relative;
+  padding-top: 100px;
   h1{
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 700;
+  }
+  p{
+    font-size: 1.3rem;
   }
 }
 .notfound-button{
@@ -592,6 +598,7 @@ a{
     background-color: $mint;
     border: 2px $mint solid;
     text-decoration: none;
+    color: #ffffff;
   }
 }
 
