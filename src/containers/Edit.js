@@ -204,7 +204,7 @@ class Edit extends Component {
     HTMLText = beautify_html(HTMLText);
 
     /*Creating text for README.md*/
-    var READMEText = 'Styles For Hue\n================\n\nCreate a user friendly app..\n\n[Wiki Tutorial](https://github.com/devleague/styles-for-hue/wiki)\n\n###Created By:\n[Lisa Zhou](https://github.com/herrolisa), \n[Christie Reindle](https://github.com/creindle), \n[Sheena Galutira](https://github.com/sogalutira), \n[Nikki Kobayashi](https://github.com/ynikki), \n[Bryce Saito](https://github.com/tokumori)\n\nOn the Home page click on Start Styling or Template on the navigation bar.\n\nUse the Style Editor Sidebar and click on the icons next to the Font, Div, Images and Saved Templates to show the menu to change styles.\n\nFont\nPick Your Element: Change your fonts based on the type of element (p, h1, selected, or all).\nPick Your Font: Choose a font family.\nFont Color: Change colors using the color wheel.\nFont Size: Type in desired font size number.\n\nDiv\nPick Your Palette: Use preset palettes to change div colors.\nPick Your Color: Select a div and change the color of the individual div.\n\nSaving:\nClick on Save Styles to create a unique link to your template for later editing.\nUse Update Styles to update your current saved template.\nClick on Export HTML and CSS Files to download a .zip file of the HTML and CSS onto your computer.\n\nHover over Dropdown on the Style Editor Sidebar to view and access saved templates. Click on the hash (e.g. rJ_YxiKkg) in the Dropdown menu to go to saved template.';
+    var READMEText = 'Styles For Hue\n================\n\nCreate a user friendly app..\n\n###Created By:\nLisa Zhou (https://github.com/herrolisa), \nChristie Reindle (https://github.com/creindle), \nSheena Galutira (https://github.com/sogalutira), \nNikki Kobayashi (https://github.com/ynikki), \nBryce Saito (https://github.com/tokumori)\n\nTUTORIAL\n================================\n\nOn the Home page click on Start Styling or Template on the navigation bar.\n\nUse the Style Editor Sidebar and click on the icons next to the Font, Div, Images and Saved Templates to show the menu to change styles.\n\nFont\nPick Your Element: Change your fonts based on the type of element (p, h1, selected, or all).\nPick Your Font: Choose a font family.\nFont Color: Change colors using the color wheel.\nFont Size: Type in desired font size number.\n\nDiv\nPick Your Palette: Use preset palettes to change div colors.\nPick Your Color: Select a div and change the color of the individual div.\n\nSaving:\nClick on Save Styles to create a unique link to your template for later editing.\nUse Update Styles to update your current saved template.\nClick on Export HTML and CSS Files to download a .zip file of the HTML and CSS onto your computer.\n\nHover over Dropdown on the Style Editor Sidebar to view and access saved templates. Click on the hash (e.g. rJ_YxiKkg) in the Dropdown menu to go to saved template.';
 
     /*Creating files to be saved as .zip*/
     var HTMLBlob = new Blob([HTMLText], {type: "text/plain;charset=utf-8"});
@@ -245,6 +245,19 @@ class Edit extends Component {
       }
     }
 
+// Creating time stamp for template name
+  timeAMPM(date) {
+    var str = (date.getMonth() + 1) + "-" + date.getDate() + "-" + date.getFullYear();
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var seconds = date.getSeconds();
+    var ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0'+minutes : minutes;
+    var strTime = hours + ':' + minutes + ':' + seconds + ' ' + ampm;
+    return str + ' ' + strTime;
+  }
 
   render() {
     let fontComponentOpenClass = " ";
@@ -457,7 +470,9 @@ class Edit extends Component {
               return this.saveFilePopup();
             }
           }>
-            <input type="text" id="template-name" placeholder="Enter Styles Name"/>
+            <input type="text" id="template-name" placeholder="Enter Styles Name"
+              defaultValue={"Hue " + this.timeAMPM(new Date)
+            }/>
             <input
               className="functional-button"
               type="submit"
