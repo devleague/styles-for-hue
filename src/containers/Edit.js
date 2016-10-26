@@ -23,6 +23,10 @@ class Edit extends Component {
     this.save = () => {
       let styleName = document.getElementById('template-name').value;
       this.saveStyle(styleName);
+      return this.templateNames()
+      .then((templates) => {
+        this.props.getTemplates(templates);
+      })
     }
     this.update = () => {
       this.editSave(this.props.elementsReducer.doc.elements);
