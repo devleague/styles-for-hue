@@ -24,7 +24,7 @@ class Tutorial extends Component {
             >
               <h1>Welcome to Styles for Hue</h1>
               <div style={{textAlign: 'center'}}>
-              <iframe display="inline-block" width="560" height="315" src="https://www.youtube.com/embed/RW58JIfK6zc" frameBorder="0" allowFullScreen></iframe>
+              <iframe display="inline-block" width="100%" height="415" src="https://www.youtube.com/embed/RW58JIfK6zc?version=3&vq=hd1080" frameBorder="0" allowFullScreen></iframe>
               </div>
               <br />
               <h3>Getting Started</h3>
