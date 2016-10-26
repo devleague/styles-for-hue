@@ -22,6 +22,10 @@ class Tutorial extends Component {
             <div
               className="tutorial-container"
             >
+              <div style={{textAlign: 'center'}}>
+              <iframe display="inline-block" width="100%" height="415" src="https://www.youtube.com/embed/RW58JIfK6zc?version=3&vq=hd1080" frameBorder="0" allowFullScreen></iframe>
+              </div>
+              <br/>
               <h1>Welcome to Styles for Hue</h1>
               <br />
               <h3>Getting Started</h3>
@@ -38,14 +42,15 @@ class Tutorial extends Component {
               <p>Pick your palette: Use preset palettes to change div colors.</p>
               <p>Pick your color: Select a div and change the color of the individual div.</p>
               <br />
-              <h3>Saving:</h3>
-              <p>Name your template/style using the Name Your Style input field. You may choose to use the default name of Hue with a timestamp.</p>
+              <h3>Saving</h3>
+              <p>Name your template/style using the Name Your Style input field.</p> 
+              <p>You may choose to use the default name of Hue with a timestamp.</p>
               <p>Click on Save Template to create a unique link to your template for later editing.</p>
               <p>Use Update Template to update your current saved template.</p>
               <p>Click on Export HTML and CSS to download a .zip file of the HTML and CSS onto your computer.</p>
               <br />
-              <h3>Loading Saved Styles/Templates:</h3>
-              <p>Click on Saved Styles in the Style Editor Sidebar</p>
+              <h3>Loading Saved Styles/Templates</h3>
+              <p>Click on Saved Styles in the Style Editor Sidebar.</p>
               <p>Using the Choose Your Template dropdown menu, select a template to load.</p>
             </div>
           </div>

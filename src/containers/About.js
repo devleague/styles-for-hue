@@ -18,10 +18,10 @@ class About extends Component {
               <h2>Who We Are</h2>
             </div>
             <div className="flex-50">
-              <p>We are <a href="http://www.devleague.com/" target="_blank">DevLeague</a> students from Cohort 11! Before entering DevLeague, our coding skills ranged from minimal to non-existent. Using Javascript, HTML, CSS and various frameworks, we created this wonderful app for hue!</p>
+              <p>Styles for Hue is a collaboration by five <a href="http://www.devleague.com/" target="_blank">DevLeague</a> students from Cohort 11. It represents the culmination of our six-month endeavor from no-experience programming fledglings to full-fledged full-stack developers. We effectively implemented our skills in JavaScript, HTML, CSS, and various frameworks to create this wonderful app for hue!</p>
             </div>
             <div className="flex-50">
-              <p>Styles for Hue is a application for web developers who need help styling a website.</p>
+              <p>This application was designed to help web developers efficiently prototype a website.  It grants the user the freedom to change styles on the fly, and empowers them further with the ability to save HTML and CSS files to use on their own server. These features will lessen the already heavy workload of developers, while allowing them the flexibility to cater the code to their specific needs.</p>
             </div>
           </div>
         </div>
@@ -30,27 +30,27 @@ class About extends Component {
             <div className="flex-photos pos-1">
               <div className="profile"/>
               <h3>Nikki Kobayashi</h3>
-              <p>Stuff I Did</p>
+              <p>Leveled up on Toggles/Modals</p>
             </div>
             <div className="flex-photos pos-2">
               <div className="profile"/>
               <h3>Lisa Zhou</h3>
-              <p>Stuff I Did</p>
+              <p>Makes it pretty!</p>
             </div>
             <div className="flex-photos pos-3">
               <div className="profile"/>
               <h3>Bryce Saito</h3>
-              <p>Stuff I Did</p>
+              <p>Dispatch Action to Set State to Stressed Out</p>
             </div>
             <div className="flex-photos pos-4">
               <div className="profile"/>
               <h3>Christie Reindle</h3>
-              <p>Stuff I Did</p>
+              <p>Packaged the program for hue to use!</p>
             </div>
             <div className="flex-photos pos-5">
               <div className="profile"/>
               <h3>Sheena Galutira</h3>
-              <p>Stuff I Did</p>
+              <p>db.HACKED.findOneAndDelete(&#123;&#125;)</p>
             </div>
           </div>
         </div>
