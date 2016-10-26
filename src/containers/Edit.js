@@ -361,7 +361,7 @@ class Edit extends Component {
             onClick={ this.updatePopup }
           >
             Update Styles
-        </button>
+          </button>
         <UpdatePopover
           reveal={this.props.popover.updatepop}
           update={ this.handleClickUpdate }
