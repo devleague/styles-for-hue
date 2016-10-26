@@ -345,8 +345,8 @@ db.styles.insert(
     style7: {
       name: 'Cherry Blossoms',
       backgroundColor: [
-        {'label': 'Young Bloom', 'value':'#D19C9D'},
-        {'label': 'Poison Ivory', 'value': '#F4F59'},
+        {'label': 'Young Bloom', 'value':'#E3A9AA'},
+        {'label': 'Snow', 'value': '#FFF7F7'},
         {'label': 'White', 'value': '#ffffff'},
         {'label': 'Branches', 'value': '#2F1412'},
         {'label': 'Grayter Than Thou', 'value': '#959273'},
@@ -357,7 +357,7 @@ db.styles.insert(
       name: 'Smokey Blue',
       backgroundColor: [
         {'label': 'Welding Blue', 'value':'#7499B2'},
-        {'label': 'White Smoke', 'value': '#F4F4F4'},
+        {'label': 'Alabaster', 'value': '#F2E6E6'},
         {'label': 'White', 'value': '#ffffff'},
         {'label': 'Black Olive', 'value': '#3A3A3A'},
         {'label': 'Grayter Than Thou', 'value': '#959273'},
