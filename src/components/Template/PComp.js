@@ -8,6 +8,15 @@ class PComp extends Component {
     return `pComp${this.props.elementId}`;
   }
 
+  hoverHandler(event, boolean) {
+    if (event) {
+      if (boolean === true) {
+        return event.target.style.backgroundColor = this.props.mouseOverColor.value;
+      }
+      return event.target.style.backgroundColor = '#fcca03';
+    }
+  }
+
   render() {
     if (this.props.linkText) {
       return (
@@ -17,7 +26,13 @@ class PComp extends Component {
           style={this.props.style}
           onClick={(event) => this.props.clickHandler(event, this.props.selectElement, this.props.style)}
         >
-          <a href="#">{this.props.linkText}</a>
+          <a
+            href="#"
+            onMouseEnter={(event) => this.hoverHandler(event, true)}
+            onMouseLeave={(event) => this.hoverHandler(event, false)}
+          >
+            {this.props.linkText}
+          </a>
         </p>
       )
     }

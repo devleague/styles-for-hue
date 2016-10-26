@@ -8,7 +8,8 @@ const initialState = {
     selectedElementId: 0,
     selectedStyle: {}
   },
-  templates: []
+  templates: [],
+  hovered: false
 };
 
 const reducer = (state = initialState, action) => {
