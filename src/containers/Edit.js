@@ -457,7 +457,7 @@ class Edit extends Component {
               return this.saveFilePopup();
             }
           }>
-            <input type="text" id="template-name"/>
+            <input type="text" id="template-name" placeholder="Enter Styles Name"/>
             <input
               className="functional-button"
               type="submit"
