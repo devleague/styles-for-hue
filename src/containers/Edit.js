@@ -23,6 +23,10 @@ class Edit extends Component {
     this.save = () => {
       let styleName = document.getElementById('template-name').value;
       this.saveStyle(styleName);
+      return this.templateNames()
+      .then((templates) => {
+        this.props.getTemplates(templates);
+      })
     }
     this.update = () => {
       this.editSave(this.props.elementsReducer.doc.elements);
@@ -341,8 +345,10 @@ class Edit extends Component {
           <h4>Choose Your Template</h4>
             <select
               id="userTemplate"
+              defaultValue="0"
               onChange={() => this.switchTemplates()}
             >
+              <option value="0" disabled="disabled">SELECT TEMPLATE</option>
               {templates}
             </select>
           <div className="functional-button-container">
@@ -472,7 +478,7 @@ class Edit extends Component {
           }>
           <div>
           Name Your Style:
-            <input type="text" id="template-name" placeholder="Enter Styles Name"
+            <input type="text" id="template-name" required="true" placeholder="Enter Styles Name"
               defaultValue={"Hue " + this.timeAMPM(new Date)
             }/>
           </div>
