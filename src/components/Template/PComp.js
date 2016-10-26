@@ -8,18 +8,52 @@ class PComp extends Component {
     return `pComp${this.props.elementId}`;
   }
 
+  hoverHandler(event, boolean) {
+    if (event) {
+      if (boolean === true) {
+        return event.target.style.backgroundColor = this.props.mouseOverColor.value;
+      }
+      return event.target.style.backgroundColor = this.props.buttonColor.value;
+    }
+  }
+
   render() {
     if (this.props.linkText) {
+      if (this.props.buttonColor) {
+        return (
+          <p
+            id={this.props.elementId}
+            className={this.isActive()}
+            style={this.props.style}
+            onClick={(event) => this.props.clickHandler(event, this.props.selectElement, this.props.style)}
+          >
+            <a
+              href="#"
+              onMouseEnter={(event) => this.hoverHandler(event, true)}
+              onMouseLeave={(event) => this.hoverHandler(event, false)}
+              style={{backgroundColor: this.props.buttonColor.value}}
+            >
+              {this.props.linkText}
+            </a>
+          </p>
+        )
+      }
       return (
-        <p
-          id={this.props.elementId}
-          className={this.isActive()}
-          style={this.props.style}
-          onClick={(event) => this.props.clickHandler(event, this.props.selectElement, this.props.style)}
-        >
-          <a href="#">{this.props.linkText}</a>
-        </p>
-      )
+          <p
+            id={this.props.elementId}
+            className={this.isActive()}
+            style={this.props.style}
+            onClick={(event) => this.props.clickHandler(event, this.props.selectElement, this.props.style)}
+          >
+            <a
+              href="#"
+              onMouseEnter={(event) => this.hoverHandler(event, true)}
+              onMouseLeave={(event) => this.hoverHandler(event, false)}
+            >
+              {this.props.linkText}
+            </a>
+          </p>
+        )
     }
     return (
       <p

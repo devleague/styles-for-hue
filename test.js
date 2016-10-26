@@ -283,66 +283,99 @@ db.styles.insert(
       backgroundColor: [
         {'label': 'Hello Yellow', 'value': '#fcca03'},
         {'label': 'Whisper', 'value':'#ececec'},
-        {'label': 'White', 'value': 'white'},
+        {'label': 'White', 'value': '#FFFFFF'},
         {'label': 'Gray20', 'value': '#333333'},
         {'label': 'Black', 'value': 'black'}
       ],
     },
     style2: {
-      name: 'Dusty',
+      name: 'Hueville',
       backgroundColor: [
-        {'label': 'Chino', 'value':'#b5ae8f'},
-        {'label': 'Whisper', 'value': '#ececec'},
-        {'label': 'White', 'value': '#ffffff'},
-        {'label': 'Dark Cyan', 'value': '#517a8b'},
+        {'label': 'Dirt Red', 'value':'#BF431C'},
+        {'label': 'Grey Skies', 'value': '#E8E8E8'},
+        {'label': 'White', 'value': '#FFFFFF'},
+        {'label': 'Dark Grey', 'value': '#3F3F3F'},
         {'label': 'Dark Green', 'value': '#0c1915'},
         {'label': 'Black', 'value': 'black'},
       ],
     },
     style3: {
-      name: 'Swamp',
+      name: 'Shady',
       backgroundColor: [
-        {'label': 'Silver Leaf', 'value':'#b8d2b6'},
-        {'label': 'White Smoke', 'value': '#f5f5f5'},
-        {'label': 'White', 'value': '#ffffff'},
-        {'label': 'Liver', 'value': '#4e3b45'},
+        {'label': 'Dirty Orange', 'value':'#B57351'},
+        {'label': 'Muted Yellow', 'value': '#DED7D1'},
+        {'label': 'White', 'value': '#FFFFFF'},
+        {'label': 'Between Grey', 'value': '#4B4844'},
         {'label': 'Del-Gray', 'value': '#918a8f'},
         {'label': 'Black', 'value': 'black'}
       ],
     },
     style4: {
-      name: 'Peonies Pastels',
+      name: 'Neutrals',
       backgroundColor: [
-        {'label': 'Taupe Gray', 'value':'#8c8a8c'},
-        {'label': 'Whiter Than Pink', 'value': '#f8ebf0'},
+        {'label': 'Neutral Grey', 'value':'#CAC4BF'},
+        {'label': 'Mixed Juice', 'value': '#FDF1DC'},
         {'label': 'White', 'value': '#ffffff'},
-        {'label': 'Bloo Hoo', 'value': '#518a8d'},
+        {'label': 'Dark Grey', 'value': '#565857'},
         {'label': 'Pink Lace', 'value': '#edc3d1'},
         {'label': 'Black', 'value': 'black'}
       ],
     },
     style5: {
-      name: 'Overcast',
+      name: 'Whipped',
       backgroundColor: [
-        {'label': 'Graydient Green', 'value':'#ccd8b2'},
-        {'label': 'Poison Ivory', 'value': '#f2f1d7'},
+        {'label': 'Yellow Mellow', 'value':'#DE835B'},
+        {'label': 'Poison Ivory', 'value': '#F4F59'},
         {'label': 'White', 'value': '#ffffff'},
-        {'label': '460,294 Shades of Black', 'value': '#070606'},
+        {'label': 'Shades of Black', 'value': '#252525'},
         {'label': 'Grayter Than Thou', 'value': '#959273'},
         {'label': 'Black', 'value': 'black'}
       ],
     },
     style6: {
-      name: 'Ice Cream Parlor',
+      name: 'Pumpkin Spice',
       backgroundColor: [
-        {'label': 'pink', 'value': 'pink'},
-        {'label': 'Cy-man', 'value':'#30B3AA'},
-        {'label': 'white', 'value': 'white'},
-        {'label': 'Whisper', 'value': '#ececec'},
+        {'label': 'Pumpkin Spice', 'value': '#FCC160'},
+        {'label': 'Muted Pumpkin', 'value':'#E5DAC3'},
+        {'label': 'White', 'value': 'white'},
+        {'label': 'Another Grey', 'value': '#383838'},
         {'label': 'black', 'value': 'black'}
       ],
     },
-    fontFamily: ['Times New Roman', 'ABeeZee'],
+    style7: {
+      name: 'Cherry Blossoms',
+      backgroundColor: [
+        {'label': 'Young Bloom', 'value':'#E3A9AA'},
+        {'label': 'Snow', 'value': '#FFF7F7'},
+        {'label': 'White', 'value': '#ffffff'},
+        {'label': 'Branches', 'value': '#2F1412'},
+        {'label': 'Grayter Than Thou', 'value': '#959273'},
+        {'label': 'Black', 'value': 'black'}
+      ],
+    },
+    style8: {
+      name: 'Smokey Blue',
+      backgroundColor: [
+        {'label': 'Welding Blue', 'value':'#7499B2'},
+        {'label': 'Alabaster', 'value': '#F2E6E6'},
+        {'label': 'White', 'value': '#ffffff'},
+        {'label': 'Black Olive', 'value': '#3A3A3A'},
+        {'label': 'Grayter Than Thou', 'value': '#959273'},
+        {'label': 'Black', 'value': 'black'}
+      ],
+    },
+    style9: {
+      name: 'Aqua Mint',
+      backgroundColor: [
+        {'label': 'Persian Green', 'value':'#00A79D'},
+        {'label': 'Eggshell', 'value': '#F3E6D8'},
+        {'label': 'White', 'value': '#ffffff'},
+        {'label': 'Onyx', 'value': '#383A39'},
+        {'label': 'Grayter Than Thou', 'value': '#959273'},
+        {'label': 'Black', 'value': 'black'}
+      ],
+    },
+    fontFamily: ['Times New Roman', 'ABeeZee', 'Abel', 'Acme', 'Actor', 'Advent Pro'],
     fontSize: '1em'
   }
 );

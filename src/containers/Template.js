@@ -14,6 +14,8 @@ class Template extends Component {
   }
 
   render() {
+    let mouseOverColor = this.props.colors.selectedColorPalette[this.props.colors.selectedColorPalette.length - 2];
+    let buttonColor = this.props.colors.selectedColorPalette[0];
     const elements = this.props.elementsReducer.doc.elements.map((elem, index) => {
       switch (elem.tag) {
         case 'div':
@@ -26,6 +28,8 @@ class Template extends Component {
               style={elem.style}
               selectElement={this.props.selectElement}
               selectedElementId={this.props.elementsReducer.selectedElement.selectedElementId}
+              mouseOverColor={mouseOverColor}
+              buttonColor={buttonColor}
             >
             </DivComp>
           )
