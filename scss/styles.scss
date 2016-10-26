@@ -80,6 +80,11 @@ a{
   //   width: 180px;
   //   border-radius: 50%;
   // }
+  .profile{
+    width: 180px;
+    height: 180px;
+    border-radius: 5px;
+  }
   h2{
     font-size: 0.9rem;
     font-weight: bold;
@@ -92,11 +97,6 @@ a{
   }
 }
 
-.profile{
-  width: 180px;
-  height: 180px;
-  border-radius: 5px;
-}
 
 .pos-1{
   @include small-1{
