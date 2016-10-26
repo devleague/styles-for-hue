@@ -13,28 +13,47 @@ class PComp extends Component {
       if (boolean === true) {
         return event.target.style.backgroundColor = this.props.mouseOverColor.value;
       }
-      return event.target.style.backgroundColor = '#fcca03';
+      return event.target.style.backgroundColor = this.props.buttonColor.value;
     }
   }
 
   render() {
     if (this.props.linkText) {
-      return (
-        <p
-          id={this.props.elementId}
-          className={this.isActive()}
-          style={this.props.style}
-          onClick={(event) => this.props.clickHandler(event, this.props.selectElement, this.props.style)}
-        >
-          <a
-            href="#"
-            onMouseEnter={(event) => this.hoverHandler(event, true)}
-            onMouseLeave={(event) => this.hoverHandler(event, false)}
+      if (this.props.buttonColor) {
+        return (
+          <p
+            id={this.props.elementId}
+            className={this.isActive()}
+            style={this.props.style}
+            onClick={(event) => this.props.clickHandler(event, this.props.selectElement, this.props.style)}
           >
-            {this.props.linkText}
-          </a>
-        </p>
-      )
+            <a
+              href="#"
+              onMouseEnter={(event) => this.hoverHandler(event, true)}
+              onMouseLeave={(event) => this.hoverHandler(event, false)}
+              style={{backgroundColor: this.props.buttonColor.value}}
+            >
+              {this.props.linkText}
+            </a>
+          </p>
+        )
+      }
+      return (
+          <p
+            id={this.props.elementId}
+            className={this.isActive()}
+            style={this.props.style}
+            onClick={(event) => this.props.clickHandler(event, this.props.selectElement, this.props.style)}
+          >
+            <a
+              href="#"
+              onMouseEnter={(event) => this.hoverHandler(event, true)}
+              onMouseLeave={(event) => this.hoverHandler(event, false)}
+            >
+              {this.props.linkText}
+            </a>
+          </p>
+        )
     }
     return (
       <p
