@@ -364,7 +364,7 @@ db.styles.insert(
         {'label': 'Black', 'value': 'black'}
       ],
     },
-    fontFamily: ['Times New Roman', 'ABeeZee'],
+    fontFamily: ['Times New Roman', 'ABeeZee', 'Abel', 'Acme', 'Actor', 'Advent Pro'],
     fontSize: '1em'
   }
 );
