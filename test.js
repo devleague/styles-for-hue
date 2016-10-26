@@ -291,10 +291,10 @@ db.styles.insert(
     style2: {
       name: 'Hueville',
       backgroundColor: [
-        {'label': 'Orange Hue', 'value':'#CC553E'},
+        {'label': 'Dirt Red', 'value':'#BF431C'},
         {'label': 'Grey Skies', 'value': '#E8E8E8'},
         {'label': 'White', 'value': '#FFFFFF'},
-        {'label': 'Dirt Red', 'value': '#7F2219'},
+        {'label': 'Dark Grey', 'value': '#3F3F3F'},
         {'label': 'Dark Green', 'value': '#0c1915'},
         {'label': 'Black', 'value': 'black'},
       ],
@@ -324,8 +324,8 @@ db.styles.insert(
     style5: {
       name: 'Whipped',
       backgroundColor: [
-        {'label': 'Yellow Mellow', 'value':'#FED3A2'},
-        {'label': 'Poison Ivory', 'value': '#f2f1d7'},
+        {'label': 'Yellow Mellow', 'value':'#DE835B'},
+        {'label': 'Poison Ivory', 'value': '#F4F59'},
         {'label': 'White', 'value': '#ffffff'},
         {'label': 'Shades of Black', 'value': '#252525'},
         {'label': 'Grayter Than Thou', 'value': '#959273'},
@@ -340,6 +340,17 @@ db.styles.insert(
         {'label': 'White', 'value': 'white'},
         {'label': 'Another Grey', 'value': '#383838'},
         {'label': 'black', 'value': 'black'}
+      ],
+    },
+    style5: {
+      name: 'Cherry Blossoms',
+      backgroundColor: [
+        {'label': 'Young Bloom', 'value':'#C76982'},
+        {'label': 'Poison Ivory', 'value': '#F4F59'},
+        {'label': 'White', 'value': '#ffffff'},
+        {'label': 'Branches', 'value': '#2F1412'},
+        {'label': 'Grayter Than Thou', 'value': '#959273'},
+        {'label': 'Black', 'value': 'black'}
       ],
     },
     fontFamily: ['Times New Roman', 'ABeeZee'],
