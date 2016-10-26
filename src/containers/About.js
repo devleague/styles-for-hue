@@ -18,10 +18,10 @@ class About extends Component {
               <h2>Who We Are</h2>
             </div>
             <div className="flex-50">
-              <p>Styles for Hue is a collaboration by five <a href="http://www.devleague.com/" target="_blank">DevLeague</a> students from Cohort 11. It represents the culmination of our six-month endeavor from no-experience programming fledglings to full-fledged full-stack developers. We effectively implemented our skills in Javascript, HTML, CSS, and various frameworks to create this wonderful app for hue!</p>
+              <p>Styles for Hue is a collaboration by five <a href="http://www.devleague.com/" target="_blank">DevLeague</a> students from Cohort 11. It represents the culmination of our six-month endeavor from no-experience programming fledglings to full-fledged full-stack developers. We effectively implemented our skills in JavaScript, HTML, CSS, and various frameworks to create this wonderful app for hue!</p>
             </div>
             <div className="flex-50">
-              <p>This application was designed to help web developers efficiently style and prototype a website.  It grants the user the freedom to change styles on the fly, and empowers them further with the ability to save the HTML and CSS files to use on their own server. These features will lessen the already heavy workload of developers, while allowing them the flexibility to cater the code to their specific needs.</p>
+              <p>This application was designed to help web developers efficiently prototype a website.  It grants the user the freedom to change styles on the fly, and empowers them further with the ability to save HTML and CSS files to use on their own server. These features will lessen the already heavy workload of developers, while allowing them the flexibility to cater the code to their specific needs.</p>
             </div>
           </div>
         </div>
