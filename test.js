@@ -24,18 +24,12 @@ db.docs.insert(
               "elementId" : 2,
               "tag" : "Header",
               "className" : "t1-header-container",
-              "style" : {
-                // "fontFamily" : "Lato",
-                // "width" : "100%",
-                // "height" : "42px",
-                // "backgroundColor" : "#30B3AA"
-              }
+              "style" : {}
             },
             {
               "_id" : ObjectId("57fc9789aa00d38a26228231"),
               "elementId" : 3,
               "tag" : "img",
-              // "src" : "https://static.pexels.com/photos/130991/pexels-photo-130991.jpeg",
               "className" : "t1-hero-container",
               "children" : [
                 {
@@ -78,46 +72,26 @@ db.docs.insert(
                       "tag" : "div",
                       "className" : "t1-col-100",
                       "children" : [
-                        // {
-                        //   "elementId" : 7,
-                        //   "tag" : "h1",
-                        //   "text" : "This Is An H1 Tag",
-                        //   "style" : {
-                        //     // "backgroundColor" : "orange"
-                        //   }
-                        // },
                         {
                           "elementId" : 8,
                           "tag" : "h2",
                           "text" : "This Is An H2 Tag",
-                          "style" : {
-                            // "backgroundColor" : "yellow"
-                          }
+                          "style" : {}
                         },
                         {
                           "elementId" : 9,
                           "tag" : "p",
                           "text" : "This is a p tag. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.",
-                          "style" : {
-                            // "backgroundColor" : "pink"
-                          }
+                          "style" : {}
                         }
                       ],
-                      "style" : {
-                        // "backgroundColor" : "blue"
-                      }
+                      "style" : {}
                     }
                   ],
-                  "style": {
-                    // "backgroundColor" : "red"
-                  }
+                  "style": {}
                 }
               ],
-              "style" :
-              {
-                // "backgroundColor" : "green",
-                // "fontFamily" : "arial"
-              }
+              "style" : {}
             },
             {
               "_id" : ObjectId("57fc9789aa00d38a26228233"),
