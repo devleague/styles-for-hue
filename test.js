@@ -285,16 +285,16 @@ db.styles.insert(
         {'label': 'Whisper', 'value':'#ececec'},
         {'label': 'White', 'value': '#FFFFFF'},
         {'label': 'Gray20', 'value': '#333333'},
-        {'label': 'Black', 'value': 'black'}
+        {'label': 'Outer Space', 'value': '#494949'}
       ],
     },
     style2: {
       name: 'Hueville',
       backgroundColor: [
-        {'label': 'Dirt Red', 'value':'#BF431C'},
+        {'label': 'Dark Pastel Red', 'value':'#BF431C'},
         {'label': 'Grey Skies', 'value': '#E8E8E8'},
         {'label': 'White', 'value': '#FFFFFF'},
-        {'label': 'Dark Grey', 'value': '#3F3F3F'},
+        {'label': 'Tangerine', 'value': '#F2722E'},
         {'label': 'Dark Green', 'value': '#0c1915'},
         {'label': 'Black', 'value': 'black'},
       ],
@@ -306,7 +306,7 @@ db.styles.insert(
         {'label': 'Muted Yellow', 'value': '#DED7D1'},
         {'label': 'White', 'value': '#FFFFFF'},
         {'label': 'Between Grey', 'value': '#4B4844'},
-        {'label': 'Del-Gray', 'value': '#918a8f'},
+        {'label': 'Grullo', 'value': '#AF9C92'},
         {'label': 'Black', 'value': 'black'}
       ],
     },
@@ -314,10 +314,10 @@ db.styles.insert(
       name: 'Neutrals',
       backgroundColor: [
         {'label': 'Neutral Grey', 'value':'#CAC4BF'},
-        {'label': 'Mixed Juice', 'value': '#FDF1DC'},
+        {'label': 'Cornsilk', 'value': '#FDF1DC'},
         {'label': 'White', 'value': '#ffffff'},
         {'label': 'Dark Grey', 'value': '#565857'},
-        {'label': 'Pink Lace', 'value': '#edc3d1'},
+        {'label': 'Dark Vanilla', 'value': '#CECA9F'},
         {'label': 'Black', 'value': 'black'}
       ],
     },
@@ -338,7 +338,7 @@ db.styles.insert(
         {'label': 'Pumpkin Spice', 'value': '#FCC160'},
         {'label': 'Muted Pumpkin', 'value':'#E5DAC3'},
         {'label': 'White', 'value': 'white'},
-        {'label': 'Another Grey', 'value': '#383838'},
+        {'label': 'Marigold', 'value': '#EDAB31'},
         {'label': 'black', 'value': 'black'}
       ],
     },
@@ -349,7 +349,7 @@ db.styles.insert(
         {'label': 'Snow', 'value': '#FFF7F7'},
         {'label': 'White', 'value': '#ffffff'},
         {'label': 'Branches', 'value': '#2F1412'},
-        {'label': 'Grayter Than Thou', 'value': '#959273'},
+        {'label': 'Parrot Pink', 'value': '#D897AC'},
         {'label': 'Black', 'value': 'black'}
       ],
     },
@@ -360,7 +360,7 @@ db.styles.insert(
         {'label': 'Alabaster', 'value': '#F2E6E6'},
         {'label': 'White', 'value': '#ffffff'},
         {'label': 'Black Olive', 'value': '#3A3A3A'},
-        {'label': 'Grayter Than Thou', 'value': '#959273'},
+        {'label': 'Auqa Dim', 'value': '#3A6D7C'},
         {'label': 'Black', 'value': 'black'}
       ],
     },
@@ -371,7 +371,7 @@ db.styles.insert(
         {'label': 'Eggshell', 'value': '#F3E6D8'},
         {'label': 'White', 'value': '#ffffff'},
         {'label': 'Onyx', 'value': '#383A39'},
-        {'label': 'Grayter Than Thou', 'value': '#959273'},
+        {'label': 'Middle Blue Green', 'value': '#94CECC'},
         {'label': 'Black', 'value': 'black'}
       ],
     },
