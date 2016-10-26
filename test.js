@@ -364,6 +364,17 @@ db.styles.insert(
         {'label': 'Black', 'value': 'black'}
       ],
     },
+    style9: {
+      name: 'Swimming in Green',
+      backgroundColor: [
+        {'label': 'Persian Green', 'value':'#00A79D'},
+        {'label': 'Eggshell', 'value': '#F3E6D8'},
+        {'label': 'White', 'value': '#ffffff'},
+        {'label': 'Onyx', 'value': '#383A39'},
+        {'label': 'Grayter Than Thou', 'value': '#959273'},
+        {'label': 'Black', 'value': 'black'}
+      ],
+    },
     fontFamily: ['Times New Roman', 'ABeeZee', 'Abel', 'Acme', 'Actor', 'Advent Pro'],
     fontSize: '1em'
   }
