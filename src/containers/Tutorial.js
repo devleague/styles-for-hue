@@ -23,6 +23,9 @@ class Tutorial extends Component {
               className="tutorial-container"
             >
               <h1>Welcome to Styles for Hue</h1>
+              <div style={{textAlign: 'center'}}>
+              <iframe display="inline-block" width="560" height="315" src="https://www.youtube.com/embed/RW58JIfK6zc" frameBorder="0" allowFullScreen></iframe>
+              </div>
               <br />
               <h3>Getting Started</h3>
               <p>On the <NavLink to="/">Home</NavLink> page click on the button Start Styling or <NavLink to="/template">Template</NavLink> on the navigation bar.</p>
