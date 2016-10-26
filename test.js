@@ -353,6 +353,17 @@ db.styles.insert(
         {'label': 'Black', 'value': 'black'}
       ],
     },
+    style8: {
+      name: 'Smokey Blue',
+      backgroundColor: [
+        {'label': 'Queen Blue', 'value':'#4B7896'},
+        {'label': 'White Smoke', 'value': '#F4F4F4'},
+        {'label': 'White', 'value': '#ffffff'},
+        {'label': 'Black Olive', 'value': '#3A3A3A'},
+        {'label': 'Grayter Than Thou', 'value': '#959273'},
+        {'label': 'Black', 'value': 'black'}
+      ],
+    },
     fontFamily: ['Times New Roman', 'ABeeZee'],
     fontSize: '1em'
   }
