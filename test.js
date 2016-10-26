@@ -356,7 +356,7 @@ db.styles.insert(
     style8: {
       name: 'Smokey Blue',
       backgroundColor: [
-        {'label': 'Queen Blue', 'value':'#4B7896'},
+        {'label': 'Welding Blue', 'value':'#7499B2'},
         {'label': 'White Smoke', 'value': '#F4F4F4'},
         {'label': 'White', 'value': '#ffffff'},
         {'label': 'Black Olive', 'value': '#3A3A3A'},
