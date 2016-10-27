@@ -52,7 +52,7 @@ class About extends Component {
                   Bryce Saito
                 </a>
               </h3>
-              <p>Dispatched Actions to Set State to Stressed Out</p>
+              <p>Dispatched actions to set state to "Stressed Out"</p>
             </div>
             <div className="flex-photos pos-4">
               <div className="profile"/>
@@ -70,7 +70,7 @@ class About extends Component {
                   Sheena Galutira
                 </a>
               </h3>
-              <p>db.HACKED.findOneAndDelete(&#123;&#125;)</p>
+              <p>db.HACKED .findOneAndDelete(&#123;&#125;)</p>
             </div>
           </div>
         </div>
