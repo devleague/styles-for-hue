@@ -1,7 +1,7 @@
 Styles For Hue
 ================
 
-Create a user friendly app..
+Create a user friendly app.. [www.stylesforhue.com](http://www.stylesforhue.com/)
 
 <p align="center">
   <img src="https://github.com/devleague/styles-for-hue/blob/master/public/images/Home.png" />
