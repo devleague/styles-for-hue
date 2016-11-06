@@ -60,9 +60,9 @@ body{
 }
 a{
   text-decoration: none;
-  &:visited{
-    color: #000000;
-  }
+  // &:visited{
+  //   color: #000000;
+  // }
 }
 
 ///////////////////////////////////////
@@ -78,13 +78,18 @@ a{
   }
 }
 
+.content-link{
+  color: $teal;
+}
+
 .link-to-github{
-  color: black;
+  color: $black;
 }
 
 .link-to-github:hover{
   color: $teal;
 }
+
 
 .flex-photos{
   flex: 0 0 200px;
