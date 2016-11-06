@@ -21,7 +21,7 @@ class Resource extends Component {
             <div
               className="flex-100"
             >
-              <h1><u>Fonts</u></h1>
+              <h2>Fonts</h2>
               <p>For the everyday developer that needs help picking out fonts. Google Fonts have popular pairings with each fonts provided on the website. </p>
               <br />
               <h3>
@@ -32,7 +32,7 @@ class Resource extends Component {
             <div
               className="flex-100"
             >
-              <h1><u>Color Palettes</u></h1>
+              <h2>Color Palettes</h2>
               <p>A few sites that we recommend to the everyday developer that needs help with color palettes. There are more color palette sites that are out there. These sites are here to help the everyday developer start off from here.</p>
               <br />
               <h3>
@@ -60,7 +60,7 @@ class Resource extends Component {
             <div
               className="flex-100"
             >
-              <h1><u>Responsive Grid Layout</u></h1>
+              <h2>Responsive Grid Layout</h2>
               <p>Creating a responsive layout that is visually appealing to the users. </p>
               <br />
               <h3>
