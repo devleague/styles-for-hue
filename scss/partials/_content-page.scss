@@ -5,6 +5,10 @@
       color: darken($mint, 15%)
     }
   }
+  h2{
+    font-size: 2rem;
+    font-weight: bold;
+  }
 }
 
 .row{
@@ -36,10 +40,6 @@
     .flex-50{
       flex: 0 0 50%;
       padding: 10px;
-    }
-    h2{
-      font-size: 2rem;
-      font-weight: bold;
     }
   }
 }
