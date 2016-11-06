@@ -79,7 +79,10 @@ a{
 }
 
 .content-link{
-  color: $teal;
+  color: $mint;
+  &:hover{
+    color: darken($mint, 15%)
+  }
 }
 
 .link-to-github{
@@ -87,7 +90,7 @@ a{
 }
 
 .link-to-github:hover{
-  color: $teal;
+  color: $mint;
 }
 
 
