@@ -1,5 +1,11 @@
-$white: #FFFFFF;
-$teal: #30B3AA;
+.content-container{
+  a{
+    color: $mint;
+    &:hover{
+      color: darken($mint, 15%)
+    }
+  }
+}
 
 .row{
   padding: 75px 0;
