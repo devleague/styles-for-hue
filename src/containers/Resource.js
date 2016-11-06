@@ -12,29 +12,18 @@ class Resource extends Component {
         >
           <h1>Resources</h1>
         </div>
-        <div
-          className="row"
-        >
-          <div
-            className="flex-wrap-container"
-          >
-            <div
-              className="flex-100"
-            >
+        <div className="row">
+          <div className="flex-wrap-container">
+            <div className="flex-100">
               <h2>Fonts</h2>
               <p>For the everyday developer that needs help picking out fonts. Google Fonts have popular pairings with each fonts provided on the website. </p>
-              <br />
               <h3>
                 <a href="https://fonts.google.com/" target="_blank">Google Fonts</a>
               </h3>
-              <br />
             </div>
-            <div
-              className="flex-100"
-            >
+            <div className="flex-100">
               <h2>Color Palettes</h2>
               <p>A few sites that we recommend to the everyday developer that needs help with color palettes. There are more color palette sites that are out there. These sites are here to help the everyday developer start off from here.</p>
-              <br />
               <h3>
                 <a href="http://colorpalettes.net/" target="_blank">Color Palettes</a>
               </h3>
@@ -55,14 +44,10 @@ class Resource extends Component {
                 <br/>
                 If you want to create a site that compliments the colors of a photo.
               </h3>
-              <br />
             </div>
-            <div
-              className="flex-100"
-            >
+            <div className="flex-100">
               <h2>Responsive Grid Layout</h2>
               <p>Creating a responsive layout that is visually appealing to the users. </p>
-              <br />
               <h3>
                 <a href="http://www.responsivegridsystem.com/" target="_blank">Responsive Grid System</a>
               </h3>
