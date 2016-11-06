@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+@font-face {font-family: 'SpellingNight'; src: url('/font/SpellingNight.otf');}
+
 @import 'partials/reset';
 @import 'partials/clearfix';
 @import 'partials/colors';
@@ -7,7 +10,6 @@
 @import 'partials/popover';
 @import 'partials/content-page';
 
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
 
 $small-1: "(min-width: 0px) and (max-width: 479px)";
 $small-2: "(min-width: 480px) and (max-width: 679px)";
