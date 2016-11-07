@@ -20,8 +20,8 @@ class Tutorial extends Component {
             className="flex-wrap-container"
           >
             <div className="flex-100">
-              <div style={{textAlign: 'center'}}>
-              <iframe display="inline-block" width="100%" height="415" src="https://www.youtube.com/embed/RW58JIfK6zc?version=3&vq=hd1080" frameBorder="0" allowFullScreen></iframe>
+              <div className="video-container">
+                <iframe display="inline-block" width="100%" height="415" src="https://www.youtube.com/embed/RW58JIfK6zc?version=3&vq=hd1080" frameBorder="0" allowFullScreen></iframe>
               </div>
             </div>
             <div className="flex-100">
