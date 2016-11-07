@@ -26,33 +26,43 @@ class Tutorial extends Component {
             </div>
             <div className="flex-100">
               <h2 className="content-subtitle">Getting Started</h2>
-              <p>On the <NavLink to="/">Home</NavLink> page click on the button Start Styling or <NavLink to="/template">Template</NavLink> on the navigation bar.</p>
-              <p>Use the <i>Edit Sidebar</i> and click on the icons next to the Font, Div, Images and Saved Templates to show the menu to change styles.</p>
+              <ul>
+                <li>On the <NavLink to="/">Home</NavLink> page click on the button Start Styling or <NavLink to="/template">Template</NavLink> on the navigation bar.</li>
+                <li>Use the <i>Edit Sidebar</i> and click on the icons next to the Font, Div, Images and Saved Templates to show the menu to change styles.</li>
+              </ul>
             </div>
             <div className="flex-100">
               <h2 className="content-subtitle">Font</h2>
-              <p>Pick your element: Change your fonts based on the type of element (&lt;p&gt;, &lt;h1&gt;, &lt;h2&gt;, &lt;h2&gt;, selected, or all).</p>
-              <p>Pick your font: Choose a font.</p>
-              <p>Font color: Change colors using the color wheel.</p>
-              <p>Font size: Type in desired font size number.</p>
+              <ul>
+                <li>Pick your element: Change your fonts based on the type of element (&lt;p&gt;, &lt;h1&gt;, &lt;h2&gt;, &lt;h2&gt;, selected, or all).</li>
+                <li>Pick your font: Choose a font.</li>
+                <li>Font color: Change colors using the color wheel.</li>
+                <li>Font size: Type in desired font size number.</li>
+              </ul>
             </div>
             <div className="flex-100">
               <h2 className="content-subtitle">Div</h2>
-              <p>Pick your palette: Use preset palettes to change div colors.</p>
-              <p>Pick your color: Select a div and change the color of the individual div.</p>
+              <ul>
+                <li>Pick your palette: Use preset palettes to change div colors.</li>
+                <li>Pick your color: Select a div and change the color of the individual div.</li>
+              </ul>
             </div>
             <div className="flex-100">
               <h2 className="content-subtitle">Saving</h2>
-              <p>Name your template/style using the Name Your Style input field.</p>
-              <p>You may choose to use the default name of Hue with a timestamp.</p>
-              <p>Click on Save Template to create a unique link to your template for later editing.</p>
-              <p>Use Update Template to update your current saved template.</p>
-              <p>Click on Export HTML and CSS to download a .zip file of the HTML and CSS onto your computer.</p>
+              <ul>
+                <li>Name your template/style using the Name Your Style input field.</li>
+                <li>You may choose to use the default name of Hue with a timestamp.</li>
+                <li>Click on Save Template to create a unique link to your template for later editing.</li>
+                <li>Use Update Template to update your current saved template.</li>
+                <li>Click on Export HTML and CSS to download a .zip file of the HTML and CSS onto your computer.</li>
+              </ul>
             </div>
             <div className="flex-100">
               <h2 className="content-subtitle">Loading Saved Styles/Templates</h2>
-              <p>Click on Saved Styles in the Style Editor Sidebar.</p>
-              <p>Using the Choose Your Template dropdown menu, select a template to load.</p>
+              <ul>
+                <li>Click on Saved Styles in the Style Editor Sidebar.</li>
+                <li>Using the Choose Your Template dropdown menu, select a template to load.</li>
+              </ul>
             </div>
           </div>
         </div>
