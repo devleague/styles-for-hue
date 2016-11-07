@@ -65,30 +65,3 @@
     }
   }
 }
-
-footer{
-  background-color: $dark-grey;
-  padding: 50px 0;
-  .footer-content{
-    margin-left: 50px;
-    li{
-      display: inline-block;
-      &.footer-menu-divider{
-        color: $mint;
-        padding: 0 5px;
-      }
-      a{
-        font-size: 0.9rem;
-        color: $mint;
-        &:hover{
-          color: darken($mint, 25%);
-        }
-      }
-    }
-    p{
-      font-size: .8rem;
-      color: $light-grey;
-      margin: 15px 0 0;
-    }
-  }
-}
