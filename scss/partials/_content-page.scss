@@ -11,8 +11,28 @@
   p{
     line-height: 1.3;
   }
+  ul{
+    display: block;
+    list-style-type: square;
+    margin-top: 10px;
+    padding-left: 40px;
+    line-height: 1.3;
+  }
   a{
     color: $dark-grey;
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      border-bottom: 1px solid $mint;
+      transition: 0.5s;
+    }
+    &:hover:after{
+      width: 100%;
+    }
     &:hover{
       color: $mint;
     }
