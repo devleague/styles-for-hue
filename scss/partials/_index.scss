@@ -1,11 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
-@font-face {font-family: 'SpellingNight'; src: url('/font/SpellingNight.otf');}
-
-$dark-grey: #535353;
-$light-grey: #E6E8E6;
-$white: #FFFFFF;
-$mint: #48DDB9;
-
 .home-background{
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)),
@@ -70,33 +62,6 @@ $mint: #48DDB9;
       background-color: $mint;
       border: 2px $mint solid;
       text-decoration: none;
-    }
-  }
-}
-
-footer{
-  background-color: $dark-grey;
-  padding: 50px 0;
-  .footer-content{
-    margin-left: 50px;
-    li{
-      display: inline-block;
-      &.footer-menu-divider{
-        color: $mint;
-        padding: 0 5px;
-      }
-      a{
-        font-size: 0.9rem;
-        color: $mint;
-        &:hover{
-          color: darken($mint, 25%);
-        }
-      }
-    }
-    p{
-      font-size: .8rem;
-      color: $light-grey;
-      margin: 15px 0 0;
     }
   }
 }
