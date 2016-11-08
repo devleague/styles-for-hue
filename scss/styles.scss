@@ -3,6 +3,7 @@
 
 @import 'partials/reset';
 @import 'partials/clearfix';
+@import 'partials/media-queries';
 @import 'partials/colors';
 @import 'partials/nav';
 @import 'partials/footer';
@@ -10,7 +11,6 @@
 @import 'partials/cssview';
 @import 'partials/popover';
 @import 'partials/content-page';
-
 
 $small-1: "(min-width: 0px) and (max-width: 479px)";
 $small-2: "(min-width: 480px) and (max-width: 679px)";
