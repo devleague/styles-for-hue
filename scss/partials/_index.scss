@@ -26,6 +26,12 @@
   padding: 15px;
   color: $white;
   flex: 0 0 100%;
+  @include tablet{
+    flex: 0 0 50%;
+  }
+  @include desktop{
+
+  }
   h1{
     font-family: 'SpellingNight', cursive;
     font-size: 5rem;
