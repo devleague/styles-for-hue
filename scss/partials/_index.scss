@@ -15,7 +15,7 @@
   text-align: center;
   color: $dark-grey;
   @include tablet{
-
+    padding-top: 150px;
   }
   @include desktop{
     padding-top: 0;
