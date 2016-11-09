@@ -48,8 +48,14 @@
   background-size: cover;
   background-position: top center;
   background-color: $mint;
-  padding: 175px 0 125px;
+  padding: 250px 0 125px;
   background-attachment: fixed;
+  @include tablet{
+
+  }
+  @include desktop{
+    padding: 175px 0 125px;
+  }
   h1{
     color: $white;
     text-transform: uppercase;
