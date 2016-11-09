@@ -29,9 +29,14 @@
   h1{
     font-family: 'SpellingNight', cursive;
     font-size: 5rem;
-    // font-size: 6rem;
     text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
     margin: 0 0 35px;
+    @include tablet{
+      font-size: 6rem;
+    }
+    @include desktop{
+
+    }
   }
   h5{
     font-size: 1.5rem;
