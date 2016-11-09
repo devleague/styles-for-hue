@@ -9,12 +9,13 @@
   display: flex;
   flex-flow: row wrap;
   align-items: center;
-  padding: 0 50px;
+  padding: 10px 50px;
   @include tablet{
 
   }
   @include desktop{
     height: 75px;
+    padding: 0 50px;
   }
   .nav-left{
     flex: 0 0 100%;
@@ -28,7 +29,13 @@
     }
     h1{
       font-family: 'SpellingNight', cursive;
-      font-size: 1.25em;
+      font-size: 2em;
+      @include tablet{
+
+      }
+      @include desktop{
+        font-size: 1.25em;
+      }
       a{
         color: $mint;
         transition: color 1s ease;
@@ -52,6 +59,13 @@
       list-style-type: none;
       margin: 0;
       padding: 0;
+      line-height: 1.5;
+      @include tablet{
+
+      }
+      @include desktop{
+        line-height: 1;
+      }
       li{
         display:inline-block;
       }
