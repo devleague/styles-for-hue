@@ -2,7 +2,14 @@ footer{
   background-color: $dark-grey;
   padding: 50px 0;
   .footer-content{
-    margin-left: 50px;
+    text-align: center;
+    @include tablet{
+
+    }
+    @include desktop{
+      text-align: left;
+      margin-left: 50px;
+    }
     li{
       display: inline-block;
       &.footer-menu-divider{
