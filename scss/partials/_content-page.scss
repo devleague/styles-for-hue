@@ -50,9 +50,6 @@
   background-color: $mint;
   padding: 200px 0 75px;
   background-attachment: fixed;
-  @include tablet{
-
-  }
   @include desktop{
     padding: 175px 0 125px;
   }
@@ -60,9 +57,6 @@
     color: $white;
     text-transform: uppercase;
     text-align: center;
-    @include tablet{
-
-    }
     @include desktop{
       margin-left: 50px;
       text-align: left;
