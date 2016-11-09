@@ -29,9 +29,6 @@
   @include tablet{
     flex: 0 0 50%;
   }
-  @include desktop{
-
-  }
   h1{
     font-family: 'SpellingNight', cursive;
     font-size: 5rem;
@@ -40,9 +37,6 @@
     line-height: 1.25;
     @include tablet{
       font-size: 6rem;
-    }
-    @include desktop{
-
     }
   }
   h5{
