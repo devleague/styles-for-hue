@@ -12,38 +12,38 @@ $desktop-width: 1080px;
   }
 }
 
-$small-1: "(min-width: 0px) and (max-width: 479px)";
-$small-2: "(min-width: 480px) and (max-width: 679px)";
-$medium-1: "(min-width: 680px) and (max-width: 879px)";
-$medium-2: "(min-width: 880px) and (max-width: 1079px)";
-$large: "(min-width: 1080px)";
+$one-photo: "(min-width: 0px) and (max-width: 479px)";
+$two-photos: "(min-width: 480px) and (max-width: 679px)";
+$three-photos: "(min-width: 680px) and (max-width: 879px)";
+$four-photos: "(min-width: 880px) and (max-width: 1079px)";
+$five-photos: "(min-width: 1080px)";
 
-@mixin small-1{
-  @media #{$small-1} {
+@mixin one-photo{
+  @media #{$one-photo} {
     @content;
   }
 }
 
-@mixin small-2{
-  @media #{$small-2} {
+@mixin two-photos{
+  @media #{$two-photos} {
     @content;
   }
 }
 
-@mixin medium-1{
-  @media #{$medium-1} {
+@mixin three-photos{
+  @media #{$three-photos} {
     @content;
   }
 }
 
-@mixin medium-2{
-  @media #{$medium-2} {
+@mixin four-photos{
+  @media #{$four-photos} {
     @content;
   }
 }
 
-@mixin large{
-  @media #{$large} {
+@mixin five-photos{
+  @media #{$five-photos} {
     @content;
   }
 }
