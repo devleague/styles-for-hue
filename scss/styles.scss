@@ -214,7 +214,7 @@ a.link-to-github{
     padding: 25px;
   }
   @include desktop{
-    // flex: 0 0 50%;    flex: 1;
+    flex: 1;
     padding: 50px 25px 50px 50px;
   }
 }
