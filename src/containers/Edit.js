@@ -390,137 +390,138 @@ class Edit extends Component {
       <div
         className="edit-container"
       >
-        <h1>Style Editor</h1>
-        <div
-          className="menu-option">
+        <div className="edit-menu">
+          <h1>Style Editor</h1>
           <div
-            className="menu-option-title"
-            onClick={ () => {
-              if (this.props.menuShow.showFontMenu === false) {
-                this.props.showFontMenu(true);
-              } else {
-                this.props.showFontMenu(false);
-              }
-            }}
-          >
-            <h3><i className="fa fa-font menu-icon"></i>Font</h3>
-            <button
-              id="button-show"
-              className="menu-button"
+            className="menu-option">
+            <div
+              className="menu-option-title"
+              onClick={ () => {
+                if (this.props.menuShow.showFontMenu === false) {
+                  this.props.showFontMenu(true);
+                } else {
+                  this.props.showFontMenu(false);
+                }
+              }}
             >
-              <i id="icon" className={"fa fa-caret-right" + " " +
-              fontComponentOpenClass}></i>
-            </button>
+              <h3><i className="fa fa-font menu-icon"></i>Font</h3>
+              <button
+                id="button-show"
+                className="menu-button"
+              >
+                <i id="icon" className={"fa fa-caret-right" + " " +
+                fontComponentOpenClass}></i>
+              </button>
+            </div>
+            { fontComponent }
           </div>
-          { fontComponent }
-        </div>
-        <div
-          className="menu-option"
-        >
           <div
-            className="menu-option-title"
-            onClick={ () => {
-              if (this.props.menuShow.showDivMenu === false) {
-                this.props.showDivMenu(true);
-              } else {
-                this.props.showDivMenu(false);
-              }
-            }}
+            className="menu-option"
           >
-            <h3><i className="fa fa-paint-brush menu-icon"></i>Colors</h3>
-            <button
-              id="button-show"
-              className="menu-button"
+            <div
+              className="menu-option-title"
+              onClick={ () => {
+                if (this.props.menuShow.showDivMenu === false) {
+                  this.props.showDivMenu(true);
+                } else {
+                  this.props.showDivMenu(false);
+                }
+              }}
             >
-              <i id="icon" className={"fa fa-caret-right" + " " + divComponentOpenClass}></i>
-            </button>
+              <h3><i className="fa fa-paint-brush menu-icon"></i>Colors</h3>
+              <button
+                id="button-show"
+                className="menu-button"
+              >
+                <i id="icon" className={"fa fa-caret-right" + " " + divComponentOpenClass}></i>
+              </button>
+            </div>
+            { divComponent }
           </div>
-          { divComponent }
-        </div>
-        <div className="menu-option">
+          <div className="menu-option">
+            <div
+              className="menu-option-title"
+              onClick={ () => {
+                if (this.props.menuShow.showUploadMenu === false) {
+                  this.props.showUploadMenu(true);
+                } else {
+                  this.props.showUploadMenu(false);
+                }
+              }}
+            >
+              <h3><i className="fa fa-file-photo-o menu-icon"></i>Images</h3>
+              <button
+                id="button-show"
+                className="menu-button"
+              >
+                <i id="icon" className={"fa fa-caret-right" + " " + uploadComponentOpenClass}></i>
+              </button>
+            </div>
+            { uploadComponent }
+          </div>
           <div
-            className="menu-option-title"
-            onClick={ () => {
-              if (this.props.menuShow.showUploadMenu === false) {
-                this.props.showUploadMenu(true);
-              } else {
-                this.props.showUploadMenu(false);
-              }
-            }}
+            className="menu-option"
           >
-            <h3><i className="fa fa-file-photo-o menu-icon"></i>Images</h3>
-            <button
-              id="button-show"
-              className="menu-button"
+            <div
+              className="menu-option-title"
+              onClick={ () => {
+                if (this.props.menuShow.showTemplateMenu === false) {
+                  this.props.showTemplateMenu(true);
+                } else {
+                  this.props.showTemplateMenu(false);
+                }
+              }}
             >
-              <i id="icon" className={"fa fa-caret-right" + " " + uploadComponentOpenClass}></i>
-            </button>
+              <h3><i className="fa fa-files-o menu-icon"></i>Saved Styles</h3>
+              <button
+                id="button-show"
+                className="menu-button"
+              >
+                <i id="icon" className={"fa fa-caret-right" + " " + templateComponentOpenClass}></i>
+              </button>
+            </div>
+            {templateDropdown}
           </div>
-          { uploadComponent }
-        </div>
-        <div
-          className="menu-option"
-        >
-          <div
-            className="menu-option-title"
-            onClick={ () => {
-              if (this.props.menuShow.showTemplateMenu === false) {
-                this.props.showTemplateMenu(true);
-              } else {
-                this.props.showTemplateMenu(false);
-              }
-            }}
-          >
-            <h3><i className="fa fa-files-o menu-icon"></i>Saved Styles</h3>
+          <div className="save-styles-container">
+            <div className="save-styles-details">
+              <h4>Name Your Style</h4>
+              <form onSubmit={(event)=> {
+                  event.preventDefault();
+                  return this.saveFilePopup();
+                }
+              }>
+                <input type="text" id="template-name" className="user-style-name" required="true" placeholder="Enter Styles Name"
+                  defaultValue={"Hue " + this.timeAMPM(new Date)
+                }/>
+                <div className="functional-button-container">
+                  <input
+                    className="functional-button save-styles"
+                    type="submit"
+                    value="Save Styles"
+                  >
+                  </input>
+                </div>
+              </form>
+            </div>
+            <SavePopover
+              show={ this.props.popover.modal }
+              click={ this.handleClick }
+            />
+          </div>
+            { updateComponent }
+          <div className="functional-button-container">
             <button
-              id="button-show"
-              className="menu-button"
+              className="functional-button"
+              onClick={this.zipFile}>Export HTML and CSS Files</button>
+          </div>
+          { /* <div className="current-styles-container">
+            <h6>Current Element Styles</h6>
+            <div className="current-elem-styles"
             >
-              <i id="icon" className={"fa fa-caret-right" + " " + templateComponentOpenClass}></i>
-            </button>
-          </div>
-          {templateDropdown}
+              {this.props.showElementStyles(this.props.elementsReducer.selectedElement.selectedStyle)}
+            </div>
+          </div> */}
         </div>
-        <div className="save-styles-container">
-          <div className="save-styles-details">
-            <h4>Name Your Style</h4>
-            <form onSubmit={(event)=> {
-                event.preventDefault();
-                return this.saveFilePopup();
-              }
-            }>
-              <input type="text" id="template-name" className="user-style-name" required="true" placeholder="Enter Styles Name"
-                defaultValue={"Hue " + this.timeAMPM(new Date)
-              }/>
-              <div className="functional-button-container">
-                <input
-                  className="functional-button save-styles"
-                  type="submit"
-                  value="Save Styles"
-                >
-                </input>
-              </div>
-            </form>
-          </div>
-          <SavePopover
-            show={ this.props.popover.modal }
-            click={ this.handleClick }
-          />
-        </div>
-          { updateComponent }
-        <div className="functional-button-container">
-          <button
-            className="functional-button"
-            onClick={this.zipFile}>Export HTML and CSS Files</button>
-        </div>
-        { /* <div className="current-styles-container">
-          <h6>Current Element Styles</h6>
-          <div className="current-elem-styles"
-          >
-            {this.props.showElementStyles(this.props.elementsReducer.selectedElement.selectedStyle)}
-          </div>
-        </div> */}
-
 
       </div>
     )
