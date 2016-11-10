@@ -203,7 +203,7 @@ a.link-to-github{
   flex-flow: row wrap;
   // align-items: flex-start;
   background-color: lighten($black, 90%);
-  border: 3px blue dashed;
+  // border: 3px blue dashed;
   @include desktop{
     margin-top: 75px;
   }
@@ -211,8 +211,8 @@ a.link-to-github{
 // ** Template Container ** //
 .template-container{
   flex: 0 0 100%;
-  padding: 10px;
-  border: 1px red solid;
+  padding: 15px;
+  // border: 1px red solid;
   // margin: 50px 25px 50px 50px;
   @include tablet{
     padding: 25px;
@@ -236,8 +236,8 @@ a.link-to-github{
 // ** Style Editor ** //
 .edit-container{
   flex: 0 0 100%;
-  padding: 10px;
-  border: 1px red solid;
+  padding: 15px;
+  // border: 1px red solid;
   // width: 300px;
   // margin: 50px 50px 50px 25px;
   @include tablet{
