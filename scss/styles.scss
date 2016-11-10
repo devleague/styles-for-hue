@@ -200,33 +200,56 @@ a.link-to-github{
 .template-edit-container{
   margin-top: 150px;
   display: flex;
-  flex-flow: row nowrap;
-  align-items: flex-start;
+  flex-flow: row wrap;
+  // align-items: flex-start;
   background-color: lighten($black, 90%);
+  border: 3px blue dashed;
   @include desktop{
     margin-top: 75px;
   }
 }
 // ** Template Container ** //
 .template-container{
-  margin: 50px 25px 50px 50px;
+  flex: 0 0 100%;
+  padding: 10px;
+  border: 1px red solid;
+  // margin: 50px 25px 50px 50px;
+  @include tablet{
+    padding: 25px;
+  }
+  @include desktop{
+    flex: 0 0 50%;
+    padding: 50px;
+  }
+}
+.template-1{
+  // margin: 0 auto;
   -webkit-box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.25);
   -moz-box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.25);
   box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.25);
-}
-.template-1{
-  margin: 0 auto;
-  padding: 25px;
+  // padding: 25px;
 }
 .selected {
   outline: 5px solid blue;
 }
 // ** Style Editor ** //
 .edit-container{
-  width: 300px;
-  margin: 50px 50px 50px 25px;
-  padding-bottom: 5px;
+  flex: 0 0 100%;
+  padding: 10px;
+  border: 1px red solid;
+  // width: 300px;
+  // margin: 50px 50px 50px 25px;
+  @include tablet{
+    padding: 25px;
+  }
+  @include desktop{
+    flex: 0 0 50%;
+    padding: 50px;
+  }
+}
+.edit-menu{
   background-color: $white;
+  padding-bottom: 5px;
   h1{
     padding: 10px;
     font-size: 1.5rem;
