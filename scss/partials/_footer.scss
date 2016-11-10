@@ -6,9 +6,6 @@ footer{
   }
   .footer-content{
     text-align: center;
-    @include tablet{
-
-    }
     @include desktop{
       text-align: left;
       margin-left: 50px;
