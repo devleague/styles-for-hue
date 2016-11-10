@@ -61,7 +61,9 @@ a{
 /////          ABOUT PAGE         /////
 ///////////////////////////////////////
 .about-image{
-  background-image: url(https://static.pexels.com/photos/70232/pexels-photo-70232.jpeg);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)),
+    url(https://static.pexels.com/photos/70232/pexels-photo-70232.jpeg);
 }
 
 .about-us{
@@ -531,7 +533,9 @@ a.link-to-github{
 
 /////// RESOURCE PAGE ///////
 .resource-image{
-  background-image: url('/images/working_design.jpg');
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)),
+    url('/images/working_design.jpg');
 }
 
 ///////// 404: NOT FOUND /////////
@@ -586,7 +590,9 @@ a.link-to-github{
 
 ////////// TUTORIAL PAGE ////////////
 .tutorial-image{
-  background-image: url('/images/books.jpg');
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)),
+    url('/images/books.jpg');
 }
 
 .video-container {
