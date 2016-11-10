@@ -6,19 +6,17 @@
   background-position: center;
   background-size: cover;
   position:relative;
-  padding-top: 100px;
-  height:100vh;
+  margin-top: 150px;
+  height: calc(100vh - 150px);
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
   text-align: center;
   color: $dark-grey;
-  @include tablet{
-    padding-top: 150px;
-  }
   @include desktop{
-    padding-top: 0;
+  margin-top: 75px;
+  height: calc(100vh - 75px);
   }
 }
 
