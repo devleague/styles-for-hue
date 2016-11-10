@@ -66,163 +66,126 @@ a.link-to-github{
   }
 }
 
-@include small-1{
-  .pos-1{
-    order: 1;
-    .profile{
-      background: url(/images/nikki.jpg) -720px 0;
+.pos-1{
+  order: 1;
+  .profile{
+    background-image: url('/images/nikki.jpg');
+    background-position: -720px 0;
+    @include two-photos{
+      background-position: -540px 0;
     }
-  }
-  .pos-2{
-    order: 2;
-    .profile{
-      background: url(/images/lisa.jpg) -720px 0;
+    @include three-photos{
+      background-position: -360px 0;
     }
-  }
-  .pos-3{
-    order: 3;
-    .profile{
-      background: url(/images/bryce.jpg) -720px 0;
+    @include four-photos{
+      background-position: -180px 0;
     }
-  }
-  .pos-4{
-    order: 4;
-    .profile{
-      background: url(/images/christie.jpg) -720px 0;
-    }
-  }
-  .pos-5{
-    order: 5;
-    .profile{
-      background: url(/images/sheena.jpg) -720px 0;
+    @include five-photos{
+      background-position: 0 0;
     }
   }
 }
-@include small-2{
-  .pos-1{
-    order: 1;
-    .profile{
-      background: url(/images/nikki.jpg) -540px 0;
+
+.pos-2{
+  order: 2;
+    @include three-photos{
+      order: 3;
     }
-  }
-  .pos-2{
-    order: 2;
-    .profile{
-      background: url(/images/lisa.jpg) -540px 0;
+  .profile{
+    background-image: url('/images/lisa.jpg');
+    background-position: -720px 0;
+    @include two-photos{
+      background-position: -540px 0;
     }
-  }
-  .pos-3{
-    order: 5;
-    .profile{
-      background: url(/images/bryce.jpg) -540px 0;
+    @include three-photos{
+      background-position: -360px 0;
     }
-  }
-  .pos-4{
-    order: 3;
-    .profile{
-      background: url(/images/christie.jpg) -540px 0;
+    @include four-photos{
+      background-position: -180px 0;
     }
-  }
-  .pos-5{
-    order: 4;
-    .profile{
-      background: url(/images/sheena.jpg) -540px 0;
+    @include five-photos{
+      background-position: 0 0;
     }
   }
 }
-@include medium-1{
-  .pos-1{
-    order: 1;
-    .profile{
-      background: url(/images/nikki.jpg) -360px 0;
+
+.pos-3{
+  order: 3;
+    @include two-photos{
+      order: 5;
     }
-  }
-  .pos-2{
-    order: 3;
-    .profile{
-      background: url(/images/lisa.jpg) -360px 0;
+    @include three-photos{
+      order: 2;
     }
-  }
-  .pos-3{
-    order: 2;
-    .profile{
-      background: url(/images/bryce.jpg) -360px 0;
+    @include four-photos{
+      order: 5;
     }
-  }
-  .pos-4{
-    order: 4;
-    .profile{
-      background: url(/images/christie.jpg) -360px 0;
+  .profile{
+    background-image: url('/images/bryce.jpg');
+    background-position: -720px 0;
+    @include two-photos{
+      background-position: -540px 0;
     }
-  }
-  .pos-5{
-    order: 5;
-    .profile{
-      background: url(/images/sheena.jpg) -360px 0;
+    @include three-photos{
+      background-position: -360px 0;
+    }
+    @include four-photos{
+      background-position: -180px 0;
+    }
+    @include five-photos{
+      background-position: 0 0;
     }
   }
 }
-@include medium-2{
-  .pos-1{
-    order: 1;
-    .profile{
-      background: url(/images/nikki.jpg) -180px 0;
+
+.pos-4{
+  order: 4;
+    @include two-photos{
+      order: 3;
     }
-  }
-  .pos-2{
-    order: 2;
-    .profile{
-      background: url(/images/lisa.jpg) -180px 0;
+    @include four-photos{
+      order: 3;
     }
-  }
-  .pos-3{
-    order: 5;
-    .profile{
-      background: url(/images/bryce.jpg) -180px 0;
+  .profile{
+    background-image: url('/images/christie.jpg');
+    background-position: -720px 0;
+    @include two-photos{
+      background-position: -540px 0;
     }
-  }
-  .pos-4{
-    order: 3;
-    .profile{
-      background: url(/images/christie.jpg) -180px 0;
+    @include three-photos{
+      background-position: -360px 0;
     }
-  }
-  .pos-5{
-    order: 4;
-    .profile{
-      background: url(/images/sheena.jpg) -180px 0;
+    @include four-photos{
+      background-position: -180px 0;
+    }
+    @include five-photos{
+      background-position: 0 0;
     }
   }
 }
-@include large{
-  .pos-1{
-    order: 1;
-    .profile{
-      background: url(/images/nikki.jpg) 0 0;
+
+.pos-5{
+  order: 5;
+    @include two-photos{
+      order: 4;
     }
-  }
-  .pos-2{
-    order: 2;
-    .profile{
-      background: url(/images/lisa.jpg) 0 0;
+    @include four-photos{
+      order: 4;
     }
-  }
-  .pos-3{
-    order: 3;
-    .profile{
-      background: url(/images/bryce.jpg) -00px 0;
+  .profile{
+    background-image: url('/images/sheena.jpg');
+    background-position: -720px 0;
+    @include two-photos{
+      background-position: -540px 0;
     }
-  }
-  .pos-4{
-    order: 4;
-    .profile{
-      background: url(/images/christie.jpg) -0 0;
+    @include three-photos{
+      background-position: -360px 0;
     }
-  }
-  .pos-5{
-    order: 5;
-    .profile{
-      background: url(/images/sheena.jpg) 0 0;
+    @include four-photos{
+      background-position: -180px 0;
+    }
+    @include five-photos{
+      background-position: 0 0;
     }
   }
 }
