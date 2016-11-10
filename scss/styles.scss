@@ -201,9 +201,7 @@ a.link-to-github{
   margin-top: 150px;
   display: flex;
   flex-flow: row wrap;
-  // align-items: flex-start;
   background-color: lighten($black, 90%);
-  // border: 3px blue dashed;
   @include desktop{
     margin-top: 75px;
   }
@@ -212,23 +210,18 @@ a.link-to-github{
 .template-container{
   flex: 0 0 100%;
   padding: 15px;
-  // border: 1px red solid;
-  // margin: 50px 25px 50px 50px;
   @include tablet{
     padding: 25px;
   }
   @include desktop{
-    // flex: 0 0 50%;
-    flex: 1;
+    // flex: 0 0 50%;    flex: 1;
     padding: 50px 25px 50px 50px;
   }
 }
 .template-1{
-  // margin: 0 auto;
   -webkit-box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.25);
   -moz-box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.25);
   box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.25);
-  // padding: 25px;
 }
 .selected {
   outline: 5px solid blue;
@@ -237,9 +230,6 @@ a.link-to-github{
 .edit-container{
   flex: 0 0 100%;
   padding: 15px;
-  // border: 1px red solid;
-  // width: 300px;
-  // margin: 50px 50px 50px 25px;
   @include tablet{
     padding: 25px;
   }
