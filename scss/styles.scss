@@ -346,8 +346,11 @@ a.link-to-github{
         outline: none;
       }
       .image-url-text{
-        width: 200px;
+        width: 100%;
         font-family: 'Lato', sans-serif;
+        @include desktop{
+          width: 280px;
+        }
       }
       .image-url-submit{
         width: 80px;
