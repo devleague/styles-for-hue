@@ -94,14 +94,22 @@
     .t1-header-left{
       flex: 0 0 25%;
       font-weight: bold;
+      text-align: left;
+    }
+    .t1-header-left h1{
+      font-size: 1rem;
     }
     .t1-header-right{
       flex: 0 0 75%;
       text-align: right;
     }
     .t1-header-right ul li{
+      line-height: 1.25;
+    }
+    .t1-header-right ul li{
       display: inline-block;
-      padding-right: 15px;
+      padding-left: 10px;
+      padding-right: 10px;
     }
     .t1-header-right a{
       font-size: 0.75em;
@@ -212,6 +220,23 @@
       font-size: 0.75em;
       line-height: 50px;
       padding: 0 50px;
+    }
+    @media only screen and (max-width: 679px) {
+      .t1-header-container{
+        height: 125px;
+        padding: 15px 25px;
+      }
+      .t1-header-left{
+        flex: 0 0 100%;
+        text-align: center;
+      }
+      .t1-header-left h1{
+        font-size: 1.5rem;
+      }
+      .t1-header-right{
+        flex: 0 0 100%;
+        text-align: center;
+      }
     }
   </style>
   <link rel="stylesheet" type="text/css" href="/css/styles.css">
