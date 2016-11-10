@@ -11,3 +11,39 @@ $desktop-width: 1080px;
     @content;
   }
 }
+
+$small-1: "(min-width: 0px) and (max-width: 479px)";
+$small-2: "(min-width: 480px) and (max-width: 679px)";
+$medium-1: "(min-width: 680px) and (max-width: 879px)";
+$medium-2: "(min-width: 880px) and (max-width: 1079px)";
+$large: "(min-width: 1080px)";
+
+@mixin small-1{
+  @media #{$small-1} {
+    @content;
+  }
+}
+
+@mixin small-2{
+  @media #{$small-2} {
+    @content;
+  }
+}
+
+@mixin medium-1{
+  @media #{$medium-1} {
+    @content;
+  }
+}
+
+@mixin medium-2{
+  @media #{$medium-2} {
+    @content;
+  }
+}
+
+@mixin large{
+  @media #{$large} {
+    @content;
+  }
+}
