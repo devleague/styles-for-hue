@@ -198,11 +198,14 @@ a.link-to-github{
 ///// TEMPLATE & EDITOR CONTAINER /////
 ///////////////////////////////////////
 .template-edit-container{
-  margin-top: 75px;
+  margin-top: 150px;
   display: flex;
   flex-flow: row nowrap;
   align-items: flex-start;
-  background-color:#eaeaea;
+  background-color: lighten($black, 90%);
+  @include desktop{
+    margin-top: 75px;
+  }
 }
 // ** Template Container ** //
 .template-container{
