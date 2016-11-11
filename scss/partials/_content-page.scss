@@ -48,12 +48,21 @@
   background-size: cover;
   background-position: top center;
   background-color: $mint;
-  padding: 175px 0 125px;
+  margin-top: 150px;
+  padding: 75px 0;
   background-attachment: fixed;
+  @include desktop{
+    margin-top: 75px;
+    padding: 125px 0;
+  }
   h1{
     color: $white;
     text-transform: uppercase;
-    margin-left: 50px;
+    text-align: center;
+    @include desktop{
+      margin-left: 50px;
+      text-align: left;
+    }
   }
 }
 
@@ -86,7 +95,10 @@
     padding: 10px;
   }
   .flex-50{
-    flex: 0 0 50%;
+    flex: 0 0 100%;
     padding: 10px;
+    @include desktop{
+      flex: 0 0 50%;
+    }
   }
 }

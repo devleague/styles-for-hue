@@ -42,7 +42,9 @@ class Template extends Component {
     })
     return (
       <div className="template-container">
-        {elements}
+        <div className="template-1-container">
+          {elements}
+        </div>
       </div>
     )
   }

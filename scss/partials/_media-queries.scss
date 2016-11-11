@@ -1,0 +1,49 @@
+$tablet-width: 679px;
+$desktop-width: 1080px;
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+$one-photo: "(min-width: 0px) and (max-width: 479px)";
+$two-photos: "(min-width: 480px) and (max-width: 679px)";
+$three-photos: "(min-width: 680px) and (max-width: 879px)";
+$four-photos: "(min-width: 880px) and (max-width: 1079px)";
+$five-photos: "(min-width: 1080px)";
+
+@mixin one-photo{
+  @media #{$one-photo} {
+    @content;
+  }
+}
+
+@mixin two-photos{
+  @media #{$two-photos} {
+    @content;
+  }
+}
+
+@mixin three-photos{
+  @media #{$three-photos} {
+    @content;
+  }
+}
+
+@mixin four-photos{
+  @media #{$four-photos} {
+    @content;
+  }
+}
+
+@mixin five-photos{
+  @media #{$five-photos} {
+    @content;
+  }
+}

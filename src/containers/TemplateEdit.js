@@ -119,16 +119,11 @@ class TemplateEdit extends Component {
           // selectedElementId={this.props.elementsReducer.selectedElement.selectedElementId}
           // selectedElementStyle={this.props.elementsReducer.selectedElement.selectedStyle}
         />
-        <div
-          className="edit-views-container"
-        >
-          <Edit
-            showElementStyles={this.showElementStyles}
-            hash={this.props.params.hash}
-            loadSavedTheme={this.loadSavedTheme}
-          />
-          { cssComponent }
-        </div>
+        <Edit
+          showElementStyles={this.showElementStyles}
+          hash={this.props.params.hash}
+          loadSavedTheme={this.loadSavedTheme}
+        />
       </div>
     )
   }

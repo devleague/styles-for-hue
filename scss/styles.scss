@@ -3,6 +3,7 @@
 
 @import 'partials/reset';
 @import 'partials/clearfix';
+@import 'partials/media-queries';
 @import 'partials/colors';
 @import 'partials/nav';
 @import 'partials/footer';
@@ -11,48 +12,16 @@
 @import 'partials/popover';
 @import 'partials/content-page';
 
-
-$small-1: "(min-width: 0px) and (max-width: 479px)";
-$small-2: "(min-width: 480px) and (max-width: 679px)";
-$medium-1: "(min-width: 680px) and (max-width: 879px)";
-$medium-2: "(min-width: 880px) and (max-width: 1079px)";
-$large: "(min-width: 1080px)";
-
-@mixin small-1{
-  @media #{$small-1} {
-    @content;
-  }
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-@mixin small-2{
-  @media #{$small-2} {
-    @content;
-  }
-}
-
-@mixin medium-1{
-  @media #{$medium-1} {
-    @content;
-  }
-}
-
-@mixin medium-2{
-  @media #{$medium-2} {
-    @content;
-  }
-}
-
-@mixin large{
-  @media #{$large} {
-    @content;
-  }
-}
-
-*{margin: 0; padding: 0; box-sizing: border-box;}
 
 body{
   font-family: 'Lato', sans-serif;
 }
+
 a{
   text-decoration: none;
 }
@@ -61,7 +30,9 @@ a{
 /////          ABOUT PAGE         /////
 ///////////////////////////////////////
 .about-image{
-  background-image: url(https://static.pexels.com/photos/70232/pexels-photo-70232.jpeg);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)),
+    url('/images/glasses-coffee.jpeg');
 }
 
 .about-us{
@@ -74,18 +45,10 @@ a.link-to-github{
   color: $black;
 }
 
-a.link-to-github:hover{
-  color: $mint;
-}
-
 .flex-photos{
   flex: 0 0 200px;
   text-align: center;
   padding: 10px 10px;
-  // img{
-  //   width: 180px;
-  //   border-radius: 50%;
-  // }
   .profile{
     width: 180px;
     height: 180px;
@@ -103,163 +66,126 @@ a.link-to-github:hover{
   }
 }
 
-@include small-1{
-  .pos-1{
-    order: 1;
-    .profile{
-      background: url(/images/nikki.jpg) -720px 0;
+.pos-1{
+  order: 1;
+  .profile{
+    background-image: url('/images/nikki.jpg');
+    background-position: -720px 0;
+    @include two-photos{
+      background-position: -540px 0;
     }
-  }
-  .pos-2{
-    order: 2;
-    .profile{
-      background: url(/images/lisa.jpg) -720px 0;
+    @include three-photos{
+      background-position: -360px 0;
     }
-  }
-  .pos-3{
-    order: 3;
-    .profile{
-      background: url(/images/bryce.jpg) -720px 0;
+    @include four-photos{
+      background-position: -180px 0;
     }
-  }
-  .pos-4{
-    order: 4;
-    .profile{
-      background: url(/images/christie.jpg) -720px 0;
-    }
-  }
-  .pos-5{
-    order: 5;
-    .profile{
-      background: url(/images/sheena.jpg) -720px 0;
+    @include five-photos{
+      background-position: 0 0;
     }
   }
 }
-@include small-2{
-  .pos-1{
-    order: 1;
-    .profile{
-      background: url(/images/nikki.jpg) -540px 0;
+
+.pos-2{
+  order: 2;
+    @include three-photos{
+      order: 3;
     }
-  }
-  .pos-2{
-    order: 2;
-    .profile{
-      background: url(/images/lisa.jpg) -540px 0;
+  .profile{
+    background-image: url('/images/lisa.jpg');
+    background-position: -720px 0;
+    @include two-photos{
+      background-position: -540px 0;
     }
-  }
-  .pos-3{
-    order: 5;
-    .profile{
-      background: url(/images/bryce.jpg) -540px 0;
+    @include three-photos{
+      background-position: -360px 0;
     }
-  }
-  .pos-4{
-    order: 3;
-    .profile{
-      background: url(/images/christie.jpg) -540px 0;
+    @include four-photos{
+      background-position: -180px 0;
     }
-  }
-  .pos-5{
-    order: 4;
-    .profile{
-      background: url(/images/sheena.jpg) -540px 0;
+    @include five-photos{
+      background-position: 0 0;
     }
   }
 }
-@include medium-1{
-  .pos-1{
-    order: 1;
-    .profile{
-      background: url(/images/nikki.jpg) -360px 0;
+
+.pos-3{
+  order: 3;
+    @include two-photos{
+      order: 5;
     }
-  }
-  .pos-2{
-    order: 3;
-    .profile{
-      background: url(/images/lisa.jpg) -360px 0;
+    @include three-photos{
+      order: 2;
     }
-  }
-  .pos-3{
-    order: 2;
-    .profile{
-      background: url(/images/bryce.jpg) -360px 0;
+    @include four-photos{
+      order: 5;
     }
-  }
-  .pos-4{
-    order: 4;
-    .profile{
-      background: url(/images/christie.jpg) -360px 0;
+  .profile{
+    background-image: url('/images/bryce.jpg');
+    background-position: -720px 0;
+    @include two-photos{
+      background-position: -540px 0;
     }
-  }
-  .pos-5{
-    order: 5;
-    .profile{
-      background: url(/images/sheena.jpg) -360px 0;
+    @include three-photos{
+      background-position: -360px 0;
+    }
+    @include four-photos{
+      background-position: -180px 0;
+    }
+    @include five-photos{
+      background-position: 0 0;
     }
   }
 }
-@include medium-2{
-  .pos-1{
-    order: 1;
-    .profile{
-      background: url(/images/nikki.jpg) -180px 0;
+
+.pos-4{
+  order: 4;
+    @include two-photos{
+      order: 3;
     }
-  }
-  .pos-2{
-    order: 2;
-    .profile{
-      background: url(/images/lisa.jpg) -180px 0;
+    @include four-photos{
+      order: 3;
     }
-  }
-  .pos-3{
-    order: 5;
-    .profile{
-      background: url(/images/bryce.jpg) -180px 0;
+  .profile{
+    background-image: url('/images/christie.jpg');
+    background-position: -720px 0;
+    @include two-photos{
+      background-position: -540px 0;
     }
-  }
-  .pos-4{
-    order: 3;
-    .profile{
-      background: url(/images/christie.jpg) -180px 0;
+    @include three-photos{
+      background-position: -360px 0;
     }
-  }
-  .pos-5{
-    order: 4;
-    .profile{
-      background: url(/images/sheena.jpg) -180px 0;
+    @include four-photos{
+      background-position: -180px 0;
+    }
+    @include five-photos{
+      background-position: 0 0;
     }
   }
 }
-@include large{
-  .pos-1{
-    order: 1;
-    .profile{
-      background: url(/images/nikki.jpg) 0 0;
+
+.pos-5{
+  order: 5;
+    @include two-photos{
+      order: 4;
     }
-  }
-  .pos-2{
-    order: 2;
-    .profile{
-      background: url(/images/lisa.jpg) 0 0;
+    @include four-photos{
+      order: 4;
     }
-  }
-  .pos-3{
-    order: 3;
-    .profile{
-      background: url(/images/bryce.jpg) -00px 0;
+  .profile{
+    background-image: url('/images/sheena.jpg');
+    background-position: -720px 0;
+    @include two-photos{
+      background-position: -540px 0;
     }
-  }
-  .pos-4{
-    order: 4;
-    .profile{
-      background: url(/images/christie.jpg) -0 0;
+    @include three-photos{
+      background-position: -360px 0;
     }
-  }
-  .pos-5{
-    order: 5;
-    .profile{
-      background: url(/images/sheena.jpg) 0 0;
+    @include four-photos{
+      background-position: -180px 0;
+    }
+    @include five-photos{
+      background-position: 0 0;
     }
   }
 }
@@ -272,32 +198,49 @@ a.link-to-github:hover{
 ///// TEMPLATE & EDITOR CONTAINER /////
 ///////////////////////////////////////
 .template-edit-container{
-  margin-top: 75px;
+  margin-top: 150px;
   display: flex;
-  flex-flow: row nowrap;
-  align-items: flex-start;
-  background-color:#eaeaea;
+  flex-flow: row wrap;
+  background-color: lighten($black, 90%);
+  @include desktop{
+    margin-top: 75px;
+  }
 }
 // ** Template Container ** //
 .template-container{
-  margin: 50px 25px 50px 50px;
+  flex: 0 0 100%;
+  padding: 15px;
+  @include tablet{
+    padding: 25px;
+  }
+  @include desktop{
+    flex: 1;
+    padding: 50px 25px 50px 50px;
+  }
+}
+.template-1-container{
   -webkit-box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.25);
   -moz-box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.25);
   box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.25);
-}
-.template-one{
-  margin: 0 auto;
-  padding: 25px;
 }
 .selected {
   outline: 5px solid blue;
 }
 // ** Style Editor ** //
 .edit-container{
-  width: 300px;
-  margin: 50px 50px 50px 25px;
-  padding-bottom: 5px;
+  flex: 0 0 100%;
+  padding: 15px;
+  @include tablet{
+    padding: 25px;
+  }
+  @include desktop{
+    flex: 0 0 300px;
+    padding: 50px 50px 50px 25px;
+  }
+}
+.edit-menu{
   background-color: $white;
+  padding-bottom: 5px;
   h1{
     padding: 10px;
     font-size: 1.5rem;
@@ -403,19 +346,26 @@ a.link-to-github:hover{
         outline: none;
       }
       .image-url-text{
-        width: 200px;
+        width: 100%;
         font-family: 'Lato', sans-serif;
+        @include desktop{
+          width: 280px;
+        }
       }
       .image-url-submit{
         width: 80px;
       }
     }
     .preview-upload{
-      width: 280px;
+      width: 100%;
       height: 200px;
-      margin-top: 10px;
+      margin: 10px auto 0;
       font-size: 0.85rem;
+      display: block;
       object-fit: cover;
+      @include desktop{
+        width: 275px;
+      }
     }
   }
 }
@@ -531,7 +481,9 @@ a.link-to-github:hover{
 
 /////// RESOURCE PAGE ///////
 .resource-image{
-  background-image: url('/images/working_design.jpg');
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)),
+    url('/images/working_design.jpg');
 }
 
 ///////// 404: NOT FOUND /////////
@@ -586,7 +538,9 @@ a.link-to-github:hover{
 
 ////////// TUTORIAL PAGE ////////////
 .tutorial-image{
-  background-image: url('/images/books.jpg');
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)),
+    url('/images/books.jpg');
 }
 
 .video-container {
